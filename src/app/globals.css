@@ -1,0 +1,304 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ШРИФТ HORIZON */
+@font-face {
+  font-family: 'Horizon';
+  src: url('/fonts/horizon.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ШРИФТ GARET */
+@font-face {
+  font-family: 'Garet';
+  src: url('/fonts/Garet-Book.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Garet';
+  src: url('/fonts/Garet-Heavy.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* VOGUE MAGAZINE STYLE - ОБНОВЛЕННАЯ ЦВЕТОВАЯ СХЕМА */
+
+/* ===== ТОЛЬКО 3 ЦВЕТА: #444e55 #FEFEFE #3B3B3A ===== */
+.vogue-bg { background-color: #FEFEFE; }
+.vogue-text { color: #3B3B3A; }
+.vogue-accent { color: #444e55; }
+.vogue-accent-bg { background-color: #444e55; }
+.vogue-dark-bg { background-color: #3B3B3A; }
+.vogue-border { border-color: #444e55; }
+
+/* ===== ТИПОГРАФИКА В СТИЛЕ VOGUE ===== */
+
+/* Заголовки с Horizon - как в журнале */
+.vogue-masthead {
+  font-family: 'Horizon', Arial, sans-serif;
+  font-size: clamp(4rem, 12vw, 12rem);
+  font-weight: normal;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  line-height: 0.8;
+  color: #3B3B3A;
+  text-align: center;
+}
+
+.vogue-headline {
+  font-family: 'Horizon', Arial, sans-serif;
+  font-size: clamp(2.5rem, 8vw, 6rem);
+  font-weight: normal;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  line-height: 0.85;
+  color: #3B3B3A;
+}
+
+.vogue-subhead {
+  font-family: 'Horizon', Arial, sans-serif;
+  font-size: clamp(1.2rem, 3vw, 2.5rem);
+  font-weight: normal;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1;
+  color: #3B3B3A;
+}
+
+/* Основной текст - элегантный и читабельный */
+.vogue-body {
+  font-family: 'Garet', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.6;
+  color: #3B3B3A;
+}
+
+.vogue-caption {
+  font-family: 'Garet', Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #3B3B3A;
+  opacity: 0.7;
+}
+
+.vogue-logo {
+  font-family: 'Horizon', Arial, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #444e55;
+}
+
+.vogue-quote {
+  font-family: 'Garet', Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.5;
+  color: #3B3B3A;
+}
+
+/* ===== КОМПОНЕНТЫ В СТИЛЕ VOGUE ===== */
+
+/* Кнопки - минималистичные как в журнале */
+.vogue-btn {
+  font-family: 'Garet', Arial, sans-serif;
+  padding: 16px 48px;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border: 1px solid #3B3B3A;
+  background-color: transparent;
+  color: #3B3B3A;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.vogue-btn:hover {
+  background-color: #3B3B3A;
+  color: #FEFEFE;
+}
+
+.vogue-btn-filled {
+  background-color: #3B3B3A;
+  color: #FEFEFE;
+  border: 1px solid #3B3B3A;
+}
+
+.vogue-btn-filled:hover {
+  background-color: transparent;
+  color: #3B3B3A;
+}
+
+/* Разделители - элегантные линии */
+.vogue-divider {
+  width: 60px;
+  height: 1px;
+  background-color: #3B3B3A;
+  opacity: 0.3;
+}
+
+.vogue-divider-long {
+  width: 120px;
+  height: 1px;
+  background-color: #3B3B3A;
+  opacity: 0.2;
+}
+
+/* Карточки - минимальные рамки */
+.vogue-card {
+  padding: 60px 40px;
+  background-color: #FEFEFE;
+  border: 1px solid #444e55;
+  transition: all 0.4s ease;
+}
+
+.vogue-card:hover {
+  border-color: #3B3B3A;
+  transform: translateY(-2px);
+}
+
+.vogue-testimonial-card {
+  padding: 60px 40px;
+  background-color: #444e55;
+  border: 1px solid #444e55;
+  transition: all 0.4s ease;
+}
+
+.vogue-testimonial-card:hover {
+  background-color: #3B3B3A;
+  transform: translateY(-2px);
+}
+
+.vogue-testimonial-card:hover .vogue-caption {
+  color: #FEFEFE !important;
+  opacity: 1 !important;
+}
+
+.vogue-testimonial-card:hover .vogue-quote {
+  color: #FEFEFE !important;
+}
+
+.vogue-testimonial-card:hover .vogue-divider {
+  background-color: #FEFEFE !important;
+}
+
+.vogue-testimonial-card:hover .testimonial-stars {
+  color: #444e55 !important;
+}
+
+/* Контейнеры */
+.vogue-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.vogue-section {
+  padding: 120px 0;
+}
+
+/* Специальные элементы */
+.vogue-badge {
+  padding: 8px 20px;
+  font-family: 'Garet', Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid #3B3B3A;
+  background-color: #FEFEFE;
+  color: #3B3B3A;
+}
+
+.vogue-number {
+  font-family: 'Horizon', Arial, sans-serif;
+  font-size: 4rem;
+  font-weight: normal;
+  color: #3B3B3A;
+  opacity: 0.1;
+  line-height: 1;
+}
+
+/* Сетка в стиле журнала */
+.vogue-grid {
+  display: grid;
+  gap: 2px;
+  background-color: #444e55;
+}
+
+.vogue-grid-item {
+  background-color: #FEFEFE;
+  padding: 60px 40px;
+}
+
+/* Анимации */
+.vogue-fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: vogueFadeIn 0.8s ease forwards;
+}
+
+@keyframes vogueFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .vogue-container {
+    padding: 0 20px;
+  }
+  
+  .vogue-section {
+    padding: 80px 0;
+  }
+  
+  .vogue-card {
+    padding: 40px 20px;
+  }
+  
+  .vogue-btn {
+    padding: 14px 32px;
+    font-size: 10px;
+  }
+}
+
+@layer base {
+  * {
+    font-family: 'Garet', system-ui, -apple-system, sans-serif;
+  }
+  
+  body {
+    font-weight: 300;
+    letter-spacing: 0.01em;
+    background-color: #FEFEFE;
+    color: #3B3B3A;
+    overflow-x: hidden;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .content-container {
+    @apply max-w-[1200px] w-full mx-auto px-10;
+  }
+}

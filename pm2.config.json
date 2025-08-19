@@ -1,0 +1,31 @@
+{
+  "apps": [
+    {
+      "name": "gomanic-brazil-landing",
+      "script": "npm",
+      "args": "start",
+      "cwd": "/var/www/gomanic-brazil/current",
+      "instances": 1,
+      "exec_mode": "fork",
+      "env": {
+        "NODE_ENV": "production",
+        "PORT": 3001
+      },
+      "error_file": "/var/log/pm2/gomanic-brazil-error.log",
+      "out_file": "/var/log/pm2/gomanic-brazil-out.log",
+      "log_file": "/var/log/pm2/gomanic-brazil-combined.log",
+      "time": true,
+      "watch": false,
+      "ignore_watch": [
+        "node_modules",
+        ".next",
+        "logs"
+      ],
+      "max_memory_restart": "500M",
+      "restart_delay": 4000,
+      "autorestart": true,
+      "max_restarts": 10,
+      "min_uptime": "10s"
+    }
+  ]
+}

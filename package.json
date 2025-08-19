@@ -1,0 +1,37 @@
+{
+  "name": "gomanic-brazil-landing",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Landing page para manicure profissional - Brasil",
+  "author": "Gomanic",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev -p 3001",
+    "build": "next build",
+    "start": "next start -p 3001",
+    "lint": "next lint",
+    "type-check": "tsc --noEmit",
+    "deploy-check": "chmod +x scripts/deploy.sh && ./scripts/deploy.sh"
+  },
+  "dependencies": {
+    "next": "14.0.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.11.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.5.0",
+    "@types/react": "^18.2.21",
+    "@types/react-dom": "^18.2.7",
+    "autoprefixer": "^10.4.15",
+    "eslint": "^8.47.0",
+    "eslint-config-next": "14.0.4",
+    "postcss": "^8.4.28",
+    "tailwindcss": "^3.3.3",
+    "typescript": "^5.1.6"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  }
+}
