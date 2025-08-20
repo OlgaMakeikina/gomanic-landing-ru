@@ -1,28 +1,36 @@
 {
   "name": "gomanic-brazil-landing",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev -p 3000",
     "build": "next build",
     "start": "next start -p 3000",
-    "lint": "next lint"
+    "lint": "next lint",
+    "type-check": "tsc --noEmit",
+    "export": "next build && next export",
+    "deploy": "npm run build && npm run start",
+    "analyze": "ANALYZE=true npm run build"
   },
   "dependencies": {
     "next": "14.0.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-icons": "^4.11.0"
+    "react-icons": "^4.11.0",
+    "react-hook-form": "^7.47.0",
+    "js-cookie": "^3.0.5"
   },
   "devDependencies": {
     "@types/node": "20.5.0",
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
+    "@types/js-cookie": "^3.0.4",
     "autoprefixer": "10.4.15",
     "eslint": "8.47.0",
     "eslint-config-next": "14.0.4",
     "postcss": "8.4.28",
     "tailwindcss": "3.3.3",
-    "typescript": "5.1.6"
+    "typescript": "5.1.6",
+    "@next/bundle-analyzer": "^14.0.4"
   }
 }
