@@ -11,8 +11,8 @@ export const defaultSEO: SEOConfig = {
   title: 'Gomanic Brasil - Manicure pela Metade do Preço | Especialistas Certificados',
   description: 'Manicure profissional com especialistas certificados pela metade do preço. Materiais premium japoneses, segurança total e qualidade garantida no Brasil.',
   keywords: 'manicure barato, unhas profissionais, manicure metade preço, nail art brasil, gomanic, especialistas manicure, materiais japoneses, manicure seguro',
-  canonical: process.env.NEXT_PUBLIC_SITE_URL,
-  ogImage: `${process.env.NEXT_PUBLIC_SITE_URL}/images/og-gomanic-brasil.jpg`,
+  canonical: process.env.NEXT_PUBLIC_SITE_URL || 'https://gomanic.com.br',
+  ogImage: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://gomanic.com.br'}/images/og-gomanic-brasil.jpg`,
   twitterCard: 'summary_large_image',
 };
 
@@ -21,9 +21,9 @@ export const structuredData = {
   "@type": "BeautySalon",
   "name": "Gomanic Brasil",
   "description": "Serviços de manicure profissional com especialistas certificados",
-  "url": process.env.NEXT_PUBLIC_SITE_URL,
-  "logo": `${process.env.NEXT_PUBLIC_SITE_URL}/images/logo-gomanic.png`,
-  "image": `${process.env.NEXT_PUBLIC_SITE_URL}/images/og-gomanic-brasil.jpg`,
+  "url": process.env.NEXT_PUBLIC_SITE_URL || 'https://gomanic.com.br',
+  "logo": `${process.env.NEXT_PUBLIC_SITE_URL || 'https://gomanic.com.br'}/images/logo-gomanic.png`,
+  "image": `${process.env.NEXT_PUBLIC_SITE_URL || 'https://gomanic.com.br'}/images/og-gomanic-brasil.jpg`,
   "telephone": "+55-11-99999-9999",
   "address": {
     "@type": "PostalAddress",

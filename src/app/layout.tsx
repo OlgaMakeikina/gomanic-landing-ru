@@ -3,6 +3,7 @@ import { defaultSEO } from '@/utils/seo'
 import Script from 'next/script'
 
 export const metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://gomanic.com.br'),
   title: defaultSEO.title,
   description: defaultSEO.description,
   keywords: defaultSEO.keywords,
