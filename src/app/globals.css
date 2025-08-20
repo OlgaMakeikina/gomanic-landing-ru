@@ -459,3 +459,105 @@
     margin-bottom: 20px;
   }
 }
+
+/* ===== ИКОНКИ КОНТАКТОВ В МОБИЛЬНОМ МЕНЮ ===== */
+
+/* Анимации для иконок */
+.contact-icon {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.contact-icon:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.contact-icon:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Специальные эффекты для WhatsApp */
+.whatsapp-icon:hover {
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+}
+
+/* Эффекты для телефона */
+.phone-icon:hover {
+  box-shadow: 0 8px 24px rgba(68, 78, 85, 0.4);
+}
+
+/* Эффекты для Instagram с градиентом */
+.instagram-icon:hover {
+  box-shadow: 0 8px 24px rgba(225, 48, 108, 0.4);
+}
+
+/* Кнопка записаться с улучшенным дизайном */
+.booking-button {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.booking-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s;
+}
+
+.booking-button:hover::before {
+  left: 100%;
+}
+
+.booking-button:hover {
+  background-color: #3B3B3A;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(68, 78, 85, 0.4);
+}
+
+.booking-button:active {
+  transform: translateY(0);
+}
+
+/* Пульсирующий эффект для индикатора срочности */
+.urgency-indicator {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(68, 78, 85, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(68, 78, 85, 0.1);
+  }
+}
+
+/* Улучшения для очень маленьких экранов */
+@media (max-width: 320px) {
+  .contact-icon {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .booking-button {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+}
+
+/* Темная тема для мобильного меню */
+.mobile-menu-dark {
+  background: linear-gradient(
+    135deg,
+    rgba(59, 59, 58, 0.98) 0%,
+    rgba(68, 78, 85, 0.95) 50%,
+    rgba(59, 59, 58, 0.98) 100%
+  );
+  backdrop-filter: blur(20px);
+}
