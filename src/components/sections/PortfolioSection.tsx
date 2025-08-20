@@ -120,10 +120,10 @@ export default function PortfolioSection() {
                   }}
                 >
                   <div 
-                    className="relative backdrop-blur-xl rounded-2xl border overflow-hidden group"
+                    className="relative backdrop-blur-xl rounded-2xl overflow-hidden group"
                     style={{
                       background: GLASS.cardBg,
-                      borderColor: GLASS.cardBorder,
+                      border: "none",
                       boxShadow: GLASS.cardShadow,
                       width: isCenter ? "400px" : "280px",
                       height: isCenter ? "480px" : "350px"

@@ -26,7 +26,7 @@ const ResultsGallery: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'portfolio' | 'before-after'>('portfolio');
 
   return (
-    <section className={styles.section}>
+    <section id="portfolio" className={styles.section}>
       <div className={styles.container}>
         {/* Заголовок секции */}
         <div className={styles.header}>

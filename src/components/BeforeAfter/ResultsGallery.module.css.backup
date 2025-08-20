@@ -51,11 +51,13 @@
   font-weight: 700;
 }
 
+/* Табы с glassmorphism */
 .tabsContainer {
   display: flex;
   justify-content: center;
   margin-bottom: 50px;
 }
+
 .tabs {
   display: flex;
   gap: 8px;
@@ -93,6 +95,7 @@
   box-shadow: 0 32px 64px rgba(68, 79, 85, 0.3) !important;
   border: 1px solid rgba(68, 79, 85, 1);
 }
+
 .tabNumber {
   display: flex;
   align-items: center;
@@ -127,6 +130,7 @@
   text-transform: uppercase;
   margin-bottom: 4px;
 }
+
 .tabSubtitle {
   font-family: Garet, sans-serif;
   font-size: 0.6rem;
@@ -135,11 +139,13 @@
   font-weight: 400;
 }
 
+/* Контейнер галереи */
 .galleryContainer {
   min-height: 400px;
   margin-bottom: 50px;
 }
 
+/* Портфолио сетка */
 .portfolioGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -163,6 +169,8 @@
 .portfolioItem:hover .portfolioImage {
   transform: scale(1.05);
 }
+
+/* Antes e Depois сетка */
 .beforeAfterGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -190,9 +198,11 @@
   transform: scale(1.05);
 }
 
+/* CTA блок */
 .ctaContainer {
   text-align: center;
 }
+
 .ctaBox {
   display: inline-block;
   position: relative;
@@ -224,6 +234,7 @@
   border-radius: 24px;
   pointer-events: none;
 }
+
 .ctaContent {
   position: relative;
   z-index: 10;
@@ -255,6 +266,7 @@
   box-shadow: 0 8px 24px rgba(59, 59, 58, 0.3);
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
+
 .ctaButton {
   padding: 18px 48px;
   border-radius: 12px;
@@ -295,6 +307,8 @@
   border: 2px solid #444e55;
   transform: translateY(-2px) scale(1.02);
 }
+
+/* Мобильная адаптация */
 @media (max-width: 768px) {
   .section {
     padding: 60px 0;

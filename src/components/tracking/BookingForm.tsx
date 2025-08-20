@@ -77,7 +77,7 @@ export default function BookingForm({ className = '', variant = 'default' }: Boo
             required
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#F5E4E6] focus:border-transparent"
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#444e55] focus:border-transparent"
             placeholder="Seu nome completo"
           />
         </div>
@@ -91,7 +91,7 @@ export default function BookingForm({ className = '', variant = 'default' }: Boo
             required
             value={formData.phone}
             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#F5E4E6] focus:border-transparent"
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#444e55] focus:border-transparent"
             placeholder="(11) 99999-9999"
           />
         </div>        
@@ -103,7 +103,7 @@ export default function BookingForm({ className = '', variant = 'default' }: Boo
             type="email"
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#F5E4E6] focus:border-transparent"
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#444e55] focus:border-transparent"
             placeholder="seu@email.com"
           />
         </div>
@@ -116,7 +116,7 @@ export default function BookingForm({ className = '', variant = 'default' }: Boo
             type="date"
             value={formData.date}
             onChange={(e) => setFormData({ ...formData, date: e.target.value })}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#F5E4E6] focus:border-transparent"
+            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#444e55] focus:border-transparent"
             min={new Date().toISOString().split('T')[0]}
           />
         </div>

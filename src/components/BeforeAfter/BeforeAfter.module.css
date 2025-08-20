@@ -22,7 +22,6 @@
   cursor: ew-resize;
   user-select: none;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  border: 2px solid #F5E4E6;
 }
 
 .imageContainer {
@@ -104,7 +103,7 @@
   font-weight: 600;
   font-size: 0.9rem;
   backdrop-filter: blur(4px);
-  border: 1px solid #F5E4E6;
+  border: none;
 }
 
 @media (max-width: 768px) {
