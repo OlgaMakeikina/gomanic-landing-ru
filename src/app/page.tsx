@@ -26,7 +26,6 @@ export default function Home() {
       <SocialProof />
       <ComoFunciona />
       <VipExclusivo />
-
       <ContactSection />
       <Footer />
     </div>
