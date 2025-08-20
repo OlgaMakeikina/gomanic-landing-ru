@@ -1,49 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'standalone',
-  
-  env: {
-    SITE_NAME: 'Unhas 5 Estrelas',
-    SITE_LOCALE: 'pt-BR',
-  },
-  
   images: {
-    domains: [
-      'localhost',
-      // Добавить домен через переменную окружения в продакшене
-    ],
+    domains: ['localhost'],
   },
-  
-  async headers() {
-    return [
-      {
-        source: '/(.*)',
-        headers: [
-          {
-            key: 'X-Frame-Options',
-            value: 'DENY',
-          },
-          {
-            key: 'X-Content-Type-Options',
-            value: 'nosniff',
-          },
-          {
-            key: 'Referrer-Policy',
-            value: 'strict-origin-when-cross-origin',
-          },
-        ],
-      },
-    ]
+  typescript: {
+    ignoreBuildErrors: false,
   },
-
-  async redirects() {
-    return [
-      {
-        source: '/agendamento',
-        destination: '/#agendamento',
-        permanent: true,
-      },
-    ]
+  webpack: (config) => {
+    config.module.rules.push({
+      test: /\.tsx?$/,
+      exclude: /backup/,
+    });
+    return config;
   },
 }
 

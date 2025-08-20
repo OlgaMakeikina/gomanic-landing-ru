@@ -12,7 +12,7 @@ const heroSlides = [
   },
   {
     id: 2,
-    image: '/images/hero/123.jpeg',
+    image: '/images/hero/0_3 (8).jpeg',
     title: 'PREÇOS VIP',
     subtitle: 'Economia de até 50% em todos os serviços',
     services: [
@@ -23,15 +23,15 @@ const heroSlides = [
   },
   {
     id: 3,
-    image: '#444f55',
-    photo: '/images/hero/0_2 (7).jpeg',
-    title: 'Por que vale a pena o Passe VIP',
+    image: '/images/hero/0_0 (6) (1).jpeg',
+    title: 'PASSE VIP',
+    subtitle: 'Vantagens exclusivas para membros VIP',
     benefits: [
-      'Preço fixo mesmo se a promoção acabar.',
-      'Garantia de vaga.',
-      'Serviço bônus na visita.'
-    ],
-    urgency: 'Restam apenas 3 vagas'
+      'Preço fixo mesmo se a promoção acabar',
+      'Garantia de vaga sempre disponível',
+      'Serviço bônus em cada visita',
+      'Atendimento prioritário'
+    ]
   }
 ]
 
@@ -59,7 +59,7 @@ export default function HeroSection() {
     if (action === 'next') {
       nextSlide()
     } else if (action === 'whatsapp') {
-      window.open('https://wa.me/5511999999999', '_blank')
+      window.open('https://wa.me/5548919700099', '_blank')
     } else if (id) {
       document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
     }
@@ -91,11 +91,9 @@ export default function HeroSection() {
         ))}
       </div>
 
-      {currentSlide === 2 ? (
-        <div className="absolute inset-0" style={{ backgroundColor: '#444f55' }}></div>
-      ) : (
+      {currentSlide === 0 || currentSlide === 1 || currentSlide === 2 ? (
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
-      )}
+      ) : null}
 
       <div className="vogue-container relative z-20 w-full">
         <div className="max-w-6xl mx-auto text-center lg:text-left px-4">
@@ -230,9 +228,7 @@ export default function HeroSection() {
             <div key="slide2" className="animate-fade-in flex items-center justify-center min-h-screen">
               <div className="max-w-6xl w-full mx-auto">
                 
-                <div className="relative backdrop-blur-xl bg-white/12 rounded-2xl border border-white/25 p-12 shadow-[0_32px_64px_rgba(0,0,0,0.5)]">
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/15 via-white/5 to-transparent rounded-2xl"></div>
-                  <div className="absolute inset-0 bg-gradient-to-tl from-black/20 via-transparent to-black/10 rounded-2xl"></div>
+                <div className="relative bg-black/30 rounded-2xl border border-white/30 p-12 shadow-[0_32px_64px_rgba(0,0,0,0.3)]">
                   
                   <div className="relative z-10">
                     <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -394,127 +390,152 @@ export default function HeroSection() {
             </div>
           )}
 
-          {/* Slide 3 - Compact Layout */}
+          {/* Slide 3 - Styled like Slide 2 */}
           {currentSlideData.id === 3 && (
             <div key="slide3" className="animate-fade-in flex items-center justify-center min-h-screen">
-              <div className="max-w-6xl w-full mx-auto px-4">
+              <div className="max-w-6xl w-full mx-auto">
                 
-                <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-6 items-center">
+                <div className="relative bg-black/30 rounded-2xl border border-white/30 p-12 shadow-[0_32px_64px_rgba(0,0,0,0.3)]">
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/4 via-white/1 to-transparent rounded-2xl"></div>
+                  <div className="absolute inset-0 bg-gradient-to-tl from-black/5 via-transparent to-black/2 rounded-2xl"></div>
                   
-                  {/* Left side - Photo */}
-                  <div className="order-2 lg:order-1">
-                    <div className="relative w-full">
-                      <img 
-                        src="/images/hero/0_2 (7).jpeg"
-                        alt="Manicure VIP" 
-                        className="w-full h-auto rounded-2xl shadow-2xl"
-                        style={{
-                          minHeight: '450px',
-                          maxHeight: '580px',
-                          objectFit: 'cover'
-                        }}
-                      />
-                      <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-black/30 to-transparent"></div>
-                    </div>
-                  </div>
-
-                  {/* Right side - Compact text content */}
-                  <div className="order-1 lg:order-2">
-                    <div className="relative backdrop-blur-xl bg-white/8 rounded-2xl border border-white/15 p-6 shadow-[0_24px_48px_rgba(0,0,0,0.7)]">
-                      <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-white/3 to-transparent rounded-2xl"></div>
+                  <div className="relative z-10">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
                       
-                      <div className="relative z-10">
+                      <div className="text-left">
+                        <div className="inline-flex items-center mb-6 px-5 py-3 rounded-full bg-white/25 backdrop-blur-md border border-white/40 shadow-lg">
+                          <span style={{
+                            fontFamily: 'Garet, sans-serif',
+                            fontSize: '13px',
+                            fontWeight: 600,
+                            letterSpacing: '0.1em',
+                            textTransform: 'uppercase',
+                            color: '#FEFEFE'
+                          }}>
+                            EXCLUSIVO VIP
+                          </span>
+                        </div>
+                        
                         <h1 style={{
                           fontFamily: 'Horizon, Arial, sans-serif',
-                          fontSize: 'clamp(1.4rem, 2.8vw, 2.2rem)',
+                          fontSize: 'clamp(2.5rem, 5vw, 3.5rem)',
                           fontWeight: 'normal',
-                          letterSpacing: '0.03em',
+                          letterSpacing: '0.05em',
                           textTransform: 'uppercase',
-                          lineHeight: '1.1',
-                          color: '#FFFFFF',
-                          textShadow: '0 4px 20px rgba(0,0,0,0.9)',
-                          marginBottom: '20px'
+                          lineHeight: '0.9',
+                          color: '#FEFEFE',
+                          textShadow: '0 4px 20px rgba(0,0,0,0.5)',
+                          marginBottom: '16px'
                         }}>
-                          Por que vale a pena o Passe VIP
+                          PASSE VIP
                         </h1>
                         
-                        <div className="mb-6">
-                          <div className="space-y-3">
-                            {currentSlideData.benefits?.map((benefit, index) => (
-                              <div key={index} className="flex items-start gap-3">
-                                <span style={{
-                                  color: '#FFFFFF', 
-                                  fontSize: '1.1rem', 
-                                  marginTop: '1px',
-                                  textShadow: '0 2px 8px rgba(0,0,0,0.9)'
-                                }}>✓</span>
-                                <span style={{
-                                  fontFamily: 'Garet, sans-serif',
-                                  fontSize: '15px',
-                                  fontWeight: 400,
-                                  color: '#FFFFFF',
-                                  lineHeight: '1.4',
-                                  textShadow: '0 2px 8px rgba(0,0,0,0.9)'
-                                }}>
-                                  {benefit}
-                                </span>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
+                        <p style={{
+                          fontFamily: 'Garet, sans-serif',
+                          fontSize: '18px',
+                          fontWeight: 500,
+                          color: '#FEFEFE',
+                          textShadow: '0 2px 10px rgba(0,0,0,0.4)',
+                          marginBottom: '32px',
+                          lineHeight: '1.4'
+                        }}>
+                          Vantagens exclusivas para membros VIP
+                        </p>
                         
-                        <div className="mb-6">
-                          <p style={{
-                            fontFamily: 'Garet, sans-serif',
-                            fontSize: '16px',
-                            fontWeight: 700,
-                            color: '#FFFFFF',
-                            textShadow: '0 2px 8px rgba(0,0,0,0.9)',
-                            textAlign: 'center',
-                            backgroundColor: 'rgba(255,255,255,0.1)',
-                            padding: '10px 16px',
-                            borderRadius: '10px',
-                            border: '1px solid rgba(255,255,255,0.2)'
-                          }}>
-                            {currentSlideData.urgency}
-                          </p>
-                        </div>
-                        
-                        <div>
+                        <div className="flex flex-col gap-4">
                           <button 
                             onClick={() => handleButtonAction('scroll', 'agendamento')}
                             className="transition-all duration-300 hover:scale-105"
                             style={{
-                              backgroundColor: '#FFFFFF',
+                              backgroundColor: '#3B3B3A',
                               border: 'none',
-                              borderRadius: '10px',
-                              padding: '14px 28px',
+                              borderRadius: '6px',
+                              padding: '16px 32px',
                               fontFamily: 'Garet, sans-serif',
                               fontSize: '15px',
-                              fontWeight: 700,
+                              fontWeight: 600,
                               letterSpacing: '0.05em',
                               textTransform: 'uppercase',
-                              color: '#000000',
+                              color: '#FEFEFE',
                               cursor: 'pointer',
                               width: '100%',
-                              boxShadow: '0 8px 32px rgba(0,0,0,0.6)'
+                              boxShadow: '0 8px 32px rgba(0,0,0,0.3)'
                             }}
                             onMouseEnter={(e) => {
-                              e.currentTarget.style.backgroundColor = '#3B3B3A'
-                              e.currentTarget.style.color = '#FFFFFF'
+                              e.currentTarget.style.backgroundColor = '#444e55'
                             }}
                             onMouseLeave={(e) => {
-                              e.currentTarget.style.backgroundColor = '#FFFFFF'
-                              e.currentTarget.style.color = '#000000'
+                              e.currentTarget.style.backgroundColor = '#3B3B3A'
                             }}
                           >
-                            RESERVAR AGORA
+                            QUERO SER VIP
+                          </button>
+                          
+                          <button 
+                            onClick={() => handleButtonAction('whatsapp')}
+                            className="transition-all duration-300 hover:scale-105"
+                            style={{
+                              backgroundColor: 'transparent',
+                              border: '2px solid rgba(255, 255, 255, 0.4)',
+                              borderRadius: '6px',
+                              padding: '14px 32px',
+                              fontFamily: 'Garet, sans-serif',
+                              fontSize: '15px',
+                              fontWeight: 400,
+                              letterSpacing: '0.05em',
+                              textTransform: 'uppercase',
+                              color: '#FEFEFE',
+                              cursor: 'pointer',
+                              width: '100%'
+                            }}
+                            onMouseEnter={(e) => {
+                              e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.1)'
+                              e.currentTarget.style.borderColor = '#FEFEFE'
+                            }}
+                            onMouseLeave={(e) => {
+                              e.currentTarget.style.backgroundColor = 'transparent'
+                              e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.4)'
+                            }}
+                          >
+                            CONTATO DIRETO
                           </button>
                         </div>
                       </div>
+
+                      <div className="text-left">
+                        <div className="space-y-8">
+                          {currentSlideData.benefits?.map((benefit, index) => (
+                            <div key={index}>
+                              <div className="flex items-start gap-4">
+                                <span style={{
+                                  color: '#FEFEFE', 
+                                  fontSize: '20px', 
+                                  marginTop: '2px',
+                                  textShadow: '0 2px 8px rgba(0,0,0,0.9)'
+                                }}>✓</span>
+                                <span style={{
+                                  fontFamily: 'Horizon, Arial, sans-serif',
+                                  fontSize: '17px',
+                                  fontWeight: 'normal',
+                                  color: '#FEFEFE',
+                                  opacity: 0.9,
+                                  lineHeight: '1.3',
+                                  textTransform: 'uppercase',
+                                  letterSpacing: '0.02em'
+                                }}>
+                                  {benefit}
+                                </span>
+                              </div>
+                              {index < currentSlideData.benefits!.length - 1 && (
+                                <div className="w-full h-px bg-white/15 mt-6"></div>
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
                     </div>
                   </div>
-
                 </div>
 
               </div>

@@ -5,7 +5,8 @@
 /* ШРИФТ HORIZON */
 @font-face {
   font-family: 'Horizon';
-  src: url('/fonts/horizon.otf') format('opentype');
+  src: url('/fonts/horizon.otf') format('opentype'),
+       url('/fonts/horizon.otf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -14,7 +15,8 @@
 /* ШРИФТ GARET */
 @font-face {
   font-family: 'Garet';
-  src: url('/fonts/Garet-Book.otf') format('opentype');
+  src: url('/fonts/Garet-Book.otf') format('opentype'),
+       url('/fonts/Garet-Book.otf') format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -22,7 +24,8 @@
 
 @font-face {
   font-family: 'Garet';
-  src: url('/fonts/Garet-Heavy.otf') format('opentype');
+  src: url('/fonts/Garet-Heavy.otf') format('opentype'),
+       url('/fonts/Garet-Heavy.otf') format('truetype');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -280,11 +283,8 @@
 }
 
 @layer base {
-  * {
-    font-family: 'Garet', system-ui, -apple-system, sans-serif;
-  }
-  
   body {
+    font-family: 'Garet', system-ui, -apple-system, sans-serif;
     font-weight: 300;
     letter-spacing: 0.01em;
     background-color: #FEFEFE;

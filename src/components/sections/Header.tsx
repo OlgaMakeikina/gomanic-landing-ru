@@ -5,45 +5,75 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   const menuItems = [
-    { href: "#promocoes", label: "PROMOÇÕES" },
-    { href: "#seguranca", label: "SEGURANÇA" },
-    { href: "#social", label: "SOCIAL" },
+    { href: "#promocoes-2", label: "PROMOÇÕES" },
     { href: "#portfolio", label: "PORTFÓLIO" },
-    { href: "#testemunhos", label: "DEPOIMENTOS" },
-    { href: "#passe-vip", label: "PASSE VIP" },
+    { href: "#seguranca", label: "SEGURANÇA" },
+    { href: "#clientes", label: "CLIENTES" },
     { href: "#vip-exclusivo", label: "VIP CLUB" },
     { href: "#como-funciona", label: "PROCESSO" },
-    { href: "#oferta", label: "OFERTA" },
     { href: "#agendamento", label: "CONTATO" }
   ]
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50" style={{backgroundColor: '#FEFEFE', borderBottom: '1px solid rgba(68, 78, 85, 0.1)'}}>
-      <div className="max-w-7xl mx-auto px-6 py-6">
+      <div className="max-w-8xl mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
           <a href="#hero" className="flex items-center space-x-3 hover:opacity-70 transition-opacity">
-            <span className="text-lg font-bold uppercase tracking-wider">GOMANIC</span>
+            <span className="vogue-logo text-lg">GOMANIC</span>
             <div className="w-px h-4 bg-[#444e55]"></div>
-            <span className="vogue-logo text-lg">BRASIL</span>
+            <span className="vogue-logo text-lg">UNHAS 5 ESTRELAS</span>
           </a>
           
-          {/* Desktop Navigation - скрытое меню на больших экранах */}
-          <nav className="hidden xl:flex items-center space-x-4">
+          {/* Desktop Navigation - показываем меню на больших экранах */}
+          <nav className="hidden lg:flex items-center space-x-6">
             {menuItems.map((item, index) => (
               <a 
                 key={index}
                 href={item.href} 
-                className="vogue-caption hover:opacity-70 transition-opacity px-2 py-2 text-xs whitespace-nowrap" 
-                style={{color: '#444e55', fontSize: '10px'}}
+                className="vogue-caption hover:opacity-70 transition-opacity px-3 py-2 text-xs whitespace-nowrap" 
+                style={{color: '#3B3B3A', fontSize: '11px', letterSpacing: '0.1em', fontWeight: 600}}
               >
                 {item.label}
               </a>
             ))}
-            <div className="vogue-badge ml-2 text-xs px-3 py-1">3 VAGAS</div>
+            <div className="ml-4 text-xs px-4 py-2 relative backdrop-blur-xl rounded-full border border-white border-opacity-40"
+                 style={{
+                   background: 'linear-gradient(135deg, rgba(245, 228, 230, 0.95) 0%, rgba(245, 228, 230, 0.8) 100%)',
+                   color: '#3B3B3A',
+                   boxShadow: '0 8px 32px rgba(245, 228, 230, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3)',
+                   fontWeight: 700,
+                   letterSpacing: '0.1em',
+                   animation: 'pulse 2s ease-in-out infinite'
+                 }}>
+              {/* Glassmorphism градиенты */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-white/15 to-transparent rounded-full pointer-events-none"></div>
+              <div className="absolute inset-0 bg-gradient-to-tl from-black/5 via-transparent to-black/3 rounded-full pointer-events-none"></div>
+              
+              {/* Мигающий эффект */}
+              <div className="absolute inset-0 rounded-full"
+                   style={{
+                     background: 'linear-gradient(135deg, rgba(245, 228, 230, 0.3) 0%, rgba(245, 228, 230, 0.1) 100%)',
+                     animation: 'glow 1.5s ease-in-out infinite alternate'
+                   }}></div>
+              
+              <span className="relative z-10">3 VAGAS</span>
+              
+              {/* CSS анимации */}
+              <style jsx>{`
+                @keyframes pulse {
+                  0%, 100% { transform: scale(1); }
+                  50% { transform: scale(1.05); }
+                }
+                @keyframes glow {
+                  0% { opacity: 0.8; box-shadow: 0 0 20px rgba(245, 228, 230, 0.5); }
+                  100% { opacity: 1; box-shadow: 0 0 30px rgba(245, 228, 230, 0.8), 0 0 40px rgba(245, 228, 230, 0.3); }
+                }
+              `}</style>
+            </div>
           </nav>
           
-          {/* Кнопка записи для средних экранов */}
-          <div className="hidden lg:block xl:hidden">
+          {/* Кнопка записи для мобильных экранов */}
+          <div className="block lg:hidden">
             <a 
               href="#agendamento"
               className="vogue-btn px-6 py-2 text-xs"

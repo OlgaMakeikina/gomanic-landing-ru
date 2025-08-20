@@ -5,6 +5,9 @@ import HeroSection from '@/components/sections/HeroSection'
 import PromocoesMes2 from '@/components/sections/PromocoesMes2'
 import PortfolioSection from '@/components/sections/PortfolioSection'
 import SegurancaQualidade from '@/components/sections/SegurancaQualidade'
+import { BeforeAfterGallery } from '@/components'
+import ResultsGallery from '@/components/BeforeAfter/ResultsGallery'
+import ClientsSection from '@/components/sections/ClientsSection'
 import SocialProof from '@/components/sections/SocialProof'
 import ComoFunciona from '@/components/sections/ComoFunciona'
 import VipExclusivo from '@/components/sections/VipExclusivo'
@@ -17,8 +20,9 @@ export default function Home() {
       <Header />
       <HeroSection />
       <PromocoesMes2 />
-      <PortfolioSection />
+      <ResultsGallery />
       <SegurancaQualidade />
+      <ClientsSection />
       <SocialProof />
       <ComoFunciona />
       <VipExclusivo />

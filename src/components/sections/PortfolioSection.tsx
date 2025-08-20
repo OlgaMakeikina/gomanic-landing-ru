@@ -17,16 +17,18 @@ export default function PortfolioSection() {
   }
 
   const galleryImages = [
-    "0_0 (5).jpeg",
-    "0_0 (6).jpeg", 
-    "0_0 (9).jpeg",
-    "0_1 (8).jpeg",
-    "0_1 (9).jpeg",
-    "0_2 (3).jpeg",
-    "0_3 (3).jpeg",
-    "0_3 (6).jpeg",
-    "0_3 (9).jpeg"
+    "0_0 (5).jpeg",      // позиция 0
+    "0_3 (25).jpeg",     // позиция 1 - ЗАМЕНЕНО!
+    "0_0 (9).jpeg",      // позиция 2
+    "0_1 (8).jpeg",      // позиция 3
+    "0_1 (9).jpeg",      // позиция 4
+    "0_2 (3).jpeg",      // позиция 5
+    "0_3 (3).jpeg",      // позиция 6
+    "0_3 (6).jpeg",      // позиция 7
+    "0_3 (9).jpeg"       // позиция 8
   ]
+
+  console.log("Gallery images:", galleryImages)
 
   const nextImage = () => {
     setCurrentIndex((prev) => (prev + 1) % galleryImages.length)
@@ -46,7 +48,7 @@ export default function PortfolioSection() {
   }
 
   return (
-    <section id="portfolio" className="relative py-20" style={{ backgroundColor: COLORS.white, boxShadow: '0 20px 60px rgba(0, 0, 0, 0.4), 0 -20px 60px rgba(0, 0, 0, 0.4)' }}>
+    <section id="portfolio" className="relative py-20" style={{ backgroundColor: COLORS.white }}>
       <div className="relative mx-auto max-w-7xl px-6">
         {/* Заголовок секции */}
         <div className="text-center mb-16">
@@ -135,6 +137,7 @@ export default function PortfolioSection() {
                       <img 
                         src={`/images/gallery/${filename}`} 
                         alt={`Resultado Premium ${currentIndex + offset + 1}`}
+                        key={`${filename}-update`}
                         className="w-full h-full object-cover rounded-2xl transition-all duration-500"
                         style={{ 
                           filter: 'brightness(0.95) contrast(1.05)'
@@ -175,82 +178,6 @@ export default function PortfolioSection() {
               }}
             />
           ))}
-        </div>
-
-        {/* Итоговая карточка с CTA */}
-        <div className="text-center">
-          <div 
-            className="inline-block relative backdrop-blur-xl rounded-2xl border max-w-4xl"
-            style={{
-              background: GLASS.ctaBg,
-              borderColor: GLASS.ctaBorder,
-              boxShadow: GLASS.ctaShadow,
-              padding: "40px 32px",
-            }}
-          >
-            {/* Glassmorphism градиенты для CTA */}
-            <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-white/5 to-transparent rounded-2xl"></div>
-            <div className="absolute inset-0 bg-gradient-to-tl from-black/15 via-transparent to-black/10 rounded-2xl"></div>
-            
-            <div className="relative z-10">
-              <div className="mb-6">
-                <img 
-                  src="/images/gallery/icons8-star-100.png"
-                  alt="Premium Star"
-                  className="w-16 h-16 mx-auto"
-                  style={{ 
-                    filter: "brightness(1.2) contrast(1.1)"
-                  }}
-                />
-              </div>
-              <p 
-                style={{
-                  color: COLORS.white,
-                  fontFamily: "Horizon, sans-serif",
-                  fontSize: 24,
-                  letterSpacing: "0.08em",
-                  fontWeight: 500,
-                  lineHeight: 1.5,
-                  textTransform: "uppercase",
-                  marginBottom: "24px"
-                }}
-              >
-                O mesmo resultado pode ser seu.<br />
-                <span style={{ fontWeight: 700 }}>Reserve agora e economize 50%</span>
-              </p>
-              
-              <button
-                onClick={() => document.getElementById('agendamento')?.scrollIntoView({ behavior: 'smooth' })}
-                className="px-12 py-4 rounded-xl transition-all duration-300 transform hover:scale-105"
-                style={{
-                  background: COLORS.white,
-                  color: COLORS.gray,
-                  border: `1px solid ${COLORS.white}`,
-                  fontFamily: "Garet, sans-serif",
-                  fontSize: 16,
-                  fontWeight: 700,
-                  letterSpacing: "0.1em",
-                  textTransform: "uppercase",
-                  boxShadow: "0 10px 28px rgba(254,254,254,0.15)",
-                  cursor: "pointer"
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.background = "transparent"
-                  e.currentTarget.style.color = COLORS.white
-                  e.currentTarget.style.boxShadow = "0 10px 28px rgba(59,59,57,0.45)"
-                  e.currentTarget.style.border = `1px solid ${COLORS.white}`
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.background = COLORS.white
-                  e.currentTarget.style.color = COLORS.gray
-                  e.currentTarget.style.boxShadow = "0 10px 28px rgba(254,254,254,0.15)"
-                  e.currentTarget.style.border = `1px solid ${COLORS.white}`
-                }}
-              >
-                Quero garantir minha vaga agora
-              </button>
-            </div>
-          </div>
         </div>
       </div>
     </section>
