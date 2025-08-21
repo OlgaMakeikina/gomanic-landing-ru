@@ -1,7 +1,7 @@
 'use client'
 
-import Header from '@/components/sections/Header'
-import HeroSection from '@/components/sections/HeroSection'
+import Header from '@/components/header'
+import HeroSection from '@/components/hero'
 import PromocoesMes2 from '@/components/sections/PromocoesMes2'
 import PortfolioSection from '@/components/sections/PortfolioSection'
 import SegurancaQualidade from '@/components/sections/SegurancaQualidade'
