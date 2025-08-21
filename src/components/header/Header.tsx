@@ -44,6 +44,10 @@ export default function Header() {
           0%, 100% { transform: scale(1); }
           50% { transform: scale(1.05); }
         }
+        @keyframes glow {
+          0% { opacity: 0.8; box-shadow: 0 0 20px rgba(245, 228, 230, 0.5); }
+          100% { opacity: 1; box-shadow: 0 0 30px rgba(245, 228, 230, 0.8), 0 0 40px rgba(245, 228, 230, 0.3); }
+        }
       `}</style>
     </header>
   )
