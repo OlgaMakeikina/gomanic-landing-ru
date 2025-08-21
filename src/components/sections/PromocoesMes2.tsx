@@ -93,18 +93,17 @@ export default function PromocoesMes2() {
             OFERTAS ESPECIAIS
           </div>
 
-          <h2
-            className="uppercase mb-6"
-            style={{
-              color: '#FEFEFE',
-              fontFamily: "Horizon, sans-serif",
-              letterSpacing: "0.12em",
-              fontWeight: 500,
-              fontSize: 36,
-            }}
-          >
-            PROMOÇÕES DO MÊS
-          </h2>
+   <h2
+  className="uppercase mb-6 text-2xl sm:text-2xl md:text-3xl lg:text-5xl"
+  style={{
+    color: '#FEFEFE',
+    fontFamily: "Horizon, sans-serif",
+    letterSpacing: "0.12em",
+    fontWeight: 500,
+  }}
+>
+  PROMOÇÕES DO MÊS
+</h2>
 
           {/* Таймер */}
           <div
