@@ -760,3 +760,172 @@
     -webkit-backdrop-filter: blur(20px);
   }
 }
+
+/* ===== МОБИЛЬНАЯ АДАПТАЦИЯ HERO SECTION ===== */
+
+/* Динамическая высота viewport */
+@supports (height: 100dvh) {
+  #hero {
+    min-height: 100dvh;
+  }
+}
+
+/* Мобильные улучшения */
+@media (max-width: 1024px) {
+  #hero {
+    min-height: 100vh;
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  
+  /* Компактные отступы */
+  .hero-mobile-padding {
+    padding: 20px 16px;
+  }
+  
+  /* Touch-friendly кнопки */
+  .hero-touch-button {
+    min-height: 48px;
+    min-width: 48px;
+    padding: 16px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  .hero-touch-button:active {
+    transform: scale(0.98);
+  }
+  
+  /* Адаптивная типографика */
+  .hero-mobile-title {
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    line-height: 0.9;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-mobile-subtitle {
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
+    line-height: 1.3;
+    margin-bottom: 1rem;
+  }
+  
+  .hero-mobile-text {
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    line-height: 1.5;
+    padding: 0 1rem;
+  }
+  
+  /* Компактные карточки */
+  .hero-mobile-card {
+    border-radius: 12px;
+    padding: 24px 20px;
+    margin: 0 16px;
+  }
+}
+
+/* Очень маленькие экраны */
+@media (max-width: 375px) {
+  .hero-mobile-card {
+    padding: 20px 16px;
+    margin: 0 12px;
+  }
+  
+  .hero-touch-button {
+    font-size: 13px;
+    padding: 14px 20px;
+  }
+  
+  .hero-mobile-title {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+}
+
+/* Ландшафтная ориентация на мобильных */
+@media (max-height: 500px) and (orientation: landscape) {
+  #hero {
+    min-height: 100vh;
+    padding: 10px 0;
+  }
+  
+  .hero-mobile-padding {
+    padding: 10px 16px;
+  }
+  
+  .hero-mobile-title {
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+    margin-bottom: 0.5rem;
+  }
+  
+  .hero-mobile-subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    margin-bottom: 0.5rem;
+  }
+  
+  .hero-mobile-card {
+    padding: 16px;
+  }
+}
+
+/* Swipe поддержка */
+.hero-swipe-area {
+  touch-action: pan-x;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Улучшенные навигационные стрелки */
+@media (max-width: 1024px) {
+  .hero-nav-arrow {
+    width: 40px;
+    height: 40px;
+    left: 16px;
+    right: 16px;
+  }
+  
+  .hero-nav-arrow svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+/* Индикатор слайдов */
+.hero-slide-indicator {
+  bottom: env(safe-area-inset-bottom, 32px);
+}
+
+/* Анимации для мобильных */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-mobile-fade-in {
+    animation: heroMobileFadeIn 0.6s ease-out;
+  }
+}
+
+@keyframes heroMobileFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Оптимизация производительности для мобильных */
+@media (max-width: 768px) {
+  #hero img {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000;
+  }
+  
+  #hero .transition-opacity {
+    will-change: opacity;
+  }
+}
