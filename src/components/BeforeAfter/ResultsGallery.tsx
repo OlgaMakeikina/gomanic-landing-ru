@@ -46,8 +46,8 @@ const ResultsGallery: React.FC = () => {
             >
               <div className={styles.tabNumber}>1</div>
               <div>
-                <div className={styles.tabTitle}>PORTFÓLIO PREMIUM</div>
-                <div className={styles.tabSubtitle}>Nossos trabalhos de alta qualidade</div>
+                <div className={styles.tabTitle}>PORTFÓLIO</div>
+
               </div>
             </button>
             
@@ -58,7 +58,6 @@ const ResultsGallery: React.FC = () => {
               <div className={styles.tabNumber}>2</div>
               <div>
                 <div className={styles.tabTitle}>ANTES E DEPOIS</div>
-                <div className={styles.tabSubtitle}>Transformações reais de nossas clientes</div>
               </div>
             </button>
           </div>

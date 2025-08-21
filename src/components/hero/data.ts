@@ -4,15 +4,16 @@ export const heroSlides: HeroSlide[] = [
   {
     id: 1,
     image: '/images/hero/0_3 (10).jpeg',
-    title: 'GOMANIC × UNHAS',
+    title: 'Especialistas GOMANIC',
     subtitle: 'Manicure premium pela metade do preço',
     content: 'Descubra o mundo VIP da manicure profissional com preços exclusivos para membros.'
   },
+  
   {
     id: 2,
     image: '/images/hero/0_3 (8).jpeg',
     title: 'PREÇOS VIP',
-    subtitle: 'Economia de até 50% em todos os serviços',
+    subtitle: 'Economia de até 50%',
     services: [
       { name: 'Manicure + nivelamento + esmaltação em gel', oldPrice: 160, newPrice: 80 },
       { name: 'Alongamento + manicure + esmaltação em gel', oldPrice: 200, newPrice: 119 },

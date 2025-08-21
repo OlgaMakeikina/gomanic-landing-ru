@@ -12,11 +12,11 @@ export default function Slide2({ slideData, onButtonAction }: SlideProps) {
             <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-start lg:items-center">
               
               <div className="text-center lg:text-left">
-                <VipBadge text="EXCLUSIVO VIP" />
+                <VipBadge text="Exclusivo com passe VIP" />
                 
-                <h1 style={{
+                <h2 style={{
                   fontFamily: 'Horizon, Arial, sans-serif',
-                  fontSize: 'clamp(1.8rem, 5vw, 3.5rem)',
+                  fontSize: 'clamp(1.5rem, 4vw, 3rem)',
                   fontWeight: 'normal',
                   letterSpacing: '0.05em',
                   textTransform: 'uppercase',
@@ -26,7 +26,7 @@ export default function Slide2({ slideData, onButtonAction }: SlideProps) {
                   marginBottom: '8px'
                 }}>
                   {slideData.title}
-                </h1>
+                </h2>
                 
                 <p style={{
                   fontFamily: 'Garet, sans-serif',

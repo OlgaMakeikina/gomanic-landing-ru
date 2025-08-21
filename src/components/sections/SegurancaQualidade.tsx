@@ -15,19 +15,18 @@ export default function SegurancaQualidade(): JSX.Element {
     {
       imagem: '/images/higiene/0_0 (12).jpeg',
       titulo: 'Higienização Profissional',
-      descricao: 'Esterilização em 3 etapas + instrumentos descartáveis',
+
       detalhes: 'Protocolo hospitalar de limpeza',
     },
     {
       imagem: '/images/higiene/0_3 (4) (1).jpeg',
       titulo: 'Materiais Certificados',
-      descricao: 'Usamos somente materiais certificados (EUA/Japão)',
+
       detalhes: 'Importados e testados dermatologicamente',
     },
     {
       imagem: '/images/higiene/0_3 (5) (1).jpeg',
       titulo: 'Segurança Total',
-      descricao: 'Zero risco de contaminação ou infecção',
       detalhes: 'Ambiente controlado e monitorado',
     },
   ] as const
@@ -72,9 +71,7 @@ export default function SegurancaQualidade(): JSX.Element {
             className="mx-auto max-w-3xl"
             style={{ color: COLORS.white, opacity: 0.9, fontFamily: 'Garet, sans-serif', fontSize: 16 }}
           >
-            Sua saúde é nossa prioridade. Seguimos os mais rigorosos protocolos de{' '}
-            <span style={{ fontWeight: 700 }}>higiene e esterilização</span>
-          </p>
+            Sua saúde é nossa prioridade</p>
         </div>
 
         {/* Верхние карточки (ограничение ширины на md) */}
@@ -111,13 +108,6 @@ export default function SegurancaQualidade(): JSX.Element {
                     {cert.titulo}
                   </h3>
 
-                  <p
-                    className="mb-4"
-                    style={{ color: COLORS.white, fontFamily: 'Garet, sans-serif', fontSize: 15, fontWeight: 600, opacity: 0.95 }}
-                  >
-                    {cert.descricao}
-                  </p>
-
                   <p style={{ color: COLORS.white, fontFamily: 'Garet, sans-serif', fontSize: 13, opacity: 0.75 }}>{cert.detalhes}</p>
                 </div>
               </div>
@@ -139,7 +129,7 @@ export default function SegurancaQualidade(): JSX.Element {
                 marginBottom: '16px',
               }}
             >
-              Formadas com instrutores internacionais
+              Formadas com padrões internacionais
             </h3>
             <p
               style={{
@@ -181,7 +171,7 @@ export default function SegurancaQualidade(): JSX.Element {
                       style={{ background: 'rgba(255,255,255,0.15)', borderColor: 'rgba(255,255,255,0.2)' }}
                     >
                       <p style={{ color: '#3B3B3A', fontFamily: 'Garet, sans-serif', fontSize: 11, fontWeight: 600, textAlign: 'center' }}>
-                        Processo de Treinamento
+                        Formação
                       </p>
                     </div>
                   </div>
@@ -208,7 +198,7 @@ export default function SegurancaQualidade(): JSX.Element {
                     style={{ background: 'rgba(255,255,255,0.15)', borderColor: 'rgba(255,255,255,0.2)' }}
                   >
                     <p style={{ color: '#3B3B3A', fontFamily: 'Garet, sans-serif', fontSize: 11, fontWeight: 600, textAlign: 'center' }}>
-                      Certificações Internacionais
+                      Habilitação
                     </p>
                   </div>
                 </div>
@@ -228,7 +218,7 @@ export default function SegurancaQualidade(): JSX.Element {
                     style={{ background: 'rgba(255,255,255,0.15)', borderColor: 'rgba(255,255,255,0.2)' }}
                   >
                     <p style={{ color: '#3B3B3A', fontFamily: 'Garet, sans-serif', fontSize: 11, fontWeight: 600, textAlign: 'center' }}>
-                      Processo de Treinamento
+                      Atendimento
                     </p>
                   </div>
                 </div>
@@ -275,7 +265,7 @@ export default function SegurancaQualidade(): JSX.Element {
                         lineHeight: 1.4,
                       }}
                     >
-                      Nossos esmaltes são completamente seguros e atendem aos padrões internacionais de qualidade
+                      Nossos materiais são completamente seguros e atendem aos padrões internacionais de qualidade
                     </div>
                   </div>
                 </div>
