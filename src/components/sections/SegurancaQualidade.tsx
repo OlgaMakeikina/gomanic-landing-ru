@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
 export default function SegurancaQualidade(): JSX.Element {
   const [isPlaying] = useState(false)
@@ -68,12 +68,16 @@ export default function SegurancaQualidade(): JSX.Element {
             POR QUE MILHARES DE CLIENTES NOS ESCOLHEM?
           </h2>
 
-          <p className="mx-auto max-w-3xl" style={{ color: COLORS.white, opacity: 0.9, fontFamily: 'Garet, sans-serif', fontSize: 16 }}>
-            Sua saúde é nossa prioridade. Seguimos os mais rigorosos protocolos de <span style={{ fontWeight: 700 }}>higiene e esterilização</span>
+          <p
+            className="mx-auto max-w-3xl"
+            style={{ color: COLORS.white, opacity: 0.9, fontFamily: 'Garet, sans-serif', fontSize: 16 }}
+          >
+            Sua saúde é nossa prioridade. Seguimos os mais rigorosos protocolos de{' '}
+            <span style={{ fontWeight: 700 }}>higiene e esterilização</span>
           </p>
         </div>
 
-        {/* Верхние карточки */}
+        {/* Верхние карточки (ограничение ширины на md) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:justify-items-center gap-6 md:gap-8 mb-16 max-w-5xl mx-auto">
           {certificacoes.map((cert, index) => (
             <div
@@ -107,7 +111,10 @@ export default function SegurancaQualidade(): JSX.Element {
                     {cert.titulo}
                   </h3>
 
-                  <p className="mb-4" style={{ color: COLORS.white, fontFamily: 'Garet, sans-serif', fontSize: 15, fontWeight: 600, opacity: 0.95 }}>
+                  <p
+                    className="mb-4"
+                    style={{ color: COLORS.white, fontFamily: 'Garet, sans-serif', fontSize: 15, fontWeight: 600, opacity: 0.95 }}
+                  >
                     {cert.descricao}
                   </p>
 
@@ -169,8 +176,13 @@ export default function SegurancaQualidade(): JSX.Element {
                     style={{ filter: 'brightness(1.1) contrast(1.05)' }}
                   />
                   <div className="absolute bottom-4 left-4 right-4">
-                    <div className="backdrop-blur-sm rounded-lg p-2 border" style={{ background: 'rgba(255,255,255,0.15)', borderColor: 'rgba(255,255,255,0.2)' }}>
-                      <p style={{ color: '#3B3B3A', fontFamily: 'Garet, sans-serif', fontSize: 11, fontWeight: 600, textAlign: 'center' }}>Processo de Treinamento</p>
+                    <div
+                      className="backdrop-blur-sm rounded-lg p-2 border"
+                      style={{ background: 'rgba(255,255,255,0.15)', borderColor: 'rgba(255,255,255,0.2)' }}
+                    >
+                      <p style={{ color: '#3B3B3A', fontFamily: 'Garet, sans-serif', fontSize: 11, fontWeight: 600, textAlign: 'center' }}>
+                        Processo de Treinamento
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -191,8 +203,13 @@ export default function SegurancaQualidade(): JSX.Element {
                   style={{ filter: 'brightness(1.1) contrast(1.05)' }}
                 />
                 <div className="absolute bottom-4 left-4 right-4">
-                  <div className="backdrop-blur-sm rounded-lg p-2 border" style={{ background: 'rgba(255,255,255,0.15)', borderColor: 'rgba(255,255,255,0.2)' }}>
-                    <p style={{ color: '#3B3B3A', fontFamily: 'Garet, sans-serif', fontSize: 11, fontWeight: 600, textAlign: 'center' }}>Certificações Internacionais</p>
+                  <div
+                    className="backdrop-blur-sm rounded-lg p-2 border"
+                    style={{ background: 'rgba(255,255,255,0.15)', borderColor: 'rgba(255,255,255,0.2)' }}
+                  >
+                    <p style={{ color: '#3B3B3A', fontFamily: 'Garet, sans-serif', fontSize: 11, fontWeight: 600, textAlign: 'center' }}>
+                      Certificações Internacionais
+                    </p>
                   </div>
                 </div>
               </div>
@@ -206,20 +223,24 @@ export default function SegurancaQualidade(): JSX.Element {
                   <source src="/images/masters/hd.mp4" type="video/mp4" />
                 </video>
                 <div className="absolute bottom-4 left-4 right-4">
-                  <div className="backdrop-blur-sm rounded-lg p-2 border" style={{ background: 'rgba(255,255,255,0.15)', borderColor: 'rgba(255,255,255,0.2)' }}>
-                    <p style={{ color: '#3B3B3A', fontFamily: 'Garet, sans-serif', fontSize: 11, fontWeight: 600, textAlign: 'center' }}>Processo de Treinamento</p>
+                  <div
+                    className="backdrop-blur-sm rounded-lg p-2 border"
+                    style={{ background: 'rgba(255,255,255,0.15)', borderColor: 'rgba(255,255,255,0.2)' }}
+                  >
+                    <p style={{ color: '#3B3B3A', fontFamily: 'Garet, sans-serif', fontSize: 11, fontWeight: 600, textAlign: 'center' }}>
+                      Processo de Treinamento
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Колонка 3: плашка + паспорт (адаптив для md) */}
+            {/* Колонка 3: плашка + паспорт (на md в ряд, паспорт справа фикс. размера) */}
             <div className="w-full md:max-w-[420px]">
-              {/* На md раскладываем плашку и паспорт в 2 колонки, на mobile — столбцом */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+              <div className="flex flex-col md:flex-row md:items-start md:gap-6">
                 {/* Плашка слева */}
                 <div
-                  className="backdrop-blur-xl rounded-2xl p-6 md:p-6"
+                  className="backdrop-blur-xl rounded-2xl p-6 flex-1"
                   style={{
                     background: 'linear-gradient(135deg, rgba(68,79,85,0.95) 0%, rgba(59,59,58,0.95) 100%)',
                     border: '1px solid #FEFEFE',
@@ -259,16 +280,15 @@ export default function SegurancaQualidade(): JSX.Element {
                   </div>
                 </div>
 
-                {/* Паспорт справа — меньше и прижат к правому краю на md */}
-                <div className="flex justify-center md:justify-end">
+                {/* Паспорт справа */}
+                <div className="mt-6 md:mt-0 md:ml-auto shrink-0">
                   <div
-                    className="relative rounded-2xl border overflow-hidden"
+                    className="relative rounded-2xl border overflow-hidden md:w-[200px] lg:w-[260px]"
                     style={{
                       background: GLASS.cardBg,
                       borderColor: GLASS.cardBorder,
                       boxShadow: GLASS.cardShadow,
                       aspectRatio: '2/3',
-                      width: '70%', // компактнее на md
                     }}
                   >
                     <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-white/5 to-transparent" />
