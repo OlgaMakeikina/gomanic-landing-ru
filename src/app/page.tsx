@@ -3,16 +3,14 @@
 import Header from '@/components/header'
 import HeroSection from '@/components/hero'
 import PromocoesMes2 from '@/components/sections/PromocoesMes2'
-import PortfolioSection from '@/components/sections/PortfolioSection'
 import SegurancaQualidade from '@/components/sections/SegurancaQualidade'
-import { BeforeAfterGallery } from '@/components'
 import ResultsGallery from '@/components/BeforeAfter/ResultsGallery'
 import ClientsSection from '@/components/sections/ClientsSection'
 import SocialProof from '@/components/sections/SocialProof'
 import ComoFunciona from '@/components/como-funciona'
 import VipExclusivo from '@/components/sections/VipExclusivo'
-import ContactSection from '@/components/sections/ContactSection'
-import Footer from '@/components/sections/Footer'
+import ContactSection from '@/components/contact'
+import Footer from '@/components/footer'
 
 export default function Home() {
   return (
