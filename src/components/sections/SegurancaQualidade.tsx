@@ -122,12 +122,13 @@ export default function SegurancaQualidade(): JSX.Element {
               style={{
                 color: COLORS.white,
                 fontFamily: 'Horizon, sans-serif',
-                fontSize: 24,
+                fontSize: 20, // Уменьшен с 24 для мобильных
                 letterSpacing: '0.1em',
                 fontWeight: 500,
                 textTransform: 'uppercase',
                 marginBottom: '16px',
               }}
+              className="md:text-2xl" // На средних экранах и больше - размер 24px
             >
               Formadas com padrões internacionais
             </h3>
