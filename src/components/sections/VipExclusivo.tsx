@@ -2,6 +2,9 @@
 
 import { useState, useEffect } from 'react'
 
+// 🔧 НАСТРОЙКА СЧЕТЧИКА - легко изменить количество дней
+const COUNTDOWN_DAYS = 30 // Измените это число для настройки времени
+
 interface VipCardProps {
   title: string
   description: string
@@ -57,27 +60,35 @@ function VipCard({ title, description, delay }: VipCardProps) {
 }
 
 function CountdownTimer() {
-  const [time, setTime] = useState({
-    days: 5,
-    hours: 14,
-    minutes: 23,
-    seconds: 47
-  })
+  // Настройка целевой даты - через заданное количество дней от текущего момента
+  const getTargetDate = () => {
+    const now = new Date()
+    const targetDate = new Date(now.getTime() + (COUNTDOWN_DAYS * 24 * 60 * 60 * 1000))
+    return targetDate
+  }
+
+  const calculateTimeLeft = () => {
+    const targetDate = getTargetDate()
+    const now = new Date()
+    const difference = targetDate.getTime() - now.getTime()
+
+    if (difference <= 0) {
+      return { days: 0, hours: 0, minutes: 0, seconds: 0 }
+    }
+
+    return {
+      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+      hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+      minutes: Math.floor((difference / 1000 / 60) % 60),
+      seconds: Math.floor((difference / 1000) % 60)
+    }
+  }
+
+  const [time, setTime] = useState(calculateTimeLeft())
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setTime(prev => {
-        if (prev.seconds > 0) {
-          return { ...prev, seconds: prev.seconds - 1 }
-        } else if (prev.minutes > 0) {
-          return { ...prev, minutes: prev.minutes - 1, seconds: 59 }
-        } else if (prev.hours > 0) {
-          return { ...prev, hours: prev.hours - 1, minutes: 59, seconds: 59 }
-        } else if (prev.days > 0) {
-          return { ...prev, days: prev.days - 1, hours: 23, minutes: 59, seconds: 59 }
-        }
-        return prev
-      })
+      setTime(calculateTimeLeft())
     }, 1000)
 
     return () => clearInterval(interval)
@@ -193,7 +204,6 @@ export default function VipExclusivo() {
                    boxShadow: '0 8px 32px rgba(68, 78, 85, 0.3), 0 2px 8px rgba(254, 254, 254, 0.1)'
                  }}>
               <div className="text-2xl font-bold">APENAS 3 VAGAS RESTANTES</div>
-              <div className="text-sm mt-1">de 30 Passes VIP disponíveis este mês</div>
             </div>
           </div>
           
