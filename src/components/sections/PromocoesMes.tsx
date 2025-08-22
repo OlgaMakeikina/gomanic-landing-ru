@@ -126,6 +126,25 @@ export default function PromocoesMes() {
             <span className="tabular-nums font-bold" style={{ color: COLORS.white }}>{remaining}</span>
           </div>
 
+          {/* Urgência - лимит мест */}
+          <div
+            className="mt-4 inline-flex items-center gap-2 rounded-lg px-4 py-2"
+            style={{
+              background: "rgba(255, 255, 255, 0.2)",
+              border: "1px solid rgba(255, 255, 255, 0.3)",
+              fontFamily: "Garet, sans-serif",
+              fontWeight: 700,
+              fontSize: 13,
+              letterSpacing: "0.1em",
+              textTransform: "uppercase",
+              color: COLORS.white,
+              animation: "pulse 2s infinite",
+            }}
+          >
+            <span>🔥</span>
+            <span>Apenas 30 vagas! Não perca!</span>
+          </div>
+
           <p
             className="mt-6 mx-auto max-w-2xl"
             style={{ color: COLORS.white, opacity: 0.85, fontFamily: "Garet, sans-serif", fontSize: 14 }}

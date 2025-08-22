@@ -105,21 +105,44 @@ export default function PromocoesMes2() {
   PROMOÇÕES DO MÊS
 </h2>
 
-          {/* Таймер */}
+          {/* Объединенный блок: Таймер + Срочность */}
           <div
-            className="mx-auto inline-flex items-center gap-3 rounded-2xl px-5 py-3 backdrop-blur-md border shadow-lg"
+            className="mx-auto inline-flex flex-col items-center gap-3 rounded-2xl px-6 py-4 backdrop-blur-md border shadow-lg"
             style={{
               background: "rgba(255, 255, 255, 0.25)",
               borderColor: "rgba(255, 255, 255, 0.40)",
               fontFamily: "Garet, sans-serif",
-              fontWeight: 600,
-              fontSize: 13,
-              letterSpacing: "0.1em",
             }}
-            aria-live="polite"
           >
-            <span className="uppercase" style={{ color: '#FEFEFE' }}>Expira em</span>
-            <span className="tabular-nums font-bold" style={{ color: '#FEFEFE' }}>{remaining}</span>
+            {/* Таймер */}
+            <div
+              className="flex items-center gap-3"
+              style={{
+                fontWeight: 600,
+                fontSize: 13,
+                letterSpacing: "0.1em",
+              }}
+              aria-live="polite"
+            >
+              <span className="uppercase" style={{ color: '#FEFEFE' }}>Expira em</span>
+              <span className="tabular-nums font-bold" style={{ color: '#FEFEFE' }}>{remaining}</span>
+            </div>
+            
+            {/* Элемент срочности */}
+            <div
+              className="flex items-center gap-2"
+              style={{
+                fontWeight: 700,
+                fontSize: 13,
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                color: '#FEFEFE',
+                animation: "pulse 2s infinite",
+              }}
+            >
+              <span>🔥</span>
+              <span>Apenas 30 vagas! Não perca!</span>
+            </div>
           </div>
 
           <p

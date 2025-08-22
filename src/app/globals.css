@@ -899,6 +899,16 @@
   bottom: env(safe-area-inset-bottom, 32px);
 }
 
+/* Анимация для элементов срочности */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
 /* Анимации для мобильных */
 @media (prefers-reduced-motion: no-preference) {
   .hero-mobile-fade-in {
