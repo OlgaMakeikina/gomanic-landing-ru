@@ -225,71 +225,67 @@ export default function SegurancaQualidade(): JSX.Element {
               </div>
             </div>
 
-            {/* Колонка 3: плашка + паспорт (на md в ряд, паспорт справа фикс. размера) */}
-            <div className="w-full md:max-w-[420px]">
-              <div className="flex flex-col md:flex-row md:items-start md:gap-6">
-                {/* Плашка слева */}
-                <div
-                  className="backdrop-blur-xl rounded-2xl p-6 flex-1"
-                  style={{
-                    background: 'linear-gradient(135deg, rgba(68,79,85,0.95) 0%, rgba(59,59,58,0.95) 100%)',
-                    border: '1px solid #FEFEFE',
-                    boxShadow: '0 32px 64px rgba(68,79,85,0.3)',
-                  }}
-                >
-                  <div className="text-center md:text-left">
-                    <h4
-                      style={{
-                        color: '#FEFEFE',
-                        fontFamily: 'Horizon, sans-serif',
-                        fontSize: 16,
-                        fontWeight: 500,
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.1em',
-                        marginBottom: '12px',
-                        lineHeight: 1.3,
-                      }}
-                    >
-                      Certificado de Segurança
-                    </h4>
-
-                    <div
-                      className="inline-block md:block px-4 py-3 rounded-xl"
-                      style={{
-                        background: '#FEFEFE',
-                        color: '#3B3B3A',
-                        fontFamily: 'Garet, sans-serif',
-                        fontSize: 12,
-                        fontWeight: 600,
-                        textAlign: 'center',
-                        lineHeight: 1.4,
-                      }}
-                    >
-                      Nossos materiais são completamente seguros e atendem aos padrões internacionais de qualidade
-                    </div>
-                  </div>
-                </div>
-
-                {/* Паспорт справа */}
-                <div className="mt-6 md:mt-0 md:ml-auto shrink-0">
-                  <div
-                    className="relative rounded-2xl border overflow-hidden md:w-[200px] lg:w-[260px]"
+            {/* Колонка 3: плашка сверху, паспорт снизу */}
+            <div className="w-full md:max-w-[420px] space-y-6">
+              {/* Плашка */}
+              <div
+                className="backdrop-blur-xl rounded-2xl p-6"
+                style={{
+                  background: 'linear-gradient(135deg, rgba(68,79,85,0.95) 0%, rgba(59,59,58,0.95) 100%)',
+                  border: '1px solid #FEFEFE',
+                  boxShadow: '0 32px 64px rgba(68,79,85,0.3)',
+                }}
+              >
+                <div className="text-center">
+                  <h4
                     style={{
-                      background: GLASS.cardBg,
-                      borderColor: GLASS.cardBorder,
-                      boxShadow: GLASS.cardShadow,
-                      aspectRatio: '2/3',
+                      color: '#FEFEFE',
+                      fontFamily: 'Horizon, sans-serif',
+                      fontSize: 16,
+                      fontWeight: 500,
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.1em',
+                      marginBottom: '12px',
+                      lineHeight: 1.3,
                     }}
                   >
-                    <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-white/5 to-transparent" />
-                    <img
-                      src="/images/masters/certificate.png"
-                      alt="Passaporte de segurança dos esmaltes"
-                      className="w-full h-full object-cover"
-                      style={{ filter: 'brightness(1.08) contrast(1.05)' }}
-                    />
+                    Certificado de Segurança
+                  </h4>
+
+                  <div
+                    className="px-4 py-3 rounded-xl"
+                    style={{
+                      background: '#FEFEFE',
+                      color: '#3B3B3A',
+                      fontFamily: 'Garet, sans-serif',
+                      fontSize: 12,
+                      fontWeight: 600,
+                      textAlign: 'center',
+                      lineHeight: 1.4,
+                    }}
+                  >
+                    Nossos materiais são completamente seguros e atendem aos padrões internacionais de qualidade
                   </div>
                 </div>
+              </div>
+
+              {/* Паспорт под плашкой */}
+              <div
+                className="relative rounded-2xl border overflow-hidden max-h-96 mx-auto"
+                style={{
+                  background: GLASS.cardBg,
+                  borderColor: GLASS.cardBorder,
+                  boxShadow: GLASS.cardShadow,
+                  aspectRatio: '2/3',
+                }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-white/5 to-transparent" />
+                <img
+                  src="/images/masters/certificate.png"
+                  alt="Passaporte de segurança dos esmaltes"
+                  className="w-full h-full object-cover"
+                  style={{ filter: 'brightness(1.08) contrast(1.05)' }}
+                />
               </div>
             </div>
           </div>
