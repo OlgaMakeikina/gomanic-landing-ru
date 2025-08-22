@@ -46,8 +46,14 @@ export default function Slide2({ slideData, onButtonAction }: SlideProps) {
                     variant="primary"
                     className="min-w-[140px]"
                   >
-                    AGENDAR
+                    AGENDAR AGORA
                   </HeroButton>
+                    <HeroButton 
+                                  onClick={() => onButtonAction('next')}
+                                  variant="secondary"
+                                >
+                                  VER PORTFOLIO
+                                </HeroButton>
                 </div>
               </div>
 
