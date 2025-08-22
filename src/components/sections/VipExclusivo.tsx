@@ -34,7 +34,6 @@ function VipCard({ title, description, delay }: VipCardProps) {
         overflow: 'hidden' as const
       }}
     >
-      {/* Subtle glow effect */}
       <div 
         style={{
           position: 'absolute',
@@ -96,7 +95,6 @@ function CountdownTimer() {
       {timeUnits.map((unit, i) => (
         <div 
           key={i} 
-          className="countdown-glass"
           style={{
             background: 'linear-gradient(135deg, rgba(59, 59, 58, 0.8) 0%, rgba(59, 59, 58, 0.6) 100%)',
             backdropFilter: 'blur(10px)',
@@ -146,7 +144,6 @@ export default function VipExclusivo() {
     <section id="vip-exclusivo" className="vogue-section relative overflow-hidden" 
              style={{backgroundColor: '#3B3B3A', color: '#FEFEFE'}}>
       
-      {/* Background gradient overlay */}
       <div 
         style={{
           position: 'absolute',
@@ -186,32 +183,28 @@ export default function VipExclusivo() {
         </div>
         
         <div className="max-w-5xl mx-auto">
-          {/* Urgency indicator with glassmorphism */}
           <div className="text-center mb-16">
-            <div className="inline-block text-white px-8 py-4 rounded-lg transform rotate-1 urgency-glass" 
+            <div className="inline-block text-white px-8 py-4 rounded-lg transform rotate-1" 
                  style={{
                    background: 'linear-gradient(135deg, rgba(68, 78, 85, 0.9) 0%, rgba(68, 78, 85, 0.7) 100%)',
                    backdropFilter: 'blur(20px)',
                    WebkitBackdropFilter: 'blur(20px)',
                    border: '1px solid rgba(254, 254, 254, 0.2)',
-                   boxShadow: '0 8px 32px rgba(68, 78, 85, 0.3), 0 2px 8px rgba(254, 254, 254, 0.1)',
-                   animation: 'urgency-pulse 2s ease-in-out infinite'
+                   boxShadow: '0 8px 32px rgba(68, 78, 85, 0.3), 0 2px 8px rgba(254, 254, 254, 0.1)'
                  }}>
               <div className="text-2xl font-bold">APENAS 3 VAGAS RESTANTES</div>
               <div className="text-sm mt-1">de 30 Passes VIP disponíveis este mês</div>
             </div>
           </div>
           
-          {/* VIP Cards with staggered animation */}
           <div className="grid lg:grid-cols-3 gap-8 mb-16">
             {vipCards.map((card, index) => (
               <VipCard key={index} {...card} />
             ))}
           </div>
           
-          {/* Main CTA with enhanced glassmorphism */}
           <div 
-            className={`main-cta-glass transition-all duration-1000 transform ${
+            className={`transition-all duration-1000 transform ${
               isCtaVisible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-12 opacity-0 scale-95'
             }`}
             style={{
@@ -227,20 +220,6 @@ export default function VipExclusivo() {
               overflow: 'hidden' as const
             }}
           >
-            {/* Animated background glow */}
-            <div 
-              style={{
-                position: 'absolute',
-                top: '-50%',
-                left: '-50%',
-                width: '200%',
-                height: '200%',
-                background: 'radial-gradient(circle, rgba(68, 78, 85, 0.1) 0%, transparent 70%)',
-                animation: 'glow-rotate 8s linear infinite',
-                pointerEvents: 'none'
-              }}
-            />
-            
             <h3 className="text-2xl font-bold mb-4 relative z-10" style={{color: '#FEFEFE'}}>
               ESTA OPORTUNIDADE ACABA EM:
             </h3>
@@ -253,7 +232,7 @@ export default function VipExclusivo() {
             
             <button 
               onClick={() => document.getElementById('agendamento')?.scrollIntoView({ behavior: 'smooth' })}
-              className="relative z-10 px-12 py-4 transition-all duration-300 text-lg booking-button-glass"
+              className="relative z-10 px-12 py-4 transition-all duration-300 text-lg"
               style={{
                 background: 'linear-gradient(135deg, rgba(254, 254, 254, 0.9) 0%, rgba(254, 254, 254, 0.8) 100%)',
                 backdropFilter: 'blur(10px)',
@@ -268,23 +247,19 @@ export default function VipExclusivo() {
                 textTransform: 'uppercase',
                 cursor: 'pointer',
                 boxShadow: '0 8px 25px rgba(254, 254, 254, 0.5), 0 2px 8px rgba(0, 0, 0, 0.1)',
-                transform: 'scale(1.02)',
-                position: 'relative',
-                overflow: 'hidden'
+                transform: 'scale(1.02)'
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.background = 'linear-gradient(135deg, rgba(254, 254, 254, 0.1) 0%, rgba(254, 254, 254, 0.05) 100%)'
                 e.currentTarget.style.color = '#FEFEFE'
                 e.currentTarget.style.border = '2px solid rgba(254, 254, 254, 0.5)'
                 e.currentTarget.style.transform = 'scale(1.05)'
-                e.currentTarget.style.boxShadow = '0 12px 35px rgba(254, 254, 254, 0.3), 0 4px 12px rgba(0, 0, 0, 0.2)'
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.background = 'linear-gradient(135deg, rgba(254, 254, 254, 0.9) 0%, rgba(254, 254, 254, 0.8) 100%)'
                 e.currentTarget.style.color = '#3B3B3A'
                 e.currentTarget.style.border = '1px solid rgba(254, 254, 254, 0.3)'
                 e.currentTarget.style.transform = 'scale(1.02)'
-                e.currentTarget.style.boxShadow = '0 8px 25px rgba(254, 254, 254, 0.5), 0 2px 8px rgba(0, 0, 0, 0.1)'
               }}
             >
               QUERO MEU PASSE VIP AGORA!
@@ -298,33 +273,9 @@ export default function VipExclusivo() {
       </div>
 
       <style jsx>{`
-        @keyframes urgency-pulse {
-          0%, 100% { transform: rotate(1deg) scale(1); }
-          50% { transform: rotate(1deg) scale(1.02); }
-        }
-        
-        @keyframes glow-rotate {
-          0% { transform: rotate(0deg); }
-          100% { transform: rotate(360deg); }
-        }
-
         .vip-glass-card:hover {
           transform: translateY(-4px) !important;
           box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15), 0 4px 12px rgba(254, 254, 254, 0.15) !important;
-        }
-
-        .countdown-glass {
-          animation: countdown-glow 3s ease-in-out infinite;
-        }
-
-        @keyframes countdown-glow {
-          0%, 100% { box-shadow: 0 0 10px rgba(254, 254, 254, 0.1); }
-          50% { box-shadow: 0 0 20px rgba(254, 254, 254, 0.2); }
-        }
-
-        .main-cta-glass:hover {
-          transform: translateY(-2px) scale(1.01) !important;
-          box-shadow: 0 16px 50px rgba(0, 0, 0, 0.25), 0 6px 16px rgba(254, 254, 254, 0.15) !important;
         }
       `}</style>
     </section>
