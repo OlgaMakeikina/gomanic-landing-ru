@@ -4,7 +4,7 @@ export const heroSlides: HeroSlide[] = [
   {
     id: 1,
     image: '/images/hero/0_3 (10).jpeg',
-    title: 'Especialistas GOMANIC',
+    title: 'GOMANIC Especialistas',
     subtitle: 'Manicure premium pela metade do preço',
     content: 'Descubra o mundo VIP da manicure profissional com preços exclusivos para membros.'
   },
