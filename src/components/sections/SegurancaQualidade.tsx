@@ -150,8 +150,8 @@ export default function SegurancaQualidade(): JSX.Element {
             {/* Колонка 1 */}
             <div className="space-y-6">
               {[
-                { src: '/images/masters/0_0 (15).jpeg', alt: 'Instrutor Internacional 1' },
-                { src: '/images/masters/IMG_0439.jpg', alt: 'Instrutor Internacional 2' },
+                { src: '/images/masters/0_0 (15).jpeg', alt: 'Instrutor Internacional 1', label: 'Formação' },
+                { src: '/images/masters/IMG_0439.jpg', alt: 'Instrutor Internacional 2', label: 'Treinamento' },
               ].map((item, i) => (
                 <div
                   key={i}
@@ -171,7 +171,7 @@ export default function SegurancaQualidade(): JSX.Element {
                       style={{ background: 'rgba(255,255,255,0.15)', borderColor: 'rgba(255,255,255,0.2)' }}
                     >
                       <p style={{ color: '#3B3B3A', fontFamily: 'Garet, sans-serif', fontSize: 11, fontWeight: 600, textAlign: 'center' }}>
-                        Formação
+                        {item.label}
                       </p>
                     </div>
                   </div>
