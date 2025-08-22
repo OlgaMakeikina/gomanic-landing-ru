@@ -12,7 +12,7 @@ export default function Slide2({ slideData, onButtonAction }: SlideProps) {
             <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-start lg:items-center">
               
               <div className="text-center lg:text-left">
-                <VipBadge text="Exclusivo com passe VIP" />
+                <VipBadge text="Oferta exclusiva do mês" />
                 
                 <h2 style={{
                   fontFamily: 'Horizon, Arial, sans-serif',

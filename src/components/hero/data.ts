@@ -12,7 +12,7 @@ export const heroSlides: HeroSlide[] = [
   {
     id: 2,
     image: '/images/hero/0_3 (8).jpeg',
-    title: 'PREÇOS VIP',
+    title: 'preços do passe vip',
     subtitle: 'Economia de até 50%',
     services: [
       { name: 'Manicure + nivelamento + esmaltação em gel', oldPrice: 160, newPrice: 80 },
