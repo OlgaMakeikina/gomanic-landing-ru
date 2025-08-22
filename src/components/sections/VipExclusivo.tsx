@@ -22,14 +22,14 @@ function VipCard({ title, description, delay }: VipCardProps) {
         isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
       }`}
       style={{
-        background: 'linear-gradient(135deg, rgba(254, 254, 254, 0.1) 0%, rgba(254, 254, 254, 0.05) 100%)',
-        backdropFilter: 'blur(20px)',
-        WebkitBackdropFilter: 'blur(20px)',
-        border: '1px solid rgba(254, 254, 254, 0.2)',
+        background: 'linear-gradient(135deg, rgba(254, 254, 254, 0.92) 0%, rgba(254, 254, 254, 0.88) 100%)',
+        backdropFilter: 'blur(15px)',
+        WebkitBackdropFilter: 'blur(15px)',
+        border: '1px solid rgba(254, 254, 254, 0.6)',
         borderRadius: '16px',
         padding: '2rem',
         textAlign: 'center' as const,
-        boxShadow: '0 8px 32px rgba(0, 0, 0, 0.1), 0 2px 8px rgba(254, 254, 254, 0.1)',
+        boxShadow: '0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(254, 254, 254, 0.4)',
         position: 'relative' as const,
         overflow: 'hidden' as const
       }}
@@ -41,15 +41,15 @@ function VipCard({ title, description, delay }: VipCardProps) {
           left: 0,
           right: 0,
           bottom: 0,
-          background: 'linear-gradient(45deg, rgba(68, 78, 85, 0.05), transparent)',
+          background: 'linear-gradient(45deg, rgba(254, 254, 254, 0.08), transparent)',
           pointerEvents: 'none'
         }}
       />
       
-      <h3 className="vogue-caption mb-4 relative z-10" style={{color: '#FEFEFE', fontSize: '16px'}}>
+      <h3 className="vogue-caption mb-4 relative z-10" style={{color: '#3B3B3A', fontSize: '16px'}}>
         {title}
       </h3>
-      <p className="vogue-body relative z-10" style={{color: '#FEFEFE', lineHeight: '1.6'}}>
+      <p className="vogue-body relative z-10" style={{color: '#3B3B3A', lineHeight: '1.6'}}>
         <strong>{description}</strong>
       </p>
     </div>
@@ -178,7 +178,7 @@ export default function VipExclusivo() {
                  boxShadow: '0 2px 8px rgba(68, 78, 85, 0.5)'
                }}></div>
           <p className="vogue-body max-w-3xl mx-auto text-lg" style={{color: '#FEFEFE'}}>
-            Não é uma simples promoção. É um <strong style={{color: '#444e55'}}>acesso exclusivo</strong> para poucas pessoas especiais
+            Não é uma simples promoção. É um <strong style={{color: '#FEFEFE'}}>acesso exclusivo</strong> para poucas pessoas especiais
           </p>
         </div>
         
@@ -275,7 +275,10 @@ export default function VipExclusivo() {
       <style jsx>{`
         .vip-glass-card:hover {
           transform: translateY(-4px) !important;
-          box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15), 0 4px 12px rgba(254, 254, 254, 0.15) !important;
+          box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18), 0 4px 12px rgba(254, 254, 254, 0.5) !important;
+          background: linear-gradient(135deg, rgba(254, 254, 254, 0.96) 0%, rgba(254, 254, 254, 0.92) 100%) !important;
+          border: 1px solid rgba(254, 254, 254, 0.8) !important;
+          backdrop-filter: blur(18px) !important;
         }
       `}</style>
     </section>
