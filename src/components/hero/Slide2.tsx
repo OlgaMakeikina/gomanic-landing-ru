@@ -58,7 +58,7 @@ export default function Slide2({ slideData, onButtonAction }: SlideProps) {
                 </div>
               </div>
 
-              <div className="text-left">
+              <div className="text-center">
                 <div className="space-y-4 lg:space-y-8">
                   {slideData.services?.map((service, index) => (
                     <ServiceItem 

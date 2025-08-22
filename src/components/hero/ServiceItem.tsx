@@ -23,7 +23,7 @@ export default function ServiceItem({ service, isLast }: ServiceItemProps) {
       }}>
         {service.name}
       </div>
-      <div className="flex items-center gap-2 lg:gap-4">
+      <div className="flex items-center justify-center gap-2 lg:gap-4">
         <span style={{
           fontFamily: 'Garet, sans-serif',
           fontSize: 'clamp(12px, 2vw, 16px)',

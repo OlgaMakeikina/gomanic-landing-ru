@@ -2,19 +2,20 @@ interface SlideNavigationProps {
   currentSlide: number
   totalSlides: number
   onGoToSlide: (index: number) => void
+  onPrevSlide: () => void
+  onNextSlide: () => void
 }
 
-export default function SlideNavigation({ currentSlide, totalSlides, onGoToSlide }: SlideNavigationProps) {
-  const handlePrevious = () => {
-    onGoToSlide((currentSlide - 1 + totalSlides) % totalSlides)
-  }
-
-  const handleNext = () => {
-    onGoToSlide((currentSlide + 1) % totalSlides)
-  }
+export default function SlideNavigation({ 
+  currentSlide, 
+  totalSlides, 
+  onPrevSlide, 
+  onNextSlide 
+}: SlideNavigationProps) {
 
   return (
     <>
+      {/* Navigation counter */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30">
         <div className="text-center">
           <span className="text-sm" style={{
@@ -29,9 +30,11 @@ export default function SlideNavigation({ currentSlide, totalSlides, onGoToSlide
         </div>
       </div>
 
+      {/* Desktop arrows only */}
       <button
-        onClick={handlePrevious}
-        className="absolute left-4 lg:left-8 top-1/2 transform -translate-y-1/2 z-30 w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300 touch-manipulation"
+        onClick={onPrevSlide}
+        className="hidden lg:flex absolute left-4 lg:left-8 top-1/2 transform -translate-y-1/2 z-30 w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 items-center justify-center text-white hover:bg-white/30 transition-all duration-300"
+        aria-label="Previous slide"
       >
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <polyline points="15,18 9,12 15,6"></polyline>
@@ -39,8 +42,9 @@ export default function SlideNavigation({ currentSlide, totalSlides, onGoToSlide
       </button>
 
       <button
-        onClick={handleNext}
-        className="absolute right-4 lg:right-8 top-1/2 transform -translate-y-1/2 z-30 w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300 touch-manipulation"
+        onClick={onNextSlide}
+        className="hidden lg:flex absolute right-4 lg:right-8 top-1/2 transform -translate-y-1/2 z-30 w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 items-center justify-center text-white hover:bg-white/30 transition-all duration-300"
+        aria-label="Next slide"
       >
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <polyline points="9,6 15,12 9,18"></polyline>

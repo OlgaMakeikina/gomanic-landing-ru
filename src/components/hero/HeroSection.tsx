@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { heroSlides } from './data'
 import SlideBackground from './SlideBackground'
 import SlideOverlay from './SlideOverlay'
@@ -12,6 +12,12 @@ import Slide3 from './Slide3'
 export default function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isPlaying, setIsPlaying] = useState(true)
+  const [touchStart, setTouchStart] = useState<number | null>(null)
+  const [touchEnd, setTouchEnd] = useState<number | null>(null)
+  const sectionRef = useRef<HTMLElement>(null)
+
+  // Минимальное расстояние для swipe
+  const minSwipeDistance = 50
 
   useEffect(() => {
     if (!isPlaying) return
@@ -29,6 +35,10 @@ export default function HeroSection() {
     setCurrentSlide((prev) => (prev + 1) % heroSlides.length)
   }
 
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length)
+  }
+
   const handleButtonAction = (action: string, id?: string) => {
     if (action === 'next') {
       nextSlide()
@@ -39,14 +49,46 @@ export default function HeroSection() {
     }
   }
 
+  // Touch handlers для swipe
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null)
+    setTouchStart(e.targetTouches[0].clientX)
+    setIsPlaying(false) // Pause автопрокрутки при touch
+  }
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX)
+  }
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return
+    
+    const distance = touchStart - touchEnd
+    const isLeftSwipe = distance > minSwipeDistance
+    const isRightSwipe = distance < -minSwipeDistance
+
+    if (isLeftSwipe) {
+      nextSlide()
+    } else if (isRightSwipe) {
+      prevSlide()
+    }
+    
+    // Возобновляем автопрокрутку через 3 секунды после свайпа
+    setTimeout(() => setIsPlaying(true), 3000)
+  }
+
   const currentSlideData = heroSlides[currentSlide]
 
   return (
     <section 
+      ref={sectionRef}
       id="hero" 
       className="h-screen relative overflow-hidden flex items-center"
       onMouseEnter={() => setIsPlaying(false)}
       onMouseLeave={() => setIsPlaying(true)}
+      onTouchStart={onTouchStart}
+      onTouchMove={onTouchMove}
+      onTouchEnd={onTouchEnd}
       style={{ minHeight: '100dvh' }}
     >
       <SlideBackground slides={heroSlides} currentSlide={currentSlide} />
@@ -74,6 +116,8 @@ export default function HeroSection() {
         currentSlide={currentSlide}
         totalSlides={heroSlides.length}
         onGoToSlide={goToSlide}
+        onPrevSlide={prevSlide}
+        onNextSlide={nextSlide}
       />
 
       <style jsx>{`
