@@ -27,7 +27,7 @@ export default function VipVantagens() {
                   className="w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6"
                   style={{backgroundColor: '#444e55', color: '#FEFEFE'}}
                 >
-                  ✓
+                  {index + 1}
                 </div>
                 <div className="vogue-body text-lg text-center" style={{color: '#FEFEFE'}}>
                   {vantagem}
@@ -70,6 +70,36 @@ export default function VipVantagens() {
           </div>
         </div>
       </div>
+    </section>
+  )
+}
+        .vantage-glass-card:hover {
+          transform: translateY(-4px) !important;
+          box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15), 0 4px 12px rgba(254, 254, 254, 0.1) !important;
+          border: 1px solid rgba(254, 254, 254, 0.25) !important;
+        }
+
+        @keyframes button-shine {
+          0% { transform: translateX(-100%); }
+          50% { transform: translateX(100%); }
+          100% { transform: translateX(100%); }
+        }
+
+        .vip-cta-button::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(90deg, transparent, rgba(254, 254, 254, 0.2), transparent);
+          transition: left 0.5s;
+        }
+
+        .vip-cta-button:hover::before {
+          left: 100%;
+        }
+      `}</style>
     </section>
   )
 }
