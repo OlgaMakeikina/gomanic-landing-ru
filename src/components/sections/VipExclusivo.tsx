@@ -38,8 +38,7 @@ export default function VipExclusivo() {
                 CLUBE LIMITADO
               </h3>
               <p className="vogue-body" style={{color: '#FEFEFE', lineHeight: '1.6'}}>
-                <strong>Somente 30 clientes por mês</strong> podem ter Passe VIP.<br/>
-                Quando esgotar, só no próximo mês.
+                <strong>Somente 30 clientes por mês podem ter Passe VIP.</strong><br/>
               </p>
             </div>
             
@@ -54,8 +53,7 @@ export default function VipExclusivo() {
                 PREÇO ÚNICO
               </h3>
               <p className="vogue-body" style={{color: '#FEFEFE', lineHeight: '1.6'}}>
-                <strong>O preço nunca mais se repete</strong> depois que as vagas esgotarem.<br/>
-                Esta é sua única chance.
+                <strong>O preço nunca mais se repete depois que as vagas esgotarem.</strong>
               </p>
             </div>
             
@@ -70,8 +68,7 @@ export default function VipExclusivo() {
                 BRINDE SURPRESA
               </h3>
               <p className="vogue-body" style={{color: '#FEFEFE', lineHeight: '1.6'}}>
-                <strong>VIPs recebem um brinde surpresa</strong> na primeira visita.<br/>
-                Valor aproximado: R$ 50
+                <strong>VIPs recebem um brinde surpresa na primeira visita.</strong>
               </p>
             </div>
           </div>
@@ -136,7 +133,7 @@ export default function VipExclusivo() {
             </button>
             
             <p className="text-sm mt-4" style={{color: '#FEFEFE'}}>
-              🔒 Pagamento seguro • ↩️ Reembolso garantido • ⚡ Confirmação imediata
+              Pagamento da entrada é 100% seguro. Se não puder comparecer, reagendamos ou devolvemos o valor.
             </p>
           </div>
         </div>
