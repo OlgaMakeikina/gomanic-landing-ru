@@ -295,6 +295,87 @@
   border: 2px solid #444e55;
   transform: translateY(-2px) scale(1.02);
 }
+/* Mobile Single Photo Slider Styles */
+.mobileSingleSlider {
+  position: relative;
+  width: 100%;
+  margin-bottom: 32px;
+}
+
+.mobileSliderWrapper {
+  position: relative;
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
+  margin: 0 auto 0 auto;
+}
+
+.mobileSliderContainer {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobileSingleItem {
+  flex: 0 0 100%;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.mobileSingleImage {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* Dots Navigation */
+.mobileDotsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 24px;
+  padding: 0 20px;
+}
+
+.mobileDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(68, 79, 85, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.mobileDot::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: transparent;
+  transition: background-color 0.3s ease;
+}
+
+.mobileDot:hover::before {
+  background: rgba(68, 79, 85, 0.1);
+}
+
+.mobileDotActive {
+  background: #444f55;
+  transform: scale(1.2);
+  box-shadow: 0 4px 12px rgba(68, 79, 85, 0.3);
+}
+
 @media (max-width: 768px) {
   .section {
     padding: 60px 0;
@@ -359,5 +440,20 @@
     padding: 16px 32px;
     font-size: 0.9rem;
     font-weight: 700;
+  }
+  
+  /* Mobile Slider Responsive Fixes */
+  .mobileSingleSlider {
+    padding: 0 16px;
+  }
+  
+  .mobileSliderWrapper {
+    width: 100%;
+    max-width: calc(100vw - 32px);
+    margin: 0 auto;
+  }
+  
+  .mobileDotsContainer {
+    padding: 0 16px;
   }
 }

@@ -1,5 +1,35 @@
 # CHANGELOG
 
+## [2.0.3] - 2025-08-22 - Mobile RESULTADOS v2.0: Single Photo + Swipe UX
+
+### 📱 Mobile UX Enhancement v2.0
+- **Single Photo Focus**: One centered photo per view for better content focus
+- **Swipe Navigation**: Natural touch gestures replace button controls
+- **Dots Indicator**: Visual progress with direct navigation capability
+- **Removed Arrow Buttons**: Cleaner interface without visual clutter
+
+### 🏗️ Technical Architecture v2.0
+- **Redesigned Components**: 
+  - `MobilePortfolioSlider.tsx` - Single photo + swipe (68 lines, reduced from 87)
+  - `MobileBeforeAfterSlider.tsx` - Single photo + swipe (68 lines, reduced from 87)
+- **Touch Events**: TouchStart/Move/End handling for swipe detection
+- **CSS Transitions**: `cubic-bezier(0.4, 0, 0.2, 1)` for smooth animations
+- **Cleaner Code**: Removed button state management complexity
+
+### 🎨 Design Enhancement
+- **Vogue Style Preserved**: Maintained color scheme (#FEFEFE, #444f55)
+- **Single Photo Layout**: 320px height, 16px border-radius, elegant shadows
+- **Dots Navigation**: Touch-friendly 12px dots with scale(1.2) active state
+- **Minimalist Approach**: Focus on content without UI distractions
+
+### ✅ Quality Improvements
+- **TypeScript**: ✅ Strict typing, no errors
+- **Architecture**: ✅ More modular, reduced complexity
+- **Performance**: ✅ Priority loading, CSS-based animations
+- **UX**: ✅ Improved mobile experience with natural gestures
+
+---
+
 ## [2.0.2] - 2025-08-21 - Hero Title Order and Alignment Update
 
 ### 🎨 UI/UX Improvements
