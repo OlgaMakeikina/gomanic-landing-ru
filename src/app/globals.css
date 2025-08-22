@@ -938,4 +938,30 @@
   #hero .transition-opacity {
     will-change: opacity;
   }
+  
+  /* Оптимизация для мобильной галереи клиентов */
+  #clientes img,
+  #clientes video {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    will-change: transform;
+  }
+  
+  /* Плавный скролл для мобильной карусели */
+  #clientes .overflow-x-auto {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+  
+  /* Безопасные отступы для мобильных */
+  #clientes .absolute.bottom-8 {
+    bottom: max(8px, env(safe-area-inset-bottom));
+    padding-bottom: env(safe-area-inset-bottom, 0);
+  }
+  
+  /* Оптимизация тапов для CTA кнопок */
+  #clientes button {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
 }

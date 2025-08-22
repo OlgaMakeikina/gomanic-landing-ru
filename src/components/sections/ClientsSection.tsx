@@ -1,5 +1,11 @@
 'use client'
 
+import { 
+  ClientsSectionHeader, 
+  DesktopClientsGallery, 
+  MobileClientsGallery 
+} from './clients';
+
 export default function ClientsSection() {
   const COLORS = { dark: "#3B3B3A", white: "#FEFEFE" }
 
@@ -9,146 +15,36 @@ export default function ClientsSection() {
                background: 'linear-gradient(135deg, #3B3B3A 0%, #2a2a29 50%, #1f1f1e 100%)'
              }}>
       <div className="mx-auto max-w-7xl px-6">
-        {/* Заголовок секции */}
-        <div className="text-center mb-16">
-          <div
-            className="uppercase tracking-[0.22em] mb-3"
-            style={{ color: COLORS.white, fontFamily: "Garet, sans-serif", fontSize: 14, opacity: 0.85 }}
-          >
-            FOTOS DE CLIENTES
-          </div>
-
-          <h2
-            className="uppercase mb-6"
-            style={{
-              color: COLORS.white,
-              fontFamily: "Horizon, sans-serif",
-              letterSpacing: "0.12em",
-              fontWeight: 500,
-              fontSize: 28,
-            }}
-          >
-            NOSSOS CLIENTES SATISFEITOS
-          </h2>
-          
-          <p
-            className="mx-auto max-w-3xl"
-            style={{ color: COLORS.white, opacity: 0.9, fontFamily: "Garet, sans-serif", fontSize: 16 }}
-          >
-            Milhares de clientes satisfeitas que já confiaram em nosso trabalho
-          </p>
-        </div>
-
-        {/* Pinterest коллаж */}
-        <div className="mx-auto max-w-5xl rounded-3xl p-4 md:p-5">
-          <div className="grid gap-3 md:gap-4 h-[620px] grid-cols-6 grid-rows-4">
-            {/* Левое верхнее фото - оранжевые ногти */}
-            <figure className="col-span-2 row-span-2 overflow-hidden rounded-2xl group">
-              <img
-                src="/images/clients/0_0 (24) (2).jpeg"
-                alt="Unhas laranja perfeitas"
-                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                style={{filter: 'brightness(1.1) contrast(1.05) saturate(1.2)'}}
-              />
-            </figure>
-
-            {/* Правое верхнее фото - девушка с веснушками */}
-            <figure className="col-span-2 row-span-2 overflow-hidden rounded-2xl group">
-              <img
-                src="/images/clients/0_2 (11).jpeg"
-                alt="Cliente satisfeita com sardas"
-                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                style={{filter: 'brightness(1.1) contrast(1.05)'}}
-              />
-            </figure>
-
-            {/* Текстовый блок - верхний ряд справа с glassmorphism */}
-            <div className="col-span-2 row-span-1 rounded-2xl border shadow-2xl flex items-center justify-center text-center relative overflow-hidden transition-all duration-500 hover:scale-105"
-                 style={{ 
-                   background:"rgba(68,78,85,.85)", 
-                   borderColor:"rgba(254,254,254,.4)",
-                   backdropFilter: "blur(20px)",
-                   boxShadow: "0 20px 60px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.2)"
-                 }}>
-              {/* Glassmorphism градиенты */}
-              <div className="absolute inset-0 bg-gradient-to-br from-white/15 via-white/8 to-transparent rounded-2xl"></div>
-              <div className="absolute inset-0 bg-gradient-to-tl from-black/20 via-transparent to-black/10 rounded-2xl"></div>
-              
-              <div className="px-4 w-full relative z-10">
-                <h4 className="uppercase tracking-[0.1em] mb-3"
-                    style={{ 
-                      color: COLORS.white, 
-                      fontFamily:"Horizon, sans-serif", 
-                      fontWeight:700, 
-                      fontSize:14,
-                      textShadow: "0 2px 8px rgba(0,0,0,0.3)"
-                    }}>
-                  SEJA A PRÓXIMA CLIENTE SATISFEITA
-                </h4>
-                <button
-                  onClick={() => document.getElementById('agendamento')?.scrollIntoView({ behavior:'smooth' })}
-                  className="w-full rounded-xl px-4 py-3 font-semibold uppercase tracking-wider text-xs transition-all duration-300 transform hover:scale-110 shadow-xl"
-                  style={{ 
-                    background: "linear-gradient(135deg, rgba(254,254,254,0.95) 0%, rgba(254,254,254,0.85) 100%)", 
-                    color: COLORS.dark,
-                    border: "1px solid rgba(255,255,255,0.5)",
-                    backdropFilter: "blur(10px)"
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.background = "linear-gradient(135deg, rgba(254,254,254,1) 0%, rgba(254,254,254,0.95) 100%)"
-                    e.currentTarget.style.transform = "scale(1.1) translateY(-2px)"
-                    e.currentTarget.style.boxShadow = "0 15px 35px rgba(254,254,254,0.3)"
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.background = "linear-gradient(135deg, rgba(254,254,254,0.95) 0%, rgba(254,254,254,0.85) 100%)"
-                    e.currentTarget.style.transform = "scale(1)"
-                    e.currentTarget.style.boxShadow = "none"
-                  }}
-                >
-                  QUERO FAZER PARTE
-                </button>
-              </div>
-            </div>
-
-            {/* Вертикальное видео stories - правый столбец */}
-            <div className="col-span-2 row-span-3 overflow-hidden rounded-2xl group">
-              <video className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" 
-                     autoPlay loop muted playsInline
-                     style={{aspectRatio: '9/16'}}>
-                <source src="/images/clients/u2311792965_httpss.mj.runUTcEApe-3E8_Ultra_realistic_hyper_de_f3873cb7-a4ac-4988-ae27-89ca058a275d_3.mp4" type="video/mp4" />
-              </video>
-            </div>
-
-            {/* Нижнее широкое фото - девушка на диване */}
-            <figure className="col-span-4 row-span-2 overflow-hidden rounded-2xl group">
-              <img
-                src="/images/clients/0_0 (25).jpeg"
-                alt="Cliente relaxando no sofá"
-                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                style={{filter: 'brightness(1.1) contrast(1.05)'}}
-              />
-            </figure>
-          </div>
-        </div>
-
-
+        <ClientsSectionHeader colors={COLORS} />
+        <DesktopClientsGallery colors={COLORS} />
+        <MobileClientsGallery colors={COLORS} />
       </div>
 
-      {/* мобильный стек */}
+      {/* Мобильные стили для скрытия скроллбара в карусели */}
       <style jsx>{`
         @media (max-width: 768px) {
-          #clientes .grid {
-            display: grid;
-            grid-template-columns: 1fr !important;
-            grid-template-rows: auto !important;
-            height: auto !important;
+          .overflow-x-auto::-webkit-scrollbar {
+            display: none;
           }
-          #clientes figure, #clientes video, #clientes .rounded-2xl {
-            min-height: 240px;
+          
+          /* Плавная анимация для мобильного CTA */
+          @keyframes mobile-cta-fade-in {
+            from {
+              opacity: 0;
+              transform: translateY(20px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+          
+          /* Добавляем анимацию для мобильной галереи */
+          .md\\:hidden {
+            animation: mobile-cta-fade-in 0.8s ease-out;
           }
         }
       `}</style>
     </section>
   )
 }
-

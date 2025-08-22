@@ -1,5 +1,52 @@
 # CHANGELOG
 
+## [2.1.1] - 2025-08-22 - Mobile Clients Gallery: 2x2 Grid + Full-Width CTA
+
+### 📱 UX Improvement Based on Feedback
+- **2x2 Grid Layout**: Two photos per row with square aspect ratios
+- **Full Content Visibility**: All 4 photos/video visible at once (no carousel)
+- **Full-Width CTA**: Bottom banner spanning entire screen width
+- **Better Content Discovery**: Users see all examples immediately
+
+### 🎨 Design System Maintained
+- **Aspect Ratios**: Perfect squares for consistent mobile experience
+- **Glassmorphism CTA**: Full-width banner with enhanced visibility
+- **Touch Optimization**: Larger tap targets with 3px gap spacing
+- **Vogue Colors**: Strict adherence to #FEFEFE, #3B3B3A, #444f55
+
+### ⚡ Performance Optimizations
+- **Simplified Layout**: Removed carousel complexity
+- **GPU Acceleration**: Maintained for all image transforms
+- **Touch Responsiveness**: Optimized for mobile interactions
+- **Bundle Size**: Reduced DOM complexity
+
+## [2.1.0] - 2025-08-22 - Mobile Clients Section: Instagram Stories Style
+
+### 📱 Major Mobile UX Enhancement
+- **Instagram Stories Layout**: Vertical story-style feed for mobile clients section
+- **Floating CTA**: Glassmorphism overlay CTA positioned over hero image
+- **Horizontal Carousel**: Touch-friendly thumbnail gallery with hidden scrollbar
+- **85vh Hero Image**: Full-screen impact with gradient overlay for readability
+
+### 🏗️ Architecture Updates
+- **Desktop/Mobile Split**: 
+  - Desktop: Pinterest grid layout preserved (hidden on mobile)
+  - Mobile: New vertical story-style layout (hidden on desktop)
+- **ClientsSection.tsx**: Enhanced with responsive design patterns
+- **Performance Optimization**: GPU-acceleration for all mobile animations
+
+### 🎨 Design System Enhancement
+- **Glassmorphism CTA**: `backdrop-blur-xl` with rgba overlays
+- **Touch Optimization**: 44px+ touch targets, tap highlight removal
+- **Safe Area Support**: iPhone notch compatibility with `env(safe-area-inset-bottom)`
+- **Vogue Style Maintained**: Strict color scheme adherence (#FEFEFE, #3B3B3A, #444f55)
+
+### ⚡ Performance Improvements
+- **Mobile-First CSS**: Separate mobile styles in globals.css
+- **Image Optimization**: `transform: translateZ(0)` for GPU acceleration
+- **Touch Scrolling**: `-webkit-overflow-scrolling: touch` for smooth carousels
+- **Reduced Layout Shift**: Fixed heights and proper aspect ratios
+
 ## [2.0.3] - 2025-08-22 - Mobile RESULTADOS v2.0: Single Photo + Swipe UX
 
 ### 📱 Mobile UX Enhancement v2.0
