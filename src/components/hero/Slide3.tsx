@@ -6,13 +6,13 @@ import BenefitItem from './BenefitItem'
 export default function Slide3({ slideData, onButtonAction }: SlideProps) {
   return (
     <div className="animate-fade-in flex items-center justify-center min-h-screen py-20 lg:py-0">
-      <div className="max-w-6xl w-full mx-auto px-4">
-        <div className="relative bg-black/30 rounded-xl lg:rounded-2xl border border-white/30 p-6 lg:p-12 shadow-[0_32px_64px_rgba(0,0,0,0.3)]">
-          <div className="absolute inset-0 bg-gradient-to-br from-white/4 via-white/1 to-transparent rounded-xl lg:rounded-2xl"></div>
-          <div className="absolute inset-0 bg-gradient-to-tl from-black/5 via-transparent to-black/2 rounded-xl lg:rounded-2xl"></div>
+      <div className="max-w-6xl w-full mx-auto px-0 lg:px-4">
+        <div className="relative bg-black/30 rounded-none lg:rounded-2xl border-0 lg:border lg:border-white/30 p-4 lg:p-12 shadow-none lg:shadow-[0_32px_64px_rgba(0,0,0,0.3)] w-full">
+          <div className="absolute inset-0 bg-gradient-to-br from-white/4 via-white/1 to-transparent rounded-none lg:rounded-2xl"></div>
+          <div className="absolute inset-0 bg-gradient-to-tl from-black/5 via-transparent to-black/2 rounded-none lg:rounded-2xl"></div>
           
           <div className="relative z-10">
-            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start lg:items-center">
+            <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-start lg:items-center">
               
               <div className="text-center lg:text-left">
                 <VipBadge text="Exclusivo com passe VIP" />
@@ -43,13 +43,14 @@ export default function Slide3({ slideData, onButtonAction }: SlideProps) {
                   {slideData.subtitle}
                 </p>
                 
-                <div className="flex flex-col gap-3 lg:gap-4">
+                {/* Desktop buttons */}
+                <div className="hidden lg:flex lg:flex-col lg:gap-4">
                   <HeroButton 
                     onClick={() => onButtonAction('scroll', 'agendamento')}
                     variant="primary"
                     className="w-full"
                   >
-                    QUERO SER VIP
+                    QUERO MEU PASSE VIP
                   </HeroButton>
                   
                   <HeroButton 
@@ -63,7 +64,8 @@ export default function Slide3({ slideData, onButtonAction }: SlideProps) {
               </div>
 
               <div className="text-left">
-                <div className="space-y-6 lg:space-y-8">
+                {/* Mobile - smaller spacing between bullets */}
+                <div className="space-y-3 lg:space-y-8">
                   {slideData.benefits?.map((benefit, index) => (
                     <BenefitItem 
                       key={index}
@@ -74,6 +76,25 @@ export default function Slide3({ slideData, onButtonAction }: SlideProps) {
                 </div>
               </div>
 
+            </div>
+            
+            {/* Mobile buttons - at the bottom */}
+            <div className="lg:hidden mt-8 flex flex-col gap-3 items-center">
+              <HeroButton 
+                onClick={() => onButtonAction('scroll', 'agendamento')}
+                variant="primary"
+                className="text-sm px-6 py-2.5 min-w-[120px]"
+              >
+                QUERO MEU PASSE VIP
+              </HeroButton>
+              
+              <HeroButton 
+                onClick={() => onButtonAction('whatsapp')}
+                variant="secondary"
+                className="text-sm px-6 py-2.5 min-w-[120px]"
+              >
+                CONTATO DIRETO
+              </HeroButton>
             </div>
           </div>
         </div>

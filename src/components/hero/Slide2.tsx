@@ -6,8 +6,8 @@ import ServiceItem from './ServiceItem'
 export default function Slide2({ slideData, onButtonAction }: SlideProps) {
   return (
     <div className="animate-fade-in flex items-center justify-center min-h-screen py-16 lg:py-0">
-      <div className="max-w-6xl w-full mx-auto px-2 lg:px-4">
-        <div className="relative bg-black/30 rounded-xl lg:rounded-2xl border border-white/30 p-4 lg:p-12 shadow-[0_32px_64px_rgba(0,0,0,0.3)] mx-2 lg:mx-0">
+      <div className="max-w-6xl w-full mx-auto px-0 lg:px-4">
+        <div className="relative bg-black/30 rounded-none lg:rounded-2xl border-0 lg:border lg:border-white/30 p-4 lg:p-12 shadow-none lg:shadow-[0_32px_64px_rgba(0,0,0,0.3)] mx-0 lg:mx-0 w-full">
           <div className="relative z-10">
             <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-start lg:items-center">
               
@@ -40,20 +40,21 @@ export default function Slide2({ slideData, onButtonAction }: SlideProps) {
                   {slideData.subtitle}
                 </p>
                 
-                <div className="flex justify-center lg:justify-start">
+                {/* Desktop buttons */}
+                <div className="hidden lg:flex lg:flex-col lg:gap-4 lg:justify-start lg:items-start">
                   <HeroButton 
                     onClick={() => onButtonAction('scroll', 'agendamento')}
                     variant="primary"
                     className="min-w-[140px]"
                   >
-                    AGENDAR AGORA
+                    QUERO MEU PASSE VIP
                   </HeroButton>
-                    <HeroButton 
-                                  onClick={() => onButtonAction('next')}
-                                  variant="secondary"
-                                >
-                                  VER PORTFOLIO
-                                </HeroButton>
+                  <HeroButton 
+                    onClick={() => onButtonAction('scroll', 'portfolio')}
+                    variant="secondary"
+                  >
+                    VER PORTFOLIO
+                  </HeroButton>
                 </div>
               </div>
 
@@ -69,6 +70,24 @@ export default function Slide2({ slideData, onButtonAction }: SlideProps) {
                 </div>
               </div>
 
+            </div>
+            
+            {/* Mobile buttons - at the bottom */}
+            <div className="lg:hidden mt-8 flex flex-col gap-3 items-center">
+              <HeroButton 
+                onClick={() => onButtonAction('scroll', 'agendamento')}
+                variant="primary"
+                className="text-sm px-6 py-2.5 min-w-[120px]"
+              >
+                QUERO MEU PASSE VIP
+              </HeroButton>
+              <HeroButton 
+                onClick={() => onButtonAction('scroll', 'portfolio')}
+                variant="secondary"
+                className="text-sm px-6 py-2.5 min-w-[120px]"
+              >
+                VER PORTFOLIO
+              </HeroButton>
             </div>
           </div>
         </div>

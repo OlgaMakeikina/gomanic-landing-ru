@@ -51,7 +51,7 @@ export default function Slide1({ slideData, onButtonAction }: SlideProps) {
               onClick={() => onButtonAction('scroll', 'agendamento')}
               variant="primary"
             >
-              QUERO SER VIP
+              QUERO MEU PASSE VIP
             </HeroButton>
             
             <HeroButton 
