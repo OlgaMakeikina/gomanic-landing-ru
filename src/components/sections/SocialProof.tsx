@@ -9,7 +9,7 @@ export default function SocialProof() {
   ]
 
   return (
-    <section id="social" className="relative py-20" style={{ backgroundColor: COLORS.white }}>
+    <section id="social" className="relative py-20" style={{ backgroundColor: COLORS.white }} aria-labelledby="social-heading">
       <div className="relative mx-auto max-w-7xl px-6">
         {/* Header */}
         <div className="text-center mb-16">
@@ -21,6 +21,7 @@ export default function SocialProof() {
           </div>
 
           <h2
+            id="social-heading"
             className="uppercase mb-6"
             style={{
               color: COLORS.dark,

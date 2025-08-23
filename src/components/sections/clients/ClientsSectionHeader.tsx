@@ -8,15 +8,16 @@ interface ClientsSectionHeaderProps {
 
 export default function ClientsSectionHeader({ colors }: ClientsSectionHeaderProps) {
   return (
-    <div className="text-center mb-16">
-      <div
+    <header className="text-center mb-16">
+      <p
         className="uppercase tracking-[0.22em] mb-3"
         style={{ color: colors.white, fontFamily: "Garet, sans-serif", fontSize: 14, opacity: 0.85 }}
       >
         FOTOS DE CLIENTES
-      </div>
+      </p>
 
       <h2
+        id="clientes-heading"
         className="uppercase mb-6"
         style={{
           color: colors.white,
@@ -35,6 +36,6 @@ export default function ClientsSectionHeader({ colors }: ClientsSectionHeaderPro
       >
         Milhares de clientes satisfeitas que já confiaram em nosso trabalho
       </p>
-    </div>
+    </header>
   );
 }

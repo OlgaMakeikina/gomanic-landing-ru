@@ -10,10 +10,14 @@ export default function ClientsSection() {
   const COLORS = { dark: "#3B3B3A", white: "#FEFEFE" }
 
   return (
-    <section id="clientes" className="py-20" 
-             style={{ 
-               background: 'linear-gradient(135deg, #3B3B3A 0%, #2a2a29 50%, #1f1f1e 100%)'
-             }}>
+    <section 
+      id="clientes" 
+      className="py-20" 
+      style={{ 
+        background: 'linear-gradient(135deg, #3B3B3A 0%, #2a2a29 50%, #1f1f1e 100%)'
+      }}
+      aria-labelledby="clientes-heading"
+    >
       <div className="mx-auto max-w-7xl px-6">
         <ClientsSectionHeader colors={COLORS} />
         <DesktopClientsGallery colors={COLORS} />

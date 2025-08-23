@@ -32,9 +32,14 @@ export default function SegurancaQualidade(): JSX.Element {
   ] as const
 
   return (
-    <section id="seguranca" className="relative py-20" style={{ backgroundColor: COLORS.dark }}>
+    <section 
+      id="seguranca" 
+      className="relative py-20" 
+      style={{ backgroundColor: COLORS.dark }}
+      aria-labelledby="seguranca-heading"
+    >
       {/* Текстурный фон */}
-      <div className="pointer-events-none absolute inset-0">
+      <div className="pointer-events-none absolute inset-0" aria-hidden="true">
         <div
           className="absolute inset-0 opacity-20"
           style={{
@@ -46,15 +51,16 @@ export default function SegurancaQualidade(): JSX.Element {
 
       <div className="relative mx-auto max-w-7xl px-6">
         {/* Заголовок */}
-        <div className="text-center mb-16">
-          <div
+        <header className="text-center mb-16">
+          <p
             className="uppercase tracking-[0.22em] mb-3"
             style={{ color: COLORS.white, fontFamily: 'Garet, sans-serif', fontSize: 14, opacity: 0.85 }}
           >
             HIGIENE E QUALIDADE
-          </div>
+          </p>
 
           <h2
+            id="seguranca-heading"
             className="uppercase mb-6"
             style={{
               color: COLORS.white,
@@ -71,30 +77,33 @@ export default function SegurancaQualidade(): JSX.Element {
             className="mx-auto max-w-3xl"
             style={{ color: COLORS.white, opacity: 0.9, fontFamily: 'Garet, sans-serif', fontSize: 16 }}
           >
-            Sua saúde é nossa prioridade</p>
-        </div>
+            Sua saúde é nossa prioridade
+          </p>
+        </header>
 
         {/* Верхние карточки (ограничение ширины на md) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:justify-items-center gap-6 md:gap-8 mb-16 max-w-5xl mx-auto">
           {certificacoes.map((cert, index) => (
-            <div
+            <article
               key={index}
               className="relative w-full md:max-w-[420px] backdrop-blur-xl rounded-2xl border overflow-hidden"
               style={{ background: GLASS.cardBg, borderColor: GLASS.cardBorder, boxShadow: GLASS.cardShadow }}
+              aria-labelledby={`cert-title-${index}`}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-white/15 via-white/5 to-transparent rounded-2xl" />
-              <div className="absolute inset-0 bg-gradient-to-tl from-black/20 via-transparent to-black/10 rounded-2xl" />
+              <div className="absolute inset-0 bg-gradient-to-br from-white/15 via-white/5 to-transparent rounded-2xl" aria-hidden="true" />
+              <div className="absolute inset-0 bg-gradient-to-tl from-black/20 via-transparent to-black/10 rounded-2xl" aria-hidden="true" />
 
               <div className="relative z-10">
                 <img
                   src={cert.imagem}
-                  alt={cert.titulo}
+                  alt={`${cert.titulo} - ${cert.detalhes}`}
                   className="w-full h-64 md:h-60 lg:h-64 object-cover"
                   style={{ filter: 'brightness(1.1) contrast(1.05)' }}
                 />
 
                 <div className="p-8 text-center">
                   <h3
+                    id={`cert-title-${index}`}
                     className="mb-4"
                     style={{
                       color: COLORS.white,
@@ -108,17 +117,20 @@ export default function SegurancaQualidade(): JSX.Element {
                     {cert.titulo}
                   </h3>
 
-                  <p style={{ color: COLORS.white, fontFamily: 'Garet, sans-serif', fontSize: 13, opacity: 0.75 }}>{cert.detalhes}</p>
+                  <p style={{ color: COLORS.white, fontFamily: 'Garet, sans-serif', fontSize: 13, opacity: 0.75 }}>
+                    {cert.detalhes}
+                  </p>
                 </div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
 
         {/* Обучение и сертификация */}
-        <div className="mt-20">
-          <div className="text-center mb-16">
+        <section className="mt-20" aria-labelledby="formacao-heading">
+          <header className="text-center mb-16">
             <h3
+              id="formacao-heading"
               style={{
                 color: COLORS.white,
                 fontFamily: 'Horizon, sans-serif',
@@ -145,7 +157,7 @@ export default function SegurancaQualidade(): JSX.Element {
             >
               Nossos especialistas são treinados de acordo com o programa profissional estadual da Federação Russa
             </p>
-          </div>
+          </header>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:justify-items-center gap-6 md:gap-8">
             {/* Колонка 1 */}
@@ -290,7 +302,7 @@ export default function SegurancaQualidade(): JSX.Element {
               </div>
             </div>
           </div>
-        </div>
+        </section>
       </div>  
     </section>
   )
