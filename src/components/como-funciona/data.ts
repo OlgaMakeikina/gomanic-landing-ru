@@ -23,7 +23,7 @@ export const processSteps: ProcessStep[] = [
     descricao: "Receba todos os detalhes",
     detalhes: "Localização, horário e instruções especiais direto no seu WhatsApp",
     seguranca: "Confirmação instantânea",
-    imagem: "/images/process/0_1 (11).jpeg"
+    imagem: "/images/process/0_0 (18).jpeg"
   },
   {
     numero: "4",
