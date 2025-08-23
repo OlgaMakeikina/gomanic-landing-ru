@@ -152,7 +152,7 @@ export default function SegurancaQualidade(): JSX.Element {
             <div className="space-y-6">
               {[
                 { src: '/images/masters/0_0 (15).jpeg', alt: 'Instrutor Internacional 1', label: 'Formação' },
-                { src: '/images/masters/IMG_0439.jpg', alt: 'Instrutor Internacional 2', label: 'Treinamento' },
+                { src: '/images/masters/0_0 (22).jpeg', alt: 'Instrutor Internacional 2', label: 'Treinamento' },
               ].map((item, i) => (
                 <div
                   key={i}
