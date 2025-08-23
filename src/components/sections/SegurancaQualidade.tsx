@@ -89,7 +89,7 @@ export default function SegurancaQualidade(): JSX.Element {
                 <img
                   src={cert.imagem}
                   alt={cert.titulo}
-                  className="w-full h-48 md:h-44 lg:h-48 object-cover"
+                  className="w-full h-64 md:h-60 lg:h-64 object-cover"
                   style={{ filter: 'brightness(1.1) contrast(1.05)' }}
                 />
 
