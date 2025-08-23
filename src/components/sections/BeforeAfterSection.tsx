@@ -6,17 +6,17 @@ export default function BeforeAfterSection() {
   const transformations = [
     {
       titulo: "Transformação Natural",
-      imagem: "/images/before-after/0_0 (16).jpeg",
+      imagem: "/images/before-after/0_1 (12).jpeg",
       descricao: "Manicure perfeita com acabamento profissional"
     },
     {
       titulo: "Design Sofisticado", 
-      imagem: "/images/before-after/0_1 (14).jpeg",
+      imagem: "/images/before-after/0_2 (1) (1).jpeg",
       descricao: "Nail art exclusiva e refinada"
     },
     {
       titulo: "Resultado Premium",
-      imagem: "/images/before-after/0_3 (22).jpeg", 
+      imagem: "/images/before-after/u2311792965_Ultra_realistic_close-up_of_a_womans_hand_showing_595803a8-9f6b-4a5a-93c2-954b9f859655_1.png", 
       descricao: "Unhas fortalecidas e embelezadas"
     }
   ]
