@@ -965,3 +965,22 @@
     touch-action: manipulation;
   }
 }
+
+/* Glassmorphism form inputs for dark backgrounds */
+.glass-input::placeholder {
+  color: rgba(254, 254, 254, 0.6) !important;
+  opacity: 1;
+}
+
+.glass-input::-webkit-input-placeholder {
+  color: rgba(254, 254, 254, 0.6) !important;
+}
+
+.glass-input::-moz-placeholder {
+  color: rgba(254, 254, 254, 0.6) !important;
+  opacity: 1;
+}
+
+.glass-input:-ms-input-placeholder {
+  color: rgba(254, 254, 254, 0.6) !important;
+}

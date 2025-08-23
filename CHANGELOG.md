@@ -1,5 +1,71 @@
 # CHANGELOG
 
+## [2.1.6] - 2025-08-23 - Glassmorphism Form Design (SegurancaQualidade Style)
+
+### 🌟 Glassmorphism Integration
+- **Style Adoption**: Форма теперь использует стили из раздела HIGIENE E QUALIDADE
+- **GLASS Constants**: cardBg, cardBorder, cardShadow как в SegurancaQualidade
+- **Visual Consistency**: Точное соответствие glassmorphism эстетике
+- **Modern UI**: Актуальные тренды стеклянного дизайна
+
+### 🎨 Form Redesign Elements
+- **Container**: backdrop-blur-xl с rounded-2xl углами
+- **Gradient Layers**: from-white/15 и from-black/20 для глубины
+- **Input Fields**: Полупрозрачные поля с white borders
+- **Typography**: Белый текст Garet с 0.22em spacing
+- **Button**: Gradient кнопка в стиле SegurancaQualidade
+
+### 🔧 Technical Implementation
+- **CSS Classes**: Добавлен .glass-input для плейсхолдеров
+- **Cross-browser**: Поддержка всех браузеров для плейсхолдеров
+- **Z-layering**: Правильное наслоение градиентов
+- **Performance**: Оптимизированные blur эффекты
+
+### ✨ Visual Enhancements
+- **Premium Look**: Роскошный стеклянный эффект
+- **Background Integration**: Красиво сочетается с фоном
+- **Depth Effect**: Многослойные градиенты создают объем
+- **Brand Harmony**: Консистентность с остальным сайтом
+
+## [2.1.4] - 2025-08-23 - Background Update: White Nails Minimalism
+
+### 🖼️ Background Image Replacement
+- **New Image**: Белые ногти с iPhone - минималистичная Vogue эстетика
+- **Color Palette**: Нейтральные тона вместо контрастных красных
+- **Style Enhancement**: Более утонченный и элегантный вид
+- **File Optimization**: Переименован в простое имя contact-bg.jpeg
+
+### 🎨 Visual Improvements
+- **Overlay Adjustment**: rgba(68, 78, 85, 0.75) для лучшего контраста
+- **Text Readability**: Оптимизирована читаемость белого текста
+- **Brand Consistency**: Лучшее соответствие минималистичному стилю Vogue
+- **Professional Look**: Премиум качество фотографии
+
+### 🧹 Code Cleanup
+- **Removed**: Тестовый компонент ImageTest.tsx
+- **Cleaned**: Импорты из page.tsx
+- **Optimized**: Пути к изображениям
+
+## [2.1.3] - 2025-08-23 - Background Image + Glassmorphism Form
+
+### 🎨 Visual Enhancement - Vogue Editorial Style
+- **Background Image**: Добавлен портрет в стиле Vogue для секции AGENDE SEU HORÁRIO
+- **Dark Overlay**: Темный фильтр rgba(68, 78, 85, 0.85) для читаемости
+- **Glassmorphism Form**: Прозрачная форма с backdrop-blur эффектом
+- **White Text Styling**: Адаптированы все элементы для темного фона
+
+### 🔧 Technical Implementation
+- **Full-Screen Section**: min-h-screen для полноэкранного отображения
+- **Responsive Image**: center/cover positioning для всех устройств  
+- **Z-layering**: Proper overlay и content positioning
+- **Form Enhancement**: Стеклянные поля с белыми плейсхолдерами
+
+### ✨ UX Improvements
+- **Visual Impact**: Премиум look модного журнала
+- **Brand Consistency**: Сохранены цвета Gomanic palette
+- **Form Focus**: Glassmorphism выделяет booking form
+- **Professional Feel**: Editorial photography styling
+
 ## [2.1.2] - 2025-08-23 - Форма Booking: Упрощение + N8N Интеграция
 
 ### 📋 Form Simplification
