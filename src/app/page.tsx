@@ -16,15 +16,17 @@ export default function Home() {
   return (
     <div className="min-h-screen" style={{backgroundColor: '#FEFEFE'}}>
       <Header />
-      <HeroSection />
-      <PromocoesMes2 />
-      <ResultsGallery />
-      <SegurancaQualidade />
-      <ClientsSection />
-      <SocialProof />
-      <ComoFunciona />
-      <VipExclusivo />
-      <ContactSection />
+      <main role="main" id="main-content">
+        <HeroSection />
+        <PromocoesMes2 />
+        <ResultsGallery />
+        <SegurancaQualidade />
+        <ClientsSection />
+        <SocialProof />
+        <ComoFunciona />
+        <VipExclusivo />
+        <ContactSection />
+      </main>
       <Footer />
     </div>
   )

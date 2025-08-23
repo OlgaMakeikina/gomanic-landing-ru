@@ -8,6 +8,8 @@ export interface TabProps {
   number: string
   title: string
   onClick: () => void
+  tabId?: string
+  panelId?: string
 }
 
 export interface GalleryContentProps {

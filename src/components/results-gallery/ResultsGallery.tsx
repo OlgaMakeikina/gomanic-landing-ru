@@ -16,7 +16,12 @@ export default function ResultsGallery() {
   }
 
   return (
-    <section id="portfolio" className={styles.section}>
+    <section 
+      id="portfolio" 
+      className={styles.section}
+      aria-labelledby="gallery-heading"
+      role="region"
+    >
       <div className={styles.container}>
         <GalleryHeader />
         

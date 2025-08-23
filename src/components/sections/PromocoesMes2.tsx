@@ -70,7 +70,7 @@ export default function PromocoesMes2() {
   }, [])
 
   return (
-    <section id="promocoes-2" className="relative py-20" style={{ 
+    <section id="promocoes-2" className="relative py-20" aria-labelledby="promocoes-heading" style={{ 
       background: 'linear-gradient(135deg, #444e55 0%, #3a434a 25%, #2f3940 50%, #3a434a 75%, #444e55 100%)', 
       boxShadow: '0 20px 60px rgba(0, 0, 0, 0.4), 0 -20px 60px rgba(0, 0, 0, 0.4)' 
     }}>
@@ -96,6 +96,7 @@ export default function PromocoesMes2() {
           </div>
 
    <h2
+  id="promocoes-heading"
   className="uppercase mb-6 text-2xl sm:text-2xl md:text-3xl lg:text-5xl"
   style={{
     color: '#FEFEFE',

@@ -8,22 +8,26 @@ interface TabsContainerProps {
 
 export default function TabsContainer({ activeTab, onTabChange }: TabsContainerProps) {
   return (
-    <div className={styles.tabsContainer}>
-      <div className={styles.tabs}>
+    <nav className={styles.tabsContainer} role="navigation" aria-label="Navegação da galeria">
+      <div className={styles.tabs} role="tablist">
         <TabButton
           isActive={activeTab === 'portfolio'}
           number="1"
           title="PORTFÓLIO"
           onClick={() => onTabChange('portfolio')}
+          tabId="portfolio-tab"
+          panelId="portfolio-panel"
         />
         
         <TabButton
           isActive={activeTab === 'before-after'}
-          number="2"
+          number="2" 
           title="ANTES E DEPOIS"
           onClick={() => onTabChange('before-after')}
+          tabId="before-after-tab"
+          panelId="before-after-panel"
         />
       </div>
-    </div>
+    </nav>
   )
 }

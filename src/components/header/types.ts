@@ -1,6 +1,7 @@
 export interface MenuItem {
   href: string
   label: string
+  ariaLabel?: string
 }
 
 export interface LogoProps {

@@ -90,6 +90,10 @@ export default function HeroSection() {
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
       style={{ minHeight: '100dvh' }}
+      role="banner"
+      aria-label="Seção principal - Apresentação dos serviços Gomanic"
+      aria-live="polite"
+      aria-atomic="false"
     >
       <SlideBackground slides={heroSlides} currentSlide={currentSlide} />
       <SlideOverlay currentSlide={currentSlide} />
