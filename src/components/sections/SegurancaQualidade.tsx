@@ -13,19 +13,19 @@ export default function SegurancaQualidade(): JSX.Element {
 
   const certificacoes = [
     {
-      imagem: '/images/higiene/0_0 (12).jpeg',
+      imagem: '/images/higiene/0_3 (13).jpeg',
       titulo: 'Higienização Profissional',
 
       detalhes: 'Protocolo hospitalar de limpeza',
     },
     {
-      imagem: '/images/higiene/0_3 (4) (1).jpeg',
+      imagem: '/images/higiene/0_3 (21).jpeg',
       titulo: 'Materiais Certificados',
 
       detalhes: 'Importados e testados dermatologicamente',
     },
     {
-      imagem: '/images/higiene/0_3 (5) (1).jpeg',
+      imagem: '/images/higiene/0_0 (20).jpeg',
       titulo: 'Segurança Total',
       detalhes: 'Ambiente controlado e monitorado',
     },
