@@ -14,7 +14,7 @@ export default function ContactSection() {
   }
 
   return (
-    <section id="agendamento" className="vogue-section" style={{backgroundColor: '#444e55', color: '#FEFEFE'}}>
+    <section id="agendamento" className="vogue-section" style={{backgroundColor: '#444e55', color: '#FEFEFE'}} aria-labelledby="contact-heading">
       <div className="vogue-container">
         <div className="max-w-2xl mx-auto">
           <ContactHeader />

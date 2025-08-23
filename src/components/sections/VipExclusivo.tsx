@@ -164,7 +164,8 @@ export default function VipExclusivo() {
 
   return (
     <section id="vip-exclusivo" className="vogue-section relative overflow-hidden" 
-             style={{backgroundColor: '#3B3B3A', color: '#FEFEFE'}}>
+             style={{backgroundColor: '#3B3B3A', color: '#FEFEFE'}}
+             aria-labelledby="vip-heading">
       
       <div 
         style={{
@@ -187,7 +188,7 @@ export default function VipExclusivo() {
                }}>
             ACESSO LIMITADO
           </div>
-          <h2 className="vogue-subhead mb-8" 
+          <h2 id="vip-heading" className="vogue-subhead mb-8" 
               style={{
                 color: '#FEFEFE',
                 textShadow: '0 4px 8px rgba(0, 0, 0, 0.4)'
