@@ -11,21 +11,21 @@ export default function DesktopClientsGallery({ colors }: DesktopClientsGalleryP
   return (
     <div className="mx-auto max-w-5xl rounded-3xl p-4 md:p-5 hidden md:block">
       <div className="grid gap-3 md:gap-4 h-[620px] grid-cols-6 grid-rows-4">
-        {/* Левое верхнее фото - оранжевые ногти */}
+        {/* Левое верхнее фото - новое изображение */}
         <figure className="col-span-2 row-span-2 overflow-hidden rounded-2xl group">
           <img
-            src="/images/clients/0_0 (24) (2).jpeg"
-            alt="Unhas laranja perfeitas"
+            src="/images/clients/0_0 (1).jpeg"
+            alt="Cliente satisfeita - resultado perfeito"
             className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
             style={{filter: 'brightness(1.1) contrast(1.05) saturate(1.2)'}}
           />
         </figure>
 
-        {/* Правое верхнее фото - девушка с веснушками */}
+        {/* Правое верхнее фото - новое изображение */}
         <figure className="col-span-2 row-span-2 overflow-hidden rounded-2xl group">
           <img
-            src="/images/clients/0_2 (11).jpeg"
-            alt="Cliente satisfeita com sardas"
+            src="/images/clients/0_3 (1).jpeg"
+            alt="Cliente feliz com resultado"
             className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
             style={{filter: 'brightness(1.1) contrast(1.05)'}}
           />

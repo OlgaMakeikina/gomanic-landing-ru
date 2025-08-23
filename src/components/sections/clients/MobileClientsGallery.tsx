@@ -12,21 +12,21 @@ export default function MobileClientsGallery({ colors }: MobileClientsGalleryPro
     <div className="md:hidden">
       {/* Галерея 2x2 */}
       <div className="grid grid-cols-2 gap-3 mb-8">
-        {/* Фото 1 - оранжевые ногти */}
+        {/* Фото 1 - новое изображение */}
         <figure className="aspect-square overflow-hidden rounded-2xl group">
           <img
-            src="/images/clients/0_0 (24) (2).jpeg"
-            alt="Unhas laranja perfeitas"
+            src="/images/clients/0_0 (1).jpeg"
+            alt="Cliente satisfeita - resultado perfeito"
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             style={{filter: 'brightness(1.1) contrast(1.05) saturate(1.2)'}}
           />
         </figure>
 
-        {/* Фото 2 - девушка с веснушками */}
+        {/* Фото 2 - новое изображение */}
         <figure className="aspect-square overflow-hidden rounded-2xl group">
           <img
-            src="/images/clients/0_2 (11).jpeg"
-            alt="Cliente satisfeita com sardas"
+            src="/images/clients/0_3 (1).jpeg"
+            alt="Cliente feliz com resultado"
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             style={{filter: 'brightness(1.1) contrast(1.05)'}}
           />
