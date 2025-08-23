@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useMemo, useState } from "react"
+import { formatTimeForPromo } from '@/utils/countdown'
 
 export default function PromocoesMes2() {
   const [openAccordion, setOpenAccordion] = useState<number | null>(null)
@@ -48,23 +49,24 @@ export default function PromocoesMes2() {
     setOpenAccordion(openAccordion === index ? null : index)
   }
 
-  // === TIMER ==============================================================
+  // === СИНХРОНИЗИРОВАННЫЙ TIMER С VIP СЕКЦИЕЙ ========================
   const [remaining, setRemaining] = useState("--:--:--")
+  const [mounted, setMounted] = useState(false)
+  
   useEffect(() => {
-    const end = new Date(new Date().getFullYear(), new Date().getMonth() + 1, 0, 23, 59, 59, 999)
+    setMounted(true)
+    console.log('🎯 Promo Timer started!')
     const tick = () => {
-      const now = new Date()
-      const d = end.getTime() - now.getTime()
-      if (d <= 0) return setRemaining("00:00:00")
-      const s = Math.floor(d / 1000)
-      const hh = String(Math.floor(s / 3600)).padStart(2, "0")
-      const mm = String(Math.floor((s % 3600) / 60)).padStart(2, "0")
-      const ss = String(s % 60).padStart(2, "0")
-      setRemaining(`${hh}:${mm}:${ss}`)
+      const formatted = formatTimeForPromo()
+      console.log('⏰ Promo Timer tick:', formatted)
+      setRemaining(formatted)
     }
     tick()
     const id = setInterval(tick, 1000)
-    return () => clearInterval(id)
+    return () => {
+      console.log('🛑 Promo Timer cleanup')
+      clearInterval(id)
+    }
   }, [])
 
   return (
@@ -124,8 +126,17 @@ export default function PromocoesMes2() {
               }}
               aria-live="polite"
             >
-              <span className="uppercase" style={{ color: '#FEFEFE' }}>Expira em</span>
-              <span className="tabular-nums font-bold" style={{ color: '#FEFEFE' }}>{remaining}</span>
+              <div className="text-center">
+                <span className="uppercase block mb-2" style={{ color: '#FEFEFE', fontSize: '13px' }}>Expira em</span>
+                <div className="tabular-nums font-bold text-2xl" style={{ color: '#FEFEFE' }}>
+                  {mounted ? remaining : '--:--:--'}
+                </div>
+                <div className="flex justify-center gap-8 mt-2" style={{ color: '#FEFEFE', opacity: 0.8, fontSize: '11px' }}>
+                  <span>DIAS</span>
+                  <span>HRS</span>
+                  <span>MIN</span>
+                </div>
+              </div>
             </div>
             
             {/* Элемент срочности */}

@@ -1,9 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-
-// 🔧 НАСТРОЙКА СЧЕТЧИКА - легко изменить количество дней
-const COUNTDOWN_DAYS = 30 // Измените это число для настройки времени
+import { calculateTimeLeft } from '@/utils/countdown'
 
 interface VipCardProps {
   title: string
@@ -60,39 +58,52 @@ function VipCard({ title, description, delay }: VipCardProps) {
 }
 
 function CountdownTimer() {
-  // Настройка целевой даты - через заданное количество дней от текущего момента
-  const getTargetDate = () => {
-    const now = new Date()
-    const targetDate = new Date(now.getTime() + (COUNTDOWN_DAYS * 24 * 60 * 60 * 1000))
-    return targetDate
-  }
-
-  const calculateTimeLeft = () => {
-    const targetDate = getTargetDate()
-    const now = new Date()
-    const difference = targetDate.getTime() - now.getTime()
-
-    if (difference <= 0) {
-      return { days: 0, hours: 0, minutes: 0, seconds: 0 }
-    }
-
-    return {
-      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-      hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-      minutes: Math.floor((difference / 1000 / 60) % 60),
-      seconds: Math.floor((difference / 1000) % 60)
-    }
-  }
-
-  const [time, setTime] = useState(calculateTimeLeft())
+  const [time, setTime] = useState({ days: 1, hours: 0, minutes: 0, seconds: 0 })
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
+    setMounted(true)
+    const initialTime = calculateTimeLeft()
+    setTime(initialTime)
+    
+    console.log('🎯 VIP Timer started!')
     const interval = setInterval(() => {
-      setTime(calculateTimeLeft())
+      const newTime = calculateTimeLeft()
+      console.log('⏰ VIP Timer tick:', newTime)
+      setTime(newTime)
     }, 1000)
 
-    return () => clearInterval(interval)
+    return () => {
+      console.log('🛑 VIP Timer cleanup')
+      clearInterval(interval)
+    }
   }, [])
+
+  // Prevent hydration mismatch by showing placeholder until mounted
+  if (!mounted) {
+    return (
+      <div className="grid grid-cols-4 gap-4 max-w-md mx-auto mb-6">
+        {[...Array(4)].map((_, i) => (
+          <div 
+            key={i} 
+            style={{
+              background: 'linear-gradient(135deg, rgba(59, 59, 58, 0.8) 0%, rgba(59, 59, 58, 0.6) 100%)',
+              backdropFilter: 'blur(10px)',
+              WebkitBackdropFilter: 'blur(10px)',
+              border: '1px solid rgba(254, 254, 254, 0.1)',
+              borderRadius: '12px',
+              padding: '0.75rem',
+              textAlign: 'center' as const,
+              color: '#FEFEFE'
+            }}
+          >
+            <div className="text-xl font-bold">--</div>
+            <div className="text-xs">--</div>
+          </div>
+        ))}
+      </div>
+    )
+  }
 
   const timeUnits = [
     { value: time.days.toString().padStart(2, '0'), label: 'DIAS' },
