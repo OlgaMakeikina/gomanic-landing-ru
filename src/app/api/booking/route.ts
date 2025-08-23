@@ -1,49 +1,41 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { createBooking, createLead } from '@/utils/crm';
+import { submitToN8N } from '@/utils/n8n';
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { name, phone, email, service, date, notes, type } = body;
+    const { name, phone, email } = body;
 
-    if (!name || !phone) {
+    if (!name || !phone || !email) {
       return NextResponse.json(
-        { error: 'Nome e telefone são obrigatórios' },
+        { error: 'Nome, telefone e email são obrigatórios' },
         { status: 400 }
       );
     }
 
-    const bookingData = {
+    const submissionData = {
       name,
       phone,
       email,
-      service: service || 'Manicure Gomanic',
-      date,
-      notes,
     };
 
-    let result;
-    if (type === 'booking' && date) {
-      result = await createBooking(bookingData);
-    } else {
-      result = await createLead(bookingData);
-    }
+    const result = await submitToN8N(submissionData);
 
     if (result.success) {
       return NextResponse.json({
         success: true,
-        message: 'Agendamento realizado com sucesso!',
+        message: 'Dados enviados com sucesso! Você receberá um email em breve.',
         data: result.data,
       });
     } else {
-      console.error('Booking failed:', result.error);
+      console.error('N8N submission failed:', result.error);
       return NextResponse.json(
-        { error: result.error || 'Erro interno do servidor' },
+        { error: result.error || 'Erro ao enviar dados' },
         { status: 500 }
       );
     }
   } catch (error) {
-    console.error('API booking error:', error);
+    console.error('API submission error:', error);
     return NextResponse.json(
       { error: 'Erro interno do servidor' },
       { status: 500 }

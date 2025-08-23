@@ -13,9 +13,6 @@ export default function BookingForm({ className = '', variant = 'default' }: Boo
     name: '',
     phone: '',
     email: '',
-    service: 'Manicure Gomanic',
-    date: '',
-    notes: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -56,10 +53,10 @@ export default function BookingForm({ className = '', variant = 'default' }: Boo
     return (
       <div className={`bg-white rounded-lg p-6 text-center ${className}`}>
         <div className="text-green-600 text-lg font-semibold mb-2">
-          ✅ Agendamento Enviado!
+          ✅ Dados Enviados com Sucesso!
         </div>
         <p className="text-gray-600">
-          Entraremos em contato em breve para confirmar seu horário.
+          Obrigado! Você receberá um email com os links de agendamento em breve.
         </p>
       </div>
     );
@@ -94,30 +91,17 @@ export default function BookingForm({ className = '', variant = 'default' }: Boo
             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#444e55] focus:border-transparent"
             placeholder="(11) 99999-9999"
           />
-        </div>        
-        <div>
+        </div>        <div>
           <label className="block text-sm font-medium text-gray-700 mb-1">
-            Email
+            Email *
           </label>
           <input
             type="email"
+            required
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#444e55] focus:border-transparent"
             placeholder="seu@email.com"
-          />
-        </div>
-
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            Data Preferida
-          </label>
-          <input
-            type="date"
-            value={formData.date}
-            onChange={(e) => setFormData({ ...formData, date: e.target.value })}
-            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#444e55] focus:border-transparent"
-            min={new Date().toISOString().split('T')[0]}
           />
         </div>
 
@@ -132,7 +116,7 @@ export default function BookingForm({ className = '', variant = 'default' }: Boo
           disabled={isSubmitting}
           className="w-full bg-[#3B3B3A] text-white py-3 px-6 rounded-md hover:bg-opacity-90 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          {isSubmitting ? 'Enviando...' : 'Agendar Agora'}
+          {isSubmitting ? 'Enviando...' : 'Enviar Dados'}
         </button>
       </div>
     </form>

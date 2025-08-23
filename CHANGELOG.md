@@ -1,5 +1,30 @@
 # CHANGELOG
 
+## [2.1.2] - 2025-08-23 - Форма Booking: Упрощение + N8N Интеграция
+
+### 📋 Form Simplification
+- **Reduced Fields**: Только Name, Phone, Email (все обязательные)
+- **Removed Fields**: service, date, notes - больше не нужны
+- **Better UX**: Более быстрое заполнение формы
+- **Email Promise**: Пользователи получат ссылки на почту
+
+### 🔗 N8N Integration
+- **New Utility**: `src/utils/n8n.ts` для интеграции
+- **API Refactor**: `booking/route.ts` переключен на N8N
+- **Environment**: Добавлена переменная `N8N_WEBHOOK_URL`
+- **Data Flow**: Form → API → N8N → Email с ссылками
+
+### 🎯 Technical Changes
+- **TypeScript**: Полная типизация N8N интеграции
+- **Error Handling**: Улучшенные сообщения об ошибках
+- **Validation**: Все 3 поля теперь required
+- **Messages**: Обновлены тексты для лучшего UX
+
+### ⚡ Production Ready
+- **Backward Compatible**: Старые формы продолжат работать
+- **Module Structure**: Сохранена архитектура ≤70 строк
+- **Testing Ready**: TypeScript проверка пройдена ✅
+
 ## [2.1.1] - 2025-08-22 - Mobile Clients Gallery: 2x2 Grid + Full-Width CTA
 
 ### 📱 UX Improvement Based on Feedback
