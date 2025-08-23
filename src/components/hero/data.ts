@@ -3,7 +3,7 @@ import { HeroSlide } from './types'
 export const heroSlides: HeroSlide[] = [
   {
     id: 1,
-    image: '/images/hero/0_3 (10).jpeg',
+    image: '/images/hero/0_0.jpeg',
     title: 'GOMANIC Especialistas',
     subtitle: 'Manicure premium pela metade do preço',
     content: 'Descubra o mundo VIP da manicure profissional com preços exclusivos para membros.'
@@ -11,7 +11,7 @@ export const heroSlides: HeroSlide[] = [
   
   {
     id: 2,
-    image: '/images/hero/0_3 (8).jpeg',
+    image: '/images/hero/0_3 (8) (1).jpeg',
     title: 'preços do passe vip',
     subtitle: 'Economia de até 50%',
     services: [
@@ -22,7 +22,7 @@ export const heroSlides: HeroSlide[] = [
   },
   {
     id: 3,
-    image: '/images/hero/0_0 (6) (1).jpeg',
+    image: '/images/hero/0_3.jpeg',
     title: 'PASSE VIP',
     subtitle: 'Vantagens exclusivas para membros VIP',
     benefits: [
