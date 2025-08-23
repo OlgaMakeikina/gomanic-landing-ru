@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { calculateTimeLeft } from '@/utils/countdown'
+import { useCountdown } from '@/hooks/useCountdown'
 
 interface VipCardProps {
   title: string
@@ -58,26 +58,7 @@ function VipCard({ title, description, delay }: VipCardProps) {
 }
 
 function CountdownTimer() {
-  const [time, setTime] = useState({ days: 1, hours: 0, minutes: 0, seconds: 0 })
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => {
-    setMounted(true)
-    const initialTime = calculateTimeLeft()
-    setTime(initialTime)
-    
-    console.log('🎯 VIP Timer started!')
-    const interval = setInterval(() => {
-      const newTime = calculateTimeLeft()
-      console.log('⏰ VIP Timer tick:', newTime)
-      setTime(newTime)
-    }, 1000)
-
-    return () => {
-      console.log('🛑 VIP Timer cleanup')
-      clearInterval(interval)
-    }
-  }, [])
+  const { time, mounted } = useCountdown()
 
   // Prevent hydration mismatch by showing placeholder until mounted
   if (!mounted) {

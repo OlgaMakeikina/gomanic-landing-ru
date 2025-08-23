@@ -1,7 +1,7 @@
 "use client"
 
-import { useEffect, useMemo, useState } from "react"
-import { formatTimeForPromo } from '@/utils/countdown'
+import { useMemo, useState } from "react"
+import { useCountdown, formatTimeForPromo } from '@/hooks/useCountdown'
 
 export default function PromocoesMes2() {
   const [openAccordion, setOpenAccordion] = useState<number | null>(null)
@@ -50,24 +50,8 @@ export default function PromocoesMes2() {
   }
 
   // === СИНХРОНИЗИРОВАННЫЙ TIMER С VIP СЕКЦИЕЙ ========================
-  const [remaining, setRemaining] = useState("--:--:--")
-  const [mounted, setMounted] = useState(false)
-  
-  useEffect(() => {
-    setMounted(true)
-    console.log('🎯 Promo Timer started!')
-    const tick = () => {
-      const formatted = formatTimeForPromo()
-      console.log('⏰ Promo Timer tick:', formatted)
-      setRemaining(formatted)
-    }
-    tick()
-    const id = setInterval(tick, 1000)
-    return () => {
-      console.log('🛑 Promo Timer cleanup')
-      clearInterval(id)
-    }
-  }, [])
+  const { time, mounted } = useCountdown()
+  const remaining = formatTimeForPromo(time)
 
   return (
     <section id="promocoes-2" className="relative py-20" aria-labelledby="promocoes-heading" style={{ 
@@ -130,12 +114,13 @@ export default function PromocoesMes2() {
               <div className="text-center">
                 <span className="uppercase block mb-2" style={{ color: '#FEFEFE', fontSize: '13px' }}>Expira em</span>
                 <div className="tabular-nums font-bold text-2xl" style={{ color: '#FEFEFE' }}>
-                  {mounted ? remaining : '--:--:--'}
+                  {mounted ? remaining : '--:--:--:--'}
                 </div>
                 <div className="flex justify-center gap-8 mt-2" style={{ color: '#FEFEFE', opacity: 0.8, fontSize: '11px' }}>
                   <span>DIAS</span>
                   <span>HRS</span>
                   <span>MIN</span>
+                  <span>SEG</span>
                 </div>
               </div>
             </div>
