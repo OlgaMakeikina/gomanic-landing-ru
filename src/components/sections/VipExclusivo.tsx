@@ -145,7 +145,10 @@ export default function VipExclusivo() {
 
   return (
     <section id="vip-exclusivo" className="vogue-section relative overflow-hidden" 
-             style={{backgroundColor: '#3B3B3A', color: '#FEFEFE'}}
+             style={{
+               background: 'linear-gradient(135deg, #3B3B3A 0%, #2a2a29 50%, #1f1f1e 100%)',
+               color: '#FEFEFE'
+             }}
              aria-labelledby="vip-heading">
       
       <div 
@@ -155,7 +158,7 @@ export default function VipExclusivo() {
           left: 0,
           right: 0,
           bottom: 0,
-          background: 'linear-gradient(135deg, rgba(68, 78, 85, 0.1) 0%, transparent 50%, rgba(68, 78, 85, 0.05) 100%)',
+          background: 'linear-gradient(135deg, rgba(68, 78, 85, 0.15) 0%, transparent 30%, rgba(254, 254, 254, 0.03) 50%, transparent 70%, rgba(68, 78, 85, 0.1) 100%)',
           pointerEvents: 'none'
         }}
       />
@@ -207,35 +210,33 @@ export default function VipExclusivo() {
           </div>
           
           <div 
-            className={`transition-all duration-1000 transform ${
+            className={`relative backdrop-blur-xl rounded-2xl border overflow-hidden transition-all duration-1000 transform ${
               isCtaVisible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-12 opacity-0 scale-95'
             }`}
-            style={{
-              background: 'linear-gradient(135deg, rgba(68, 78, 85, 0.8) 0%, rgba(68, 78, 85, 0.6) 100%)',
-              backdropFilter: 'blur(20px)',
-              WebkitBackdropFilter: 'blur(20px)',
-              border: '2px solid rgba(254, 254, 254, 0.2)',
-              borderRadius: '20px',
-              padding: '2rem',
-              textAlign: 'center' as const,
-              boxShadow: '0 12px 40px rgba(0, 0, 0, 0.2), 0 4px 12px rgba(254, 254, 254, 0.1)',
-              position: 'relative' as const,
-              overflow: 'hidden' as const
+            style={{ 
+              background: 'rgba(255, 255, 255, 0.12)', 
+              borderColor: 'rgba(255, 255, 255, 0.25)', 
+              boxShadow: '0 32px 64px rgba(0,0,0,0.5)' 
             }}
           >
-            <h3 className="text-2xl font-bold mb-4 relative z-10" style={{color: '#FEFEFE'}}>
+            {/* Градиентные слои как в BookingForm */}
+            <div className="absolute inset-0 bg-gradient-to-br from-white/15 via-white/5 to-transparent rounded-2xl" />
+            <div className="absolute inset-0 bg-gradient-to-tl from-black/20 via-transparent to-black/10 rounded-2xl" />
+            
+            <div className="relative z-10 p-8 text-center">
+            <h3 className="text-2xl font-bold mb-4" style={{color: '#FEFEFE'}}>
               ESTA OPORTUNIDADE ACABA EM:
             </h3>
             
             <CountdownTimer />
             
-            <p className="vogue-body text-lg mb-6 relative z-10" style={{color: '#FEFEFE', fontWeight: 600}}>
+            <p className="vogue-body text-lg mb-6" style={{color: '#FEFEFE', fontWeight: 600}}>
               Depois disso, volta ao preço normal (sem desconto)
             </p>
             
             <button 
               onClick={() => document.getElementById('agendamento')?.scrollIntoView({ behavior: 'smooth' })}
-              className="relative z-10 px-12 py-4 transition-all duration-300 text-lg"
+              className="px-12 py-4 transition-all duration-300 text-lg"
               style={{
                 background: 'linear-gradient(135deg, rgba(254, 254, 254, 0.9) 0%, rgba(254, 254, 254, 0.8) 100%)',
                 backdropFilter: 'blur(10px)',
@@ -268,9 +269,10 @@ export default function VipExclusivo() {
               QUERO MEU PASSE VIP AGORA!
             </button>
             
-            <p className="text-sm mt-4 relative z-10" style={{color: '#FEFEFE', opacity: 0.9}}>
+            <p className="text-sm mt-4" style={{color: '#FEFEFE', opacity: 0.9}}>
               Pagamento da entrada é 100% seguro. Se não puder comparecer, reagendamos ou devolvemos o valor.
             </p>
+            </div>
           </div>
         </div>
       </div>
