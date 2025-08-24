@@ -9,7 +9,7 @@ export default function PromocoesMes() {
         titulo: "Manicure + nivelamento + esmaltação em gel",
         precoNormal: "R$ 160",
         precoVIP: "R$ 80",
-        pagamentoAntecipado: "R$ 24",
+        // pagamentoAntecipado: "R$ 24",
         inclui: [
           "Ferramentas esterilizadas",
           "Nivelamento perfeito da unha",
@@ -20,7 +20,7 @@ export default function PromocoesMes() {
         titulo: "Alongamento + manicure + esmaltação em gel",
         precoNormal: "R$ 200",
         precoVIP: "R$ 119",
-        pagamentoAntecipado: "R$ 36",
+        // pagamentoAntecipado: "R$ 36",
         inclui: [
           "Modelagem de comprimento e formato",
           "Reforço da resistência",
@@ -31,7 +31,7 @@ export default function PromocoesMes() {
         titulo: "Combo: manicure + esmaltação em gel + pedicure + plástica dos pés",
         precoNormal: "R$ 320",
         precoVIP: "R$ 160",
-        pagamentoAntecipado: "R$ 48",
+        // pagamentoAntecipado: "R$ 48",
         inclui: [
           "Cuidados completos para mãos e pés",
           "Esmaltação premium de longa duração",
@@ -226,12 +226,14 @@ export default function PromocoesMes() {
                     </div>
                   </div>
 
+                  {/* 
                   <div className="flex items-baseline justify-between gap-4 mt-3">
                     <span className="uppercase" style={{ letterSpacing: "0.02em", opacity: 0.9 }}>
                       Pagamento antecipado:
                     </span>
                     <span style={{ fontWeight: 700 }}>{promo.pagamentoAntecipado}</span>
                   </div>
+                  */}
                   </div>
                 </div>
 
