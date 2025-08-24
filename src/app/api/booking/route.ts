@@ -4,11 +4,11 @@ import { submitToN8N } from '@/utils/n8n';
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { name, phone, email } = body;
+    const { name, phone, email, service } = body;
 
-    if (!name || !phone || !email) {
+    if (!name || !phone || !email || !service) {
       return NextResponse.json(
-        { error: 'Nome, telefone e email são obrigatórios' },
+        { error: 'Nome, telefone, email e serviço são obrigatórios' },
         { status: 400 }
       );
     }
@@ -17,6 +17,7 @@ export async function POST(request: NextRequest) {
       name,
       phone,
       email,
+      service,
     };
 
     const result = await submitToN8N(submissionData);

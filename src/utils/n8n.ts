@@ -2,6 +2,7 @@ interface N8NSubmissionData {
   name: string;
   phone: string;
   email: string;
+  service: string;
 }
 
 interface N8NResponse {
@@ -32,6 +33,7 @@ export const submitToN8N = async (data: N8NSubmissionData): Promise<N8NResponse>
         name: data.name,
         phone: data.phone,
         email: data.email,
+        service: data.service,
         source: 'gomanic-landing-br',
         timestamp: new Date().toISOString(),
       }),

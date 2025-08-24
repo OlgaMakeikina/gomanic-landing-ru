@@ -1,5 +1,31 @@
 # CHANGELOG
 
+## [2.1.7] - 2025-08-23 - Service Selection Added to Booking Form
+
+### 📋 Service Options Integration
+- **3 Service Options**: MANICURE + GEL (R$80), ALONGAMENTO + GEL (R$119), COMBO COMPLETO (R$160)
+- **Interactive Selection**: Glassmorphism cards с hover и selected states
+- **Required Validation**: Обязательный выбор услуги перед отправкой
+- **Price Display**: Четкое отображение цен в Horizon шрифте
+
+### 🎨 Glassmorphism Service Cards
+- **Selection Design**: backdrop-blur-sm с dynamic opacity
+- **Active State**: border-white/60 + rgba(255, 255, 255, 0.25) background
+- **Hover Effects**: border-white/40 с smooth transitions
+- **Typography**: Garet для названий, Horizon для цен
+
+### 🔧 Technical Implementation
+- **Form State**: Добавлено поле service в formData
+- **API Integration**: booking/route.ts обновлен для service field
+- **N8N Data**: service передается в N8N webhook
+- **Validation**: Client и server side проверки для service
+
+### 📊 User Experience Improvements
+- **Click to Select**: Клик по карточке выбирает услугу
+- **Visual Feedback**: Четкая индикация выбранной опции
+- **Error Handling**: Сообщение при отсутствии выбора услуги
+- **Accessibility**: Radio buttons с keyboard navigation
+
 ## [2.1.6] - 2025-08-23 - Glassmorphism Form Design (SegurancaQualidade Style)
 
 ### 🌟 Glassmorphism Integration
