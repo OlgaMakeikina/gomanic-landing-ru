@@ -1,0 +1,1 @@
+export { useCyrillicFontSupport } from './useCyrillicFontSupport';

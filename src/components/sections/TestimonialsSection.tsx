@@ -1,3 +1,5 @@
+import { HorizonText } from '@/components/ui'
+
 export default function TestimonialsSection() {
   const COLORS = { dark: "#3B3B3A", gray: "#444e55", white: "#FEFEFE" }
   
@@ -14,7 +16,7 @@ export default function TestimonialsSection() {
         {/* Header */}
         <div className="text-center mb-20">
           <div className="vogue-caption mb-4" style={{color: '#444e55'}}>DEPOIMENTOS</div>
-          <h2 className="vogue-subhead mb-8" style={{color: '#444e55'}}>O QUE DIZEM SOBRE NÓS</h2>
+          <HorizonText as="h2" className="vogue-subhead mb-8" style={{color: '#444e55'}}>O QUE DIZEM SOBRE NÓS</HorizonText>
           <div className="vogue-divider mx-auto mb-8" style={{backgroundColor: '#444e55'}}></div>
           <p className="vogue-body max-w-2xl mx-auto" style={{color: '#444e55'}}>
             Experiências reais de nossas clientes satisfeitas

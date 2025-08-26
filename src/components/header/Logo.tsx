@@ -1,4 +1,5 @@
 import { LogoProps } from './types'
+import { HorizonText } from '@/components/ui'
 
 export default function Logo({ className = '' }: LogoProps) {
   return (
@@ -9,11 +10,11 @@ export default function Logo({ className = '' }: LogoProps) {
       title="Вернуться на главную страницу"
     >
       <div className="hidden lg:flex items-center">
-        <span className="vogue-logo text-lg" aria-hidden="true">GOMANIC</span>
+        <HorizonText as="span" className="vogue-logo text-lg" aria-hidden="true">GOMANIC</HorizonText>
       </div>
       
       <div className="flex lg:hidden flex-col items-start">
-        <span className="vogue-logo text-sm leading-none" style={{color: '#444e55'}} aria-hidden="true">GOMANIC</span>
+        <HorizonText as="span" className="vogue-logo text-sm leading-none" style={{color: '#444e55'}} aria-hidden="true">GOMANIC</HorizonText>
       </div>
     </a>
   )

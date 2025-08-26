@@ -1,3 +1,5 @@
+import { HorizonText } from '@/components/ui'
+
 export default function VipVantagens() {
   const vantagens = [
     "Фиксированная цена даже если акция закончится",
@@ -10,9 +12,9 @@ export default function VipVantagens() {
       <div className="vogue-container">
         <div className="text-center mb-20">
           <div className="vogue-caption mb-4" style={{color: '#444e55'}}>ЭКСКЛЮЗИВНЫЕ ПРЕИМУЩЕСТВА</div>
-          <h2 className="vogue-subhead mb-8" style={{color: '#FEFEFE'}}>
+          <HorizonText as="h2" className="vogue-subhead mb-8" style={{color: '#FEFEFE'}}>
             ПОЧЕМУ СТОИТ VIP-ПРОПУСК
-          </h2>
+          </HorizonText>
           <div className="vogue-divider mx-auto mb-8" style={{backgroundColor: '#FEFEFE', opacity: 0.3}}></div>
           <p className="vogue-body max-w-2xl mx-auto" style={{color: '#FEFEFE'}}>
             Эксклюзивные преимущества для VIP-членов

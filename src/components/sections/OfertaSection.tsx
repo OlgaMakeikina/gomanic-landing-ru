@@ -1,3 +1,5 @@
+import { HorizonText } from '@/components/ui'
+
 export default function OfertaSection() {
   return (
     <section id="oferta" className="vogue-section" style={{backgroundColor: '#3B3B3A', color: '#FEFEFE'}}>
@@ -7,7 +9,7 @@ export default function OfertaSection() {
           {/* Content Side */}
           <div className="text-center lg:text-left flex flex-col justify-center">
             <div className="vogue-caption mb-4" style={{color: '#444e55'}}>OFERTA ESPECIAL COM URGÊNCIA</div>
-            <h2 className="vogue-subhead mb-8" style={{color: '#FEFEFE'}}>GARANTA SEU LUGAR E PAGUE METADE DO PREÇO!</h2>
+            <HorizonText as="h2" className="vogue-subhead mb-8" style={{color: '#FEFEFE'}}>GARANTA SEU LUGAR E PAGUE METADE DO PREÇO!</HorizonText>
             <div className="vogue-divider mb-8 lg:mx-0 mx-auto" style={{backgroundColor: '#FEFEFE', opacity: 0.3}}></div>
             
             <p className="vogue-body text-lg mb-12" style={{color: '#444e55'}}>

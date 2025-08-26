@@ -11,6 +11,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
+        'horizon': ['Horizon', 'Druk Wide Super', 'Arial Black', 'Arial', 'sans-serif'],
+        'druk': ['Druk Wide Super', 'Arial Black', 'Arial', 'sans-serif'],
+        'garet': ['Garet', 'Inter', 'system-ui', 'sans-serif'],
         'orbitron': ['var(--font-orbitron)', 'Orbitron', 'monospace'],
         'sans': [
           "Inter",

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { useCountdown } from '@/hooks/useCountdown'
+import { HorizonText } from '@/components/ui'
 
 interface VipCardProps {
   title: string
@@ -172,13 +173,13 @@ export default function VipExclusivo() {
                }}>
             ОГРАНИЧЕННЫЙ ДОСТУП
           </div>
-          <h2 id="vip-heading" className="vogue-subhead mb-8" 
+          <HorizonText as="h2" id="vip-heading" className="vogue-subhead mb-8" 
               style={{
                 color: '#FEFEFE',
                 textShadow: '0 4px 8px rgba(0, 0, 0, 0.4)'
               }}>
             VIP-ПРОПУСК = ЭКСКЛЮЗИВНЫЙ КЛУБ
-          </h2>
+          </HorizonText>
           <div className="vogue-divider mx-auto mb-8" 
                style={{
                  backgroundColor: '#444e55',

@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { HorizonText } from '@/components/ui'
 
 interface HeroTitleProps {
   title: string
@@ -28,9 +29,10 @@ export default function HeroTitle({ title, subtitle, content, align = 'center', 
   return (
     <>
       <div className={`mb-8 lg:mb-12 ${align === 'center' ? 'text-center' : 'text-left'}`}>
-        <h1
+        <HorizonText
+          as="h1"
           style={{
-            fontFamily: 'Horizon, Arial, sans-serif',
+            fontFamily: 'Horizon, Druk Wide Super, Arial Black, Arial, sans-serif',
             textTransform: 'uppercase',
             color: '#FEFEFE',
             textShadow: '0 4px 20px rgba(0,0,0,0.5)',
@@ -66,7 +68,7 @@ export default function HeroTitle({ title, subtitle, content, align = 'center', 
           >
             {part2}
           </span>
-        </h1>
+        </HorizonText>
 
         {/* Location info - only when showLocationInfo is true */}
         {showLocationInfo && (

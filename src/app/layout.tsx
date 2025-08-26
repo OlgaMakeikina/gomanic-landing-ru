@@ -1,4 +1,5 @@
 import './globals.css'
+import './cyrillic-fonts.css'
 import { defaultSEO } from '@/utils/seo'
 import Script from 'next/script'
 
@@ -53,13 +54,26 @@ export default function RootLayout({
   const GA_ID = process.env.GOOGLE_ANALYTICS_ID;
   
   return (
-    <html lang="pt-BR">
+    <html lang="ru">
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link 
+          href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" 
+          rel="stylesheet" 
+        />
         <link 
           rel="preload" 
           href="/fonts/horizon.otf" 
           as="font" 
           type="font/otf" 
+          crossOrigin="anonymous"
+        />
+        <link 
+          rel="preload" 
+          href="/fonts/druk-wide-super.ttf" 
+          as="font" 
+          type="font/ttf" 
           crossOrigin="anonymous"
         />
         <link 
@@ -88,6 +102,7 @@ export default function RootLayout({
             }),
           }}
         />
+        <script src="/js/font-fallback.js" defer></script>
       </head>
       <body>
         {children}

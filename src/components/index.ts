@@ -14,3 +14,6 @@ export { default as ContactSection } from './contact/ContactSection'
 export { default as FinalOfferSection } from './sections/FinalOfferSection'
 export { default as Footer } from './footer/Footer'
 export { default as BeforeAfterGallery } from './BeforeAfter/BeforeAfterGallery'
+
+// Export UI components
+export * from './ui'

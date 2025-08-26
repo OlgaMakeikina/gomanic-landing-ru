@@ -18,6 +18,7 @@
   font-weight: normal;
   font-style: normal;
   font-display: swap;
+  unicode-range: U+0020-007F, U+00A0-00FF, U+0100-017F, U+0400-04FF, U+0500-052F, U+2DE0-2DFF, U+A640-A69F;
 }
 
 /* ШРИФТ GARET */
@@ -53,7 +54,7 @@
 
 /* Заголовки с Horizon - как в журнале */
 .vogue-masthead {
-  font-family: 'Horizon', Arial, sans-serif;
+  font-family: 'Horizon', 'Druk Wide Super', 'Arial Black', Arial, sans-serif;
   font-size: clamp(4rem, 12vw, 12rem);
   font-weight: normal;
   letter-spacing: 0.15em;
@@ -64,7 +65,7 @@
 }
 
 .vogue-headline {
-  font-family: 'Horizon', Arial, sans-serif;
+  font-family: 'Horizon', 'Druk Wide Super', 'Arial Black', Arial, sans-serif;
   font-size: clamp(2.5rem, 8vw, 6rem);
   font-weight: normal;
   letter-spacing: 0.1em;
@@ -74,7 +75,7 @@
 }
 
 .vogue-subhead {
-  font-family: 'Horizon', Arial, sans-serif;
+  font-family: 'Horizon', 'Druk Wide Super', 'Arial Black', Arial, sans-serif;
   font-size: clamp(1.2rem, 3vw, 2.5rem);
   font-weight: normal;
   letter-spacing: 0.08em;
@@ -104,7 +105,7 @@
 }
 
 .vogue-logo {
-  font-family: 'Horizon', Arial, sans-serif;
+  font-family: 'Horizon', 'Druk Wide Super', 'Arial Black', Arial, sans-serif;
   font-size: 12px;
   font-weight: normal;
   letter-spacing: 0.12em;
@@ -236,7 +237,7 @@
 }
 
 .vogue-number {
-  font-family: 'Horizon', Arial, sans-serif;
+  font-family: 'Horizon', 'Druk Wide Super', 'Arial Black', Arial, sans-serif;
   font-size: 4rem;
   font-weight: normal;
   color: #3B3B3A;
