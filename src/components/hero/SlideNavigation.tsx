@@ -1,17 +1,24 @@
 interface SlideNavigationProps {
   currentSlide: number
   totalSlides: number
-  onGoToSlide: (index: number) => void
-  onPrevSlide: () => void
-  onNextSlide: () => void
+  onSlideChange: (index: number) => void
 }
 
 export default function SlideNavigation({ 
   currentSlide, 
   totalSlides, 
-  onPrevSlide, 
-  onNextSlide 
+  onSlideChange 
 }: SlideNavigationProps) {
+
+  const handlePrevSlide = () => {
+    const prevIndex = (currentSlide - 1 + totalSlides) % totalSlides
+    onSlideChange(prevIndex)
+  }
+
+  const handleNextSlide = () => {
+    const nextIndex = (currentSlide + 1) % totalSlides
+    onSlideChange(nextIndex)
+  }
 
   return (
     <nav 
@@ -19,11 +26,12 @@ export default function SlideNavigation({
       aria-label="Navegação de slides da apresentação"
       className="absolute inset-0 z-30 pointer-events-none"
     >
-      {/* Navigation counter */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 pointer-events-none">
-        <div className="text-center">
+      {/* Navigation counter and dots */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 pointer-events-auto">
+        <div className="text-center space-y-4">
+          {/* Counter */}
           <span 
-            className="text-sm" 
+            className="text-sm block" 
             style={{
               color: '#FEFEFE', 
               opacity: 0.8,
@@ -37,12 +45,29 @@ export default function SlideNavigation({
           >
             {currentSlide + 1} / {totalSlides}
           </span>
+          
+          {/* Dots navigation */}
+          <div className="flex space-x-2 justify-center">
+            {Array.from({ length: totalSlides }).map((_, index) => (
+              <button
+                key={index}
+                onClick={() => onSlideChange(index)}
+                className={`w-3 h-3 rounded-full border transition-all duration-300 ${
+                  currentSlide === index 
+                    ? 'bg-white border-white' 
+                    : 'bg-transparent border-white/50 hover:border-white/80'
+                }`}
+                aria-label={`Ir para slide ${index + 1}`}
+                type="button"
+              />
+            ))}
+          </div>
         </div>
       </div>
 
       {/* Desktop arrows only */}
       <button
-        onClick={onPrevSlide}
+        onClick={handlePrevSlide}
         className="hidden lg:flex absolute left-4 lg:left-8 top-1/2 transform -translate-y-1/2 w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 items-center justify-center text-white hover:bg-white/30 transition-all duration-300 pointer-events-auto"
         aria-label="Ir para slide anterior"
         type="button"
@@ -53,7 +78,7 @@ export default function SlideNavigation({
       </button>
 
       <button
-        onClick={onNextSlide}
+        onClick={handleNextSlide}
         className="hidden lg:flex absolute right-4 lg:right-8 top-1/2 transform -translate-y-1/2 w-10 h-10 lg:w-12 lg:h-12 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 items-center justify-center text-white hover:bg-white/30 transition-all duration-300 pointer-events-auto"
         aria-label="Ir para próximo slide"
         type="button"

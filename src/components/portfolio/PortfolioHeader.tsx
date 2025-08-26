@@ -5,7 +5,7 @@ export default function PortfolioHeader() {
         className="uppercase tracking-[0.22em] mb-3"
         style={{ color: '#444e55', fontFamily: "Garet, sans-serif", fontSize: 14, opacity: 0.85 }}
       >
-        RESULTADOS
+        РЕЗУЛЬТАТЫ
       </div>
 
       <h2
@@ -18,14 +18,14 @@ export default function PortfolioHeader() {
           fontSize: 28,
         }}
       >
-        SUAS UNHAS ESTARÃO ASSIM JÁ AMANHÃ
+        ВАШИ НОГТИ БУДУТ ВЫГЛЯДЕТЬ ТАК УЖЕ ЗАВТРА
       </h2>
 
       <p
         className="mx-auto max-w-3xl"
         style={{ color: '#444e55', fontFamily: "Garet, sans-serif", fontSize: 16 }}
       >
-        Nossas manicures vão reproduzir esse mesmo nível de <span style={{ fontWeight: 700 }}>brilho e perfeição</span> nas suas mãos.
+        Наши мастера воспроизведут тот же уровень <span style={{ fontWeight: 700 }}>блеска и совершенства</span> на ваших руках.
       </p>
     </div>
   )

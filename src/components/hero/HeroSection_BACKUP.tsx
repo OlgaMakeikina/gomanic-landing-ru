@@ -1,27 +1,29 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import { heroSlidesRU as heroSlides } from './data_RU'
+import { heroSlides } from './data'
 import SlideBackground from './SlideBackground'
 import SlideOverlay from './SlideOverlay'
 import SlideNavigation from './SlideNavigation'
 import Slide1 from './Slide1'
 import Slide2 from './Slide2'
+import Slide3 from './Slide3'
 
-export default function HeroSectionRU() {
+export default function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isPlaying, setIsPlaying] = useState(true)
   const [touchStart, setTouchStart] = useState<number | null>(null)
   const [touchEnd, setTouchEnd] = useState<number | null>(null)
   const sectionRef = useRef<HTMLElement>(null)
 
+  // Минимальное расстояние для swipe
   const minSwipeDistance = 50
 
   useEffect(() => {
     if (!isPlaying) return
     const slideInterval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % heroSlides.length)
-    }, 6000)
+    }, 7000)
     return () => clearInterval(slideInterval)
   }, [isPlaying])
 
@@ -41,15 +43,17 @@ export default function HeroSectionRU() {
     if (action === 'next') {
       nextSlide()
     } else if (action === 'whatsapp') {
-      window.open('https://wa.me/79000000000', '_blank')
+      window.open('https://wa.me/5548919700099', '_blank')
     } else if (id) {
       document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
     }
   }
 
+  // Touch handlers для swipe
   const onTouchStart = (e: React.TouchEvent) => {
     setTouchEnd(null)
     setTouchStart(e.targetTouches[0].clientX)
+    setIsPlaying(false) // Pause автопрокрутки при touch
   }
 
   const onTouchMove = (e: React.TouchEvent) => {
@@ -58,6 +62,7 @@ export default function HeroSectionRU() {
 
   const onTouchEnd = () => {
     if (!touchStart || !touchEnd) return
+    
     const distance = touchStart - touchEnd
     const isLeftSwipe = distance > minSwipeDistance
     const isRightSwipe = distance < -minSwipeDistance
@@ -67,46 +72,67 @@ export default function HeroSectionRU() {
     } else if (isRightSwipe) {
       prevSlide()
     }
+    
+    // Возобновляем автопрокрутку через 3 секунды после свайпа
+    setTimeout(() => setIsPlaying(true), 3000)
   }
-  const renderSlide = (slideIndex: number) => {
-    const slideData = heroSlides[slideIndex]
-    const slideProps = { 
-      slideData, 
-      onButtonAction: handleButtonAction 
-    }
 
-    if (slideIndex === 0) return <Slide1 {...slideProps} />
-    if (slideIndex === 1) return <Slide2 {...slideProps} />
-    return null
-  }
+  const currentSlideData = heroSlides[currentSlide]
 
   return (
     <section 
       ref={sectionRef}
       id="hero" 
-      className="relative w-full h-screen overflow-hidden"
+      className="h-screen relative overflow-hidden flex items-center"
+      onMouseEnter={() => setIsPlaying(false)}
+      onMouseLeave={() => setIsPlaying(true)}
       onTouchStart={onTouchStart}
       onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
-      onMouseEnter={() => setIsPlaying(false)}
-      onMouseLeave={() => setIsPlaying(true)}
+      style={{ minHeight: '100dvh' }}
+      role="banner"
+      aria-label="Seção principal - Apresentação dos serviços Gomanic"
+      aria-live="polite"
+      aria-atomic="false"
     >
-      <SlideBackground 
-        currentSlide={currentSlide}
-        slides={heroSlides}
-      />
-      
-      <SlideOverlay />
+      <SlideBackground slides={heroSlides} currentSlide={currentSlide} />
+      <SlideOverlay currentSlide={currentSlide} />
 
-      <div className="relative z-20 h-full">
-        {renderSlide(currentSlide)}
+      <div className="vogue-container relative z-20 w-full">
+        <div className="max-w-6xl mx-auto text-center lg:text-left px-4 lg:px-0">
+          
+          {currentSlideData.id === 1 && (
+            <Slide1 slideData={currentSlideData} onButtonAction={handleButtonAction} />
+          )}
+          
+          {currentSlideData.id === 2 && (
+            <Slide2 slideData={currentSlideData} onButtonAction={handleButtonAction} />
+          )}
+          
+          {currentSlideData.id === 3 && (
+            <Slide3 slideData={currentSlideData} onButtonAction={handleButtonAction} />
+          )}
+
+        </div>
       </div>
 
-      <SlideNavigation
+      <SlideNavigation 
         currentSlide={currentSlide}
         totalSlides={heroSlides.length}
-        onSlideChange={goToSlide}
+        onGoToSlide={goToSlide}
+        onPrevSlide={prevSlide}
+        onNextSlide={nextSlide}
       />
+
+      <style jsx>{`
+        @keyframes fade-in {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+          animation: fade-in 0.8s ease-out;
+        }
+      `}</style>
     </section>
   )
 }

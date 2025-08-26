@@ -22,7 +22,7 @@ export default function Header() {
         className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[60] focus:bg-white focus:text-black focus:p-2 focus:rounded"
         style={{backgroundColor: '#FEFEFE', color: '#444f55'}}
       >
-        Pular para o conteúdo principal
+        Перейти к основному контенту
       </a>
       
       <header 
@@ -35,7 +35,7 @@ export default function Header() {
             
             <Logo />
             
-            <nav className="hidden lg:flex items-center" role="navigation" aria-label="Navegação principal">
+            <nav className="hidden lg:flex items-center" role="navigation" aria-label="Основная навигация">
               <Navigation items={menuItems} />
               <VipBadge />
             </nav>
@@ -43,7 +43,7 @@ export default function Header() {
             <MobileMenuButton 
               isOpen={isMobileMenuOpen}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              aria-label="Abrir menu de navegação móvel"
+              aria-label="Открыть мобильное меню навигации"
               aria-expanded={isMobileMenuOpen}
             />
           </div>

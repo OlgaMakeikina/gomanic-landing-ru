@@ -10,16 +10,16 @@ export default function CtaBlock({ onCtaClick }: CtaBlockProps) {
         
         <div className={styles.ctaContent}>
           <p className={styles.ctaText}>
-            O mesmo resultado pode ser seu.<br />
-            <span className={styles.ctaSecondary}>Reserve agora e</span><br />
-            <span className={styles.ctaHighlight}>economize 50%</span>
+            Такой же результат может быть у вас.<br />
+            <span className={styles.ctaSecondary}>Запишитесь сейчас и</span><br />
+            <span className={styles.ctaHighlight}>сэкономьте 50%</span>
           </p>
           
           <button
             onClick={onCtaClick}
             className={styles.ctaButton}
           >
-            Quero garantir minha vaga agora
+            Хочу забронировать место сейчас
           </button>
         </div>
       </div>

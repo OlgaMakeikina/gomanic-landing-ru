@@ -16,7 +16,7 @@ export default function VipBadge() {
              background: 'linear-gradient(135deg, rgba(245, 228, 230, 0.3) 0%, rgba(245, 228, 230, 0.1) 100%)',
              animation: 'glow 1.5s ease-in-out infinite alternate'
            }}></div>
-      <span className="relative z-10">3 VAGAS</span>
+      <span className="relative z-10">3 МЕСТА</span>
       <style jsx>{`
         @keyframes pulse {
           0%, 100% { transform: scale(1); }

@@ -44,7 +44,7 @@ export const createPaymentPreference = async (items, customer, appointmentId) =>
       },
       auto_return: 'approved',
       external_reference: appointmentId,
-      statement_descriptor: 'UNHAS 5 ESTRELAS',
+      statement_descriptor: 'GOMANIC',
       notification_url: `${config.siteUrl}/api/mercadopago/webhook`
     }
 

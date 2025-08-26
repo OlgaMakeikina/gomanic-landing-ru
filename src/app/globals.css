@@ -2,11 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ШРИФТ DRUK WIDE SUPER */
+@font-face {
+  font-family: 'Druk Wide Super';
+  src: url('/fonts/druk-wide-super.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* ШРИФТ HORIZON */
 @font-face {
   font-family: 'Horizon';
-  src: url('/fonts/horizon.otf') format('opentype'),
-       url('/fonts/horizon.otf') format('truetype');
+  src: url('/fonts/horizon.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;

@@ -3,10 +3,10 @@ import styles from './styles.module.css'
 export default function GalleryHeader() {
   return (
     <header className={styles.header}>
-      <p className={styles.overline}>RESULTADOS</p>
-      <h2 id="gallery-heading" className={styles.title}>SUAS UNHAS ESTARÃO ASSIM JÁ AMANHÃ</h2>
+      <p className={styles.overline}>РЕЗУЛЬТАТЫ</p>
+      <h2 id="gallery-heading" className={styles.title}>ВАШИ НОГТИ БУДУТ ВЫГЛЯДЕТЬ ТАК УЖЕ ЗАВТРА</h2>
       <p className={styles.subtitle}>
-        Nossas manicures vão reproduzir esse mesmo nível de <strong>brilho e perfeição</strong> nas suas mãos.
+        Наши мастера воспроизведут тот же уровень <strong>блеска и совершенства</strong> на ваших руках.
       </p>
     </header>
   )

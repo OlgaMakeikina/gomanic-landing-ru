@@ -50,7 +50,7 @@ export default function BeforeAfterSection() {
             className="mx-auto max-w-3xl"
             style={{ color: COLORS.gray, opacity: 0.8, fontFamily: "Garet, sans-serif", fontSize: 16 }}
           >
-            Veja as transformações reais das nossas clientes. Resultados que falam por si só.
+            Посмотрите на реальные преобразования наших клиенток. Результаты говорят сами за себя.
           </p>
         </div>
         

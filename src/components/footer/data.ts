@@ -20,16 +20,16 @@ export const socialLinks: SocialLink[] = [
 
 export const companyData = [
   {
-    label: "RAZÃO SOCIAL",
-    value: "UNHAS 5 ESTRELAS LTDA"
+    label: "НАИМЕНОВАНИЕ",
+    value: "GOMANIC LTDA"
   },
   {
     label: "CNPJ",
     value: "53.316.798/0001-41"
   },
   {
-    label: "CONTA BANCÁRIA",
-    value: "Agência 1\nConta 15180643906"
+    label: "БАНКОВСКИЙ СЧЕТ",
+    value: "Агентство 1\nСчет 15180643906"
   },
   {
     label: "PIX",

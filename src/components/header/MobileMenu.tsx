@@ -85,11 +85,11 @@ export default function MobileMenu({ isOpen, items, onClose }: MobileMenuProps) 
                 border: '1px solid rgba(254, 254, 254, 0.2)',
                 boxShadow: '0 4px 12px rgba(68, 78, 85, 0.3)'
               }}
-              aria-label="Telefone"
+              aria-label="Телефон"
             >
               <img 
                 src="/images/contacts/icons8-call-100.png" 
-                alt="Telefone" 
+                alt="Телефон" 
                 width={20} 
                 height={20}
                 style={{ filter: 'brightness(0) invert(1)' }}
@@ -141,7 +141,7 @@ export default function MobileMenu({ isOpen, items, onClose }: MobileMenuProps) 
               boxShadow: '0 4px 12px rgba(68, 78, 85, 0.4), inset 0 1px 0 rgba(254, 254, 254, 0.1)'
             }}
           >
-            AGENDAR AGORA
+            ЗАПИСАТЬСЯ СЕЙЧАС
           </button>
 
           <div 
@@ -154,7 +154,7 @@ export default function MobileMenu({ isOpen, items, onClose }: MobileMenuProps) 
               boxShadow: '0 2px 8px rgba(68, 78, 85, 0.2)'
             }}
           >
-            <div className="vogue-caption text-xs" style={{color: '#FEFEFE'}}>⏰ 3 VAGAS RESTANTES</div>
+            <div className="vogue-caption text-xs" style={{color: '#FEFEFE'}}>⏰ ОСТАЛОСЬ 3 МЕСТА</div>
           </div>
           
         </div>

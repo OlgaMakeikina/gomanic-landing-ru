@@ -13,7 +13,7 @@ export default function TabsContainer({ activeTab, onTabChange }: TabsContainerP
         <TabButton
           isActive={activeTab === 'portfolio'}
           number="1"
-          title="PORTFÓLIO"
+          title="ПОРТФОЛИО"
           onClick={() => onTabChange('portfolio')}
           tabId="portfolio-tab"
           panelId="portfolio-panel"
@@ -22,7 +22,7 @@ export default function TabsContainer({ activeTab, onTabChange }: TabsContainerP
         <TabButton
           isActive={activeTab === 'before-after'}
           number="2" 
-          title="ANTES E DEPOIS"
+          title="ДО И ПОСЛЕ"
           onClick={() => onTabChange('before-after')}
           tabId="before-after-tab"
           panelId="before-after-panel"

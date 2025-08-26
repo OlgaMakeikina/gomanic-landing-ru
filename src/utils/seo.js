@@ -2,41 +2,41 @@ import { config } from './config'
 
 // Базовые SEO настройки
 export const defaultSEO = {
-  title: 'Manicure Profissional - Unhas 5 Estrelas | Florianópolis - SC',
-  description: 'Manicure profissional com especialistas pela metade do preço. Materiais premium japoneses, segurança total e resultado garantido em Florianópolis.',
+  title: 'Профессиональный маникюр - GOMANIC | Флорианополис - SC',
+  description: 'Профессиональный маникюр со специалистами за полцены. Японские премиум материалы, полная безопасность и гарантированный результат в Флорианополисе.',
   keywords: [
-    'manicure Florianópolis',
-    'manicure profissional',
-    'esmaltação em gel',
-    'alongamento de unhas',
-    'pedicure Florianópolis',
-    'unhas premium',
-    'manicure desconto',
-    'beleza Florianópolis',
-    'nail art',
-    'cuidados com unhas'
+    'маникюр Флорианополис',
+    'профессиональный маникюр',
+    'гель лак',
+    'наращивание ногтей',
+    'педикюр Флорианополис',
+    'премиум ногти',
+    'маникюр скидка',
+    'красота Флорианополис',
+    'дизайн ногтей',
+    'уход за ногтями'
   ],
   openGraph: {
     type: 'website',
-    locale: 'pt_BR',
+    locale: 'ru_RU',
     url: config.siteUrl,
-    siteName: 'Unhas 5 Estrelas',
-    title: 'Manicure Profissional - Unhas 5 Estrelas',
-    description: 'Manicure profissional pela metade do preço em Florianópolis - SC',
+    siteName: 'GOMANIC',
+    title: 'Профессиональный маникюр - GOMANIC',
+    description: 'Профессиональный маникюр за полцены в Флорианополисе - SC',
     images: [
       {
         url: `${config.siteUrl}/images/og-image.jpg`,
         width: 1200,
         height: 630,
-        alt: 'Manicure Profissional - Unhas 5 Estrelas',
+        alt: 'Профессиональный маникюр - GOMANIC',
       },
     ],
   },
   twitter: {
     cardType: 'summary_large_image',
-    site: '@unhas_cinco_estrelas',
-    title: 'Manicure Profissional - Unhas 5 Estrelas',
-    description: 'Manicure profissional pela metade do preço em Florianópolis',
+    site: '@gomanic_salon',
+    title: 'Профессиональный маникюр - GOMANIC',
+    description: 'Профессиональный маникюр за полцены в Флорианополисе',
     image: `${config.siteUrl}/images/og-image.jpg`,
   },
 }
@@ -46,8 +46,8 @@ export const generateBusinessSchema = () => {
   return {
     '@context': 'https://schema.org',
     '@type': 'BeautySalon',
-    name: 'Unhas 5 Estrelas',
-    description: 'Manicure profissional com especialistas pela metade do preço',
+    name: 'GOMANIC',
+    description: 'Профессиональный маникюр со специалистами за полцены',
     url: config.siteUrl,
     logo: `${config.siteUrl}/images/logo.png`,
     image: `${config.siteUrl}/images/og-image.jpg`,
@@ -112,7 +112,7 @@ export const generateReviewSchema = (reviews) => {
   return {
     '@context': 'https://schema.org',
     '@type': 'BeautySalon',
-    name: 'Unhas 5 Estrelas',
+    name: 'GOMANIC',
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: '4.9',

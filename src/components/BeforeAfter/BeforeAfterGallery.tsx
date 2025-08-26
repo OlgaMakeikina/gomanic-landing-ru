@@ -15,9 +15,9 @@ const BeforeAfterGallery: React.FC = () => {
     <section className={styles.section}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <h2 className={styles.title}>Antes e Depois</h2>
+          <h2 className={styles.title}>До и После</h2>
           <p className={styles.subtitle}>
-            Veja os resultados incríveis que nossas técnicas profissionais proporcionam
+            Посмотрите на невероятные результаты наших профессиональных техник
           </p>
         </div>
         
@@ -62,8 +62,8 @@ const BeforeAfterGallery: React.FC = () => {
                   marginBottom: "24px"
                 }}
               >
-                O mesmo resultado pode ser seu.<br />
-                <span style={{ fontWeight: 700 }}>Reserve agora e economize 50%</span>
+                Такой же результат может быть у вас.<br />
+                <span style={{ fontWeight: 700 }}>Запишитесь сейчас и сэкономьте 50%</span>
               </p>
               
               <button
@@ -94,7 +94,7 @@ const BeforeAfterGallery: React.FC = () => {
                   e.currentTarget.style.border = '1px solid #FEFEFE'
                 }}
               >
-                Quero garantir minha vaga agora
+                Хочу забронировать место сейчас
               </button>
             </div>
           </div>
