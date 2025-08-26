@@ -10,15 +10,15 @@ interface HeroTitleProps {
 }
 
 export default function HeroTitle({ title, subtitle, content, align = 'center', showLocationInfo = false }: HeroTitleProps) {
-  // Специальная логика для "GOMANIC Especialistas" - GOMANIC крупный сверху, Especialistas мелкий снизу
-  const isGomanicEspecialistas = title === 'GOMANIC Especialistas'
+  // Специальная логика для "GOMANIC Especialistas" и "GOMANIC Специалисты"
+  const isGomanicEspecialistas = title === 'GOMANIC Especialistas' || title === 'GOMANIC Специалисты'
   
   // 1) Если передан "A × B", используем его
   const hasDivider = title.includes(' × ')
   const [part1, part2] = hasDivider
     ? (title.split(' × ') as [string, string])
     : isGomanicEspecialistas
-    ? (['GOMANIC', 'Especialistas'] as [string, string]) // GOMANIC крупный, Especialistas мелкий
+    ? (title.split(' ') as [string, string]) // Разделяем по пробелу для обеих версий
     : (() => {
         // 2) Иначе: всё, кроме последнего слова — первая строка, последнее — вторая
         const words = title.trim().split(/\s+/)
@@ -47,8 +47,9 @@ export default function HeroTitle({ title, subtitle, content, align = 'center', 
                 display: 'block',
                 fontWeight: isGomanicEspecialistas ? 800 : 400,
                 letterSpacing: isGomanicEspecialistas ? '0.04em' : '0.08em',
-                fontSize: isGomanicEspecialistas ? 'clamp(2rem, 7vw, 5.5rem)' : 'clamp(1.1rem, 3.2vw, 2.2rem)',
-                lineHeight: isGomanicEspecialistas ? 0.9 : 1.0
+                fontSize: isGomanicEspecialistas ? 'clamp(1.5rem, 5vw, 3.5rem)' : 'clamp(1.1rem, 3.2vw, 2.2rem)',
+                lineHeight: isGomanicEspecialistas ? 0.9 : 1.0,
+                color: '#FEFEFE'
               }}
             >
               {part1}
@@ -59,11 +60,12 @@ export default function HeroTitle({ title, subtitle, content, align = 'center', 
           <span
             style={{
               display: 'block',
-              fontWeight: isGomanicEspecialistas ? 400 : 800,
-              letterSpacing: isGomanicEspecialistas ? '0.08em' : '0.04em',
-              lineHeight: isGomanicEspecialistas ? 1.0 : 0.9,
+              fontWeight: isGomanicEspecialistas ? 800 : 800,
+              letterSpacing: isGomanicEspecialistas ? '0.04em' : '0.04em',
+              lineHeight: isGomanicEspecialistas ? 0.9 : 0.9,
               marginTop: part1 ? '-0.15em' : 0,
-              fontSize: isGomanicEspecialistas ? 'clamp(1.1rem, 3.2vw, 2.2rem)' : 'clamp(2rem, 7vw, 5.5rem)'
+              fontSize: isGomanicEspecialistas ? 'clamp(2rem, 7vw, 5.5rem)' : 'clamp(2rem, 7vw, 5.5rem)',
+              color: '#FEFEFE'
             }}
           >
             {part2}
