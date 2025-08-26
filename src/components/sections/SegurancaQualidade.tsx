@@ -14,20 +14,18 @@ export default function SegurancaQualidade(): JSX.Element {
   const certificacoes = [
     {
       imagem: '/images/higiene/0_3 (13).jpeg',
-      titulo: 'Higienização Profissional',
-
-      detalhes: 'Protocolo hospitalar de limpeza',
+      titulo: 'Новейшие техники',
+      detalhes: 'Мастера прошли обучение по последним технологиям подготовки ногтей',
     },
     {
       imagem: '/images/higiene/0_3 (21).jpeg',
-      titulo: 'Materiais Certificados',
-
-      detalhes: 'Importados e testados dermatologicamente',
+      titulo: 'Премиум-материалы',
+      detalhes: 'Японское сырьё с сертификатами безопасности',
     },
     {
       imagem: '/images/higiene/0_0 (20).jpeg',
-      titulo: 'Segurança Total',
-      detalhes: 'Ambiente controlado e monitorado',
+      titulo: 'Гарантия стерильности',
+      detalhes: 'Одноразовые инструменты + стерилизация',
     },
   ] as const
 
@@ -56,7 +54,7 @@ export default function SegurancaQualidade(): JSX.Element {
             className="uppercase tracking-[0.22em] mb-3"
             style={{ color: COLORS.white, fontFamily: 'Garet, sans-serif', fontSize: 14, opacity: 0.85 }}
           >
-            HIGIENE E QUALIDADE
+            ПРЕИМУЩЕСТВА
           </p>
 
           <h2
@@ -70,15 +68,8 @@ export default function SegurancaQualidade(): JSX.Element {
               fontSize: 28,
             }}
           >
-            POR QUE MILHARES DE CLIENTES NOS ESCOLHEM?
+            Почему стоит попробовать прямо сейчас?
           </h2>
-
-          <p
-            className="mx-auto max-w-3xl"
-            style={{ color: COLORS.white, opacity: 0.9, fontFamily: 'Garet, sans-serif', fontSize: 16 }}
-          >
-            Sua saúde é nossa prioridade
-          </p>
         </header>
 
         {/* Верхние карточки (ограничение ширины на md) */}
@@ -126,6 +117,77 @@ export default function SegurancaQualidade(): JSX.Element {
           ))}
         </div>
 
+        {/* Дополнительные преимущества */}
+        <section className="mt-16" aria-labelledby="additional-benefits-heading">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div
+              className="backdrop-blur-xl rounded-2xl p-8 border text-center"
+              style={{
+                background: 'linear-gradient(135deg, rgba(68,79,85,0.95) 0%, rgba(59,59,58,0.95) 100%)',
+                borderColor: GLASS.cardBorder,
+                boxShadow: GLASS.cardShadow,
+              }}
+            >
+              <h4
+                style={{
+                  color: COLORS.white,
+                  fontFamily: 'Horizon, sans-serif',
+                  fontSize: 16,
+                  fontWeight: 500,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.1em',
+                  marginBottom: '12px',
+                }}
+              >
+                Современный ноский маникюр
+              </h4>
+              <p
+                style={{
+                  color: COLORS.white,
+                  fontFamily: 'Garet, sans-serif',
+                  fontSize: 14,
+                  opacity: 0.9,
+                }}
+              >
+                Держится дольше, чем стандартный
+              </p>
+            </div>
+
+            <div
+              className="backdrop-blur-xl rounded-2xl p-8 border text-center"
+              style={{
+                background: 'linear-gradient(135deg, rgba(254,254,254,0.95) 0%, rgba(253,255,254,0.95) 100%)',
+                borderColor: COLORS.white,
+                boxShadow: GLASS.cardShadow,
+              }}
+            >
+              <h4
+                style={{
+                  color: COLORS.dark,
+                  fontFamily: 'Horizon, sans-serif',
+                  fontSize: 16,
+                  fontWeight: 500,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.1em',
+                  marginBottom: '12px',
+                }}
+              >
+                Спеццена для первых клиентов
+              </h4>
+              <p
+                style={{
+                  color: COLORS.dark,
+                  fontFamily: 'Garet, sans-serif',
+                  fontSize: 14,
+                  fontWeight: 600,
+                }}
+              >
+                Только за полцены
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Обучение и сертификация */}
         <section className="mt-20" aria-labelledby="formacao-heading">
           <header className="text-center mb-16">
@@ -142,7 +204,7 @@ export default function SegurancaQualidade(): JSX.Element {
               }}
               className="md:text-2xl" // На средних экранах и больше - размер 24px
             >
-              Formadas com padrões internacionais
+              Обучены по международным стандартам
             </h3>
             <p
               style={{
@@ -155,7 +217,7 @@ export default function SegurancaQualidade(): JSX.Element {
                 lineHeight: 1.6,
               }}
             >
-              Nossos especialistas são treinados de acordo com o programa profissional estadual da Federação Russa
+              Наши специалисты обучены по государственной профессиональной программе Российской Федерации
             </p>
           </header>
 
@@ -163,8 +225,8 @@ export default function SegurancaQualidade(): JSX.Element {
             {/* Колонка 1 */}
             <div className="space-y-6">
               {[
-                { src: '/images/masters/0_0 (15).jpeg', alt: 'Instrutor Internacional 1', label: 'Formação' },
-                { src: '/images/masters/0_0 (22).jpeg', alt: 'Instrutor Internacional 2', label: 'Treinamento' },
+                { src: '/images/masters/0_0 (15).jpeg', alt: 'Международный инструктор 1', label: 'Обучение' },
+                { src: '/images/masters/0_0 (22).jpeg', alt: 'Международный инструктор 2', label: 'Тренинг' },
               ].map((item, i) => (
                 <div
                   key={i}
@@ -201,7 +263,7 @@ export default function SegurancaQualidade(): JSX.Element {
                 <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-white/5 to-transparent" />
                 <img
                   src="/images/masters/0_3 (20).jpeg"
-                  alt="Certificados"
+                  alt="Сертификаты"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   style={{ filter: 'brightness(1.1) contrast(1.05)' }}
                 />
@@ -211,7 +273,7 @@ export default function SegurancaQualidade(): JSX.Element {
                     style={{ background: 'rgba(255,255,255,0.15)', borderColor: 'rgba(255,255,255,0.2)' }}
                   >
                     <p style={{ color: '#3B3B3A', fontFamily: 'Garet, sans-serif', fontSize: 11, fontWeight: 600, textAlign: 'center' }}>
-                      Habilitação
+                      Квалификация
                     </p>
                   </div>
                 </div>
@@ -231,7 +293,7 @@ export default function SegurancaQualidade(): JSX.Element {
                     style={{ background: 'rgba(255,255,255,0.15)', borderColor: 'rgba(255,255,255,0.2)' }}
                   >
                     <p style={{ color: '#3B3B3A', fontFamily: 'Garet, sans-serif', fontSize: 11, fontWeight: 600, textAlign: 'center' }}>
-                      Atendimento
+                      Обслуживание
                     </p>
                   </div>
                 </div>
@@ -262,7 +324,7 @@ export default function SegurancaQualidade(): JSX.Element {
                       lineHeight: 1.3,
                     }}
                   >
-                    Certificado de Segurança
+                    Сертификат безопасности
                   </h4>
 
                   <div
@@ -277,7 +339,7 @@ export default function SegurancaQualidade(): JSX.Element {
                       lineHeight: 1.4,
                     }}
                   >
-                    Nossos materiais são completamente seguros e atendem aos padrões internacionais de qualidade
+                    Наши материалы полностью безопасны и соответствуют международным стандартам качества
                   </div>
                 </div>
               </div>
@@ -295,7 +357,7 @@ export default function SegurancaQualidade(): JSX.Element {
                 <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-white/5 to-transparent" />
                 <img
                   src="/images/masters/certificate.png"
-                  alt="Passaporte de segurança dos esmaltes"
+                  alt="Паспорт безопасности эмалей"
                   className="w-full h-full object-cover"
                   style={{ filter: 'brightness(1.08) contrast(1.05)' }}
                 />
