@@ -17,7 +17,7 @@ export default function SocialProof() {
             className="uppercase tracking-[0.22em] mb-3"
             style={{ color: COLORS.gray, fontFamily: "Garet, sans-serif", fontSize: 14, opacity: 0.85 }}
           >
-            REDES SOCIAIS
+            СОЦИАЛЬНЫЕ СЕТИ
           </div>
 
           <h2
@@ -31,14 +31,14 @@ export default function SocialProof() {
               fontSize: 28,
             }}
           >
-            O QUE FALAM DE NÓS
+            ЧТО ГОВОРЯТ О НАС
           </h2>
 
           <p
             className="mx-auto max-w-2xl"
             style={{ color: COLORS.gray, fontFamily: "Garet, sans-serif", fontSize: 16 }}
           >
-            Posts reais de clientes satisfeitas no Instagram
+            Реальные посты довольных клиентов в Instagram
           </p>
         </div>
 
@@ -75,7 +75,7 @@ export default function SocialProof() {
               <div className="relative z-10 p-4">
                 <img 
                   src={screenshot} 
-                  alt={`Review screenshot ${index + 1}`}
+                  alt={`Скриншот отзыва ${index + 1}`}
                   className="w-full h-auto object-contain rounded-lg"
                   style={{ 
                     maxHeight: '500px',
@@ -115,7 +115,7 @@ export default function SocialProof() {
                   marginBottom: "16px"
                 }}
               >
-                JUNTE-SE À NOSSA COMUNIDADE
+                ПРИСОЕДИНЯЙТЕСЬ К НАШЕМУ СООБЩЕСТВУ
               </h3>
               
               <p 
@@ -128,7 +128,7 @@ export default function SocialProof() {
                   lineHeight: 1.5
                 }}
               >
-                Siga-nos no Instagram para ver mais trabalhos incríveis e dicas de manicure
+                Подписывайтесь на наш Instagram, чтобы видеть больше потрясающих работ и советов по маникюру
               </p>
               
               <a 
@@ -163,8 +163,8 @@ export default function SocialProof() {
                 </svg>
 
                 {/* Responsive text */}
-                <span className="block lg:hidden">SEGUIR</span>
-                <span className="hidden lg:block">SEGUIR @UNHAS_CINCO_ESTRELAS</span>
+                <span className="block lg:hidden">ПОДПИСАТЬСЯ</span>
+                <span className="hidden lg:block">ПОДПИСАТЬСЯ @UNHAS_CINCO_ESTRELAS</span>
               </a>
             </div>
           </div>

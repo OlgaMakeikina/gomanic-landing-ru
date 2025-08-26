@@ -1,21 +1,21 @@
 export default function VipVantagens() {
   const vantagens = [
-    "Preço fixo mesmo se a promoção acabar",
-    "Garantia de vaga",
-    "Serviço bônus na visita"
+    "Фиксированная цена даже если акция закончится",
+    "Гарантия места",
+    "Бонусная услуга при посещении"
   ]
 
   return (
     <section id="passe-vip" className="vogue-section" style={{backgroundColor: '#3B3B3A', color: '#FEFEFE'}}>
       <div className="vogue-container">
         <div className="text-center mb-20">
-          <div className="vogue-caption mb-4" style={{color: '#444e55'}}>VANTAGENS EXCLUSIVAS</div>
+          <div className="vogue-caption mb-4" style={{color: '#444e55'}}>ЭКСКЛЮЗИВНЫЕ ПРЕИМУЩЕСТВА</div>
           <h2 className="vogue-subhead mb-8" style={{color: '#FEFEFE'}}>
-            POR QUE VALE A PENA O PASSE VIP
+            ПОЧЕМУ СТОИТ VIP-ПРОПУСК
           </h2>
           <div className="vogue-divider mx-auto mb-8" style={{backgroundColor: '#FEFEFE', opacity: 0.3}}></div>
           <p className="vogue-body max-w-2xl mx-auto" style={{color: '#FEFEFE'}}>
-            Benefícios exclusivos para membros VIP
+            Эксклюзивные преимущества для VIP-членов
           </p>
         </div>
         
@@ -65,7 +65,7 @@ export default function VipVantagens() {
                 e.currentTarget.style.boxShadow = '0 4px 20px rgba(68, 78, 85, 0.4)'
               }}
             >
-              QUERO GARANTIR MEU PASSE VIP
+              ХОЧУ ГАРАНТИРОВАТЬ СВОЙ VIP-ПРОПУСК
             </button>
           </div>
         </div>

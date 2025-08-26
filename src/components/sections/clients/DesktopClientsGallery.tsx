@@ -15,7 +15,7 @@ export default function DesktopClientsGallery({ colors }: DesktopClientsGalleryP
         <figure className="col-span-2 row-span-2 overflow-hidden rounded-2xl group">
           <img
             src="/images/clients/0_0 (1).jpeg"
-            alt="Cliente satisfeita - resultado perfeito"
+            alt="Довольная клиентка - идеальный результат"
             className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
             style={{filter: 'brightness(1.1) contrast(1.05) saturate(1.2)'}}
           />
@@ -25,7 +25,7 @@ export default function DesktopClientsGallery({ colors }: DesktopClientsGalleryP
         <figure className="col-span-2 row-span-2 overflow-hidden rounded-2xl group">
           <img
             src="/images/clients/0_3 (1).jpeg"
-            alt="Cliente feliz com resultado"
+            alt="Счастливая клиентка с результатом"
             className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
             style={{filter: 'brightness(1.1) contrast(1.05)'}}
           />
@@ -52,7 +52,7 @@ export default function DesktopClientsGallery({ colors }: DesktopClientsGalleryP
                   fontSize:14,
                   textShadow: "0 2px 8px rgba(0,0,0,0.3)"
                 }}>
-              SEJA A PRÓXIMA CLIENTE SATISFEITA
+              СТАНЬ СЛЕДУЮЩЕЙ ДОВОЛЬНОЙ КЛИЕНТКОЙ
             </h4>
             <button
               onClick={() => document.getElementById('agendamento')?.scrollIntoView({ behavior:'smooth' })}
@@ -74,7 +74,7 @@ export default function DesktopClientsGallery({ colors }: DesktopClientsGalleryP
                 e.currentTarget.style.boxShadow = "none"
               }}
             >
-              QUERO FAZER PARTE
+              ХОЧУ ПРИСОЕДИНИТЬСЯ
             </button>
           </div>
         </div>
@@ -92,7 +92,7 @@ export default function DesktopClientsGallery({ colors }: DesktopClientsGalleryP
         <figure className="col-span-4 row-span-2 overflow-hidden rounded-2xl group">
           <img
             src="/images/clients/0_0 (25).jpeg"
-            alt="Cliente relaxando no sofá"
+            alt="Клиентка отдыхает на диване"
             className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
             style={{filter: 'brightness(1.1) contrast(1.05)'}}
           />

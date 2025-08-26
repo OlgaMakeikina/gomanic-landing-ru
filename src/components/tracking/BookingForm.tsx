@@ -30,17 +30,17 @@ export default function BookingForm({ className = '', variant = 'default' }: Boo
   const services = [
     {
       id: 'manicure-gel',
-      name: 'MANICURE + NIVELAMENTO + ESMALTAÇÃO EM GEL',
+      name: 'МАНИКЮР + ВЫРАВНИВАНИЕ + ПОКРЫТИЕ ГЕЛЕМ',
       price: 'R$ 80'
     },
     {
       id: 'alongamento-gel', 
-      name: 'ALONGAMENTO + MANICURE + ESMALTAÇÃO EM GEL',
+      name: 'НАРАЩИВАНИЕ + МАНИКЮР + ПОКРЫТИЕ ГЕЛЕМ',
       price: 'R$ 119'
     },
     {
       id: 'combo-completo',
-      name: 'COMBO: MANICURE + ESMALTAÇÃO EM GEL + PEDICURE + PLÁSTICA DOS PÉS',
+      name: 'КОМБО: МАНИКЮР + ПОКРЫТИЕ ГЕЛЕМ + ПЕДИКЮР + ПЛАСТИКА СТОП',
       price: 'R$ 160'
     }
   ];
@@ -74,10 +74,10 @@ export default function BookingForm({ className = '', variant = 'default' }: Boo
           });
         }
       } else {
-        setError(result.error || 'Erro ao enviar formulário');
+        setError(result.error || 'Ошибка отправки формы');
       }
     } catch (err) {
-      setError('Erro de conexão. Tente novamente.');
+      setError('Ошибка соединения. Попробуйте снова.');
     } finally {
       setIsSubmitting(false);
     }
@@ -105,7 +105,7 @@ export default function BookingForm({ className = '', variant = 'default' }: Boo
             textTransform: 'uppercase',
             fontWeight: 600
           }}>
-            ✅ DADOS ENVIADOS COM SUCESSO!
+            ✅ ДАННЫЕ УСПЕШНО ОТПРАВЛЕНЫ!
           </div>
           <p style={{
             color: '#FEFEFE',
@@ -114,7 +114,7 @@ export default function BookingForm({ className = '', variant = 'default' }: Boo
             opacity: 0.9,
             lineHeight: 1.6
           }}>
-            Obrigado! Você receberá um email com os links de agendamento em breve.
+            Спасибо! Вскоре вы получите email со ссылками для записи.
           </p>
         </div>
       </div>
@@ -146,7 +146,7 @@ export default function BookingForm({ className = '', variant = 'default' }: Boo
                 textTransform: 'uppercase',
                 opacity: 0.85
               }}>
-                NOME *
+                ИМЯ *
               </label>
               <input
                 type="text"
@@ -154,7 +154,7 @@ export default function BookingForm({ className = '', variant = 'default' }: Boo
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 className="glass-input w-full px-4 py-3 rounded-xl border backdrop-blur-sm transition-all focus:outline-none focus:ring-2 focus:ring-white/40"
-                placeholder="Seu nome completo"
+                placeholder="Ваше полное имя"
                 style={{
                   background: 'rgba(255, 255, 255, 0.15)',
                   borderColor: 'rgba(255, 255, 255, 0.2)',
@@ -230,7 +230,7 @@ export default function BookingForm({ className = '', variant = 'default' }: Boo
                 textTransform: 'uppercase',
                 opacity: 0.85
               }}>
-                ESCOLHA SUA OPÇÃO *
+                ВЫБЕРИТЕ ВАШ ВАРИАНТ *
               </label>
               <div className="space-y-3">
                 {services.map((service) => (
@@ -324,7 +324,7 @@ export default function BookingForm({ className = '', variant = 'default' }: Boo
                 padding: '16px 48px'
               }}
             >
-              {isSubmitting ? 'ENVIANDO...' : 'ENVIAR DADOS'}
+              {isSubmitting ? 'ОТПРАВЛЯЕМ...' : 'ОТПРАВИТЬ ДАННЫЕ'}
             </button>
           </div>
         </form>

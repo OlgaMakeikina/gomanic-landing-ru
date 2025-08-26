@@ -149,7 +149,7 @@ export default function PromocoesMes() {
             className="mt-6 mx-auto max-w-2xl"
             style={{ color: COLORS.white, opacity: 0.85, fontFamily: "Garet, sans-serif", fontSize: 14 }}
           >
-            Preços exclusivos para portadores do Passe VIP
+            Эксклюзивные цены для владельцев VIP-пропуска
           </p>
         </div>
 

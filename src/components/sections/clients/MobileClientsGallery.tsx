@@ -16,7 +16,7 @@ export default function MobileClientsGallery({ colors }: MobileClientsGalleryPro
         <figure className="aspect-square overflow-hidden rounded-2xl group">
           <img
             src="/images/clients/0_0 (1).jpeg"
-            alt="Cliente satisfeita - resultado perfeito"
+            alt="Довольная клиентка - идеальный результат"
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             style={{filter: 'brightness(1.1) contrast(1.05) saturate(1.2)'}}
           />
@@ -26,7 +26,7 @@ export default function MobileClientsGallery({ colors }: MobileClientsGalleryPro
         <figure className="aspect-square overflow-hidden rounded-2xl group">
           <img
             src="/images/clients/0_3 (1).jpeg"
-            alt="Cliente feliz com resultado"
+            alt="Счастливая клиентка с результатом"
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             style={{filter: 'brightness(1.1) contrast(1.05)'}}
           />
@@ -36,7 +36,7 @@ export default function MobileClientsGallery({ colors }: MobileClientsGalleryPro
         <figure className="aspect-square overflow-hidden rounded-2xl group">
           <img
             src="/images/clients/0_0 (25).jpeg"
-            alt="Cliente relaxando no sofá"
+            alt="Клиентка отдыхает на диване"
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             style={{filter: 'brightness(1.1) contrast(1.05)'}}
           />
@@ -73,7 +73,7 @@ export default function MobileClientsGallery({ colors }: MobileClientsGalleryPro
                 lineHeight:1.3,
                 textShadow: "0 2px 8px rgba(0,0,0,0.4)"
               }}>
-            SEJA A PRÓXIMA CLIENTE SATISFEITA
+            СТАНЬ СЛЕДУЮЩЕЙ ДОВОЛЬНОЙ КЛИЕНТКОЙ
           </h4>
           
           <p className="mb-6 opacity-90"
@@ -83,7 +83,7 @@ export default function MobileClientsGallery({ colors }: MobileClientsGalleryPro
                fontSize:14,
                lineHeight:1.5
              }}>
-            Milhares de clientes já confiaram em nosso trabalho
+            Тысячи клиентов уже доверились нашей работе
           </p>
           
           <button
@@ -97,7 +97,7 @@ export default function MobileClientsGallery({ colors }: MobileClientsGalleryPro
               boxShadow: "0 8px 25px rgba(254,254,254,0.2)"
             }}
           >
-            QUERO FAZER PARTE
+            ХОЧУ ПРИСОЕДИНИТЬСЯ
           </button>
         </div>
       </div>

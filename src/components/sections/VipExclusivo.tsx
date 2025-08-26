@@ -127,18 +127,18 @@ export default function VipExclusivo() {
 
   const vipCards = [
     {
-      title: 'CLUBE LIMITADO',
-      description: 'Somente 30 clientes por mês podem ter Passe VIP.',
+      title: 'ЗАКРЫТЫЙ КЛУБ',
+      description: 'Только 30 клиентов в месяц могут иметь VIP-пропуск.',
       delay: 200
     },
     {
-      title: 'PREÇO ÚNICO',
-      description: 'O preço nunca mais se repete depois que as vagas esgotarem.',
+      title: 'УНИКАЛЬНАЯ ЦЕНА',
+      description: 'Эта цена больше не повторится после того, как места закончатся.',
       delay: 400
     },
     {
-      title: 'BRINDE SURPRESA',
-      description: 'VIPs recebem um brinde surpresa na primeira visita.',
+      title: 'ПОДАРОК-СЮРПРИЗ',
+      description: 'VIP-клиенты получают подарок-сюрприз при первом посещении.',
       delay: 600
     }
   ]
@@ -170,14 +170,14 @@ export default function VipExclusivo() {
                  color: '#444e55',
                  textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)'
                }}>
-            ACESSO LIMITADO
+            ОГРАНИЧЕННЫЙ ДОСТУП
           </div>
           <h2 id="vip-heading" className="vogue-subhead mb-8" 
               style={{
                 color: '#FEFEFE',
                 textShadow: '0 4px 8px rgba(0, 0, 0, 0.4)'
               }}>
-            PASSE VIP = CLUBE EXCLUSIVO
+            VIP-ПРОПУСК = ЭКСКЛЮЗИВНЫЙ КЛУБ
           </h2>
           <div className="vogue-divider mx-auto mb-8" 
                style={{
@@ -185,7 +185,7 @@ export default function VipExclusivo() {
                  boxShadow: '0 2px 8px rgba(68, 78, 85, 0.5)'
                }}></div>
           <p className="vogue-body max-w-3xl mx-auto text-lg" style={{color: '#FEFEFE'}}>
-            Não é uma simples promoção. É um <strong style={{color: '#FEFEFE'}}>acesso exclusivo</strong> para poucas pessoas especiais
+            Это не просто акция. Это <strong style={{color: '#FEFEFE'}}>эксклюзивный доступ</strong> для избранных особых людей
           </p>
         </div>
         
@@ -199,7 +199,7 @@ export default function VipExclusivo() {
                    border: '1px solid rgba(254, 254, 254, 0.2)',
                    boxShadow: '0 8px 32px rgba(68, 78, 85, 0.3), 0 2px 8px rgba(254, 254, 254, 0.1)'
                  }}>
-              <div className="text-2xl font-bold">APENAS 3 VAGAS RESTANTES</div>
+              <div className="text-2xl font-bold">ОСТАЛОСЬ ТОЛЬКО 3 МЕСТА</div>
             </div>
           </div>
           
@@ -225,13 +225,13 @@ export default function VipExclusivo() {
             
             <div className="relative z-10 p-8 text-center">
             <h3 className="text-2xl font-bold mb-4" style={{color: '#FEFEFE'}}>
-              ESTA OPORTUNIDADE ACABA EM:
+              ЭТА ВОЗМОЖНОСТЬ ЗАКАНЧИВАЕТСЯ ЧЕРЕЗ:
             </h3>
             
             <CountdownTimer />
             
             <p className="vogue-body text-lg mb-6" style={{color: '#FEFEFE', fontWeight: 600}}>
-              Depois disso, volta ao preço normal (sem desconto)
+              После этого вернется обычная цена (без скидки)
             </p>
             
             <button 
@@ -266,11 +266,11 @@ export default function VipExclusivo() {
                 e.currentTarget.style.transform = 'scale(1.02)'
               }}
             >
-              QUERO MEU PASSE VIP AGORA!
+              ХОЧУ СВОЙ VIP-ПРОПУСК СЕЙЧАС!
             </button>
             
             <p className="text-sm mt-4" style={{color: '#FEFEFE', opacity: 0.9}}>
-              Pagamento da entrada é 100% seguro. Se não puder comparecer, reagendamos ou devolvemos o valor.
+              Предоплата на 100% безопасна. Если не сможете прийти, перенесем встречу или вернем деньги.
             </p>
             </div>
           </div>

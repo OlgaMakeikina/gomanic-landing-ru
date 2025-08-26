@@ -6,11 +6,11 @@ export default function FooterLogo({ onCtaClick }: FooterLogoProps) {
       <div className="flex items-center justify-center space-x-3 mb-8">
         <span className="text-xs uppercase tracking-wider font-bold" style={{color: '#FEFEFE'}}>GOMANIC</span>
         <div className="w-px h-4 bg-[#FEFEFE] opacity-70"></div>
-        <span className="text-xs uppercase tracking-wider font-bold" style={{color: '#FEFEFE'}}>BRASIL</span>
+        <span className="text-xs uppercase tracking-wider font-bold" style={{color: '#FEFEFE'}}>БРАЗИЛИЯ</span>
       </div>
       <div className="w-16 h-px mb-8 mx-auto" style={{backgroundColor: '#FEFEFE', opacity: 0.3}}></div>
       <p className="text-sm leading-relaxed mb-8" style={{color: '#FEFEFE'}}>
-        Manicure profissional com novos especialistas pela metade do preço.
+        Профессиональный маникюр с новыми специалистами за полцены.
       </p>
       
       <div className="mt-auto">
@@ -44,7 +44,7 @@ export default function FooterLogo({ onCtaClick }: FooterLogoProps) {
             e.currentTarget.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.1)'
           }}
         >
-          QUERO SER VIP AGORA
+          ХОЧУ СТАТЬ VIP СЕЙЧАС
         </button>
       </div>
     </div>

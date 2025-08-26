@@ -9,7 +9,7 @@ interface AddressSectionProps {
 export default function AddressSection({ showMap, onToggleMap }: AddressSectionProps) {
   return (
     <div className="lg:col-span-5 flex flex-col min-h-[200px]">
-      <div className="text-xs uppercase tracking-wider mb-8 text-center" style={{color: '#FEFEFE', letterSpacing: '0.15em'}}>ENDEREÇO</div>
+      <div className="text-xs uppercase tracking-wider mb-8 text-center" style={{color: '#FEFEFE', letterSpacing: '0.15em'}}>АДРЕС</div>
       <div className="w-16 h-px mb-8 mx-auto" style={{backgroundColor: '#FEFEFE', opacity: 0.3}}></div>
       
       <div className="space-y-6 flex-grow">
@@ -59,7 +59,7 @@ export default function AddressSection({ showMap, onToggleMap }: AddressSectionP
               e.currentTarget.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.1)'
             }}
           >
-            {showMap ? 'ESCONDER MAPA' : 'MOSTRAR NO MAPA'}
+            {showMap ? 'СКРЫТЬ КАРТУ' : 'ПОКАЗАТЬ НА КАРТЕ'}
           </button>
         </div>
       </div>
