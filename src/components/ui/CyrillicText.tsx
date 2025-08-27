@@ -9,6 +9,7 @@ interface CyrillicTextProps {
   as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span' | 'div';
   fallbackClassName?: string;
   style?: React.CSSProperties;
+  id?: string;
 }
 
 export function CyrillicText({ 
@@ -17,6 +18,7 @@ export function CyrillicText({
   as: Component = 'div',
   fallbackClassName = '',
   style,
+  id,
   ...props
 }: CyrillicTextProps) {
   const supportsCyrillic = useCyrillicFontSupport();
@@ -31,15 +33,16 @@ export function CyrillicText({
     ? `${className} ${fallbackClassName}`
     : className;
 
-  return <Component className={appliedClassName} style={style} {...props}>{children}</Component>;
+  return <Component className={appliedClassName} style={style} id={id} {...props}>{children}</Component>;
 }
 
-export function HorizonText({ children, className = '', style, ...props }: Omit<CyrillicTextProps, 'fallbackClassName'>) {
+export function HorizonText({ children, className = '', style, id, ...props }: Omit<CyrillicTextProps, 'fallbackClassName'>) {
   return (
     <CyrillicText 
       className={className}
       fallbackClassName="websafe-cyrillic"
       style={style}
+      id={id}
       {...props}
     >
       {children}

@@ -168,8 +168,11 @@ export default function VipExclusivo() {
         <div className="text-center mb-20">
           <div className="vogue-caption mb-4" 
                style={{
-                 color: '#444e55',
-                 textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)'
+                 color: '#FEFEFE',
+                 textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)',
+                 fontFamily: "Manrope, sans-serif", 
+                 fontSize: 14, 
+                 opacity: 0.85
                }}>
             ОГРАНИЧЕННЫЙ ДОСТУП
           </div>

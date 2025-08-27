@@ -11,7 +11,7 @@ export default function VipVantagens() {
     <section id="passe-vip" className="vogue-section" style={{backgroundColor: '#3B3B3A', color: '#FEFEFE'}}>
       <div className="vogue-container">
         <div className="text-center mb-20">
-          <div className="vogue-caption mb-4" style={{color: '#444e55'}}>ЭКСКЛЮЗИВНЫЕ ПРЕИМУЩЕСТВА</div>
+          <div className="vogue-caption mb-4" style={{ color: '#444e55', fontFamily: "Manrope, sans-serif", fontSize: 14, opacity: 0.85 }}>ЭКСКЛЮЗИВНЫЕ ПРЕИМУЩЕСТВА</div>
           <HorizonText as="h2" className="vogue-subhead mb-8" style={{color: '#FEFEFE'}}>
             ПОЧЕМУ СТОИТ VIP-ПРОПУСК
           </HorizonText>
