@@ -3,9 +3,9 @@ export default function SocialProof() {
   
   // Скриншоты настоящих отзывов
   const reviewScreenshots = [
-    "/images/reviews/review1.jpg",
-    "/images/reviews/review2.jpg", 
-    "/images/reviews/review3.jpg"
+    "/images/reviews/review1.png",
+    "/images/reviews/review2.png", 
+    "/images/reviews/review3.png"
   ]
 
   return (
@@ -15,9 +15,9 @@ export default function SocialProof() {
         <div className="text-center mb-16">
           <div
             className="uppercase tracking-[0.22em] mb-3"
-            style={{ color: COLORS.gray, fontFamily: "Garet, sans-serif", fontSize: 14, opacity: 0.85 }}
+            style={{ color: COLORS.gray, fontFamily: "Manrope, sans-serif", fontSize: 14, opacity: 0.85 }}
           >
-            СОЦИАЛЬНЫЕ СЕТИ
+            ОТЗЫВЫ
           </div>
 
           <h2
@@ -38,7 +38,7 @@ export default function SocialProof() {
             className="mx-auto max-w-2xl"
             style={{ color: COLORS.gray, fontFamily: "Garet, sans-serif", fontSize: 16 }}
           >
-            Реальные посты довольных клиентов в Instagram
+            Реальные отзывы наших клиентов
           </p>
         </div>
 
