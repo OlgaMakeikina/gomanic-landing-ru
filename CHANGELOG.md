@@ -1,5 +1,24 @@
 # CHANGELOG
 
+## [2.1.8] - 2025-08-27 - Testimonials Section Optimization
+
+### 🎯 Testimonials Cards Optimization
+- **Compact Layout**: Убраны излишние отступы, оптимизированы размеры секции
+- **Fixed Card Dimensions**: aspectRatio 3/4, minHeight: 280px, maxHeight: 320px
+- **Improved Grid**: Адаптивная сетка 1→2→3 с gap-6 вместо gap-8
+- **Visual Enhancements**: Добавлены star icons, улучшены shadows и hover effects
+
+### 🎨 Design Improvements
+- **Button Optimization**: Уменьшены размеры CTA кнопки (px-6 py-3, fontSize: 13px)
+- **Better Image Display**: object-cover для корректного отображения
+- **Hover Effects**: Gradient overlay и улучшенные transitions
+- **Container Optimization**: max-w-5xl вместо max-w-6xl
+
+### 📱 Mobile Adaptation
+- **Responsive Spacing**: py-16 mobile, py-20 desktop
+- **Consistent Typography**: Vogue style compliance maintained
+- **Color Scheme**: #FEFEFE, #444e55, #3B3B3A строго соблюдены
+
 ## [2.1.7] - 2025-08-23 - Service Selection Added to Booking Form
 
 ### 📋 Service Options Integration

@@ -36,18 +36,18 @@ export default function SocialProof() {
 
           <p
             className="mx-auto max-w-2xl"
-            style={{ color: COLORS.gray, fontFamily: "Garet, sans-serif", fontSize: 16 }}
+            style={{ color: COLORS.gray, fontFamily: "Manrope, sans-serif", fontSize: 16 }}
           >
             Реальные отзывы наших клиентов
           </p>
         </div>
 
         {/* Review Screenshots Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="flex flex-col items-center gap-8 max-w-2xl mx-auto">
           {reviewScreenshots.map((screenshot, index) => (
             <div 
               key={index}
-              className="relative group cursor-pointer"
+              className="relative group cursor-pointer w-full max-w-md"
               style={{
                 background: 'rgba(59, 59, 58, 0.08)',
                 backdropFilter: 'blur(10px)',
@@ -72,13 +72,12 @@ export default function SocialProof() {
               <div className="absolute inset-0 bg-gradient-to-br from-gray-500/5 via-gray-500/2 to-transparent rounded-2xl"></div>
               <div className="absolute inset-0 bg-gradient-to-tl from-gray-600/8 via-transparent to-gray-600/5 rounded-2xl"></div>
               
-              <div className="relative z-10 p-4">
+              <div className="relative z-10">
                 <img 
                   src={screenshot} 
                   alt={`Скриншот отзыва ${index + 1}`}
-                  className="w-full h-auto object-contain rounded-lg"
+                  className="w-full h-full object-cover rounded-lg"
                   style={{ 
-                    maxHeight: '500px',
                     transition: 'transform 0.3s ease'
                   }}
                 />
