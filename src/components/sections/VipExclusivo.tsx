@@ -245,7 +245,7 @@ export default function VipExclusivo() {
                 color: '#3B3B3A',
                 border: '1px solid rgba(254, 254, 254, 0.3)',
                 borderRadius: '12px',
-                fontFamily: 'Garet, sans-serif',
+                fontFamily: 'Manrope, sans-serif',
                 fontSize: '18px',
                 fontWeight: 700,
                 letterSpacing: '0.1em',

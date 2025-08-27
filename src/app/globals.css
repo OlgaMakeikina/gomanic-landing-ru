@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ШРИФТ DRUK WIDE CYR SUPER - С КИРИЛЛИЦЕЙ */
+@font-face {
+  font-family: 'DrukWideCyr-Super';
+  src: url('/fonts/drukwidecyr-super.woff2') format('woff2'),
+       url('/fonts/drukwidecyr-super.woff') format('woff'),
+       url('/fonts/drukwidecyr-super.ttf') format('truetype'),
+       url('/fonts/drukwidecyr-super.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* ШРИФТ DRUK WIDE SUPER */
 @font-face {
   font-family: 'Druk Wide Super';
@@ -21,24 +33,7 @@
   unicode-range: U+0020-007F, U+00A0-00FF, U+0100-017F, U+0400-04FF, U+0500-052F, U+2DE0-2DFF, U+A640-A69F;
 }
 
-/* ШРИФТ GARET */
-@font-face {
-  font-family: 'Garet';
-  src: url('/fonts/Garet-Book.otf') format('opentype'),
-       url('/fonts/Garet-Book.otf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Garet';
-  src: url('/fonts/Garet-Heavy.otf') format('opentype'),
-       url('/fonts/Garet-Heavy.otf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
+/* ШРИФТ MANROPE ЧЕРЕЗ GOOGLE FONTS */
 
 /* VOGUE MAGAZINE STYLE - ОБНОВЛЕННАЯ ЦВЕТОВАЯ СХЕМА */
 
@@ -54,7 +49,7 @@
 
 /* Заголовки с Horizon - как в журнале */
 .vogue-masthead {
-  font-family: 'Horizon', 'Druk Wide Super', 'Arial Black', Arial, sans-serif;
+  font-family: 'DrukWideCyr-Super', Arial, sans-serif;
   font-size: clamp(4rem, 12vw, 12rem);
   font-weight: normal;
   letter-spacing: 0.15em;
@@ -65,7 +60,7 @@
 }
 
 .vogue-headline {
-  font-family: 'Horizon', 'Druk Wide Super', 'Arial Black', Arial, sans-serif;
+  font-family: 'DrukWideCyr-Super', Arial, sans-serif;
   font-size: clamp(2.5rem, 8vw, 6rem);
   font-weight: normal;
   letter-spacing: 0.1em;
@@ -75,7 +70,7 @@
 }
 
 .vogue-subhead {
-  font-family: 'Horizon', 'Druk Wide Super', 'Arial Black', Arial, sans-serif;
+  font-family: 'DrukWideCyr-Super', Arial, sans-serif;
   font-size: clamp(1.2rem, 3vw, 2.5rem);
   font-weight: normal;
   letter-spacing: 0.08em;
@@ -86,7 +81,7 @@
 
 /* Основной текст - элегантный и читабельный */
 .vogue-body {
-  font-family: 'Garet', Arial, sans-serif;
+  font-family: 'Manrope', Arial, sans-serif;
   font-size: 16px;
   font-weight: 400;
   letter-spacing: 0.01em;
@@ -95,7 +90,7 @@
 }
 
 .vogue-caption {
-  font-family: 'Garet', Arial, sans-serif;
+  font-family: 'DrukWideCyr-Super', Arial, sans-serif;
   font-size: 12px;
   font-weight: 400;
   letter-spacing: 0.12em;
@@ -105,7 +100,7 @@
 }
 
 .vogue-logo {
-  font-family: 'Horizon', 'Druk Wide Super', 'Arial Black', Arial, sans-serif;
+  font-family: 'DrukWideCyr-Super', Arial, sans-serif;
   font-size: 12px;
   font-weight: normal;
   letter-spacing: 0.12em;
@@ -114,7 +109,7 @@
 }
 
 .vogue-quote {
-  font-family: 'Garet', Arial, sans-serif;
+  font-family: 'Manrope', Arial, sans-serif;
   font-size: 18px;
   font-weight: 400;
   font-style: italic;
@@ -126,10 +121,10 @@
 
 /* Кнопки - минималистичные как в журнале */
 .vogue-btn {
-  font-family: 'Garet', Arial, sans-serif;
+  font-family: 'Manrope', Arial, sans-serif;
   padding: 16px 48px;
   font-size: 11px;
-  font-weight: 400;
+  font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   border: 1px solid #3B3B3A;
@@ -226,9 +221,9 @@
 /* Специальные элементы */
 .vogue-badge {
   padding: 8px 20px;
-  font-family: 'Garet', Arial, sans-serif;
+  font-family: 'Manrope', Arial, sans-serif;
   font-size: 10px;
-  font-weight: 400;
+  font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   border: 1px solid #3B3B3A;
@@ -237,7 +232,7 @@
 }
 
 .vogue-number {
-  font-family: 'Horizon', 'Druk Wide Super', 'Arial Black', Arial, sans-serif;
+  font-family: 'DrukWideCyr-Super', Arial, sans-serif;
   font-size: 4rem;
   font-weight: normal;
   color: #3B3B3A;
@@ -293,8 +288,8 @@
 
 @layer base {
   body {
-    font-family: 'Garet', system-ui, -apple-system, sans-serif;
-    font-weight: 300;
+    font-family: 'Manrope', system-ui, -apple-system, sans-serif;
+    font-weight: 400;
     letter-spacing: 0.01em;
     background-color: #FEFEFE;
     color: #3B3B3A;

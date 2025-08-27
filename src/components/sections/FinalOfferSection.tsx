@@ -8,7 +8,7 @@ export default function FinalOfferSection() {
           <div className="mb-12">
             <div className="text-4xl mb-6">💎</div>
             <h2 className="mb-8" style={{
-              fontFamily: 'Horizon, Arial, sans-serif',
+              fontFamily: 'Horizon, Druk Wide Super, Arial Black, Arial, sans-serif',
               fontSize: 'clamp(2rem, 6vw, 3.5rem)',
               fontWeight: 'normal',
               letterSpacing: '0.05em',
@@ -33,7 +33,7 @@ export default function FinalOfferSection() {
               backgroundColor: '#444e55',
               color: '#FEFEFE',
               border: 'none',
-              fontFamily: 'Garet, sans-serif',
+              fontFamily: 'Manrope, sans-serif',
               fontSize: '16px',
               fontWeight: 700,
               letterSpacing: '0.1em',

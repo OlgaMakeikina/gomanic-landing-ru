@@ -21,7 +21,7 @@ export default function FooterLogo({ onCtaClick }: FooterLogoProps) {
             backgroundColor: 'rgba(254, 254, 254, 0.9)',
             color: '#444e55',
             border: '1px solid rgba(254, 254, 254, 0.3)',
-            fontFamily: 'Garet, sans-serif',
+            fontFamily: 'Manrope, sans-serif',
             fontSize: '12px',
             fontWeight: 600,
             letterSpacing: '0.15em',

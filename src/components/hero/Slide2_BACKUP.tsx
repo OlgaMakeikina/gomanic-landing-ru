@@ -15,7 +15,7 @@ export default function Slide2({ slideData, onButtonAction }: SlideProps) {
                 <VipBadge text="Oferta exclusiva do mês" />
                 
                 <h2 style={{
-                  fontFamily: 'Horizon, Arial, sans-serif',
+                  fontFamily: 'Horizon, Druk Wide Super, Arial Black, Arial, sans-serif',
                   fontSize: 'clamp(1.5rem, 4vw, 3rem)',
                   fontWeight: 'normal',
                   letterSpacing: '0.05em',

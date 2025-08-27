@@ -10,7 +10,7 @@ export default function HeroButton({ onClick, variant, children, className = '' 
     border: 'none',
     borderRadius: '8px',
     padding: '16px 24px',
-    fontFamily: 'Garet, sans-serif',
+    fontFamily: 'Manrope, sans-serif',
     fontSize: '14px',
     fontWeight: variant === 'primary' ? 600 : 400,
     letterSpacing: '0.05em',

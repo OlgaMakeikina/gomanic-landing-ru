@@ -25,7 +25,7 @@ export default function SocialProof() {
             className="uppercase mb-6"
             style={{
               color: COLORS.dark,
-              fontFamily: "Horizon, sans-serif",
+              fontFamily: "DrukWideCyr-Super, sans-serif",
               letterSpacing: "0.12em",
               fontWeight: 500,
               fontSize: 28,
@@ -106,7 +106,7 @@ export default function SocialProof() {
               <h3 
                 style={{
                   color: '#FEFEFE',
-                  fontFamily: "Horizon, sans-serif",
+                  fontFamily: "DrukWideCyr-Super, sans-serif",
                   fontSize: 20,
                   letterSpacing: "0.08em",
                   fontWeight: 500,
@@ -121,7 +121,7 @@ export default function SocialProof() {
               <p 
                 style={{
                   color: '#FEFEFE',
-                  fontFamily: "Garet, sans-serif",
+                  fontFamily: "Manrope, sans-serif",
                   fontSize: 14,
                   opacity: 0.9,
                   marginBottom: "24px",
@@ -140,7 +140,7 @@ export default function SocialProof() {
                   background: 'linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%)',
                   color: '#FEFEFE',
                   border: 'none',
-                  fontFamily: "Garet, sans-serif",
+                  fontFamily: "Manrope, sans-serif",
                   fontSize: 14,
                   fontWeight: 600,
                   letterSpacing: "0.1em",

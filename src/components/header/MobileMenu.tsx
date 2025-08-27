@@ -37,16 +37,12 @@ export default function MobileMenu({ isOpen, items, onClose }: MobileMenuProps) 
               <a 
                 key={index}
                 href={item.href} 
-                className="block hover:opacity-70 transition-all duration-300 py-2 text-base touch-manipulation"
+                className="block hover:opacity-70 transition-all duration-300 py-2 text-base touch-manipulation mobile-menu-unified-font"
                 style={{
                   color: '#FEFEFE', 
                   minHeight: '40px', 
                   lineHeight: '40px',
-                  fontFamily: 'Horizon, sans-serif',
-                  fontSize: '14px',
-                  fontWeight: 'normal',
-                  letterSpacing: '0.1em',
-                  textTransform: 'uppercase'
+                  fontSize: '14px'
                 }}
                 onClick={onClose}
               >
@@ -130,7 +126,7 @@ export default function MobileMenu({ isOpen, items, onClose }: MobileMenuProps) 
               WebkitBackdropFilter: 'blur(10px)',
               color: '#FEFEFE',
               border: '1px solid rgba(254, 254, 254, 0.3)',
-              fontFamily: 'Garet, sans-serif',
+              fontFamily: 'Manrope, sans-serif',
               fontSize: '14px',
               fontWeight: 600,
               letterSpacing: '0.1em',

@@ -15,7 +15,7 @@ export default function BenefitItem({ benefit, isLast }: BenefitItemProps) {
           flexShrink: 0
         }}>✓</span>
         <span style={{
-          fontFamily: 'Horizon, Arial, sans-serif',
+          fontFamily: 'DrukWideCyr-Super, Arial Black, Arial, sans-serif',
           fontSize: 'clamp(13px, 2.5vw, 17px)',
           fontWeight: 'normal',
           color: '#FEFEFE',

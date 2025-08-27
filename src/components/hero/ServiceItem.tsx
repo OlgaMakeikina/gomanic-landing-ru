@@ -11,7 +11,7 @@ export default function ServiceItem({ service, isLast }: ServiceItemProps) {
   return (
     <div>
       <div style={{
-        fontFamily: 'Horizon, Arial, sans-serif',
+        fontFamily: 'DrukWideCyr-Super, Arial Black, Arial, sans-serif',
         fontSize: 'clamp(11px, 2vw, 17px)',
         fontWeight: 'normal',
         color: '#FEFEFE',
@@ -25,7 +25,7 @@ export default function ServiceItem({ service, isLast }: ServiceItemProps) {
       </div>
       <div className="flex items-center justify-center gap-2 lg:gap-4">
         <span style={{
-          fontFamily: 'Garet, sans-serif',
+          fontFamily: 'Manrope, sans-serif',
           fontSize: 'clamp(12px, 2vw, 16px)',
           fontWeight: 400,
           color: '#FEFEFE',
@@ -35,7 +35,7 @@ export default function ServiceItem({ service, isLast }: ServiceItemProps) {
           R$ {service.oldPrice}
         </span>
         <span style={{
-          fontFamily: 'Horizon, Arial, sans-serif',
+          fontFamily: 'DrukWideCyr-Super, Arial Black, Arial, sans-serif',
           fontSize: 'clamp(13px, 2.5vw, 17px)',
           fontWeight: 'normal',
           color: '#3B3B3A',

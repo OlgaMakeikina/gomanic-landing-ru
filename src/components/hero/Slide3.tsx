@@ -18,7 +18,7 @@ export default function Slide3({ slideData, onButtonAction }: SlideProps) {
                 <VipBadge text="Exclusivo com passe VIP" />
                 
                 <h2 style={{
-                  fontFamily: 'Horizon, Arial, sans-serif',
+                  fontFamily: 'DrukWideCyr-Super, Arial Black, Arial, sans-serif',
                   fontSize: 'clamp(1.5rem, 4vw, 3rem)',
                   fontWeight: 'normal',
                   letterSpacing: '0.05em',
@@ -32,7 +32,7 @@ export default function Slide3({ slideData, onButtonAction }: SlideProps) {
                 </h2>
                 
                 <p style={{
-                  fontFamily: 'Garet, sans-serif',
+                  fontFamily: 'Manrope, sans-serif',
                   fontSize: 'clamp(14px, 3vw, 18px)',
                   fontWeight: 500,
                   color: '#FEFEFE',

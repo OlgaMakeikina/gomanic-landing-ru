@@ -37,7 +37,7 @@ export default function BeforeAfterSection() {
             className="uppercase mb-6"
             style={{
               color: COLORS.gray,
-              fontFamily: "Horizon, sans-serif",
+              fontFamily: "DrukWideCyr-Super, sans-serif",
               letterSpacing: "0.12em",
               fontWeight: 500,
               fontSize: 28,
@@ -76,7 +76,7 @@ export default function BeforeAfterSection() {
                   className="mb-3"
                   style={{
                     color: COLORS.gray,
-                    fontFamily: "Horizon, sans-serif",
+                    fontFamily: "DrukWideCyr-Super, sans-serif",
                     fontSize: 18,
                     fontWeight: 500,
                     letterSpacing: "0.02em"
@@ -89,7 +89,7 @@ export default function BeforeAfterSection() {
                   style={{
                     color: COLORS.gray,
                     opacity: 0.8,
-                    fontFamily: "Garet, sans-serif",
+                    fontFamily: "Manrope, sans-serif",
                     fontSize: 14,
                     lineHeight: 1.6
                   }}
@@ -110,7 +110,7 @@ export default function BeforeAfterSection() {
               background: 'linear-gradient(135deg, #444e55 0%, #3a434a 100%)',
               color: COLORS.white,
               border: 'none',
-              fontFamily: "Garet, sans-serif",
+              fontFamily: "Manrope, sans-serif",
               fontSize: 16,
               fontWeight: 700,
               letterSpacing: "0.1em",

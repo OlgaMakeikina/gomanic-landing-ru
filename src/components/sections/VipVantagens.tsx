@@ -46,7 +46,7 @@ export default function VipVantagens() {
                 backgroundColor: '#444e55',
                 color: '#FEFEFE',
                 border: 'none',
-                fontFamily: 'Garet, sans-serif',
+                fontFamily: 'Manrope, sans-serif',
                 fontSize: '14px',
                 fontWeight: 600,
                 letterSpacing: '0.1em',

@@ -36,11 +36,11 @@
 
 /* Автоматическое определение языка и применение соответствующих шрифтов */
 .vogue-text-adaptive {
-  font-family: 'Garet', 'PT Sans', 'DejaVu Sans', Arial, sans-serif;
+  font-family: 'Manrope', 'PT Sans', 'DejaVu Sans', Arial, sans-serif;
 }
 
 .vogue-text-adaptive:lang(ru) {
-  font-family: 'Garet', 'PT Sans', 'DejaVu Sans', 'Times New Roman', serif;
+  font-family: 'Manrope', 'PT Sans', 'DejaVu Sans', 'Times New Roman', serif;
   font-weight: 400;
 }
 
@@ -79,18 +79,24 @@
 .no-cyrillic-support .vogue-subhead,
 .no-cyrillic-support .vogue-logo,
 .no-cyrillic-support .vogue-number {
-  font-family: 'Oswald', 'Montserrat', 'Druk Wide Super', 'PT Sans Caption', 'Arial Black', Arial, sans-serif !important;
-  font-weight: 700 !important;
-  font-stretch: condensed !important;
+  font-family: 'DrukWideCyr-Super', Arial, sans-serif !important;
+  font-weight: normal !important;
   text-transform: uppercase !important;
   letter-spacing: 0.05em !important;
 }
 
+/* Специальный класс для мобильного меню - единообразный шрифт */
+.mobile-menu-unified-font {
+  font-family: 'DrukWideCyr-Super' !important;
+  font-weight: normal !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+}
+
 /* Веб-безопасные альтернативы */
 .websafe-cyrillic {
-  font-family: 'Oswald', 'Montserrat', 'Arial Black', Arial, 'Helvetica Neue', Helvetica, sans-serif;
-  font-weight: 700;
-  font-stretch: condensed;
+  font-family: 'DrukWideCyr-Super', Arial, sans-serif;
+  font-weight: normal;
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }

@@ -35,7 +35,7 @@ export default function SlideNavigation({
             style={{
               color: '#FEFEFE', 
               opacity: 0.8,
-              fontFamily: 'Garet, sans-serif',
+              fontFamily: 'Manrope, sans-serif',
               fontWeight: 400,
               fontSize: 'clamp(14px, 2vw, 16px)'
             }}

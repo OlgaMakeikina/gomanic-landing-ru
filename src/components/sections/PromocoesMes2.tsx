@@ -103,7 +103,7 @@ export default function PromocoesMes2() {
             className="uppercase mb-6"
             style={{
               color: COLORS.white,
-              fontFamily: "Horizon, Impact, Arial Black, sans-serif",
+              fontFamily: "Horizon, Druk Wide Super, Arial Black, Arial, sans-serif",
               letterSpacing: "0.12em",
               fontWeight: 500,
               fontSize: 24,
@@ -117,7 +117,7 @@ export default function PromocoesMes2() {
             style={{
               background: "rgba(255, 255, 255, 0.25)",
               borderColor: "rgba(255, 255, 255, 0.40)",
-              fontFamily: "Garet, sans-serif",
+              fontFamily: "Manrope, sans-serif",
               fontWeight: 600,
               fontSize: 13,
               letterSpacing: "0.1em",
@@ -133,7 +133,7 @@ export default function PromocoesMes2() {
             style={{
               background: "rgba(255, 255, 255, 0.2)",
               border: "1px solid rgba(255, 255, 255, 0.3)",
-              fontFamily: "Garet, sans-serif",
+              fontFamily: "Manrope, sans-serif",
               fontWeight: 700,
               fontSize: 13,
               letterSpacing: "0.1em",
@@ -175,7 +175,7 @@ export default function PromocoesMes2() {
                     className="text-center"
                     style={{
                       color: COLORS.white,
-                      fontFamily: "Horizon, Impact, Arial Black, sans-serif",
+                      fontFamily: "Horizon, Druk Wide Super, Arial Black, Arial, sans-serif",
                       fontSize: 16,
                       letterSpacing: "0.03em",
                       fontWeight: 500,
@@ -198,7 +198,7 @@ export default function PromocoesMes2() {
                       background: GLASS.priceBg,
                       borderColor: GLASS.priceBorder,
                       boxShadow: GLASS.priceShadow,
-                      fontFamily: "Garet, sans-serif",
+                      fontFamily: "Manrope, sans-serif",
                       fontSize: 12,
                       color: COLORS.white,
                     }}
@@ -255,7 +255,7 @@ export default function PromocoesMes2() {
                       background: COLORS.white,
                       color: COLORS.gray,
                       border: `1px solid ${COLORS.white}`,
-                      fontFamily: "Garet, sans-serif",
+                      fontFamily: "Manrope, sans-serif",
                       fontSize: 12,
                       fontWeight: 700,
                       letterSpacing: "0.1em",

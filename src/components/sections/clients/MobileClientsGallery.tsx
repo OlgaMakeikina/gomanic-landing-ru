@@ -67,7 +67,7 @@ export default function MobileClientsGallery({ colors }: MobileClientsGalleryPro
           <h4 className="uppercase tracking-[0.12em] mb-4"
               style={{ 
                 color: colors.white, 
-                fontFamily:"Horizon, sans-serif", 
+                fontFamily:"DrukWideCyr-Super, sans-serif", 
                 fontWeight:600, 
                 fontSize:18,
                 lineHeight:1.3,
@@ -79,7 +79,7 @@ export default function MobileClientsGallery({ colors }: MobileClientsGalleryPro
           <p className="mb-6 opacity-90"
              style={{ 
                color: colors.white, 
-               fontFamily:"Garet, sans-serif", 
+               fontFamily:"Manrope, sans-serif", 
                fontSize:14,
                lineHeight:1.5
              }}>

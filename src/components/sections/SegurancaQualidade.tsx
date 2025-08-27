@@ -62,7 +62,7 @@ export default function SegurancaQualidade(): JSX.Element {
             className="uppercase mb-6"
             style={{
               color: COLORS.white,
-              fontFamily: 'Horizon, sans-serif',
+              fontFamily: 'DrukWideCyr-Super, sans-serif',
               letterSpacing: '0.12em',
               fontWeight: 500,
               fontSize: 28,
@@ -98,7 +98,7 @@ export default function SegurancaQualidade(): JSX.Element {
                     className="mb-4"
                     style={{
                       color: COLORS.white,
-                      fontFamily: 'Horizon, sans-serif',
+                      fontFamily: 'DrukWideCyr-Super, sans-serif',
                       fontSize: 16,
                       letterSpacing: '0.03em',
                       fontWeight: 500,
@@ -131,7 +131,7 @@ export default function SegurancaQualidade(): JSX.Element {
               <h4
                 style={{
                   color: COLORS.white,
-                  fontFamily: 'Horizon, sans-serif',
+                  fontFamily: 'DrukWideCyr-Super, sans-serif',
                   fontSize: 16,
                   fontWeight: 500,
                   textTransform: 'uppercase',
@@ -144,7 +144,7 @@ export default function SegurancaQualidade(): JSX.Element {
               <p
                 style={{
                   color: COLORS.white,
-                  fontFamily: 'Garet, sans-serif',
+                  fontFamily: 'Manrope, sans-serif',
                   fontSize: 14,
                   opacity: 0.9,
                 }}
@@ -164,7 +164,7 @@ export default function SegurancaQualidade(): JSX.Element {
               <h4
                 style={{
                   color: COLORS.dark,
-                  fontFamily: 'Horizon, sans-serif',
+                  fontFamily: 'DrukWideCyr-Super, sans-serif',
                   fontSize: 16,
                   fontWeight: 500,
                   textTransform: 'uppercase',
@@ -177,7 +177,7 @@ export default function SegurancaQualidade(): JSX.Element {
               <p
                 style={{
                   color: COLORS.dark,
-                  fontFamily: 'Garet, sans-serif',
+                  fontFamily: 'Manrope, sans-serif',
                   fontSize: 14,
                   fontWeight: 600,
                 }}
@@ -195,7 +195,7 @@ export default function SegurancaQualidade(): JSX.Element {
               id="formacao-heading"
               style={{
                 color: COLORS.white,
-                fontFamily: 'Horizon, sans-serif',
+                fontFamily: 'DrukWideCyr-Super, sans-serif',
                 fontSize: 20, // Уменьшен с 24 для мобильных
                 letterSpacing: '0.1em',
                 fontWeight: 500,
@@ -209,7 +209,7 @@ export default function SegurancaQualidade(): JSX.Element {
             <p
               style={{
                 color: COLORS.white,
-                fontFamily: 'Garet, sans-serif',
+                fontFamily: 'Manrope, sans-serif',
                 fontSize: 16,
                 opacity: 0.9,
                 maxWidth: '600px',
@@ -315,7 +315,7 @@ export default function SegurancaQualidade(): JSX.Element {
                   <h4
                     style={{
                       color: '#FEFEFE',
-                      fontFamily: 'Horizon, sans-serif',
+                      fontFamily: 'DrukWideCyr-Super, sans-serif',
                       fontSize: 16,
                       fontWeight: 500,
                       textTransform: 'uppercase',
@@ -332,7 +332,7 @@ export default function SegurancaQualidade(): JSX.Element {
                     style={{
                       background: '#FEFEFE',
                       color: '#3B3B3A',
-                      fontFamily: 'Garet, sans-serif',
+                      fontFamily: 'Manrope, sans-serif',
                       fontSize: 12,
                       fontWeight: 600,
                       textAlign: 'center',

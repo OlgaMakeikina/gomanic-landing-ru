@@ -11,7 +11,7 @@ export default function ClientsSectionHeader({ colors }: ClientsSectionHeaderPro
     <header className="text-center mb-16">
       <p
         className="uppercase tracking-[0.22em] mb-3"
-        style={{ color: colors.white, fontFamily: "Garet, sans-serif", fontSize: 14, opacity: 0.85 }}
+        style={{ color: colors.white, fontFamily: "Manrope, sans-serif", fontSize: 14, opacity: 0.85 }}
       >
         ФОТО КЛИЕНТОВ
       </p>
@@ -21,7 +21,7 @@ export default function ClientsSectionHeader({ colors }: ClientsSectionHeaderPro
         className="uppercase mb-6"
         style={{
           color: colors.white,
-          fontFamily: "Horizon, sans-serif",
+          fontFamily: "DrukWideCyr-Super, sans-serif",
           letterSpacing: "0.12em",
           fontWeight: 500,
           fontSize: 28,
@@ -32,7 +32,7 @@ export default function ClientsSectionHeader({ colors }: ClientsSectionHeaderPro
       
       <p
         className="mx-auto max-w-3xl"
-        style={{ color: colors.white, opacity: 0.9, fontFamily: "Garet, sans-serif", fontSize: 16 }}
+        style={{ color: colors.white, opacity: 0.9, fontFamily: "Manrope, sans-serif", fontSize: 16 }}
       >
         Тысячи довольных клиентов, которые уже доверились нашей работе
       </p>

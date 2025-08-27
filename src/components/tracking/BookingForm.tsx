@@ -140,7 +140,7 @@ export default function BookingForm({ className = '', variant = 'default' }: Boo
             <div>
               <label className="block mb-3" style={{
                 color: '#FEFEFE',
-                fontFamily: 'Garet, sans-serif',
+                fontFamily: 'Manrope, sans-serif',
                 fontSize: 14,
                 letterSpacing: '0.22em',
                 textTransform: 'uppercase',
@@ -159,7 +159,7 @@ export default function BookingForm({ className = '', variant = 'default' }: Boo
                   background: 'rgba(255, 255, 255, 0.15)',
                   borderColor: 'rgba(255, 255, 255, 0.2)',
                   color: '#FEFEFE',
-                  fontFamily: 'Garet, sans-serif',
+                  fontFamily: 'Manrope, sans-serif',
                   fontSize: 16
                 }}
               />
@@ -168,7 +168,7 @@ export default function BookingForm({ className = '', variant = 'default' }: Boo
             <div>
               <label className="block mb-3" style={{
                 color: '#FEFEFE',
-                fontFamily: 'Garet, sans-serif',
+                fontFamily: 'Manrope, sans-serif',
                 fontSize: 14,
                 letterSpacing: '0.22em',
                 textTransform: 'uppercase',
@@ -187,7 +187,7 @@ export default function BookingForm({ className = '', variant = 'default' }: Boo
                   background: 'rgba(255, 255, 255, 0.15)',
                   borderColor: 'rgba(255, 255, 255, 0.2)',
                   color: '#FEFEFE',
-                  fontFamily: 'Garet, sans-serif',
+                  fontFamily: 'Manrope, sans-serif',
                   fontSize: 16
                 }}
               />
@@ -196,7 +196,7 @@ export default function BookingForm({ className = '', variant = 'default' }: Boo
             <div>
               <label className="block mb-3" style={{
                 color: '#FEFEFE',
-                fontFamily: 'Garet, sans-serif',
+                fontFamily: 'Manrope, sans-serif',
                 fontSize: 14,
                 letterSpacing: '0.22em',
                 textTransform: 'uppercase',
@@ -215,7 +215,7 @@ export default function BookingForm({ className = '', variant = 'default' }: Boo
                   background: 'rgba(255, 255, 255, 0.15)',
                   borderColor: 'rgba(255, 255, 255, 0.2)',
                   color: '#FEFEFE',
-                  fontFamily: 'Garet, sans-serif',
+                  fontFamily: 'Manrope, sans-serif',
                   fontSize: 16
                 }}
               />
@@ -224,7 +224,7 @@ export default function BookingForm({ className = '', variant = 'default' }: Boo
             <div>
               <label className="block mb-3" style={{
                 color: '#FEFEFE',
-                fontFamily: 'Garet, sans-serif',
+                fontFamily: 'Manrope, sans-serif',
                 fontSize: 14,
                 letterSpacing: '0.22em',
                 textTransform: 'uppercase',
@@ -263,7 +263,7 @@ export default function BookingForm({ className = '', variant = 'default' }: Boo
                         <div className="flex justify-between items-center gap-4">
                           <h4 style={{
                             color: '#FEFEFE',
-                            fontFamily: 'Garet, sans-serif',
+                            fontFamily: 'Manrope, sans-serif',
                             fontSize: 11,
                             fontWeight: 600,
                             letterSpacing: '0.08em',
@@ -276,7 +276,7 @@ export default function BookingForm({ className = '', variant = 'default' }: Boo
                           </h4>
                           <span style={{
                             color: '#FEFEFE',
-                            fontFamily: 'Horizon, sans-serif',
+                            fontFamily: 'DrukWideCyr-Super, sans-serif',
                             fontSize: 14,
                             fontWeight: 500,
                             letterSpacing: '0.03em',
@@ -300,7 +300,7 @@ export default function BookingForm({ className = '', variant = 'default' }: Boo
                   background: 'rgba(239, 68, 68, 0.15)',
                   borderColor: 'rgba(239, 68, 68, 0.3)',
                   color: '#FEF2F2',
-                  fontFamily: 'Garet, sans-serif',
+                  fontFamily: 'Manrope, sans-serif',
                   fontSize: 14
                 }}
               >
@@ -316,7 +316,7 @@ export default function BookingForm({ className = '', variant = 'default' }: Boo
                 background: 'linear-gradient(135deg, rgba(68,79,85,0.95) 0%, rgba(59,59,58,0.95) 100%)',
                 borderColor: '#FEFEFE',
                 color: '#FEFEFE',
-                fontFamily: 'Garet, sans-serif',
+                fontFamily: 'Manrope, sans-serif',
                 fontSize: 12,
                 fontWeight: 600,
                 letterSpacing: '0.15em',

@@ -47,7 +47,7 @@ export default function DesktopClientsGallery({ colors }: DesktopClientsGalleryP
             <h4 className="uppercase tracking-[0.1em] mb-3"
                 style={{ 
                   color: colors.white, 
-                  fontFamily:"Horizon, sans-serif", 
+                  fontFamily:"DrukWideCyr-Super, sans-serif", 
                   fontWeight:700, 
                   fontSize:14,
                   textShadow: "0 2px 8px rgba(0,0,0,0.3)"

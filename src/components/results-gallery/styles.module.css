@@ -16,7 +16,7 @@
 
 .overline {
   color: #444e55;
-  font-family: Garet, sans-serif;
+  font-family: Manrope, sans-serif;
   font-size: 0.875rem;
   font-weight: 400;
   letter-spacing: 0.22em;
@@ -30,7 +30,7 @@
   color: #444e55;
   margin-bottom: 24px;
   font-weight: 500;
-  font-family: Horizon, sans-serif;
+  font-family: DrukWideCyr-Super, sans-serif;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   line-height: 1.1;
@@ -43,7 +43,7 @@
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.6;
-  font-family: Garet, sans-serif;
+  font-family: Manrope, sans-serif;
   white-space: nowrap;
 }
 
@@ -100,7 +100,7 @@
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  font-family: Horizon, sans-serif;
+  font-family: DrukWideCyr-Super, sans-serif;
   font-size: 1.5rem;
   font-weight: 500;
   color: #3B3B3A;
@@ -120,7 +120,7 @@
 }
 
 .tabTitle {
-  font-family: Garet, sans-serif;
+  font-family: Manrope, sans-serif;
   font-size: 0.7rem;
   font-weight: 400;
   letter-spacing: 0.15em;
@@ -128,7 +128,7 @@
   margin-bottom: 4px;
 }
 .tabSubtitle {
-  font-family: Garet, sans-serif;
+  font-family: Manrope, sans-serif;
   font-size: 0.6rem;
   opacity: 0.7;
   line-height: 1.3;
@@ -231,7 +231,7 @@
 
 .ctaText {
   color: #FEFEFE;
-  font-family: Garet, sans-serif;
+  font-family: Manrope, sans-serif;
   font-size: 1.4rem;
   letter-spacing: 0.05em;
   font-weight: 400;
@@ -261,7 +261,7 @@
   background: #FEFEFE;
   color: #3B3B3A;
   border: 2px solid #FEFEFE;
-  font-family: Garet, sans-serif;
+  font-family: Manrope, sans-serif;
   font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0.1em;

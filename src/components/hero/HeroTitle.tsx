@@ -32,7 +32,7 @@ export default function HeroTitle({ title, subtitle, content, align = 'center', 
         <HorizonText
           as="h1"
           style={{
-            fontFamily: 'Horizon, Druk Wide Super, Arial Black, Arial, sans-serif',
+            fontFamily: 'DrukWideCyr-Super, Arial, sans-serif',
             textTransform: 'uppercase',
             color: '#FEFEFE',
             textShadow: '0 4px 20px rgba(0,0,0,0.5)',
@@ -123,7 +123,7 @@ export default function HeroTitle({ title, subtitle, content, align = 'center', 
       <div className={`mb-6 lg:mb-8 ${align === 'center' ? 'text-center' : 'text-left'}`}>
         <p
           style={{
-            fontFamily: 'Garet, sans-serif',
+            fontFamily: 'Manrope, sans-serif',
             fontSize: 'clamp(1.1rem, 2.6vw, 2rem)',
             fontWeight: 600,
             color: '#FEFEFE',
@@ -140,7 +140,7 @@ export default function HeroTitle({ title, subtitle, content, align = 'center', 
         <div className={`mb-8 lg:mb-12 ${align === 'center' ? 'text-center' : 'text-left'}`}>
           <p
             style={{
-              fontFamily: 'Garet, sans-serif',
+              fontFamily: 'Manrope, sans-serif',
               fontSize: 'clamp(1rem, 2vw, 1.375rem)',
               fontWeight: 400,
               color: '#FEFEFE',

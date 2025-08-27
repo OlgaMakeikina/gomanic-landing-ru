@@ -79,7 +79,7 @@ export default function TestimonialsSection() {
               backgroundColor: 'transparent',
               color: '#444e55',
               border: '2px solid #444e55',
-              fontFamily: 'Garet, sans-serif',
+              fontFamily: 'Manrope, sans-serif',
               fontSize: '14px',
               fontWeight: 600,
               letterSpacing: '0.1em',
