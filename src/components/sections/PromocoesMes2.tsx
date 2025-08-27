@@ -94,7 +94,7 @@ export default function PromocoesMes2() {
         <div className="text-center mb-10">
           <div
             className="uppercase tracking-[0.22em] mb-3"
-            style={{ color: COLORS.white, fontFamily: "Garet, sans-serif", fontSize: 14, opacity: 0.85 }}
+            style={{ color: COLORS.white, fontFamily: "Manrope, sans-serif", fontSize: 14, opacity: 0.85 }}
           >
             СПЕЦИАЛЬНЫЕ ПРЕДЛОЖЕНИЯ
           </div>
@@ -103,7 +103,7 @@ export default function PromocoesMes2() {
             className="uppercase mb-6"
             style={{
               color: COLORS.white,
-              fontFamily: "Horizon, Druk Wide Super, Arial Black, Arial, sans-serif",
+              fontFamily: "DrukWideCyr-Super, sans-serif",
               letterSpacing: "0.12em",
               fontWeight: 500,
               fontSize: 24,
@@ -148,7 +148,7 @@ export default function PromocoesMes2() {
 
           <p
             className="mt-6 mx-auto max-w-2xl"
-            style={{ color: COLORS.white, opacity: 0.85, fontFamily: "Garet, sans-serif", fontSize: 14 }}
+            style={{ color: COLORS.white, opacity: 0.85, fontFamily: "Manrope, sans-serif", fontSize: 14 }}
           >
             Эксклюзивные цены для обладателей VIP-пропуска
           </p>
@@ -175,7 +175,7 @@ export default function PromocoesMes2() {
                     className="text-center"
                     style={{
                       color: COLORS.white,
-                      fontFamily: "Horizon, Druk Wide Super, Arial Black, Arial, sans-serif",
+                      fontFamily: "DrukWideCyr-Super, sans-serif",
                       fontSize: 16,
                       letterSpacing: "0.03em",
                       fontWeight: 500,
@@ -231,11 +231,11 @@ export default function PromocoesMes2() {
                 <div className="flex-1">
                   <div
                     className="mb-2 uppercase"
-                    style={{ color: COLORS.white, fontFamily: "Garet, sans-serif", fontSize: 12, opacity: 0.9, letterSpacing: "0.08em" }}
+                    style={{ color: COLORS.white, fontFamily: "Manrope, sans-serif", fontSize: 12, opacity: 0.9, letterSpacing: "0.08em" }}
                   >
                     Включено
                   </div>
-                  <ul className="space-y-1" style={{ color: COLORS.white, fontFamily: "Garet, sans-serif", fontSize: 12 }}>
+                  <ul className="space-y-1" style={{ color: COLORS.white, fontFamily: "Manrope, sans-serif", fontSize: 12 }}>
                     {promo.inclui.map((item, i) => (
                       <li key={i} className="flex items-start">
                         <span className="mr-2">•</span>
@@ -289,7 +289,7 @@ export default function PromocoesMes2() {
             background: "rgba(255, 255, 255, 0.15)",
             border: "1px solid rgba(255, 255, 255, 0.25)",
             color: COLORS.white,
-            fontFamily: "Garet, sans-serif",
+            fontFamily: "Manrope, sans-serif",
             fontSize: 14,
             backdropFilter: "blur(10px)",
           }}
