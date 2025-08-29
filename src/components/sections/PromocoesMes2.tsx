@@ -52,18 +52,19 @@ export default function PromocoesMes2() {
   const COLORS = { dark: "#444f55", gray: "#3B3B3A", white: "#FEFEFE" }
   const [openAccordion, setOpenAccordion] = useState<number | null>(null)
 
-  const [remaining, setRemaining] = useState("--:--:--")
+  const [remaining, setRemaining] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 })
   useEffect(() => {
     const end = new Date(new Date().getFullYear(), new Date().getMonth() + 1, 0, 23, 59, 59, 999)
     const tick = () => {
       const now = new Date()
       const d = end.getTime() - now.getTime()
-      if (d <= 0) return setRemaining("00:00:00")
-      const s = Math.floor(d / 1000)
-      const hh = String(Math.floor(s / 3600)).padStart(2, "0")
-      const mm = String(Math.floor((s % 3600) / 60)).padStart(2, "0")
-      const ss = String(s % 60).padStart(2, "0")
-      setRemaining(`${hh}:${mm}:${ss}`)
+      if (d <= 0) return setRemaining({ days: 0, hours: 0, minutes: 0, seconds: 0 })
+      const totalSeconds = Math.floor(d / 1000)
+      const days = Math.floor(totalSeconds / (24 * 3600))
+      const hours = Math.floor((totalSeconds % (24 * 3600)) / 3600)
+      const minutes = Math.floor((totalSeconds % 3600) / 60)
+      const seconds = totalSeconds % 60
+      setRemaining({ days, hours, minutes, seconds })
     }
     tick()
     const id = setInterval(tick, 1000)
@@ -116,17 +117,138 @@ export default function PromocoesMes2() {
               borderColor: "rgba(255, 255, 255, 0.40)",
             }}
           >
-            <div
-              className="flex items-center justify-center gap-3 mb-3"
-              style={{
-                fontFamily: "Manrope, sans-serif",
-                fontWeight: 600,
-                fontSize: 13,
-                letterSpacing: "0.1em",
-              }}
-            >
-              <span className="uppercase" style={{ color: COLORS.white }}>Осталось времени</span>
-              <span className="tabular-nums font-bold" style={{ color: COLORS.white }}>{remaining}</span>
+            <div className="text-center">
+              <div
+                className="uppercase mb-2"
+                style={{
+                  color: COLORS.white,
+                  fontFamily: "Manrope, sans-serif",
+                  fontWeight: 600,
+                  fontSize: 13,
+                  letterSpacing: "0.1em",
+                  opacity: 0.9,
+                }}
+              >
+                Осталось времени
+              </div>
+              
+              <div className="flex items-center justify-center gap-4">
+                <div className="text-center">
+                  <div
+                    className="tabular-nums font-bold"
+                    style={{
+                      color: COLORS.white,
+                      fontFamily: "Manrope, sans-serif",
+                      fontSize: 20,
+                      fontWeight: 800,
+                      lineHeight: 1,
+                    }}
+                  >
+                    {String(remaining.days).padStart(2, "0")}
+                  </div>
+                  <div
+                    style={{
+                      color: COLORS.white,
+                      fontFamily: "Manrope, sans-serif",
+                      fontSize: 10,
+                      fontWeight: 500,
+                      textTransform: "uppercase",
+                      letterSpacing: "0.1em",
+                      opacity: 0.8,
+                      marginTop: 2,
+                    }}
+                  >
+                    дни
+                  </div>
+                </div>
+                
+                <div className="text-center">
+                  <div
+                    className="tabular-nums font-bold"
+                    style={{
+                      color: COLORS.white,
+                      fontFamily: "Manrope, sans-serif",
+                      fontSize: 20,
+                      fontWeight: 800,
+                      lineHeight: 1,
+                    }}
+                  >
+                    {String(remaining.hours).padStart(2, "0")}
+                  </div>
+                  <div
+                    style={{
+                      color: COLORS.white,
+                      fontFamily: "Manrope, sans-serif",
+                      fontSize: 10,
+                      fontWeight: 500,
+                      textTransform: "uppercase",
+                      letterSpacing: "0.1em",
+                      opacity: 0.8,
+                      marginTop: 2,
+                    }}
+                  >
+                    часы
+                  </div>
+                </div>
+                
+                <div className="text-center">
+                  <div
+                    className="tabular-nums font-bold"
+                    style={{
+                      color: COLORS.white,
+                      fontFamily: "Manrope, sans-serif",
+                      fontSize: 20,
+                      fontWeight: 800,
+                      lineHeight: 1,
+                    }}
+                  >
+                    {String(remaining.minutes).padStart(2, "0")}
+                  </div>
+                  <div
+                    style={{
+                      color: COLORS.white,
+                      fontFamily: "Manrope, sans-serif",
+                      fontSize: 10,
+                      fontWeight: 500,
+                      textTransform: "uppercase",
+                      letterSpacing: "0.1em",
+                      opacity: 0.8,
+                      marginTop: 2,
+                    }}
+                  >
+                    мин
+                  </div>
+                </div>
+                
+                <div className="text-center">
+                  <div
+                    className="tabular-nums font-bold"
+                    style={{
+                      color: COLORS.white,
+                      fontFamily: "Manrope, sans-serif",
+                      fontSize: 20,
+                      fontWeight: 800,
+                      lineHeight: 1,
+                    }}
+                  >
+                    {String(remaining.seconds).padStart(2, "0")}
+                  </div>
+                  <div
+                    style={{
+                      color: COLORS.white,
+                      fontFamily: "Manrope, sans-serif",
+                      fontSize: 10,
+                      fontWeight: 500,
+                      textTransform: "uppercase",
+                      letterSpacing: "0.1em",
+                      opacity: 0.8,
+                      marginTop: 2,
+                    }}
+                  >
+                    сек
+                  </div>
+                </div>
+              </div>
             </div>
             
             <div
