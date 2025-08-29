@@ -96,7 +96,7 @@ export default function HeroSectionRU() {
         slides={heroSlides}
       />
       
-      <SlideOverlay />
+      <SlideOverlay currentSlide={currentSlide} />
 
       <div className="relative z-20 h-full">
         {renderSlide(currentSlide)}

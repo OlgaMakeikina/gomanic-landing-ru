@@ -50,15 +50,7 @@ export default function PromocoesMes2() {
   )
 
   const COLORS = { dark: "#444f55", gray: "#3B3B3A", white: "#FEFEFE" }
-  const GLASS = {
-    cardBg: `rgba(255, 255, 255, 0.12)`,
-    cardBorder: "rgba(255, 255, 255, 0.25)",
-    cardShadow: "0 32px 64px rgba(0,0,0,0.5)",
-    priceBg: `rgba(255, 255, 255, 0.25)`,
-    priceBorder: "rgba(255, 255, 255, 0.40)",
-    priceShadow: "0 8px 32px rgba(0,0,0,0.3)",
-    blur: "16px",
-  }
+  const [openAccordion, setOpenAccordion] = useState<number | null>(null)
 
   const [remaining, setRemaining] = useState("--:--:--")
   useEffect(() => {
@@ -78,6 +70,10 @@ export default function PromocoesMes2() {
     return () => clearInterval(id)
   }, [])
 
+  const toggleAccordion = (index: number) => {
+    setOpenAccordion(openAccordion === index ? null : index)
+  }
+
   return (
     <section id="promocoes" className="relative py-20" style={{ backgroundColor: COLORS.dark }}>
       <div className="pointer-events-none absolute inset-0">
@@ -91,7 +87,8 @@ export default function PromocoesMes2() {
       </div>
 
       <div className="relative mx-auto max-w-7xl px-6">
-        <div className="text-center mb-10">
+        {/* Header */}
+        <div className="text-center mb-16">
           <div
             className="uppercase tracking-[0.22em] mb-3"
             style={{ color: COLORS.white, fontFamily: "Manrope, sans-serif", fontSize: 14, opacity: 0.85 }}
@@ -106,185 +103,244 @@ export default function PromocoesMes2() {
               fontFamily: "DrukWideCyr-Super, sans-serif",
               letterSpacing: "0.12em",
               fontWeight: 500,
-              fontSize: 24,
+              fontSize: 36,
             }}
           >
             АКЦИИ МЕСЯЦА
           </h2>
 
           <div
-            className="mx-auto inline-flex items-center gap-3 rounded-2xl px-5 py-3 backdrop-blur-md border shadow-lg"
+            className="mx-auto inline-block rounded-2xl px-6 py-4 backdrop-blur-md border shadow-lg mb-4"
             style={{
               background: "rgba(255, 255, 255, 0.25)",
               borderColor: "rgba(255, 255, 255, 0.40)",
-              fontFamily: "Manrope, sans-serif",
-              fontWeight: 600,
-              fontSize: 13,
-              letterSpacing: "0.1em",
-            }}
-            aria-live="polite"
-          >
-            <span className="uppercase" style={{ color: COLORS.white }}>Осталось времени</span>
-            <span className="tabular-nums font-bold" style={{ color: COLORS.white }}>{remaining}</span>
-          </div>
-
-          <div
-            className="mt-4 inline-flex items-center gap-2 rounded-lg px-4 py-2"
-            style={{
-              background: "rgba(255, 255, 255, 0.2)",
-              border: "1px solid rgba(255, 255, 255, 0.3)",
-              fontFamily: "Manrope, sans-serif",
-              fontWeight: 700,
-              fontSize: 13,
-              letterSpacing: "0.1em",
-              textTransform: "uppercase",
-              color: COLORS.white,
-              animation: "pulse 2s infinite",
             }}
           >
-            <span>🔥</span>
-            <span>Только 30 мест! Не упустите!</span>
-          </div>
-
-          <p
-            className="mt-6 mx-auto max-w-2xl"
-            style={{ color: COLORS.white, opacity: 0.85, fontFamily: "Manrope, sans-serif", fontSize: 14 }}
-          >
-            Эксклюзивные цены для обладателей VIP-пропуска
-          </p>
-        </div>
-
-        <div className="grid gap-6 md:gap-8 lg:grid-cols-2 xl:grid-cols-4 items-stretch">
-          {promocoes.map((promo, idx) => (
-            <article
-              key={idx}
-              className="relative backdrop-blur-xl rounded-2xl border flex flex-col"
+            <div
+              className="flex items-center justify-center gap-3 mb-3"
               style={{
-                background: GLASS.cardBg,
-                borderColor: GLASS.cardBorder,
-                boxShadow: GLASS.cardShadow,
-                height: "500px",
+                fontFamily: "Manrope, sans-serif",
+                fontWeight: 600,
+                fontSize: 13,
+                letterSpacing: "0.1em",
               }}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-white/15 via-white/5 to-transparent rounded-2xl"></div>
-              <div className="absolute inset-0 bg-gradient-to-tl from-black/20 via-transparent to-black/10 rounded-2xl"></div>
-              
-              <div className="relative z-10 h-full grid grid-rows-[auto_auto_1fr_auto] px-6 py-6 gap-4">
-                <div>
-                  <h3
-                    className="text-center"
-                    style={{
-                      color: COLORS.white,
-                      fontFamily: "DrukWideCyr-Super, sans-serif",
-                      fontSize: 16,
-                      letterSpacing: "0.03em",
-                      fontWeight: 500,
-                      lineHeight: 1.3,
-                      textTransform: "uppercase",
-                      minHeight: "80px",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                    }}
-                  >
-                    {promo.titulo}
-                  </h3>
-                </div>
+              <span className="uppercase" style={{ color: COLORS.white }}>Осталось времени</span>
+              <span className="tabular-nums font-bold" style={{ color: COLORS.white }}>{remaining}</span>
+            </div>
+            
+            <div
+              className="flex items-center justify-center gap-2"
+              style={{
+                fontFamily: "Manrope, sans-serif",
+                fontWeight: 700,
+                fontSize: 13,
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                color: COLORS.white,
+                animation: "pulse 2s infinite",
+              }}
+            >
+              <span>🔥</span>
+              <span>Только 30 мест! Не упустите!</span>
+            </div>
+          </div>
+        </div>
 
-                <div>
-                  <div
-                    className="rounded-2xl px-4 py-3 backdrop-blur-md border"
-                    style={{
-                      background: GLASS.priceBg,
-                      borderColor: GLASS.priceBorder,
-                      boxShadow: GLASS.priceShadow,
-                      fontFamily: "Manrope, sans-serif",
-                      fontSize: 12,
-                      color: COLORS.white,
-                    }}
-                  >
-                    <div className="flex items-baseline justify-between gap-2">
-                      <span className="uppercase" style={{ letterSpacing: "0.02em", opacity: 0.9 }}>
-                        Цена с VIP:
-                      </span>
-                      <div className="flex items-baseline gap-2">
-                        <span style={{ textDecoration: "line-through", opacity: 0.55, fontSize: 11 }}>
+        {/* Main Content: Photo + Accordion */}
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+          {/* Left: Photo */}
+          <div className="lg:sticky lg:top-8">
+            <div
+              className="relative aspect-square rounded-2xl overflow-hidden backdrop-blur-xl border"
+              style={{
+                background: "rgba(255, 255, 255, 0.12)",
+                borderColor: "rgba(255, 255, 255, 0.25)",
+                boxShadow: "0 32px 64px rgba(0,0,0,0.5)",
+              }}
+            >
+              <img 
+                src="/images/offer/offer.jpeg" 
+                alt="Маникюр со скидкой 50% - наша работа" 
+                className="absolute inset-0 w-full h-full object-cover"
+                style={{
+                  filter: "brightness(0.85) contrast(1.1)"
+                }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-black/30"></div>
+              <div className="absolute inset-0 bg-gradient-to-tl from-black/20 via-transparent to-transparent"></div>
+            </div>
+          </div>
+
+          {/* Right: Accordion */}
+          <div className="space-y-4">
+            {promocoes.map((promo, index) => (
+              <div
+                key={index}
+                className="relative backdrop-blur-xl rounded-2xl border overflow-hidden"
+                style={{
+                  background: "rgba(255, 255, 255, 0.12)",
+                  borderColor: "rgba(255, 255, 255, 0.25)",
+                  boxShadow: "0 8px 32px rgba(0,0,0,0.3)",
+                }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-white/15 via-white/5 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-tl from-black/20 via-transparent to-black/10"></div>
+
+                {/* Accordion Header */}
+                <button
+                  onClick={() => toggleAccordion(index)}
+                  className="relative z-10 w-full p-6 text-left focus:outline-none hover:bg-white/10 transition-all duration-300"
+                >
+                  <div className="flex items-center justify-between">
+                    <div className="flex-1 pr-4">
+                      <h3
+                        style={{
+                          color: COLORS.white,
+                          fontFamily: "DrukWideCyr-Super, sans-serif",
+                          fontSize: 18,
+                          letterSpacing: "0.03em",
+                          fontWeight: 500,
+                          lineHeight: 1.3,
+                          textTransform: "uppercase",
+                          marginBottom: 12,
+                        }}
+                      >
+                        {promo.titulo}
+                      </h3>
+
+                      <div className="flex items-center gap-3">
+                        <span
+                          style={{
+                            color: COLORS.white,
+                            opacity: 0.6,
+                            textDecoration: "line-through",
+                            fontFamily: "Manrope, sans-serif",
+                            fontSize: 14,
+                          }}
+                        >
                           {promo.precoNormal}
                         </span>
                         <span
-                          className="inline-flex items-center rounded-md px-2 py-1"
+                          className="inline-flex items-center rounded-lg px-3 py-1"
                           style={{
                             background: COLORS.white,
                             color: COLORS.gray,
                             fontWeight: 800,
-                            fontSize: 14,
-                            boxShadow: "0 2px 8px rgba(254,254,254,0.20)",
+                            fontSize: 18,
+                            fontFamily: "Manrope, sans-serif",
+                            boxShadow: "0 4px 12px rgba(254,254,254,0.20)",
                           }}
                         >
                           {promo.precoVIP}
                         </span>
                       </div>
                     </div>
-                  </div>
-                </div>
 
-                <div className="flex-1">
-                  <div
-                    className="mb-2 uppercase"
-                    style={{ color: COLORS.white, fontFamily: "Manrope, sans-serif", fontSize: 12, opacity: 0.9, letterSpacing: "0.08em" }}
-                  >
-                    Включено
+                    <div
+                      className="flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-transform duration-300"
+                      style={{
+                        background: "rgba(255, 255, 255, 0.2)",
+                        transform: openAccordion === index ? "rotate(180deg)" : "rotate(0deg)",
+                      }}
+                    >
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        style={{ color: COLORS.white }}
+                      >
+                        <path
+                          d="M4 6L8 10L12 6"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </div>
                   </div>
-                  <ul className="space-y-1" style={{ color: COLORS.white, fontFamily: "Manrope, sans-serif", fontSize: 12 }}>
-                    {promo.inclui.map((item, i) => (
-                      <li key={i} className="flex items-start">
-                        <span className="mr-2">•</span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                </button>
 
-                <div>
-                  <button
-                    onClick={() =>
-                      document.getElementById("agendamento")?.scrollIntoView({ behavior: "smooth", block: "start" })
-                    }
-                    className="w-full rounded-xl px-4 py-2 transition-all duration-300"
-                    style={{
-                      background: COLORS.white,
-                      color: COLORS.gray,
-                      border: `1px solid ${COLORS.white}`,
-                      fontFamily: "Manrope, sans-serif",
-                      fontSize: 12,
-                      fontWeight: 700,
-                      letterSpacing: "0.1em",
-                      textTransform: "uppercase",
-                      boxShadow: "0 10px 28px rgba(254,254,254,0.10)",
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.background = "transparent"
-                      e.currentTarget.style.color = COLORS.white
-                      e.currentTarget.style.boxShadow = "0 10px 28px rgba(59,59,57,0.45)"
-                      e.currentTarget.style.border = `1px solid ${COLORS.white}`
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.background = COLORS.white
-                      e.currentTarget.style.color = COLORS.gray
-                      e.currentTarget.style.boxShadow = "0 10px 28px rgba(254,254,254,0.10)"
-                      e.currentTarget.style.border = `1px solid ${COLORS.white}`
-                    }}
-                  >
-                    Забронировать место
-                  </button>
+                {/* Accordion Content */}
+                <div
+                  className="relative z-10 overflow-hidden transition-all duration-300"
+                  style={{
+                    maxHeight: openAccordion === index ? "200px" : "0",
+                  }}
+                >
+                  <div className="px-6 pb-6">
+                    <div
+                      className="mb-3 uppercase"
+                      style={{
+                        color: COLORS.white,
+                        fontFamily: "Manrope, sans-serif",
+                        fontSize: 12,
+                        opacity: 0.9,
+                        letterSpacing: "0.08em",
+                      }}
+                    >
+                      Включено
+                    </div>
+                    <ul
+                      className="space-y-2 mb-4"
+                      style={{
+                        color: COLORS.white,
+                        fontFamily: "Manrope, sans-serif",
+                        fontSize: 14,
+                        lineHeight: 1.5,
+                      }}
+                    >
+                      {promo.inclui.map((item, i) => (
+                        <li key={i} className="flex items-start">
+                          <span className="mr-3 mt-1">•</span>
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <button
+                      onClick={() =>
+                        document.getElementById("agendamento")?.scrollIntoView({ behavior: "smooth", block: "start" })
+                      }
+                      className="w-full rounded-lg px-4 py-3 transition-all duration-300 hover:scale-105"
+                      style={{
+                        background: COLORS.white,
+                        color: COLORS.gray,
+                        border: `1px solid ${COLORS.white}`,
+                        fontFamily: "Manrope, sans-serif",
+                        fontSize: 14,
+                        fontWeight: 700,
+                        letterSpacing: "0.1em",
+                        textTransform: "uppercase",
+                        boxShadow: "0 8px 24px rgba(254,254,254,0.15)",
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.background = "transparent"
+                        e.currentTarget.style.color = COLORS.white
+                        e.currentTarget.style.boxShadow = "0 8px 24px rgba(59,59,57,0.45)"
+                        e.currentTarget.style.border = `1px solid ${COLORS.white}`
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.background = COLORS.white
+                        e.currentTarget.style.color = COLORS.gray
+                        e.currentTarget.style.boxShadow = "0 8px 24px rgba(254,254,254,0.15)"
+                        e.currentTarget.style.border = `1px solid ${COLORS.white}`
+                      }}
+                    >
+                      Забронировать место
+                    </button>
+                  </div>
                 </div>
               </div>
-            </article>
-          ))}
+            ))}
+          </div>
         </div>
 
+        {/* Bottom Info */}
         <div
-          className="mt-10 md:mt-12 rounded-2xl px-5 py-4 text-center mx-auto max-w-3xl"
+          className="mt-16 rounded-2xl px-6 py-4 text-center mx-auto max-w-3xl"
           style={{
             background: "rgba(255, 255, 255, 0.15)",
             border: "1px solid rgba(255, 255, 255, 0.25)",
