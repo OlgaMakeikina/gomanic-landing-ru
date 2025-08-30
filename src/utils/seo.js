@@ -65,7 +65,7 @@ export const generateBusinessSchema = () => {
       longitude: -48.4063245
     },
     telephone: '+55 48 99673-7351',
-    priceRange: 'R$ 80-160',
+    priceRange: '600-1800 ₽',
     openingHours: [
       'Mo-Fr 09:00-18:00',
       'Sa 09:00-16:00'

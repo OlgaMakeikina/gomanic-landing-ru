@@ -23,14 +23,14 @@ export default function Slide1({ slideData, onButtonAction }: SlideProps) {
                 onClick={() => onButtonAction('scroll', 'agendamento')}
                 variant="primary"
               >
-                QUERO MEU PASSE VIP
+                ХОЧУ СВОЙ VIP-ПРОПУСК
               </HeroButton>
               
               <HeroButton 
                 onClick={() => onButtonAction('next')}
                 variant="secondary"
               >
-                SABER MAIS
+                УЗНАТЬ БОЛЬШЕ
               </HeroButton>
             </div>
           </div>
@@ -51,14 +51,14 @@ export default function Slide1({ slideData, onButtonAction }: SlideProps) {
               onClick={() => onButtonAction('scroll', 'agendamento')}
               variant="primary"
             >
-              QUERO MEU PASSE VIP
+              ХОЧУ СВОЙ VIP-ПРОПУСК
             </HeroButton>
             
             <HeroButton 
               onClick={() => onButtonAction('next')}
               variant="secondary"
             >
-              SABER MAIS
+              УЗНАТЬ БОЛЬШЕ
             </HeroButton>
           </div>
         </div>

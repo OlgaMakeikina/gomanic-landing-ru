@@ -47,13 +47,13 @@ export default function Slide2({ slideData, onButtonAction }: SlideProps) {
                     variant="primary"
                     className="min-w-[140px]"
                   >
-                    QUERO MEU PASSE VIP
+                    ХОЧУ СВОЙ VIP-ПРОПУСК
                   </HeroButton>
                   <HeroButton 
                     onClick={() => onButtonAction('scroll', 'portfolio')}
                     variant="secondary"
                   >
-                    VER PORTFOLIO
+                    ПОСМОТРЕТЬ ПОРТФОЛИО
                   </HeroButton>
                 </div>
               </div>
@@ -79,14 +79,14 @@ export default function Slide2({ slideData, onButtonAction }: SlideProps) {
                 variant="primary"
                 className="text-sm px-6 py-2.5 min-w-[120px]"
               >
-                QUERO MEU PASSE VIP
+                ХОЧУ СВОЙ VIP-ПРОПУСК
               </HeroButton>
               <HeroButton 
                 onClick={() => onButtonAction('scroll', 'portfolio')}
                 variant="secondary"
                 className="text-sm px-6 py-2.5 min-w-[120px]"
               >
-                VER PORTFOLIO
+                ПОСМОТРЕТЬ ПОРТФОЛИО
               </HeroButton>
             </div>
           </div>

@@ -90,7 +90,10 @@ export default function HeroTitle({ title, subtitle, content, align = 'center', 
                     Пространство обслуживания:
                   </p>
                   <p className="text-lg text-white font-bold tracking-wide">
-                    GOMANIC
+                    салон GOMANIC
+                  </p>
+                  <p className="text-sm text-white/90 tracking-wide">
+                    Невский пр., СПб
                   </p>
                 </div>
               </div>
@@ -111,7 +114,10 @@ export default function HeroTitle({ title, subtitle, content, align = 'center', 
                     Пространство обслуживания:
                   </p>
                   <p className="text-sm text-white font-bold tracking-wide">
-                    GOMANIC
+                    салон GOMANIC
+                  </p>
+                  <p className="text-xs text-white/90 tracking-wide">
+                    Невский пр., СПб
                   </p>
                 </div>
               </div>

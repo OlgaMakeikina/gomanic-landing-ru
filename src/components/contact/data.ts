@@ -1,8 +1,8 @@
 export const serviceOptions = [
   { value: '', label: 'Escolha o serviço' },
-  { value: 'manicure', label: 'Manicure sem esmaltação', price: 'R$ 50' },
-  { value: 'manicure-gel', label: 'Manicure + gel', price: 'R$ 100' },
-  { value: 'manicure-gel-fortalecimento', label: 'Manicure + gel + fortalecimento', price: 'R$ 130' }
+  { value: 'manicure', label: 'Manicure sem esmaltação', price: '750 ₽' },
+  { value: 'manicure-gel', label: 'Manicure + gel', price: '1500 ₽' },
+  { value: 'manicure-gel-fortalecimento', label: 'Manicure + gel + fortalecimento', price: '1950 ₽' }
 ]
 
 export const timeOptions = [

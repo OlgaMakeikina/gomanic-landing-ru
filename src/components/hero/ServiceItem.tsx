@@ -32,7 +32,7 @@ export default function ServiceItem({ service, isLast }: ServiceItemProps) {
           opacity: 0.5,
           textDecoration: 'line-through'
         }}>
-          R$ {service.oldPrice}
+          {service.oldPrice} ₽
         </span>
         <span style={{
           fontFamily: 'DrukWideCyr-Super, Arial Black, Arial, sans-serif',
@@ -44,7 +44,7 @@ export default function ServiceItem({ service, isLast }: ServiceItemProps) {
           borderRadius: '4px',
           boxShadow: '0 2px 8px rgba(0,0,0,0.2)'
         }}>
-          R$ {service.newPrice}
+          {service.newPrice} ₽
         </span>
       </div>
       {!isLast && (

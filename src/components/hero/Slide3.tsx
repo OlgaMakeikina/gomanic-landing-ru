@@ -50,7 +50,7 @@ export default function Slide3({ slideData, onButtonAction }: SlideProps) {
                     variant="primary"
                     className="w-full"
                   >
-                    QUERO MEU PASSE VIP
+                    ХОЧУ СВОЙ VIP-ПРОПУСК
                   </HeroButton>
                   
                   <HeroButton 
@@ -58,7 +58,7 @@ export default function Slide3({ slideData, onButtonAction }: SlideProps) {
                     variant="secondary"
                     className="w-full"
                   >
-                    CONTATO DIRETO
+                    ПРЯМОЙ КОНТАКТ
                   </HeroButton>
                 </div>
               </div>
@@ -85,7 +85,7 @@ export default function Slide3({ slideData, onButtonAction }: SlideProps) {
                 variant="primary"
                 className="text-sm px-6 py-2.5 min-w-[120px]"
               >
-                QUERO MEU PASSE VIP
+                ХОЧУ СВОЙ VIP-ПРОПУСК
               </HeroButton>
               
               <HeroButton 
@@ -93,7 +93,7 @@ export default function Slide3({ slideData, onButtonAction }: SlideProps) {
                 variant="secondary"
                 className="text-sm px-6 py-2.5 min-w-[120px]"
               >
-                CONTATO DIRETO
+                ПРЯМОЙ КОНТАКТ
               </HeroButton>
             </div>
           </div>

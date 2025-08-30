@@ -31,17 +31,17 @@ export default function BookingForm({ className = '', variant = 'default' }: Boo
     {
       id: 'manicure-gel',
       name: 'МАНИКЮР + ВЫРАВНИВАНИЕ + ПОКРЫТИЕ ГЕЛЕМ',
-      price: 'R$ 80'
+      price: '1200 ₽'
     },
     {
       id: 'alongamento-gel', 
       name: 'НАРАЩИВАНИЕ + МАНИКЮР + ПОКРЫТИЕ ГЕЛЕМ',
-      price: 'R$ 119'
+      price: '1800 ₽'
     },
     {
       id: 'combo-completo',
       name: 'КОМБО: МАНИКЮР + ПОКРЫТИЕ ГЕЛЕМ + ПЕДИКЮР + ПЛАСТИКА СТОП',
-      price: 'R$ 160'
+      price: '2400 ₽'
     }
   ];
 

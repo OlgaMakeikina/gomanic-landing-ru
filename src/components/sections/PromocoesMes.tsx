@@ -7,9 +7,9 @@ export default function PromocoesMes() {
     () => [
       {
         titulo: "Manicure + nivelamento + esmaltação em gel",
-        precoNormal: "R$ 160",
-        precoVIP: "R$ 80",
-        // pagamentoAntecipado: "R$ 24",
+        precoNormal: "2500 ₽",
+        precoVIP: "1200 ₽",
+        // pagamentoAntecipado: "360 ₽",
         inclui: [
           "Ferramentas esterilizadas",
           "Nivelamento perfeito da unha",
@@ -18,9 +18,9 @@ export default function PromocoesMes() {
       },
       {
         titulo: "Alongamento + manicure + esmaltação em gel",
-        precoNormal: "R$ 200",
-        precoVIP: "R$ 119",
-        // pagamentoAntecipado: "R$ 36",
+        precoNormal: "4000 ₽",
+        precoVIP: "1800 ₽",
+        // pagamentoAntecipado: "540 ₽",
         inclui: [
           "Modelagem de comprimento e formato",
           "Reforço da resistência",
@@ -29,9 +29,9 @@ export default function PromocoesMes() {
       },
       {
         titulo: "Combo: manicure + esmaltação em gel + pedicure + plástica dos pés",
-        precoNormal: "R$ 320",
-        precoVIP: "R$ 160",
-        // pagamentoAntecipado: "R$ 48",
+        precoNormal: "6000 ₽",
+        precoVIP: "2400 ₽",
+        // pagamentoAntecipado: "720 ₽",
         inclui: [
           "Cuidados completos para mãos e pés",
           "Esmaltação premium de longa duração",
