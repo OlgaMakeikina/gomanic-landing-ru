@@ -29,19 +29,24 @@ export default function BookingForm({ className = '', variant = 'default' }: Boo
   // Список услуг
   const services = [
     {
+      id: 'manicure-basic',
+      name: 'Маникюр без покрытия + снятие геля-лака',
+      price: '600 ₽'
+    },
+    {
       id: 'manicure-gel',
-      name: 'МАНИКЮР + ВЫРАВНИВАНИЕ + ПОКРЫТИЕ ГЕЛЕМ',
+      name: 'Маникюр + гель-лак + снятие',
       price: '1200 ₽'
     },
     {
-      id: 'alongamento-gel', 
-      name: 'НАРАЩИВАНИЕ + МАНИКЮР + ПОКРЫТИЕ ГЕЛЕМ',
-      price: '1800 ₽'
+      id: 'manicure-gel-strengthening',
+      name: 'Маникюр + гель-лак + укрепление гелем + снятие',
+      price: '1600 ₽'
     },
     {
-      id: 'combo-completo',
-      name: 'КОМБО: МАНИКЮР + ПОКРЫТИЕ ГЕЛЕМ + ПЕДИКЮР + ПЛАСТИКА СТОП',
-      price: '2400 ₽'
+      id: 'extension-manicure-gel',
+      name: 'Наращивание/коррекция + маникюр + гель-лак',
+      price: '1800 ₽'
     }
   ];
 

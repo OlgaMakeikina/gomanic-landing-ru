@@ -1,12 +1,13 @@
 export const serviceOptions = [
-  { value: '', label: 'Escolha o serviço' },
-  { value: 'manicure', label: 'Manicure sem esmaltação', price: '750 ₽' },
-  { value: 'manicure-gel', label: 'Manicure + gel', price: '1500 ₽' },
-  { value: 'manicure-gel-fortalecimento', label: 'Manicure + gel + fortalecimento', price: '1950 ₽' }
+  { value: '', label: 'Выберите услугу' },
+  { value: 'manicure-basic', label: 'Маникюр без покрытия + снятие геля-лака', price: '600 ₽' },
+  { value: 'manicure-gel', label: 'Маникюр + гель-лак + снятие', price: '1200 ₽' },
+  { value: 'manicure-gel-strengthening', label: 'Маникюр + гель-лак + укрепление гелем + снятие', price: '1600 ₽' },
+  { value: 'extension-manicure-gel', label: 'Наращивание/коррекция + маникюр + гель-лак', price: '1800 ₽' }
 ]
 
 export const timeOptions = [
-  { value: '', label: 'Escolha o horário' },
+  { value: '', label: 'Выберите время' },
   { value: '09:00', label: '09:00' },
   { value: '10:00', label: '10:00' },
   { value: '11:00', label: '11:00' },
