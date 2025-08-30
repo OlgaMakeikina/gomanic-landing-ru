@@ -3,7 +3,6 @@ import { useState } from 'react'
 import FooterLogo from './FooterLogo'
 import SocialLinks from './SocialLinks'
 import AddressSection from './AddressSection'
-import CompanyInfo from './CompanyInfo'
 import Copyright from './Copyright'
 
 export default function Footer() {
@@ -28,7 +27,6 @@ export default function Footer() {
 
         </div>
         
-        <CompanyInfo />
         <Copyright />
       </div>
     </footer>

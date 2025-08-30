@@ -5,7 +5,7 @@ export default function SocialLinks() {
   return (
     <div className="lg:col-span-3">
       <div className="text-xs uppercase tracking-wider mb-8 text-center" style={{color: '#FEFEFE', letterSpacing: '0.15em'}}>
-        CONTATOS E REDES SOCIAIS
+        КОНТАКТЫ И СОЦСЕТИ
       </div>
       <div className="w-16 h-px mb-8 mx-auto" style={{backgroundColor: '#FEFEFE', opacity: 0.3}}></div>
       

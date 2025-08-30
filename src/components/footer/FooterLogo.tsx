@@ -5,8 +5,6 @@ export default function FooterLogo({ onCtaClick }: FooterLogoProps) {
     <div className="lg:col-span-4 text-center flex flex-col min-h-[200px]">
       <div className="flex items-center justify-center space-x-3 mb-8">
         <span className="text-xs uppercase tracking-wider font-bold" style={{color: '#FEFEFE'}}>GOMANIC</span>
-        <div className="w-px h-4 bg-[#FEFEFE] opacity-70"></div>
-        <span className="text-xs uppercase tracking-wider font-bold" style={{color: '#FEFEFE'}}>БРАЗИЛИЯ</span>
       </div>
       <div className="w-16 h-px mb-8 mx-auto" style={{backgroundColor: '#FEFEFE', opacity: 0.3}}></div>
       <p className="text-sm leading-relaxed mb-8" style={{color: '#FEFEFE'}}>
@@ -21,7 +19,7 @@ export default function FooterLogo({ onCtaClick }: FooterLogoProps) {
             backgroundColor: 'rgba(254, 254, 254, 0.9)',
             color: '#444e55',
             border: '1px solid rgba(254, 254, 254, 0.3)',
-            fontFamily: 'Manrope, sans-serif',
+            fontFamily: 'DrukWideCyr-Super, Arial, sans-serif',
             fontSize: '12px',
             fontWeight: 600,
             letterSpacing: '0.15em',
@@ -44,7 +42,7 @@ export default function FooterLogo({ onCtaClick }: FooterLogoProps) {
             e.currentTarget.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.1)'
           }}
         >
-          ХОЧУ СТАТЬ VIP СЕЙЧАС
+          СТАТЬ VIP
         </button>
       </div>
     </div>

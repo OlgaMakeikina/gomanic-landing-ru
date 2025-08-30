@@ -14,7 +14,7 @@ export default function CompanyInfo() {
             </div>
             <div style={{
               color: '#FEFEFE',
-              fontFamily: 'Manrope, sans-serif',
+              fontFamily: 'Manrope, Arial, sans-serif',
               fontSize: '16px',
               fontWeight: 400,
               lineHeight: 1.4
