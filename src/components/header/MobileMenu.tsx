@@ -92,7 +92,7 @@ export default function MobileMenu({ isOpen, items, onClose }: MobileMenuProps) 
               />
             </a>
 
-            <a 
+            {/* <a 
               href="https://www.instagram.com/unhas_cinco_estrelas?igsh=YXFiN2psamRvd2Fq" 
               target="_blank"
               rel="noopener noreferrer"
@@ -111,7 +111,7 @@ export default function MobileMenu({ isOpen, items, onClose }: MobileMenuProps) 
                 height={20}
                 style={{ filter: 'brightness(0) invert(1)' }}
               />
-            </a>
+            </a> */}
           </div>
 
           <button 

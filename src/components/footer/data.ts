@@ -6,11 +6,11 @@ export const socialLinks: SocialLink[] = [
     icon: "/images/contacts/icons8-call-100.png",
     alt: "Phone"
   },
-  {
-    href: "https://www.instagram.com/unhas_cinco_estrelas?igsh=YXFiN2psamRvd2Fq",
-    icon: "/images/contacts/icons8-instagram-100.png",
-    alt: "Instagram"
-  },
+//{
+  //  href: "https://www.instagram.com/unhas_cinco_estrelas?igsh=YXFiN2psamRvd2Fq",
+    //icon: "/images/contacts/icons8-instagram-100.png",
+    //alt: "Instagram"
+  //},
   {
     href: "https://wa.me/5548919700099",
     icon: "/images/contacts/icons8-whatsapp-100.png",
