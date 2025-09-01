@@ -58,7 +58,7 @@ export default function Slide3({ slideData, onButtonAction }: SlideProps) {
                     variant="secondary"
                     className="w-full"
                   >
-                    ПРЯМОЙ КОНТАКТ
+                    СВЯЗАТЬСЯ ПО WHATSAPP
                   </HeroButton>
                 </div>
               </div>
@@ -93,7 +93,7 @@ export default function Slide3({ slideData, onButtonAction }: SlideProps) {
                 variant="secondary"
                 className="text-sm px-6 py-2.5 min-w-[120px]"
               >
-                ПРЯМОЙ КОНТАКТ
+                СВЯЗАТЬСЯ ПО WHATSAPP
               </HeroButton>
             </div>
           </div>
