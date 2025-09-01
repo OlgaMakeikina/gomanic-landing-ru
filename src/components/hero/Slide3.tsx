@@ -15,7 +15,7 @@ export default function Slide3({ slideData, onButtonAction }: SlideProps) {
             <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-start lg:items-center">
               
               <div className="text-center lg:text-left">
-                <VipBadge text="Exclusivo com passe VIP" />
+                <VipBadge text="Эксклюзивно с VIP-пропуском" />
                 
                 <h2 style={{
                   fontFamily: 'DrukWideCyr-Super, Arial Black, Arial, sans-serif',
@@ -50,7 +50,7 @@ export default function Slide3({ slideData, onButtonAction }: SlideProps) {
                     variant="primary"
                     className="w-full"
                   >
-                    ХОЧУ СВОЙ VIP-ПРОПУСК
+                    ХОЧУ VIP-ПРОПУСК
                   </HeroButton>
                   
                   <HeroButton 
@@ -85,7 +85,7 @@ export default function Slide3({ slideData, onButtonAction }: SlideProps) {
                 variant="primary"
                 className="text-sm px-6 py-2.5 min-w-[120px]"
               >
-                ХОЧУ СВОЙ VIP-ПРОПУСК
+                ХОЧУ VIP-ПРОПУСК
               </HeroButton>
               
               <HeroButton 

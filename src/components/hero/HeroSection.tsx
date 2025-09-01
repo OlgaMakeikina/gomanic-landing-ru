@@ -7,6 +7,7 @@ import SlideOverlay from './SlideOverlay'
 import SlideNavigation from './SlideNavigation'
 import Slide1 from './Slide1'
 import Slide2 from './Slide2'
+import Slide3 from './Slide3'
 
 export default function HeroSectionRU() {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -77,6 +78,7 @@ export default function HeroSectionRU() {
 
     if (slideIndex === 0) return <Slide1 {...slideProps} />
     if (slideIndex === 1) return <Slide2 {...slideProps} />
+    if (slideIndex === 2) return <Slide3 {...slideProps} />
     return null
   }
 
