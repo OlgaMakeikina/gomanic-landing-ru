@@ -47,7 +47,7 @@ export default function HeroTitle({ title, subtitle, content, align = 'center', 
                 display: 'block',
                 fontWeight: isGomanicEspecialistas ? 800 : 400,
                 letterSpacing: isGomanicEspecialistas ? '0.04em' : '0.08em',
-                fontSize: isGomanicEspecialistas ? 'clamp(1.5rem, 5vw, 3.5rem)' : 'clamp(1.1rem, 3.2vw, 2.2rem)',
+                fontSize: isGomanicEspecialistas ? 'clamp(2.5rem, 7.5vw, 5.5rem)' : 'clamp(1.1rem, 3.2vw, 2.2rem)',
                 lineHeight: isGomanicEspecialistas ? 0.9 : 1.0,
                 color: '#FEFEFE'
               }}
@@ -64,7 +64,7 @@ export default function HeroTitle({ title, subtitle, content, align = 'center', 
               letterSpacing: isGomanicEspecialistas ? '0.04em' : '0.04em',
               lineHeight: isGomanicEspecialistas ? 0.9 : 0.9,
               marginTop: part1 ? '-0.15em' : 0,
-              fontSize: isGomanicEspecialistas ? 'clamp(2rem, 7vw, 5.5rem)' : 'clamp(2rem, 7vw, 5.5rem)',
+              fontSize: isGomanicEspecialistas ? 'clamp(1.3rem, 5vw, 3.5rem)' : 'clamp(2rem, 7vw, 5.5rem)',
               color: '#FEFEFE'
             }}
           >
