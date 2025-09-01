@@ -26,9 +26,9 @@ export default function SlideNavigation({
       aria-label="Navegação de slides da apresentação"
       className="absolute inset-0 z-30 pointer-events-none"
     >
-      {/* Navigation counter and dots */}
+      {/* Navigation counter only */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 pointer-events-auto">
-        <div className="text-center space-y-4">
+        <div className="text-center">
           {/* Counter */}
           <span 
             className="text-sm block" 
@@ -45,23 +45,6 @@ export default function SlideNavigation({
           >
             {currentSlide + 1} / {totalSlides}
           </span>
-          
-          {/* Dots navigation */}
-          <div className="flex space-x-2 justify-center">
-            {Array.from({ length: totalSlides }).map((_, index) => (
-              <button
-                key={index}
-                onClick={() => onSlideChange(index)}
-                className={`w-3 h-3 rounded-full border transition-all duration-300 ${
-                  currentSlide === index 
-                    ? 'bg-white border-white' 
-                    : 'bg-transparent border-white/50 hover:border-white/80'
-                }`}
-                aria-label={`Ir para slide ${index + 1}`}
-                type="button"
-              />
-            ))}
-          </div>
         </div>
       </div>
 
