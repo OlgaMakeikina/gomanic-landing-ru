@@ -147,7 +147,7 @@ export default function VipExclusivo() {
   return (
     <section id="vip-exclusivo" className="vogue-section relative overflow-hidden" 
              style={{
-               background: 'linear-gradient(135deg, #3B3B3A 0%, #2a2a29 50%, #1f1f1e 100%)',
+               backgroundColor: '#444f55',
                color: '#FEFEFE'
              }}
              aria-labelledby="vip-heading">
@@ -159,7 +159,7 @@ export default function VipExclusivo() {
           left: 0,
           right: 0,
           bottom: 0,
-          background: 'linear-gradient(135deg, rgba(68, 78, 85, 0.15) 0%, transparent 30%, rgba(254, 254, 254, 0.03) 50%, transparent 70%, rgba(68, 78, 85, 0.1) 100%)',
+          background: 'linear-gradient(135deg, rgba(68, 79, 85, 0.15) 0%, transparent 30%, rgba(254, 254, 254, 0.03) 50%, transparent 70%, rgba(68, 79, 85, 0.1) 100%)',
           pointerEvents: 'none'
         }}
       />
@@ -178,15 +178,14 @@ export default function VipExclusivo() {
           </div>
           <HorizonText as="h2" id="vip-heading" className="vogue-subhead mb-8" 
               style={{
-                color: '#FEFEFE',
-                textShadow: '0 4px 8px rgba(0, 0, 0, 0.4)'
+                color: '#FEFEFE'
               }}>
             VIP-ПРОПУСК = ЭКСКЛЮЗИВНЫЙ КЛУБ
           </HorizonText>
           <div className="vogue-divider mx-auto mb-8" 
                style={{
-                 backgroundColor: '#444e55',
-                 boxShadow: '0 2px 8px rgba(68, 78, 85, 0.5)'
+                 backgroundColor: '#3b3b39',
+                 boxShadow: '0 2px 8px rgba(59, 59, 57, 0.5)'
                }}></div>
           <p className="vogue-body max-w-3xl mx-auto text-lg" style={{color: '#FEFEFE'}}>
             Это не просто акция. Это <strong style={{color: '#FEFEFE'}}>эксклюзивный доступ</strong> для избранных особых людей
@@ -197,11 +196,11 @@ export default function VipExclusivo() {
           <div className="text-center mb-16">
             <div className="inline-block text-white px-8 py-4 rounded-lg transform rotate-1" 
                  style={{
-                   background: 'linear-gradient(135deg, rgba(68, 78, 85, 0.9) 0%, rgba(68, 78, 85, 0.7) 100%)',
+                   background: 'linear-gradient(135deg, rgba(59, 59, 57, 0.9) 0%, rgba(59, 59, 57, 0.7) 100%)',
                    backdropFilter: 'blur(20px)',
                    WebkitBackdropFilter: 'blur(20px)',
                    border: '1px solid rgba(254, 254, 254, 0.2)',
-                   boxShadow: '0 8px 32px rgba(68, 78, 85, 0.3), 0 2px 8px rgba(254, 254, 254, 0.1)'
+                   boxShadow: '0 8px 32px rgba(59, 59, 57, 0.3), 0 2px 8px rgba(254, 254, 254, 0.1)'
                  }}>
               <div className="text-2xl font-bold">ОСТАЛОСЬ ТОЛЬКО 3 МЕСТА</div>
             </div>
