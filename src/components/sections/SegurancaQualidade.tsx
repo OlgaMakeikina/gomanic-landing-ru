@@ -13,17 +13,17 @@ export default function SegurancaQualidade(): JSX.Element {
 
   const certificacoes = [
     {
-      imagem: '/images/higiene/0_3 (13).jpeg',
+      imagem: '/images/higiene/higiene1.jpeg',
       titulo: 'Новейшие техники',
       detalhes: 'Мастера прошли обучение по последним технологиям подготовки ногтей',
     },
     {
-      imagem: '/images/higiene/0_3 (21).jpeg',
+      imagem: '/images/higiene/higiene2.jpeg',
       titulo: 'Премиум-материалы',
       detalhes: 'Японское сырьё с сертификатами безопасности',
     },
     {
-      imagem: '/images/higiene/0_0 (20).jpeg',
+      imagem: '/images/higiene/higiene3.jpeg',
       titulo: 'Гарантия стерильности',
       detalhes: 'Одноразовые инструменты + стерилизация',
     },
@@ -225,8 +225,8 @@ export default function SegurancaQualidade(): JSX.Element {
             {/* Колонка 1 */}
             <div className="space-y-6">
               {[
-                { src: '/images/masters/0_0 (15).jpeg', alt: 'Международный инструктор 1', label: 'Обучение' },
-                { src: '/images/masters/0_0 (22).jpeg', alt: 'Международный инструктор 2', label: 'Тренинг' },
+                { src: '/images/masters/masters1.jpeg', alt: 'Международный инструктор 1', label: 'Обучение' },
+                { src: '/images/masters/masters2.jpeg', alt: 'Международный инструктор 2', label: 'Тренинг' },
               ].map((item, i) => (
                 <div
                   key={i}
@@ -262,7 +262,7 @@ export default function SegurancaQualidade(): JSX.Element {
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-white/5 to-transparent" />
                 <img
-                  src="/images/masters/0_3 (20).jpeg"
+                  src="/images/masters/masters3.jpeg"
                   alt="Сертификаты"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   style={{ filter: 'brightness(1.1) contrast(1.05)' }}

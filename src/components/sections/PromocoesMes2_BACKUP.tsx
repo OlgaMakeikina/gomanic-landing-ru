@@ -155,7 +155,7 @@ export default function PromocoesMes2() {
           {/* Фото слева - 50% */}
           <div className="flex justify-center">
             <img 
-              src="/images/promocoes/offer.jpeg" 
+              src="/images/offer/offer.jpeg" 
               alt="Promoções de manicure" 
               className="w-full rounded-2xl object-cover"
               style={{
