@@ -204,7 +204,7 @@ export default function SegurancaQualidade(): JSX.Element {
               }}
               className="md:text-2xl" // На средних экранах и больше - размер 24px
             >
-              Обучены по международным стандартам
+              Международные стандарты
             </h3>
             <p
               style={{
@@ -221,49 +221,22 @@ export default function SegurancaQualidade(): JSX.Element {
             </p>
           </header>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:justify-items-center gap-6 md:gap-8">
-            {/* Колонка 1 */}
-            <div className="space-y-6">
-              {[
-                { src: '/images/masters/masters1.jpeg', alt: 'Международный инструктор 1', label: 'Обучение' },
-                { src: '/images/masters/masters2.jpeg', alt: 'Международный инструктор 2', label: 'Тренинг' },
-              ].map((item, i) => (
-                <div
-                  key={i}
-                  className="relative w-full md:max-w-[420px] backdrop-blur-xl rounded-2xl border overflow-hidden group"
-                  style={{ background: GLASS.cardBg, borderColor: GLASS.cardBorder, boxShadow: GLASS.cardShadow, aspectRatio: '4/3' }}
-                >
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-white/5 to-transparent" />
-                  <img
-                    src={item.src}
-                    alt={item.alt}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    style={{ filter: 'brightness(1.1) contrast(1.05)' }}
-                  />
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <div
-                      className="backdrop-blur-sm rounded-lg p-2 border"
-                      style={{ background: 'rgba(255,255,255,0.15)', borderColor: 'rgba(255,255,255,0.2)' }}
-                    >
-                      <p style={{ color: '#3B3B3A', fontFamily: 'Garet, sans-serif', fontSize: 11, fontWeight: 600, textAlign: 'center' }}>
-                        {item.label}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Колонка 2 */}
-            <div className="space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-12">
+            {/* Первая строка - 3 фото */}
+            {[
+              { src: '/images/masters/masters1.jpeg', alt: 'Международный стандарт 1', label: 'Обучение' },
+              { src: '/images/masters/masters2.jpeg', alt: 'Международный стандарт 2', label: 'Квалификация' },
+              { src: '/images/masters/masters3.jpeg', alt: 'Международный стандарт 3', label: 'Сертификация' }
+            ].map((item, i) => (
               <div
-                className="relative w-full md:max-w-[420px] backdrop-blur-xl rounded-2xl border overflow-hidden group"
+                key={i}
+                className="relative w-full backdrop-blur-xl rounded-2xl border overflow-hidden group"
                 style={{ background: GLASS.cardBg, borderColor: GLASS.cardBorder, boxShadow: GLASS.cardShadow, aspectRatio: '4/3' }}
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-white/5 to-transparent" />
                 <img
-                  src="/images/masters/masters3.jpeg"
-                  alt="Сертификаты"
+                  src={item.src}
+                  alt={item.alt}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   style={{ filter: 'brightness(1.1) contrast(1.05)' }}
                 />
@@ -273,38 +246,78 @@ export default function SegurancaQualidade(): JSX.Element {
                     style={{ background: 'rgba(255,255,255,0.15)', borderColor: 'rgba(255,255,255,0.2)' }}
                   >
                     <p style={{ color: '#3B3B3A', fontFamily: 'Garet, sans-serif', fontSize: 11, fontWeight: 600, textAlign: 'center' }}>
-                      Квалификация
+                      {item.label}
                     </p>
                   </div>
                 </div>
               </div>
+            ))}
+          </div>
 
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-16">
+            {/* Вторая строка - 3 видео */}
+            {[
+              { src: '/images/masters/hd.mp4', type: 'video', alt: 'Видео обучение 1', label: 'Техники работы' },
+              { src: '/images/masters/copy_61419D38-6BD1-432E-AFDE-7587071CE25C.mov', type: 'video', alt: 'Видео обучение 2', label: 'Материалы' },
+              { src: '/images/masters/copy_E50046E2-F8A7-481A-AC2B-02659A859387.mov', type: 'video', alt: 'Видео обучение 3', label: 'Процесс' }
+            ].map((item, i) => (
               <div
-                className="relative w-full md:max-w-[420px] backdrop-blur-xl rounded-2xl border overflow-hidden group"
+                key={i}
+                className="relative w-full backdrop-blur-xl rounded-2xl border overflow-hidden group"
                 style={{ background: GLASS.cardBg, borderColor: GLASS.cardBorder, boxShadow: GLASS.cardShadow, aspectRatio: '4/3' }}
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-white/5 to-transparent" />
-                <video className="w-full h-full object-cover" autoPlay loop muted playsInline>
-                  <source src="/images/masters/hd.mp4" type="video/mp4" />
-                </video>
+                {item.type === 'video' ? (
+                  <video className="w-full h-full object-cover" autoPlay loop muted playsInline>
+                    <source src={item.src} type={item.src.endsWith('.mp4') ? 'video/mp4' : 'video/quicktime'} />
+                    Ваш браузер не поддерживает видео
+                  </video>
+                ) : (
+                  <img
+                    src={item.src}
+                    alt={item.alt}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    style={{ filter: 'brightness(1.1) contrast(1.05)' }}
+                  />
+                )}
                 <div className="absolute bottom-4 left-4 right-4">
                   <div
                     className="backdrop-blur-sm rounded-lg p-2 border"
                     style={{ background: 'rgba(255,255,255,0.15)', borderColor: 'rgba(255,255,255,0.2)' }}
                   >
                     <p style={{ color: '#3B3B3A', fontFamily: 'Garet, sans-serif', fontSize: 11, fontWeight: 600, textAlign: 'center' }}>
-                      Обслуживание
+                      {item.label}
                     </p>
                   </div>
                 </div>
               </div>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* Сертификат */}
+            <div
+              className="relative rounded-2xl border overflow-hidden"
+              style={{
+                background: GLASS.cardBg,
+                borderColor: GLASS.cardBorder,
+                boxShadow: GLASS.cardShadow,
+                aspectRatio: '3/4',
+              }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-white/5 to-transparent" />
+              <img
+                src="/images/masters/certificate.png"
+                alt="Сертификат международных стандартов"
+                className="w-full h-full object-cover"
+                style={{ filter: 'brightness(1.08) contrast(1.05)' }}
+              />
             </div>
 
-            {/* Колонка 3: плашка сверху, паспорт снизу */}
-            <div className="w-full md:max-w-[420px] space-y-6">
-              {/* Плашка */}
+            {/* Плашка */}
+            <div className="flex items-center">
               <div
-                className="backdrop-blur-xl rounded-2xl p-6"
+                className="backdrop-blur-xl rounded-2xl p-8 w-full"
                 style={{
                   background: 'linear-gradient(135deg, rgba(68,79,85,0.95) 0%, rgba(59,59,58,0.95) 100%)',
                   border: '1px solid #FEFEFE',
@@ -316,11 +329,11 @@ export default function SegurancaQualidade(): JSX.Element {
                     style={{
                       color: '#FEFEFE',
                       fontFamily: 'DrukWideCyr-Super, sans-serif',
-                      fontSize: 16,
+                      fontSize: 18,
                       fontWeight: 500,
                       textTransform: 'uppercase',
                       letterSpacing: '0.1em',
-                      marginBottom: '12px',
+                      marginBottom: '16px',
                       lineHeight: 1.3,
                     }}
                   >
@@ -328,39 +341,20 @@ export default function SegurancaQualidade(): JSX.Element {
                   </h4>
 
                   <div
-                    className="px-4 py-3 rounded-xl"
+                    className="px-6 py-4 rounded-xl"
                     style={{
                       background: '#FEFEFE',
                       color: '#3B3B3A',
                       fontFamily: 'Manrope, sans-serif',
-                      fontSize: 12,
+                      fontSize: 14,
                       fontWeight: 600,
                       textAlign: 'center',
-                      lineHeight: 1.4,
+                      lineHeight: 1.5,
                     }}
                   >
                     Наши материалы полностью безопасны и соответствуют международным стандартам качества
                   </div>
                 </div>
-              </div>
-
-              {/* Паспорт под плашкой */}
-              <div
-                className="relative rounded-2xl border overflow-hidden max-h-96 mx-auto"
-                style={{
-                  background: GLASS.cardBg,
-                  borderColor: GLASS.cardBorder,
-                  boxShadow: GLASS.cardShadow,
-                  aspectRatio: '2/3',
-                }}
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-white/5 to-transparent" />
-                <img
-                  src="/images/masters/certificate.png"
-                  alt="Паспорт безопасности эмалей"
-                  className="w-full h-full object-cover"
-                  style={{ filter: 'brightness(1.08) contrast(1.05)' }}
-                />
               </div>
             </div>
           </div>
