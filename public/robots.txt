@@ -1,27 +1,4 @@
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://seu-dominio.com.br/sitemap.xml
-
-# Блокируем служебные страницы
-Disallow: /api/
-Disallow: /_next/
-Disallow: /admin/
-Disallow: /*.json$
-
-# Разрешаем важные страницы
-Allow: /images/
-Allow: /fonts/
-Allow: /*.css$
-Allow: /*.js$
-
-# Настройки для поисковых ботов
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-# Время задержки между запросами (в секундах)
-Crawl-delay: 1
+Sitemap: https://gomanic.com.br/sitemap.xml
