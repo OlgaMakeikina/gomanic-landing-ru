@@ -3,7 +3,7 @@ import { HeroSlide } from './types'
 export const heroSlidesRU: HeroSlide[] = [
   {
     id: 1,
-    image: '/images/hero/0_3 (10).jpeg',
+    image: '/images/hero/hero1.jpeg',
     title: 'GOMANIC Специалисты',
     subtitle: 'Премиум маникюр за полцены',
     content: 'Откройте для себя VIP-мир профессионального маникюра с эксклюзивными ценами для участников.'
@@ -11,7 +11,7 @@ export const heroSlidesRU: HeroSlide[] = [
   
   {
     id: 2,
-    image: '/images/hero/0_0.jpeg',
+    image: '/images/hero/hero2.jpeg',
     title: 'цены vip-пропуска',
     subtitle: 'Экономия до 55%',
     services: [
@@ -24,7 +24,7 @@ export const heroSlidesRU: HeroSlide[] = [
   
   {
     id: 3,
-    image: '/images/hero/0_3 (10).jpeg',
+    image: '/images/hero/hero3.jpeg',
     title: 'VIP-пропуск',
     subtitle: 'Эксклюзивные преимущества только для участников',
     benefits: [
