@@ -14,7 +14,7 @@ export default function DesktopClientsGallery({ colors }: DesktopClientsGalleryP
         {/* Левое верхнее фото - новое изображение */}
         <figure className="col-span-2 row-span-2 overflow-hidden rounded-2xl group">
           <img
-            src="/images/clients/0_3.jpeg"
+            src="/images/clients/client1.jpeg"
             alt="Довольная клиентка - идеальный результат"
             className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
             style={{filter: 'brightness(1.1) contrast(1.05) saturate(1.2)'}}
@@ -24,7 +24,7 @@ export default function DesktopClientsGallery({ colors }: DesktopClientsGalleryP
         {/* Правое верхнее фото - новое изображение */}
         <figure className="col-span-2 row-span-2 overflow-hidden rounded-2xl group">
           <img
-            src="/images/clients/0_3 (1).jpeg"
+            src="/images/clients/client2.jpeg"
             alt="Счастливая клиентка с результатом"
             className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
             style={{filter: 'brightness(1.1) contrast(1.05)'}}
@@ -91,7 +91,7 @@ export default function DesktopClientsGallery({ colors }: DesktopClientsGalleryP
         {/* Нижнее широкое фото - девушка на диване */}
         <figure className="col-span-4 row-span-2 overflow-hidden rounded-2xl group">
           <img
-            src="/images/clients/0_0 (25).jpeg"
+            src="/images/clients/client3.jpeg"
             alt="Клиентка отдыхает на диване"
             className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
             style={{filter: 'brightness(1.1) contrast(1.05)'}}
