@@ -1,6 +1,65 @@
 'use client'
 import React, { useState } from 'react'
 
+interface VideoItemProps {
+  src: string
+  poster: string
+  alt: string
+  label: string
+}
+
+function VideoItem({ src, poster, alt, label }: VideoItemProps) {
+  const [hasError, setHasError] = useState(false)
+  const [isPlaying, setIsPlaying] = useState(true)
+  
+  const handleVideoClick = (e: React.MouseEvent<HTMLVideoElement>) => {
+    const video = e.currentTarget
+    if (video.paused) {
+      video.play()
+      setIsPlaying(true)
+    } else {
+      video.pause()
+      setIsPlaying(false)
+    }
+  }
+  
+  if (hasError) {
+    return (
+      <img
+        src={poster}
+        alt={alt}
+        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        style={{ filter: 'brightness(1.1) contrast(1.05)' }}
+      />
+    )
+  }
+  
+  return (
+    <video 
+      className="w-full h-full object-cover cursor-pointer" 
+      autoPlay 
+      loop 
+      muted 
+      playsInline
+      preload="metadata"
+      poster={poster}
+      onClick={handleVideoClick}
+      onError={() => setHasError(true)}
+      onLoadStart={() => console.log('Loading video:', src)}
+      onPlay={() => setIsPlaying(true)}
+      onPause={() => setIsPlaying(false)}
+    >
+      <source src={src} type="video/mp4" />
+      <img
+        src={poster}
+        alt={alt}
+        className="w-full h-full object-cover"
+        style={{ filter: 'brightness(1.1) contrast(1.05)' }}
+      />
+    </video>
+  )
+}
+
 export default function SegurancaQualidade(): JSX.Element {
   const [isPlaying] = useState(false)
 
@@ -257,9 +316,9 @@ export default function SegurancaQualidade(): JSX.Element {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-16">
             {/* Вторая строка - 3 видео */}
             {[
-              { src: '/images/masters/hd.mp4', type: 'video', alt: 'Видео обучение 1', label: 'Техники работы' },
-              { src: '/images/masters/copy_61419D38-6BD1-432E-AFDE-7587071CE25C.mov', type: 'video', alt: 'Видео обучение 2', label: 'Материалы' },
-              { src: '/images/masters/copy_E50046E2-F8A7-481A-AC2B-02659A859387.mov', type: 'video', alt: 'Видео обучение 3', label: 'Процесс' }
+              { src: '/images/masters/hd.mp4', type: 'video', alt: 'Видео обучение 1', label: 'Техники работы', poster: '/images/masters/masters1.jpeg' },
+              { src: '/images/masters/2.mp4', type: 'video', alt: 'Видео обучение 2', label: 'Материалы', poster: '/images/masters/masters2.jpeg' },
+              { src: '/images/masters/3.mp4', type: 'video', alt: 'Видео обучение 3', label: 'Процесс', poster: '/images/masters/masters3.jpeg' }
             ].map((item, i) => (
               <div
                 key={i}
@@ -267,19 +326,12 @@ export default function SegurancaQualidade(): JSX.Element {
                 style={{ background: GLASS.cardBg, borderColor: GLASS.cardBorder, boxShadow: GLASS.cardShadow, aspectRatio: '4/3' }}
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-white/5 to-transparent" />
-                {item.type === 'video' ? (
-                  <video className="w-full h-full object-cover" autoPlay loop muted playsInline>
-                    <source src={item.src} type={item.src.endsWith('.mp4') ? 'video/mp4' : 'video/quicktime'} />
-                    Ваш браузер не поддерживает видео
-                  </video>
-                ) : (
-                  <img
-                    src={item.src}
-                    alt={item.alt}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    style={{ filter: 'brightness(1.1) contrast(1.05)' }}
-                  />
-                )}
+                <VideoItem
+                  src={item.src}
+                  poster={item.poster}
+                  alt={item.alt}
+                  label={item.label}
+                />
                 <div className="absolute bottom-4 left-4 right-4">
                   <div
                     className="backdrop-blur-sm rounded-lg p-2 border"

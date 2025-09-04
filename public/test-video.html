@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #333;
+            color: white;
+        }
+        .video-container {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #666;
+            border-radius: 10px;
+        }
+        video {
+            width: 100%;
+            max-width: 400px;
+            height: 300px;
+            object-fit: cover;
+            border: 2px solid #fff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Video Test Page</h1>
+    
+    <div class="video-container">
+        <h3>hd.mp4</h3>
+        <video controls autoplay muted loop playsInline>
+            <source src="/images/masters/hd.mp4" type="video/mp4">
+            Video not supported
+        </video>
+    </div>
+    
+    <div class="video-container">
+        <h3>2.mp4</h3>
+        <video controls autoplay muted loop playsInline>
+            <source src="/images/masters/2.mp4" type="video/mp4">
+            Video not supported
+        </video>
+    </div>
+    
+    <div class="video-container">
+        <h3>3.mp4</h3>
+        <video controls autoplay muted loop playsInline>
+            <source src="/images/masters/3.mp4" type="video/mp4">
+            Video not supported
+        </video>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const videos = document.querySelectorAll('video');
+            videos.forEach((video, index) => {
+                video.addEventListener('loadstart', () => {
+                    console.log(`Video ${index + 1} started loading`);
+                });
+                
+                video.addEventListener('canplay', () => {
+                    console.log(`Video ${index + 1} can play`);
+                });
+                
+                video.addEventListener('error', (e) => {
+                    console.error(`Video ${index + 1} error:`, e);
+                    console.error('Error details:', video.error);
+                });
+                
+                video.addEventListener('loadedmetadata', () => {
+                    console.log(`Video ${index + 1} metadata loaded - Duration: ${video.duration}s`);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
