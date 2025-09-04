@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useMemo, useState } from "react"
+import { HorizonText } from '@/components/ui';
 
 export default function PromocoesMes2() {
   const promocoes = useMemo(
@@ -97,18 +98,13 @@ export default function PromocoesMes2() {
             СПЕЦИАЛЬНЫЕ ПРЕДЛОЖЕНИЯ
           </div>
 
-          <h2
-            className="uppercase mb-6"
-            style={{
-              color: COLORS.white,
-              fontFamily: "DrukWideCyr-Super, sans-serif",
-              letterSpacing: "0.12em",
-              fontWeight: 500,
-              fontSize: 36,
-            }}
+          <HorizonText 
+            as="h2"
+            className="vogue-subhead mb-8"
+            style={{color: COLORS.white}}
           >
             АКЦИИ МЕСЯЦА
-          </h2>
+          </HorizonText>
 
           <div
             className="mx-auto inline-block rounded-2xl px-6 py-4 backdrop-blur-md border shadow-lg mb-4"

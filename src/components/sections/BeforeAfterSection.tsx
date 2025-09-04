@@ -1,5 +1,7 @@
 'use client'
 
+import { HorizonText } from '@/components/ui';
+
 export default function BeforeAfterSection() {
   const COLORS = { dark: "#3B3B3A", gray: "#444e55", white: "#FEFEFE" }
   
@@ -33,18 +35,13 @@ export default function BeforeAfterSection() {
             ANTES E DEPOIS
           </div>
 
-          <h2
-            className="uppercase mb-6"
-            style={{
-              color: COLORS.gray,
-              fontFamily: "DrukWideCyr-Super, sans-serif",
-              letterSpacing: "0.12em",
-              fontWeight: 500,
-              fontSize: 28,
-            }}
+          <HorizonText 
+            as="h2"
+            className="vogue-subhead mb-8"
+            style={{color: COLORS.gray}}
           >
             ANTES E DEPOIS
-          </h2>
+          </HorizonText>
           
           <p
             className="mx-auto max-w-3xl"

@@ -1,5 +1,6 @@
 'use client'
 import React, { useState } from 'react'
+import { HorizonText } from '@/components/ui';
 
 interface VideoItemProps {
   src: string
@@ -116,19 +117,14 @@ export default function SegurancaQualidade(): JSX.Element {
             ПРЕИМУЩЕСТВА
           </p>
 
-          <h2
-            id="seguranca-heading"
-            className="uppercase mb-6"
-            style={{
-              color: COLORS.white,
-              fontFamily: 'DrukWideCyr-Super, sans-serif',
-              letterSpacing: '0.12em',
-              fontWeight: 500,
-              fontSize: 28,
-            }}
-          >
-            Почему стоит попробовать прямо сейчас?
-          </h2>
+          <HorizonText 
+          as="h2"
+          id="seguranca-heading"
+          className="vogue-subhead mb-8"
+          style={{color: COLORS.white}}
+        >
+          Почему стоит попробовать прямо сейчас?
+        </HorizonText>
         </header>
 
         {/* Верхние карточки (ограничение ширины на md) */}

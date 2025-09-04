@@ -1,5 +1,7 @@
 'use client'
 
+import { HorizonText } from '@/components/ui';
+
 interface ClientsSectionHeaderProps {
   colors: {
     white: string;
@@ -16,19 +18,14 @@ export default function ClientsSectionHeader({ colors }: ClientsSectionHeaderPro
         ФОТО КЛИЕНТОВ
       </p>
 
-      <h2
+      <HorizonText 
+        as="h2"
         id="clientes-heading"
-        className="uppercase mb-6"
-        style={{
-          color: colors.white,
-          fontFamily: "DrukWideCyr-Super, sans-serif",
-          letterSpacing: "0.12em",
-          fontWeight: 500,
-          fontSize: 28,
-        }}
+        className="vogue-subhead mb-8"
+        style={{color: colors.white}}
       >
         НАШИ ДОВОЛЬНЫЕ КЛИЕНТЫ
-      </h2>
+      </HorizonText>
       
       <p
         className="mx-auto max-w-3xl"

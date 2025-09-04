@@ -1,3 +1,5 @@
+import { HorizonText } from '@/components/ui';
+
 export default function SocialProof() {
   const COLORS = { dark: "#3B3B3A", gray: "#444e55", white: "#FEFEFE" }
   
@@ -20,19 +22,14 @@ export default function SocialProof() {
             ОТЗЫВЫ
           </div>
 
-          <h2
+          <HorizonText 
+            as="h2"
             id="social-heading"
-            className="uppercase mb-6"
-            style={{
-              color: COLORS.dark,
-              fontFamily: "DrukWideCyr-Super, sans-serif",
-              letterSpacing: "0.12em",
-              fontWeight: 500,
-              fontSize: 28,
-            }}
+            className="vogue-subhead mb-8"
+            style={{color: COLORS.dark}}
           >
             ЧТО ГОВОРЯТ О НАС
-          </h2>
+          </HorizonText>
 
           <p
             className="mx-auto max-w-2xl"

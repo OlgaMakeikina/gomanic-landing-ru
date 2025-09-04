@@ -1,3 +1,5 @@
+import { HorizonText } from '@/components/ui';
+
 export default function FinalOfferSection() {
   return (
     <section id="oferta-final" className="vogue-section py-20" style={{backgroundColor: '#3B3B3A', color: '#FEFEFE'}}>
@@ -7,18 +9,14 @@ export default function FinalOfferSection() {
           {/* Urgency Text */}
           <div className="mb-12">
             <div className="text-4xl mb-6">💎</div>
-            <h2 className="mb-8" style={{
-              fontFamily: 'Horizon, Druk Wide Super, Arial Black, Arial, sans-serif',
-              fontSize: 'clamp(2rem, 6vw, 3.5rem)',
-              fontWeight: 'normal',
-              letterSpacing: '0.05em',
-              textTransform: 'uppercase',
-              lineHeight: '1.1',
-              color: '#FEFEFE'
-            }}>
+            <HorizonText 
+              as="h2" 
+              className="vogue-subhead mb-8" 
+              style={{color: '#FEFEFE'}}
+            >
               ÚLTIMAS VAGAS<br />
               <span style={{color: '#444e55'}}>DISPONÍVEIS AGORA</span>
-            </h2>
+            </HorizonText>
             
             <p className="vogue-body text-lg leading-relaxed max-w-2xl mx-auto" style={{color: '#FEFEFE', opacity: 0.9}}>
               Registre-se agora mesmo e receba manicure de mestres licenciados pela metade do preço.
