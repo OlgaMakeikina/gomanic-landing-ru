@@ -59,6 +59,7 @@ export default function MobilePortfolioSlider({ images }: MobilePortfolioSliderP
                 className={styles.mobileSingleImage}
                 sizes="100vw"
                 priority={index === 0}
+                loading={index === 0 ? "eager" : "lazy"}
               />
             </div>
           ))}
