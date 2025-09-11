@@ -1,7 +1,9 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
+import { MasterConfig } from '@/types/master'
 import { heroSlidesRU as heroSlides } from './data_RU'
+import { generateMasterSlides } from '@/utils/master-slides'
 import SlideBackground from './SlideBackground'
 import SlideOverlay from './SlideOverlay'
 import SlideNavigation from './SlideNavigation'
@@ -9,22 +11,29 @@ import Slide1 from './Slide1'
 import Slide2 from './Slide2'
 import Slide3 from './Slide3'
 
-export default function HeroSectionRU() {
+interface HeroSectionProps {
+  masterData?: MasterConfig | null
+}
+
+export default function HeroSectionRU({ masterData }: HeroSectionProps) {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isPlaying, setIsPlaying] = useState(true)
   const [touchStart, setTouchStart] = useState<number | null>(null)
   const [touchEnd, setTouchEnd] = useState<number | null>(null)
   const sectionRef = useRef<HTMLElement>(null)
 
+  // Используем данные мастера если есть, иначе дефолтные слайды
+  const slides = masterData ? generateMasterSlides(masterData) : heroSlides
+
   const minSwipeDistance = 50
 
   useEffect(() => {
     if (!isPlaying) return
     const slideInterval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % heroSlides.length)
+      setCurrentSlide((prev) => (prev + 1) % slides.length)
     }, 6000)
     return () => clearInterval(slideInterval)
-  }, [isPlaying])
+  }, [isPlaying, slides.length])
 
   const goToSlide = (index: number) => {
     setCurrentSlide(index)
@@ -70,7 +79,7 @@ export default function HeroSectionRU() {
     }
   }
   const renderSlide = (slideIndex: number) => {
-    const slideData = heroSlides[slideIndex]
+    const slideData = slides[slideIndex]
     const slideProps = { 
       slideData, 
       onButtonAction: handleButtonAction 
@@ -95,7 +104,7 @@ export default function HeroSectionRU() {
     >
       <SlideBackground 
         currentSlide={currentSlide}
-        slides={heroSlides}
+        slides={slides}
       />
       
       <SlideOverlay currentSlide={currentSlide} />
@@ -106,7 +115,7 @@ export default function HeroSectionRU() {
 
       <SlideNavigation
         currentSlide={currentSlide}
-        totalSlides={heroSlides.length}
+        totalSlides={slides.length}
         onSlideChange={goToSlide}
       />
     </section>

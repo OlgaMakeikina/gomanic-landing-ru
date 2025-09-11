@@ -1,5 +1,9 @@
 'use client'
 
+import { useEffect, useState } from 'react'
+import { MasterConfig } from '@/types/master'
+import { getCurrentMaster, loadMasterData } from '@/utils/master-loader'
+
 import Header from '@/components/header'
 import HeroSection from '@/components/hero'
 import PromocoesMes2 from '@/components/sections/PromocoesMes2'
@@ -13,21 +17,40 @@ import ContactSection from '@/components/contact'
 import Footer from '@/components/footer'
 
 export default function Home() {
+  const [masterData, setMasterData] = useState<MasterConfig | null>(null)
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    async function loadData() {
+      const masterId = getCurrentMaster()
+      if (masterId) {
+        const data = await loadMasterData(masterId)
+        setMasterData(data)
+      }
+      setLoading(false)
+    }
+    loadData()
+  }, [])
+
+  if (loading) {
+    return <div className="min-h-screen flex items-center justify-center">Загрузка...</div>
+  }
+
   return (
     <div className="min-h-screen" style={{backgroundColor: '#FEFEFE'}}>
-      <Header />
+      <Header masterData={masterData} />
       <main role="main" id="main-content">
-        <HeroSection />
-        <PromocoesMes2 />
-        <ResultsGallery />
-        <SegurancaQualidade />
-        <ClientsSection />
-        <SocialProof />
-        <ComoFunciona />
-        <VipExclusivo />
-        <ContactSection />
+        <HeroSection masterData={masterData} />
+        <PromocoesMes2 masterData={masterData} />
+        <ResultsGallery masterData={masterData} />
+        <SegurancaQualidade masterData={masterData} />
+        <ClientsSection masterData={masterData} />
+        <SocialProof masterData={masterData} />
+        <ComoFunciona masterData={masterData} />
+        <VipExclusivo masterData={masterData} />
+        <ContactSection masterData={masterData} />
       </main>
-      <Footer />
+      <Footer masterData={masterData} />
     </div>
   )
 }
