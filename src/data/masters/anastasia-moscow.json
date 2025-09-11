@@ -2,7 +2,7 @@
   "subdomain": "anastasia-moscow",
   "personal": {
     "name": "Анастасия Ульянова",
-    "photo": "/images/masters/anastasia/profile.jpg",
+    "photo": "/images/nail-master/anastasia-ulianova/profile.png",
     "status": {
       "type": "intern",
       "label": "Стажер GOMANIC",
@@ -44,12 +44,12 @@
   ],
   "portfolio": {
     "photos": [
-      "/images/masters/anastasia/portfolio/work1.jpg",
-      "/images/masters/anastasia/portfolio/work2.jpg",
-      "/images/masters/anastasia/portfolio/work3.jpg",
-      "/images/masters/anastasia/portfolio/work4.jpg",
-      "/images/masters/anastasia/portfolio/work5.jpg",
-      "/images/masters/anastasia/portfolio/work6.jpg"
+      "/images/nail-master/anastasia-ulianova/work1.png",
+      "/images/nail-master/anastasia-ulianova/work2.png",
+      "/images/nail-master/anastasia-ulianova/work3.png",
+      "/images/nail-master/anastasia-ulianova/work4.png",
+      "/images/nail-master/anastasia-ulianova/work5.png",
+      "/images/nail-master/anastasia-ulianova/work6.png"
     ],
     "description": "Более 200 довольных клиенток за последний год"
   },

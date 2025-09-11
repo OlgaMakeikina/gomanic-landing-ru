@@ -6,6 +6,7 @@ import { getCurrentMaster, loadMasterData } from '@/utils/master-loader'
 
 import Header from '@/components/header'
 import HeroSectionRU from '@/components/hero/HeroSection'
+import MasterIntro from '@/components/sections/MasterIntro'
 import PromocoesMes2 from '@/components/sections/PromocoesMes2'
 import SegurancaQualidade from '@/components/sections/SegurancaQualidade'
 import ResultsGallery from '@/components/results-gallery'
@@ -41,6 +42,7 @@ export default function Home() {
       <Header masterData={masterData} />
       <main role="main" id="main-content">
         <HeroSectionRU masterData={masterData} />
+        <MasterIntro masterData={masterData} />
         <PromocoesMes2 masterData={masterData} />
         <ResultsGallery masterData={masterData} />
         <SegurancaQualidade masterData={masterData} />
