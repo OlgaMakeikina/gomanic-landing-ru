@@ -1,11 +1,17 @@
 'use client'
 import { useState } from 'react'
+import { MasterConfig } from '@/types/master'
 import FooterLogo from './FooterLogo'
 import SocialLinks from './SocialLinks'
 import AddressSection from './AddressSection'
 import Copyright from './Copyright'
+import Disclaimer from './Disclaimer'
 
-export default function Footer() {
+interface FooterProps {
+  masterData?: MasterConfig | null
+}
+
+export default function Footer({ masterData }: FooterProps) {
   const [showMap, setShowMap] = useState(false)
 
   const handleCtaClick = () => {
@@ -28,6 +34,7 @@ export default function Footer() {
         </div>
         
         <Copyright />
+        <Disclaimer masterData={masterData} />
       </div>
     </footer>
   )

@@ -5,7 +5,7 @@ import { MasterConfig } from '@/types/master'
 import { getCurrentMaster, loadMasterData } from '@/utils/master-loader'
 
 import Header from '@/components/header'
-import HeroSection from '@/components/hero'
+import HeroSectionRU from '@/components/hero/HeroSection'
 import PromocoesMes2 from '@/components/sections/PromocoesMes2'
 import SegurancaQualidade from '@/components/sections/SegurancaQualidade'
 import ResultsGallery from '@/components/results-gallery'
@@ -40,7 +40,7 @@ export default function Home() {
     <div className="min-h-screen" style={{backgroundColor: '#FEFEFE'}}>
       <Header masterData={masterData} />
       <main role="main" id="main-content">
-        <HeroSection masterData={masterData} />
+        <HeroSectionRU masterData={masterData} />
         <PromocoesMes2 masterData={masterData} />
         <ResultsGallery masterData={masterData} />
         <SegurancaQualidade masterData={masterData} />
