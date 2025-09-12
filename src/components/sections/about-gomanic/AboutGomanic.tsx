@@ -6,10 +6,11 @@ export default function AboutGomanic() {
   const [isVisible, setIsVisible] = useState(false)
 
   const stats = [
-    { number: "3000+", label: "учеников из 12 стран обучено", icon: "🎓" },
-    { number: "50 000", label: "маникюров моделям сделано", icon: "💅" },
-    { number: "20 000", label: "моделей школы", icon: "👥" },
-    { number: "5", label: "профессиональных образовательных программ", icon: "📚" }
+    { number: "3000+", label: "учеников из 12 стран обучено" },
+    { number: "50 000", label: "маникюров моделям сделано" },
+    { number: "20 000", label: "моделей школы" },
+    { number: "4000", label: "собственных оттенков" },
+    { number: "5", label: "профессиональных образовательных программ" }
   ]
 
   useEffect(() => {
@@ -48,12 +49,12 @@ export default function AboutGomanic() {
           <h2 className="text-4xl lg:text-5xl font-bold mb-6 uppercase tracking-wide" style={{ fontFamily: 'DrukWideCyr-Super, Arial, sans-serif', color: '#FEFEFE' }}>
             GOMANIC
           </h2>
-          <p className="text-xl lg:text-2xl max-w-4xl mx-auto leading-relaxed" style={{ fontFamily: 'Manrope, sans-serif', color: '#FEFEFE', fontWeight: 300, opacity: 0.9 }}>
-            Маркетинговая платформа академии маникюра GOMANIC
+          <p className="text-xl lg:text-1xl max-w-4xl mx-auto leading-relaxed" style={{ fontFamily: 'Manrope, sans-serif', color: '#FEFEFE', fontWeight: 300, opacity: 0.9 }}>
+            Маркетинговая платформа академии маникюра GOMANIC — <br/> это сервис, который задаёт новые правила индустрии. <br/> Мы обучаем, объединяем и поддерживаем мастеров, чтобы каждый маникюр соответствовал современным стандартам. Это гарантия стиля и качества, проверенная тысячами клиентов.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-16">
           {stats.map((stat, index) => (
             <div 
               key={index}
@@ -66,11 +67,10 @@ export default function AboutGomanic() {
             >
               <div className="absolute inset-0 bg-gradient-to-br from-white/15 via-white/8 to-transparent rounded-2xl"></div>
               <div className="relative z-10">
-                <div className="text-4xl mb-4">{stat.icon}</div>
-                <div className="text-3xl lg:text-4xl font-bold mb-2" style={{ fontFamily: 'DrukWideCyr-Super, Arial, sans-serif', color: '#FEFEFE' }}>
+                <div className="text-2xl lg:text-1xl font-bold" style={{ fontFamily: 'DrukWideCyr-Super, Arial, sans-serif', color: '#FEFEFE', whiteSpace: 'nowrap' }}>
                   {stat.number}
                 </div>
-                <p className="text-base leading-relaxed" style={{ fontFamily: 'Manrope, sans-serif', color: '#FEFEFE', opacity: 0.9 }}>
+                <p className="text-base leading-relaxed mt-2" style={{ fontFamily: 'Manrope, sans-serif', color: '#FEFEFE', opacity: 0.9 }}>
                   {stat.label}
                 </p>
               </div>
@@ -78,28 +78,10 @@ export default function AboutGomanic() {
           ))}
         </div>
 
-        <div className="text-center mb-16 p-6 rounded-2xl backdrop-blur-xl border border-white border-opacity-25 relative overflow-hidden"
-             style={{ background: 'rgba(254, 254, 254, 0.08)', boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)' }}>
-          <div className="relative z-10">
-            <div className="text-lg font-semibold mb-2" style={{ fontFamily: 'Manrope, sans-serif', color: '#FEFEFE' }}>
-              Лицензия комитета по образованию
-            </div>
-            <div className="text-base mb-1" style={{ fontFamily: 'Manrope, sans-serif', color: '#FEFEFE', opacity: 0.8 }}>
-              Регистрационный номер лицензии: № Л035-01271-78/006575853
-            </div>
-            <div className="text-base mb-2" style={{ fontFamily: 'Manrope, sans-serif', color: '#FEFEFE', opacity: 0.8 }}>
-              Дата предоставления лицензии: 16.06.2023
-            </div>
-            <div className="text-sm" style={{ fontFamily: 'Manrope, sans-serif', color: '#FEFEFE', opacity: 0.7 }}>
-              Общество с ограниченной ответственностью «Управляющая компания Развитие»
-            </div>
-          </div>
-        </div>
-
         <div className="text-center p-8 rounded-2xl backdrop-blur-xl border border-white border-opacity-30 relative overflow-hidden"
              style={{ background: 'rgba(254, 254, 254, 0.15)', boxShadow: '0 20px 60px rgba(0, 0, 0, 0.5)' }}>
           <div className="relative z-10">
-            <h3 className="text-2xl lg:text-3xl font-bold mb-4 uppercase tracking-wide" style={{ fontFamily: 'DrukWideCyr-Super, Arial, sans-serif', color: '#FEFEFE' }}>
+            <h3 className="text-2xl lg:text-1xl font-bold mb-4 uppercase tracking-wide" style={{ fontFamily: 'DrukWideCyr-Super, Arial, sans-serif', color: '#FEFEFE' }}>
               Хочешь стать частью команды GOMANIC?
             </h3>
             <p className="text-lg mb-8 opacity-90" style={{ fontFamily: 'Manrope, sans-serif', color: '#FEFEFE' }}>
@@ -108,11 +90,11 @@ export default function AboutGomanic() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button onClick={handleWhatsAppClick} className="px-8 py-4 rounded-lg font-bold transition-all hover:opacity-90 hover:scale-105 uppercase tracking-wide"
                       style={{ backgroundColor: '#FEFEFE', color: '#444f55', fontFamily: 'Manrope, sans-serif', fontSize: '14px', letterSpacing: '0.1em' }}>
-                📱 НАПИСАТЬ В WHATSAPP
+                НАПИСАТЬ В WHATSAPP
               </button>
               <button onClick={handleTelegramClick} className="px-8 py-4 rounded-lg font-bold border-2 transition-all hover:opacity-90 hover:scale-105 uppercase tracking-wide"
                       style={{ color: '#FEFEFE', borderColor: '#FEFEFE', backgroundColor: 'transparent', fontFamily: 'Manrope, sans-serif', fontSize: '14px', letterSpacing: '0.1em' }}>
-                ✈️ НАПИСАТЬ В TELEGRAM
+                НАПИСАТЬ В TELEGRAM
               </button>
             </div>
           </div>
