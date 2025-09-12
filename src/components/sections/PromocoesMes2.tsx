@@ -456,8 +456,7 @@ export default function PromocoesMes2() {
           </div>
         </div>
 
-        {/* Bottom Info */}
-        <div
+        {/*  <div
           className="mt-16 rounded-2xl px-6 py-4 text-center mx-auto max-w-3xl"
           style={{
             background: "rgba(255, 255, 255, 0.15)",
@@ -468,12 +467,13 @@ export default function PromocoesMes2() {
             backdropFilter: "blur(10px)",
           }}
         >
-          <div className="leading-relaxed">
+         <div className="leading-relaxed">
             <span className="mr-1">💳</span>
             Оплата предоплаты на 100% безопасна.{" "}
             <span className="font-semibold">Если не сможете прийти, перенесем запись или вернем деньги.</span>
           </div>
-        </div>
+     
+        </div>    */} 
       </div>
     </section>
   )
