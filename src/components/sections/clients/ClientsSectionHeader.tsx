@@ -31,7 +31,7 @@ export default function ClientsSectionHeader({ colors }: ClientsSectionHeaderPro
         className="mx-auto max-w-3xl"
         style={{ color: colors.white, opacity: 0.9, fontFamily: "Manrope, sans-serif", fontSize: 16 }}
       >
-        Тысячи довольных клиентов, которые уже доверились нашей работе
+       Тысячи довольных клиентов, которые уже доверились мастерам, прошедшим обучение в GOMANIC
       </p>
     </header>
   );

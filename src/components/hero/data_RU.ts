@@ -6,7 +6,7 @@ export const heroSlidesRU: HeroSlide[] = [
     image: '/images/hero/hero1.jpeg',
     title: 'GOMANIC',
     subtitle: '',
-    content: 'Независимые специалисты, сертифицированные по программе метод эстетики ногтей GOMANIC'
+    content: 'Независимые специалисты, сертифицированные по программе - Mетод эстетики ногтей GOMANIC'
   },
   
   {
