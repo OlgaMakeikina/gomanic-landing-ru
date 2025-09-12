@@ -77,18 +77,27 @@ export default function MasterIntro({ masterData }: MasterIntroProps) {
           
           {/* Левая часть - Фото */}
           <div className="relative">
-            <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+            <div
+              className="relative aspect-square rounded-2xl overflow-hidden backdrop-blur-xl border"
+              style={{
+                background: "rgba(255, 255, 255, 0.12)",
+                borderColor: "rgba(255, 255, 255, 0.25)",
+                boxShadow: "0 32px 64px rgba(0,0,0,0.5)",
+              }}
+            >
               <img
                 src={personal.photo}
                 alt={personal.name}
-                className="w-full h-[500px] object-cover"
+                className="absolute inset-0 w-full h-full object-cover"
+                style={{
+                  filter: "brightness(0.85) contrast(1.1)"
+                }}
                 onError={(e) => {
                   e.currentTarget.src = '/images/placeholder-master.jpg'
                 }}
               />
-              
-              {/* Градиент снизу */}
-              <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/60 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-black/30"></div>
+              <div className="absolute inset-0 bg-gradient-to-tl from-black/20 via-transparent to-transparent"></div>
               
               {/* Имя поверх фото */}
               <div className="absolute bottom-6 left-6 text-white">
