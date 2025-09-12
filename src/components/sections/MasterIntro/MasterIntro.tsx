@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { MasterConfig } from '@/types/master'
+import { mapEmbedUrl } from '@/components/footer/data'
 
 interface MasterIntroProps {
   masterData: MasterConfig | null
@@ -131,6 +132,34 @@ export default function MasterIntro({ masterData }: MasterIntroProps) {
               >
                 О себе: <em>"{personal.strongSide.description}"</em>
               </p>
+            </div>
+
+            {/* Адрес */}
+            <div className="space-y-4">
+              <p 
+                className="text-lg lg:text-xl leading-relaxed"
+                style={{ 
+                  fontFamily: 'Manrope, sans-serif',
+                  color: '#444f55'
+                }}
+              >
+                Адрес: Невский проспект, 118, этаж 4, офис 4109, Санкт-Петербург
+              </p>
+              
+              {/* Google карта */}
+              <div className="rounded-lg overflow-hidden shadow-lg border" style={{ borderColor: 'rgba(68, 79, 85, 0.1)' }}>
+                <iframe
+                  src={mapEmbedUrl}
+                  width="100%"
+                  height="250"
+                  style={{ border: 0 }}
+                  allowFullScreen={true}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Карта расположения салона GOMANIC"
+                  className="w-full"
+                ></iframe>
+              </div>
             </div>
 
             {/* Кнопки */}

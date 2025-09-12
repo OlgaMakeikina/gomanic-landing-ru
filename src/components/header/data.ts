@@ -1,11 +1,9 @@
 import { MenuItem } from './types'
 
 export const menuItems: MenuItem[] = [
-  { href: "#promocoes-2", label: "АКЦИИ" },
-  { href: "#portfolio", label: "ПОРТФОЛИО" },
-  { href: "#seguranca", label: "БЕЗОПАСНОСТЬ" },
-  { href: "#clientes", label: "КЛИЕНТЫ" },
-  { href: "#vip-exclusivo", label: "VIP CLUB" },
-  { href: "#como-funciona", label: "ПРОЦЕСС" },
-  { href: "#agendamento", label: "КОНТАКТ" }
+  { href: "#master-intro", label: "О мастере" },
+  { href: "#about-gomanic", label: "о GOMANIC" },
+  { href: "#reviews", label: "Отзывы" },
+  { href: "#contacts", label: "Контакты" },
+  { href: "#booking", label: "Записаться" }
 ]

@@ -14,7 +14,7 @@ export default function Slide1({ slideData, onButtonAction }: SlideProps) {
               subtitle={slideData.subtitle}
               content={slideData.content}
               align="center"
-              showLocationInfo={true}
+              showLocationInfo={false}
             />
             
             {/* Buttons in one row */}
@@ -42,7 +42,7 @@ export default function Slide1({ slideData, onButtonAction }: SlideProps) {
             title={slideData.title}
             subtitle={slideData.subtitle}
             content={slideData.content}
-            showLocationInfo={true}
+            showLocationInfo={false}
           />
           
           {/* Buttons in one row for mobile */}

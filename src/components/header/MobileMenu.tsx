@@ -150,7 +150,7 @@ export default function MobileMenu({ isOpen, items, onClose }: MobileMenuProps) 
               boxShadow: '0 2px 8px rgba(68, 78, 85, 0.2)'
             }}
           >
-            <div className="vogue-caption text-xs" style={{color: '#FEFEFE'}}>⏰ ОСТАЛОСЬ 3 МЕСТА</div>
+            <div className="vogue-caption text-xs" style={{color: '#FEFEFE'}}>📍 Невский пр., 118, СПб</div>
           </div>
           
         </div>
