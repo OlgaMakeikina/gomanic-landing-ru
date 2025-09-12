@@ -28,7 +28,7 @@ export default function SocialProof() {
             className="vogue-subhead mb-8"
             style={{color: COLORS.dark}}
           >
-            ЧТО ГОВОРЯТ О НАС
+            ЧТО ГОВОРЯТ О МАСТЕРАХ GOMANIC
           </HorizonText>
 
           <p
