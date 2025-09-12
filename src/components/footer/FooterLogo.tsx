@@ -8,7 +8,8 @@ export default function FooterLogo({ onCtaClick }: FooterLogoProps) {
       </div>
       <div className="w-16 h-px mb-8 mx-auto" style={{backgroundColor: '#FEFEFE', opacity: 0.3}}></div>
       <p className="text-sm leading-relaxed mb-8" style={{color: '#FEFEFE'}}>
-        Профессиональный маникюр с новыми специалистами за полцены.
+        {/* Профессиональный маникюр с новыми специалистами за полцены. */}
+        Профессиональный маникюр с независимыми специалистами, сертифицированными GOMANIC.
       </p>
       
       <div className="mt-auto">

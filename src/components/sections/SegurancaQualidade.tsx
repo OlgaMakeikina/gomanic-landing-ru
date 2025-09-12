@@ -237,7 +237,7 @@ export default function SegurancaQualidade(): JSX.Element {
                   fontWeight: 600,
                 }}
               >
-                Только за полцены
+                {/* Только за полцены */}
               </p>
             </div>
           </div>

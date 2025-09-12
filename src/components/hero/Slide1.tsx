@@ -20,17 +20,17 @@ export default function Slide1({ slideData, onButtonAction }: SlideProps) {
             {/* Buttons in one row */}
             <div className="flex gap-4 justify-center items-center">
               <HeroButton 
-                onClick={() => onButtonAction('scroll', 'agendamento')}
+                onClick={() => onButtonAction('scroll', 'master-intro')}
                 variant="primary"
               >
-                ХОЧУ СВОЙ VIP-ПРОПУСК
+                О МАСТЕРЕ
               </HeroButton>
               
               <HeroButton 
-                onClick={() => onButtonAction('next')}
+                onClick={() => onButtonAction('whatsapp')}
                 variant="secondary"
               >
-                УЗНАТЬ БОЛЬШЕ
+                Записаться в WA
               </HeroButton>
             </div>
           </div>
@@ -48,17 +48,17 @@ export default function Slide1({ slideData, onButtonAction }: SlideProps) {
           {/* Buttons in one row for mobile */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4">
             <HeroButton 
-              onClick={() => onButtonAction('scroll', 'agendamento')}
+              onClick={() => onButtonAction('scroll', 'master-intro')}
               variant="primary"
             >
-              ХОЧУ СВОЙ VIP-ПРОПУСК
+              О МАСТЕРЕ
             </HeroButton>
             
             <HeroButton 
-              onClick={() => onButtonAction('next')}
+              onClick={() => onButtonAction('whatsapp')}
               variant="secondary"
             >
-              УЗНАТЬ БОЛЬШЕ
+              Записаться в WA
             </HeroButton>
           </div>
         </div>

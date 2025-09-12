@@ -3,7 +3,7 @@ import { config } from './config'
 // Базовые SEO настройки
 export const defaultSEO = {
   title: 'Профессиональный маникюр - GOMANIC | Флорианополис - SC',
-  description: 'Профессиональный маникюр со специалистами за полцены. Японские премиум материалы, полная безопасность и гарантированный результат в Флорианополисе.',
+  description: 'Профессиональный маникюр с независимыми специалистами. Японские премиум материалы, полная безопасность и гарантированный результат в Флорианополисе.',
   keywords: [
     'маникюр Флорианополис',
     'профессиональный маникюр',
@@ -22,7 +22,7 @@ export const defaultSEO = {
     url: config.siteUrl,
     siteName: 'GOMANIC',
     title: 'Профессиональный маникюр - GOMANIC',
-    description: 'Профессиональный маникюр за полцены в Флорианополисе - SC',
+    description: 'Профессиональный маникюр с независимыми специалистами в Флорианополисе - SC',
     images: [
       {
         url: `${config.siteUrl}/images/og-image.jpg`,
@@ -36,7 +36,7 @@ export const defaultSEO = {
     cardType: 'summary_large_image',
     site: '@gomanic_salon',
     title: 'Профессиональный маникюр - GOMANIC',
-    description: 'Профессиональный маникюр за полцены в Флорианополисе',
+    description: 'Профессиональный маникюр с независимыми специалистами в Флорианополисе',
     image: `${config.siteUrl}/images/og-image.jpg`,
   },
 }
@@ -47,7 +47,7 @@ export const generateBusinessSchema = () => {
     '@context': 'https://schema.org',
     '@type': 'BeautySalon',
     name: 'GOMANIC',
-    description: 'Профессиональный маникюр со специалистами за полцены',
+    description: 'Профессиональный маникюр с независимыми специалистами',
     url: config.siteUrl,
     logo: `${config.siteUrl}/images/logo.png`,
     image: `${config.siteUrl}/images/og-image.jpg`,

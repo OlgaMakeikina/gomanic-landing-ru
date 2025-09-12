@@ -10,8 +10,8 @@ interface HeroTitleProps {
 }
 
 export default function HeroTitle({ title, subtitle, content, align = 'center', showLocationInfo = false }: HeroTitleProps) {
-  // Специальная логика для "GOMANIC Especialistas" и "GOMANIC Специалисты"
-  const isGomanicEspecialistas = title === 'GOMANIC Especialistas' || title === 'GOMANIC Специалисты'
+  // Специальная логика для "GOMANIC Especialistas" и "GOMANIC Независимые специалисты, сертифицированные по программе метод эстетики ногтей GOMANIC"
+  const isGomanicEspecialistas = title === 'GOMANIC Especialistas' || title.includes('GOMANIC Независимые специалисты')
   
   // 1) Если передан "A × B", используем его
   const hasDivider = title.includes(' × ')
@@ -73,10 +73,10 @@ export default function HeroTitle({ title, subtitle, content, align = 'center', 
         </HorizonText>
 
         {/* Location info - only when showLocationInfo is true */}
-        {showLocationInfo && (
+        {/* {showLocationInfo && (
           <>
             {/* Desktop version - always right aligned under H1 */}
-            <div className="hidden lg:flex lg:justify-end lg:mt-4 lg:mb-6">
+            {/* <div className="hidden lg:flex lg:justify-end lg:mt-4 lg:mb-6">
               <div className="flex items-center gap-3 bg-black/20 backdrop-blur-sm rounded-lg px-6 py-4 border border-white/10">
                 <Image
                   src="/images/contacts/icons8-location-100 (1).png"
@@ -97,10 +97,10 @@ export default function HeroTitle({ title, subtitle, content, align = 'center', 
                   </p>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             {/* Mobile version - centered under H1 */}
-            <div className="lg:hidden flex justify-center mt-4 mb-6">
+            {/* <div className="lg:hidden flex justify-center mt-4 mb-6">
               <div className="flex items-center gap-3 bg-black/20 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/10">
                 <Image
                   src="/images/contacts/icons8-location-100 (1).png"
@@ -121,9 +121,9 @@ export default function HeroTitle({ title, subtitle, content, align = 'center', 
                   </p>
                 </div>
               </div>
-            </div>
-          </>
-        )}
+            </div> */}
+          {/* </> */}
+        {/* )} */}
       </div>
 
       <div className={`mb-6 lg:mb-8 ${align === 'center' ? 'text-center' : 'text-left'}`}>

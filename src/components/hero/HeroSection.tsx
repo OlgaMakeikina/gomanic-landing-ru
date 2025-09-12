@@ -51,9 +51,12 @@ export default function HeroSectionRU({ masterData }: HeroSectionProps) {
     if (action === 'next') {
       nextSlide()
     } else if (action === 'whatsapp') {
-      window.open('https://wa.me/79000000000', '_blank')
-    } else if (id) {
-      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+      window.open('https://wa.me/5548996737351', '_blank')
+    } else if (action === 'scroll' && id) {
+      const targetElement = document.getElementById(id)
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth' })
+      }
     }
   }
 

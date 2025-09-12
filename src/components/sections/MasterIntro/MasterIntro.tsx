@@ -56,7 +56,7 @@ export default function MasterIntro({ masterData }: MasterIntroProps) {
   }
 
   return (
-    <section className="py-20" style={{ backgroundColor: '#FEFEFE' }}>
+    <section id="master-intro" className="py-20" style={{ backgroundColor: '#FEFEFE' }}>
       <div className="max-w-6xl mx-auto px-6">
         
         {/* Заголовок секции */}

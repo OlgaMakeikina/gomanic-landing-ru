@@ -4,9 +4,9 @@ export const heroSlidesRU: HeroSlide[] = [
   {
     id: 1,
     image: '/images/hero/hero1.jpeg',
-    title: 'GOMANIC Специалисты',
-    subtitle: 'Премиум маникюр за полцены',
-    content: 'Откройте для себя VIP-мир профессионального маникюра с эксклюзивными ценами для участников.'
+    title: 'GOMANIC',
+    // subtitle: 'Премиум маникюр за полцены',
+    content: 'Независимые специалисты, сертифицированные по программе метод эстетики ногтей GOMANIC'
   },
   
   {
