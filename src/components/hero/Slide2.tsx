@@ -12,7 +12,7 @@ export default function Slide2RU({ slideData, onButtonAction }: SlideProps) {
             <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-start lg:items-center">
               
               <div className="text-center lg:text-left">
-                <VipBadge text="Эксклюзивное предложение месяца" />
+
                 
                 <h2 style={{
                   fontFamily: 'DrukWideCyr-Super, Arial Black, Arial, sans-serif',
@@ -23,7 +23,7 @@ export default function Slide2RU({ slideData, onButtonAction }: SlideProps) {
                   lineHeight: '0.9',
                   color: '#FEFEFE',
                   textShadow: '0 4px 20px rgba(0,0,0,0.5)',
-                  marginBottom: '8px'
+                  marginBottom: '50px'
                 }}>
                   {slideData.title}
                 </h2>
@@ -46,7 +46,7 @@ export default function Slide2RU({ slideData, onButtonAction }: SlideProps) {
                     variant="primary"
                     className="min-w-[140px]"
                   >
-                    ПОЛУЧИТЬ VIP-ПРОПУСК
+                    ХОЧУ ЗАПИСАТЬСЯ
                   </HeroButton>
                   <HeroButton 
                     onClick={() => onButtonAction('scroll', 'portfolio')}
@@ -77,7 +77,7 @@ export default function Slide2RU({ slideData, onButtonAction }: SlideProps) {
                 variant="primary"
                 className="text-sm px-6 py-2.5 min-w-[120px]"
               >
-                ПОЛУЧИТЬ VIP-ПРОПУСК
+                ХОЧУ ЗАПИСАТЬСЯ
               </HeroButton>
               <HeroButton 
                 onClick={() => onButtonAction('scroll', 'portfolio')}

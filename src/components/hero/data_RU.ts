@@ -5,15 +5,15 @@ export const heroSlidesRU: HeroSlide[] = [
     id: 1,
     image: '/images/hero/hero1.jpeg',
     title: 'GOMANIC',
-    // subtitle: 'Премиум маникюр за полцены',
+    subtitle: '',
     content: 'Независимые специалисты, сертифицированные по программе метод эстетики ногтей GOMANIC'
   },
   
   {
     id: 2,
     image: '/images/hero/hero2.jpeg',
-    title: 'цены vip-пропуска',
-    subtitle: 'Экономия до 55%',
+    title: 'Экономия до 55%',
+    subtitle: '',
     services: [
       { name: 'Маникюр без покрытия + снятие геля-лака', oldPrice: 1200, newPrice: 600 },
       { name: 'Маникюр + гель-лак + снятие', oldPrice: 2500, newPrice: 1200 },
@@ -25,12 +25,12 @@ export const heroSlidesRU: HeroSlide[] = [
   {
     id: 3,
     image: '/images/hero/hero3.jpeg',
-    title: 'VIP-пропуск',
-    subtitle: 'Эксклюзивные преимущества только для участников',
+    title: 'Акция месяца',
+    subtitle: '',
     benefits: [
-      'Только 30 клиентов в месяц могут иметь VIP-пропуск',
+      'Только 30 клиентов в месяц могут воспользоваться предложением',
       'Эта цена больше не повторится после того, как места закончатся',
-      'VIP-клиенты получают подарок-сюрприз при первом посещении'
+      'Клиенты получают подарок-сюрприз при первом посещении'
     ]
   }
 ]

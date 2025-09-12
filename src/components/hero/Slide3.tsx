@@ -15,7 +15,7 @@ export default function Slide3({ slideData, onButtonAction }: SlideProps) {
             <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-start lg:items-center">
               
               <div className="text-center lg:text-left">
-                <VipBadge text="Эксклюзивно с VIP-пропуском" />
+       
                 
                 <h2 style={{
                   fontFamily: 'DrukWideCyr-Super, Arial Black, Arial, sans-serif',
@@ -26,7 +26,7 @@ export default function Slide3({ slideData, onButtonAction }: SlideProps) {
                   lineHeight: '0.9',
                   color: '#FEFEFE',
                   textShadow: '0 4px 20px rgba(0,0,0,0.5)',
-                  marginBottom: '12px'
+                  marginBottom: '50px'
                 }}>
                   {slideData.title}
                 </h2>
@@ -50,7 +50,7 @@ export default function Slide3({ slideData, onButtonAction }: SlideProps) {
                     variant="primary"
                     className="w-full"
                   >
-                    ХОЧУ VIP-ПРОПУСК
+                    ХОЧУ ЗАПИСАТЬСЯ
                   </HeroButton>
                   
                   <HeroButton 

@@ -11,7 +11,7 @@ export default function ServiceItem({ service, isLast }: ServiceItemProps) {
   return (
     <div>
       <div style={{
-        fontFamily: 'DrukWideCyr-Super, Arial Black, Arial, sans-serif',
+ 
         fontSize: 'clamp(11px, 2vw, 17px)',
         fontWeight: 'normal',
         color: '#FEFEFE',
@@ -35,7 +35,7 @@ export default function ServiceItem({ service, isLast }: ServiceItemProps) {
           {service.oldPrice} ₽
         </span>
         <span style={{
-          fontFamily: 'DrukWideCyr-Super, Arial Black, Arial, sans-serif',
+       
           fontSize: 'clamp(13px, 2.5vw, 17px)',
           fontWeight: 'normal',
           color: '#3B3B3A',
