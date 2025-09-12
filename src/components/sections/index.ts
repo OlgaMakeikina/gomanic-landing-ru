@@ -1,0 +1,5 @@
+export { default as AboutGomanic } from './about-gomanic'
+export { default as ClientsSection } from './ClientsSection'
+export { default as PromocoesMes2 } from './PromocoesMes2'
+export { default as OfertaSection } from './OfertaSection'
+export { default as BeforeAfterSection } from './BeforeAfterSection'

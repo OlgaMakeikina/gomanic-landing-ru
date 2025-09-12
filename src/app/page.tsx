@@ -8,6 +8,7 @@ import Header from '@/components/header'
 import HeroSectionRU from '@/components/hero/HeroSection'
 import MasterIntro from '@/components/sections/MasterIntro'
 import PromocoesMes2 from '@/components/sections/PromocoesMes2'
+import AboutGomanic from '@/components/sections/about-gomanic/AboutGomanic'
 import SegurancaQualidade from '@/components/sections/SegurancaQualidade'
 import ResultsGallery from '@/components/results-gallery'
 import ClientsSection from '@/components/sections/ClientsSection'
@@ -44,7 +45,8 @@ export default function Home() {
         <HeroSectionRU masterData={masterData} />
         <MasterIntro masterData={masterData} />
         <PromocoesMes2 masterData={masterData} />
-        <ResultsGallery />
+        <ResultsGallery /> 
+        <AboutGomanic />
         <SegurancaQualidade masterData={masterData} />
         <ClientsSection masterData={masterData} />
         <SocialProof masterData={masterData} />
