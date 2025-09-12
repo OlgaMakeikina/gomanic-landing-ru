@@ -9,7 +9,7 @@ export default function GalleryHeader() {
         ВЫГЛЯДЕТЬ ТАК УЖЕ ЗАВТРА
       </h2>
       <p className={styles.subtitle}>
-        Наши мастера воспроизведут тот же уровень <strong>блеска и совершенства</strong> на ваших руках.
+        Мастер воспроизведёт тот же уровень <strong>блеска и совершенства</strong> на ваших руках.
       </p>
     </header>
   )

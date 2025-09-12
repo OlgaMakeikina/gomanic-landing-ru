@@ -10,7 +10,6 @@ export default function CtaBlock({ onCtaClick }: CtaBlockProps) {
         
         <div className={styles.ctaContent}>
           <p className={styles.ctaText}>
-            Такой же результат может быть у вас.<br />
             <span className={styles.ctaSecondary}>Запишитесь сейчас и</span><br />
             <span className={styles.ctaHighlight}>сэкономьте 50%</span>
           </p>
