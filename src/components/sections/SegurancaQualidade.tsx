@@ -75,12 +75,12 @@ export default function SegurancaQualidade(): JSX.Element {
     {
       imagem: '/images/higiene/higiene1.jpeg',
       titulo: 'Новейшие техники',
-      detalhes: 'Мастера прошли обучение по последним технологиям подготовки ногтей',
+      detalhes: 'Мастер прошёл обучение по последним технологиям подготовки ногтей',
     },
     {
       imagem: '/images/higiene/higiene2.jpeg',
       titulo: 'Премиум-материалы',
-      detalhes: 'Японское сырьё с сертификатами безопасности',
+      detalhes: 'Материалы с сертификатами безопасности',
     },
     {
       imagem: '/images/higiene/higiene3.jpeg',
@@ -237,7 +237,7 @@ export default function SegurancaQualidade(): JSX.Element {
                   fontWeight: 600,
                 }}
               >
-                {/* Только за полцены */}
+                Только за полцены
               </p>
             </div>
           </div>
@@ -259,7 +259,7 @@ export default function SegurancaQualidade(): JSX.Element {
               }}
               className="md:text-2xl" // На средних экранах и больше - размер 24px
             >
-              Международные стандарты
+              стандарт работы
             </h3>
             <p
               style={{
@@ -272,7 +272,7 @@ export default function SegurancaQualidade(): JSX.Element {
                 lineHeight: 1.6,
               }}
             >
-              Наши специалисты обучены по государственной профессиональной программе Российской Федерации
+             Специалист обучен по международной программе GOMANIC
             </p>
           </header>
 
@@ -280,7 +280,7 @@ export default function SegurancaQualidade(): JSX.Element {
             {/* Первая строка - 3 фото */}
             {[
               { src: '/images/masters/masters1.jpeg', alt: 'Международный стандарт 1', label: 'Обучение' },
-              { src: '/images/masters/masters2.jpeg', alt: 'Международный стандарт 2', label: 'Квалификация' },
+              { src: '/images/masters/masters2.jpeg', alt: 'Международный стандарт 2', label: 'Тренировки' },
               { src: '/images/masters/masters3.jpeg', alt: 'Международный стандарт 3', label: 'Сертификация' }
             ].map((item, i) => (
               <div
@@ -312,7 +312,7 @@ export default function SegurancaQualidade(): JSX.Element {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-16">
             {/* Вторая строка - 3 видео */}
             {[
-              { src: '/images/masters/hd.mp4', type: 'video', alt: 'Видео обучение 1', label: 'Техники работы', poster: '/images/masters/masters1.jpeg' },
+              { src: '/images/masters/hd.mp4', type: 'video', alt: 'Видео обучение 1', label: 'Прием клиентов', poster: '/images/masters/masters1.jpeg' },
               { src: '/images/masters/2.mp4', type: 'video', alt: 'Видео обучение 2', label: 'Материалы', poster: '/images/masters/masters2.jpeg' },
               { src: '/images/masters/3.mp4', type: 'video', alt: 'Видео обучение 3', label: 'Процесс', poster: '/images/masters/masters3.jpeg' }
             ].map((item, i) => (
@@ -400,7 +400,7 @@ export default function SegurancaQualidade(): JSX.Element {
                       lineHeight: 1.5,
                     }}
                   >
-                    Наши материалы полностью безопасны и соответствуют международным стандартам качества
+                    Материалы полностью безопасны и соответствуют международным стандартам качества
                   </div>
                 </div>
               </div>
