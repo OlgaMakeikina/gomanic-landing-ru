@@ -6,12 +6,16 @@ interface PortfolioGridProps {
 }
 
 export default function PortfolioGrid({ images }: PortfolioGridProps) {
+  const getImageSrc = (image: string) => {
+    return image.startsWith('/') ? image : `/images/gallery/${image}`
+  }
+
   return (
     <div className={styles.portfolioGrid}>
       {images.map((image, index) => (
         <div key={index} className={styles.portfolioItem}>
           <Image
-            src={`/images/gallery/${image}`}
+            src={getImageSrc(image)}
             alt={`Portfolio ${index + 1}`}
             fill
             className={styles.portfolioImage}

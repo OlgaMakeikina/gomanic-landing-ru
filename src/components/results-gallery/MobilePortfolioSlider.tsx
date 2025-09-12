@@ -14,6 +14,10 @@ export default function MobilePortfolioSlider({ images }: MobilePortfolioSliderP
   const touchEndX = useRef<number>(0)
   const containerRef = useRef<HTMLDivElement>(null)
 
+  const getImageSrc = (image: string) => {
+    return image.startsWith('/') ? image : `/images/gallery/${image}`
+  }
+
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.targetTouches[0].clientX
   }
@@ -53,7 +57,7 @@ export default function MobilePortfolioSlider({ images }: MobilePortfolioSliderP
           {images.map((image, index) => (
             <div key={index} className={styles.mobileSingleItem}>
               <Image
-                src={`/images/gallery/${image}`}
+                src={getImageSrc(image)}
                 alt={`Portfolio ${index + 1}`}
                 fill
                 className={styles.mobileSingleImage}

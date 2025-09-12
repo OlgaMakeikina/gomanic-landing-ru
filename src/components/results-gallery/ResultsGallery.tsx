@@ -1,19 +1,33 @@
 'use client'
 
-import { useState } from 'react'
-import { portfolioData, beforeAfterData } from './data'
+import { useState, useEffect } from 'react'
+import { getMasterDataSync } from '@/utils/master-data'
+import { portfolioData as fallbackData } from './data'
 import GalleryHeader from './GalleryHeader'
-import TabsContainer from './TabsContainer'
-import GalleryContent from './GalleryContent'
+import PortfolioGrid from './PortfolioGrid'
+import MobilePortfolioSlider from './MobilePortfolioSlider'
 import CtaBlock from './CtaBlock'
 import styles from './styles.module.css'
 
 export default function ResultsGallery() {
-  const [activeTab, setActiveTab] = useState<'portfolio' | 'before-after'>('portfolio')
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth <= 768)
+    }
+    
+    checkIsMobile()
+    window.addEventListener('resize', checkIsMobile)
+    return () => window.removeEventListener('resize', checkIsMobile)
+  }, [])
 
   const handleCtaClick = () => {
     document.getElementById('agendamento')?.scrollIntoView({ behavior: 'smooth' })
   }
+
+  const masterData = getMasterDataSync()
+  const portfolioImages = masterData?.portfolio.photos || fallbackData.map(img => `/images/gallery/${img}`)
 
   return (
     <section 
@@ -25,16 +39,13 @@ export default function ResultsGallery() {
       <div className={styles.container}>
         <GalleryHeader />
         
-        <TabsContainer 
-          activeTab={activeTab}
-          onTabChange={setActiveTab}
-        />
-
-        <GalleryContent 
-          activeTab={activeTab}
-          portfolioData={portfolioData}
-          beforeAfterData={beforeAfterData}
-        />
+        <div className={styles.galleryContainer}>
+          {isMobile ? (
+            <MobilePortfolioSlider images={portfolioImages} />
+          ) : (
+            <PortfolioGrid images={portfolioImages} />
+          )}
+        </div>
 
         <CtaBlock onCtaClick={handleCtaClick} />
       </div>

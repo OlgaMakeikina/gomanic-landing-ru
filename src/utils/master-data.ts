@@ -1,4 +1,5 @@
 import { MasterConfig } from '@/types/master'
+import anastasiaData from '@/data/masters/anastasia-moscow.json'
 
 const DEFAULT_MASTER_ID = 'anastasia-moscow'
 
@@ -15,7 +16,7 @@ export async function getMasterData(): Promise<MasterConfig | null> {
 
 export function getMasterDataSync(): MasterConfig | null {
   try {
-    return require('@/data/masters/anastasia-moscow.json')
+    return anastasiaData as MasterConfig
   } catch (error) {
     console.error('Error loading master data sync:', error)
     return null

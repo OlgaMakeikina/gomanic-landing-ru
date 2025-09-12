@@ -44,7 +44,7 @@ export default function Home() {
         <HeroSectionRU masterData={masterData} />
         <MasterIntro masterData={masterData} />
         <PromocoesMes2 masterData={masterData} />
-        <ResultsGallery masterData={masterData} />
+        <ResultsGallery />
         <SegurancaQualidade masterData={masterData} />
         <ClientsSection masterData={masterData} />
         <SocialProof masterData={masterData} />
