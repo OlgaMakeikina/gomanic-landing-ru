@@ -58,6 +58,20 @@ export default function MasterIntro({ masterData }: MasterIntroProps) {
   return (
     <section className="py-20" style={{ backgroundColor: '#FEFEFE' }}>
       <div className="max-w-6xl mx-auto px-6">
+        
+        {/* Заголовок секции */}
+        <div className="text-center mb-16">
+          <h2 
+            className="text-4xl lg:text-5xl font-bold mb-4 uppercase tracking-wide"
+            style={{ 
+              fontFamily: 'DrukWideCyr-Super, Arial, sans-serif',
+              color: '#444f55'
+            }}
+          >
+            Мастер системы GOMANIC
+          </h2>
+        </div>
+
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           
           {/* Левая часть - Фото */}
@@ -77,9 +91,12 @@ export default function MasterIntro({ masterData }: MasterIntroProps) {
               
               {/* Имя поверх фото */}
               <div className="absolute bottom-6 left-6 text-white">
-                <h2 className="text-3xl font-bold mb-2" style={{ fontFamily: 'Manrope, sans-serif' }}>
+                <h3 
+                  className="text-2xl lg:text-3xl font-bold mb-2 uppercase tracking-wide"
+                  style={{ fontFamily: 'DrukWideCyr-Super, Arial, sans-serif' }}
+                >
                   {personal.name}
-                </h2>
+                </h3>
               </div>
             </div>
           </div>
@@ -93,47 +110,57 @@ export default function MasterIntro({ masterData }: MasterIntroProps) {
                 className="w-3 h-3 rounded-full mr-3"
                 style={{ backgroundColor: statusStyle.accent }}
               ></div>
-              <span className={`font-semibold text-sm ${statusStyle.text}`}>
+              <span className={`font-semibold text-sm ${statusStyle.text}`} style={{ fontFamily: 'Manrope, sans-serif' }}>
                 {personal.status.label}
               </span>
               {personal.status.promotion?.isActive && (
-                <span className="ml-3 text-xs font-medium text-gray-600">
+                <span className="ml-3 text-xs font-medium text-gray-600" style={{ fontFamily: 'Manrope, sans-serif' }}>
                   {personal.status.promotion.text}
                 </span>
               )}
             </div>
 
-            {/* Сильная сторона */}
+            {/* О себе */}
             <div className="space-y-4">
-              <h3 className="text-2xl font-bold" style={{ color: '#444f55', fontFamily: 'Manrope, sans-serif' }}>
-                {personal.strongSide.title}
-              </h3>
-              <p className="text-lg leading-relaxed" style={{ color: '#444f55', fontFamily: 'Manrope, sans-serif' }}>
-                {personal.strongSide.description}
+              <p 
+                className="text-lg lg:text-xl leading-relaxed"
+                style={{ 
+                  fontFamily: 'Manrope, sans-serif',
+                  color: '#444f55'
+                }}
+              >
+                О себе: <em>"{personal.strongSide.description}"</em>
               </p>
             </div>
 
             {/* Кнопки */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <button
                 onClick={handleServicesClick}
-                className="px-8 py-4 rounded-lg font-semibold text-white transition-all hover:opacity-90 hover:scale-105"
-                style={{ backgroundColor: '#444f55', fontFamily: 'Manrope, sans-serif' }}
+                className="px-8 py-4 rounded-lg font-bold text-white transition-all hover:opacity-90 hover:scale-105 uppercase tracking-wide whitespace-nowrap"
+                style={{ 
+                  backgroundColor: '#444f55', 
+                  fontFamily: 'Manrope, sans-serif',
+                  fontSize: '14px',
+                  letterSpacing: '0.1em'
+                }}
               >
-                Посмотреть услуги
+                ПОСМОТРЕТЬ УСЛУГИ
               </button>
               
               <button
                 onClick={handleBookingClick}
-                className="px-8 py-4 rounded-lg font-semibold border-2 transition-all hover:opacity-90 hover:scale-105"
+                className="px-8 py-4 rounded-lg font-bold border-2 transition-all hover:opacity-90 hover:scale-105 uppercase tracking-wide whitespace-nowrap"
                 style={{ 
                   color: '#444f55', 
                   borderColor: '#444f55',
                   backgroundColor: 'transparent',
-                  fontFamily: 'Manrope, sans-serif'
+                  fontFamily: 'Manrope, sans-serif',
+                  fontSize: '14px',
+                  letterSpacing: '0.1em'
                 }}
               >
-                Записаться на приём
+                ЗАПИСАТЬСЯ К МАСТЕРУ
               </button>
             </div>
 
