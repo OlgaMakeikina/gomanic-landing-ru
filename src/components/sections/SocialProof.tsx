@@ -1,6 +1,11 @@
+import { MasterConfig } from '@/types/master'
 import { HorizonText } from '@/components/ui';
 
-export default function SocialProof() {
+interface SocialProofProps {
+  masterData?: MasterConfig | null;
+}
+
+export default function SocialProof({ masterData }: SocialProofProps) {
   const COLORS = { dark: "#3B3B3A", gray: "#444e55", white: "#FEFEFE" }
   
   // Скриншоты настоящих отзывов

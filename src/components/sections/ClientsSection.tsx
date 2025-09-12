@@ -1,12 +1,17 @@
 'use client'
 
+import { MasterConfig } from '@/types/master'
 import { 
   ClientsSectionHeader, 
   DesktopClientsGallery, 
   MobileClientsGallery 
 } from './clients';
 
-export default function ClientsSection() {
+interface ClientsSectionProps {
+  masterData?: MasterConfig | null;
+}
+
+export default function ClientsSection({ masterData }: ClientsSectionProps) {
   const COLORS = { dark: "#3B3B3A", white: "#FEFEFE" }
 
   return (

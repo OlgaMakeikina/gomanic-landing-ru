@@ -1,27 +1,33 @@
 import { MasterConfig } from '@/types/master'
+import { HeroSlide } from '@/components/hero/types'
 
-export function generateMasterSlides(masterData: MasterConfig) {
+export function generateMasterSlides(masterData: MasterConfig): HeroSlide[] {
   return [
     {
-      id: 'master-intro',
+      id: 1,
+      image: '/images/hero/slide1.jpg',
       title: masterData.personal.name,
       subtitle: masterData.seo.h2,
-      content: masterData.personal.strongSide.description,
-      backgroundImage: '/images/hero/slide1.jpg'
+      content: masterData.personal.strongSide.description
     },
     {
-      id: 'services',
+      id: 2,
+      image: '/images/hero/slide2.jpg',
       title: 'Услуги и цены',
       subtitle: `${masterData.personal.status.label} - специальные предложения`,
       content: 'Профессиональный маникюр по выгодным ценам',
-      backgroundImage: '/images/hero/slide2.jpg'
+      services: masterData.services.slice(0, 3).map(service => ({
+        name: service.name,
+        oldPrice: service.originalPrice,
+        newPrice: service.currentPrice
+      }))
     },
     {
-      id: 'contact',
+      id: 3,
+      image: '/images/hero/slide3.jpg',
       title: 'Запись на приём',
-      subtitle: `${masterData.contacts.address.city}, ${masterData.contacts.address.metro}`,
-      content: masterData.contacts.address.full,
-      backgroundImage: '/images/hero/slide3.jpg'
+      subtitle: `${masterData.contacts.address.city}, ${masterData.contacts.address.metro || ''}`,
+      content: masterData.contacts.address.full
     }
   ]
 }

@@ -1,8 +1,13 @@
 'use client'
+import { MasterConfig } from '@/types/master'
 import ContactHeader from './ContactHeader'
 import BookingForm from '@/components/tracking/BookingForm'
 
-export default function ContactSection() {
+interface ContactSectionProps {
+  masterData?: MasterConfig | null;
+}
+
+export default function ContactSection({ masterData }: ContactSectionProps) {
   return (
     <section 
       id="agendamento" 

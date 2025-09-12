@@ -35,7 +35,8 @@ export default function AboutGomanic() {
       style={{ 
         backgroundImage: 'url(/images/clients/0_0_4_1.jpeg)',
         backgroundSize: 'cover',
-        backgroundPosition: 'center'
+        backgroundPosition: 'center',
+        boxShadow: '0 -10px 20px rgba(0, 0, 0, 0.3), 0 20px 40px rgba(0, 0, 0, 0.6)'
       }}
     >
       <div className="absolute inset-0 z-0" style={{ background: 'rgba(0,0,0,0.4)', filter: 'grayscale(100%)' }}></div>

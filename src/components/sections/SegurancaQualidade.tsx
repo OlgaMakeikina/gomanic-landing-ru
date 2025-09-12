@@ -1,6 +1,11 @@
 'use client'
 import React, { useState } from 'react'
+import { MasterConfig } from '@/types/master'
 import { HorizonText } from '@/components/ui';
+
+interface SegurancaQualidadeProps {
+  masterData?: MasterConfig | null;
+}
 
 interface VideoItemProps {
   src: string
@@ -61,7 +66,7 @@ function VideoItem({ src, poster, alt, label }: VideoItemProps) {
   )
 }
 
-export default function SegurancaQualidade(): JSX.Element {
+export default function SegurancaQualidade({ masterData }: SegurancaQualidadeProps): JSX.Element {
   const [isPlaying] = useState(false)
 
   const COLORS = { dark: '#444f55', gray: '#3B3B3A', white: '#FEFEFE' }

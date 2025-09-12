@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import { MasterConfig } from '@/types/master'
 import { menuItems } from './data'
 import Logo from './Logo'
 import Navigation from './Navigation'
@@ -7,7 +8,11 @@ import VipBadge from './VipBadge'
 import MobileMenuButton from './MobileMenuButton'
 import MobileMenu from './MobileMenu'
 
-export default function Header() {
+interface HeaderProps {
+  masterData?: MasterConfig | null;
+}
+
+export default function Header({ masterData }: HeaderProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   const handleMobileMenuClose = () => {

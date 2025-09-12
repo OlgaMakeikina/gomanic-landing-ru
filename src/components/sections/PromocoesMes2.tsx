@@ -1,9 +1,14 @@
 "use client"
 
 import { useEffect, useMemo, useState } from "react"
+import { MasterConfig } from '@/types/master'
 import { HorizonText } from '@/components/ui';
 
-export default function PromocoesMes2() {
+interface PromocoesMes2Props {
+  masterData?: MasterConfig | null;
+}
+
+export default function PromocoesMes2({ masterData }: PromocoesMes2Props) {
   const promocoes = useMemo(
     () => [
       {

@@ -1,1 +1,1 @@
-export { default as AboutGomanic } from './AboutGomanic'
+export { default } from './AboutGomanic'

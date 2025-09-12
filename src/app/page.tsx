@@ -20,7 +20,6 @@ import Footer from '@/components/footer'
 
 export default function Home() {
   const [masterData, setMasterData] = useState<MasterConfig | null>(null)
-  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     async function loadData() {
@@ -29,14 +28,9 @@ export default function Home() {
         const data = await loadMasterData(masterId)
         setMasterData(data)
       }
-      setLoading(false)
     }
     loadData()
   }, [])
-
-  if (loading) {
-    return <div className="min-h-screen flex items-center justify-center">Загрузка...</div>
-  }
 
   return (
     <div className="min-h-screen" style={{backgroundColor: '#FEFEFE'}}>

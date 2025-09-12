@@ -1,8 +1,13 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { MasterConfig } from '@/types/master'
 import { useCountdown } from '@/hooks/useCountdown'
 import { HorizonText } from '@/components/ui'
+
+interface VipExclusivoProps {
+  masterData?: MasterConfig | null;
+}
 
 interface VipCardProps {
   title: string
@@ -118,7 +123,7 @@ function CountdownTimer() {
   )
 }
 
-export default function VipExclusivo() {
+export default function VipExclusivo({ masterData }: VipExclusivoProps) {
   const [isCtaVisible, setIsCtaVisible] = useState(false)
 
   useEffect(() => {
