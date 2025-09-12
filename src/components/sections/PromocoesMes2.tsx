@@ -282,10 +282,10 @@ export default function PromocoesMes2() {
                       <h3
                         style={{
                           color: COLORS.white,
-                          fontFamily: "DrukWideCyr-Super, sans-serif",
+                          fontFamily: "Manrope, sans-serif",
                           fontSize: 18,
                           letterSpacing: "0.03em",
-                          fontWeight: 500,
+                          fontWeight: 600,
                           lineHeight: 1.3,
                           textTransform: "uppercase",
                           marginBottom: 12,
