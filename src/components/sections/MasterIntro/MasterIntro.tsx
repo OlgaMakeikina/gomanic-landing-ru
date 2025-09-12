@@ -107,6 +107,18 @@ export default function MasterIntro({ masterData }: MasterIntroProps) {
                 >
                   {personal.name}
                 </h3>
+                <p 
+                  className="text-sm opacity-90"
+                  style={{ fontFamily: 'Manrope, sans-serif' }}
+                >
+                  {personal.status.label}
+                </p>
+                <p 
+                  className="text-xs opacity-75"
+                  style={{ fontFamily: 'Manrope, sans-serif' }}
+                >
+                  {personal.status.promotion?.text}
+                </p>
               </div>
             </div>
           </div>
@@ -114,22 +126,6 @@ export default function MasterIntro({ masterData }: MasterIntroProps) {
           {/* Правая часть - Информация */}
           <div className="space-y-8">
             
-            {/* Статус */}
-            <div className={`inline-flex items-center px-6 py-3 rounded-full border ${statusStyle.bg} ${statusStyle.border}`}>
-              <div 
-                className="w-3 h-3 rounded-full mr-3"
-                style={{ backgroundColor: statusStyle.accent }}
-              ></div>
-              <span className={`font-semibold text-sm ${statusStyle.text}`} style={{ fontFamily: 'Manrope, sans-serif' }}>
-                {personal.status.label}
-              </span>
-              {personal.status.promotion?.isActive && (
-                <span className="ml-3 text-xs font-medium text-gray-600" style={{ fontFamily: 'Manrope, sans-serif' }}>
-                  {personal.status.promotion.text}
-                </span>
-              )}
-            </div>
-
             {/* О себе */}
             <div className="space-y-4">
               <p 
