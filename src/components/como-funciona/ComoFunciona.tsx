@@ -7,7 +7,7 @@ import MobileTimeline from './MobileTimeline'
 
 export default function ComoFunciona() {
   return (
-    <section id="como-funciona" className="py-20" style={{backgroundColor: '#3b3b39'}} aria-labelledby="como-funciona-heading">
+    <section id="como-funciona" className="py-20" style={{backgroundColor: '#444f55'}} aria-labelledby="como-funciona-heading">
       <div className="vogue-container">
         <SectionHeader />
         <DesktopTimeline passos={processSteps} />
