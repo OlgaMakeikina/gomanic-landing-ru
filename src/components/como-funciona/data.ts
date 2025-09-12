@@ -4,11 +4,32 @@ export const processSteps: ProcessStep[] = [
   {
     numero: "1",
     titulo: "Выберите услугу",
-    descricao: "Выберите ваш предпочитаемый VIP-пакет",
-    detalhes: "Просмотрите наши премиальные услуги и выберите то, что вам больше всего подходит",
+    descricao: "Выберите услугу у мастера, которая вам подходит",
+    detalhes: "",
     seguranca: "",
     imagem: "/images/process/process1.jpeg"
   },
+
+  {
+    numero: "2",
+    titulo: "Запишитесь на удобное для вас время",
+    descricao: "Напишите мастеру в WhatsApp для уточнени записи",
+    detalhes: "",
+    seguranca: "",
+    imagem: "/images/process/process3.jpeg"
+  },
+  {
+    numero: "4",
+    titulo: "Приходите и экономьте",
+    descricao: "Приходите в назваченное время, наслаждйтесь услугой и скидкой до 50%",
+    detalhes: "",
+    seguranca: "",
+    imagem: "/images/process/process4.jpeg"
+  }
+]
+
+
+{/*}
   {
     numero: "2", 
     titulo: "Оплатите предоплату",
@@ -17,20 +38,4 @@ export const processSteps: ProcessStep[] = [
     seguranca: "Предоплата на 100% безопасна. Если не сможете прийти, перенесем встречу или вернем деньги",
     imagem: "/images/process/process2.jpeg"
   },
-  {
-    numero: "3",
-    titulo: "Подтверждение в WhatsApp",
-    descricao: "Получите все детали",
-    detalhes: "Местоположение, время и специальные инструкции прямо в ваш WhatsApp",
-    seguranca: "Мгновенное подтверждение",
-    imagem: "/images/process/process3.jpeg"
-  },
-  {
-    numero: "4",
-    titulo: "Приходите и завершите",
-    descricao: "Расслабьтесь и доплатите остальное",
-    detalhes: "Наслаждайтесь VIP-процедурой и доплатите оставшуюся сумму на месте со скидкой",
-    seguranca: "Гарантия удовлетворения 100%",
-    imagem: "/images/process/process4.jpeg"
-  }
-]
+*/}
