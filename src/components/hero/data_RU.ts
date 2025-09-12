@@ -15,10 +15,9 @@ export const heroSlidesRU: HeroSlide[] = [
     title: 'Экономия до 55%',
     subtitle: '',
     services: [
-      { name: 'Маникюр без покрытия + снятие геля-лака', oldPrice: 1200, newPrice: 600 },
-      { name: 'Маникюр + гель-лак + снятие', oldPrice: 2500, newPrice: 1200 },
-      { name: 'Маникюр + гель-лак + укрепление гелем + снятие', oldPrice: 3000, newPrice: 1600 },
-      { name: 'Наращивание/коррекция + маникюр + гель-лак', oldPrice: 4000, newPrice: 1800 }
+      { name: 'Гель-лак + снятие + маникюр', oldPrice: 2000, newPrice: 999 },
+      { name: 'Гель-лак + архитектура гелем + маникюр + снятие', oldPrice: 2700, newPrice: 1299 },
+      { name: 'Наращивание ногтей + маникюр + снятие лака', oldPrice: 3500, newPrice: 1799 }
     ]
   },
   
