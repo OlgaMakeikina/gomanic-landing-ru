@@ -37,12 +37,16 @@ export default function MobileMenu({ isOpen, items, onClose }: MobileMenuProps) 
               <a 
                 key={index}
                 href={item.href} 
-                className="block hover:opacity-70 transition-all duration-300 py-2 text-base touch-manipulation mobile-menu-unified-font"
+                className="block hover:opacity-70 transition-all duration-300 py-2 text-base touch-manipulation"
                 style={{
                   color: '#FEFEFE', 
                   minHeight: '40px', 
                   lineHeight: '40px',
-                  fontSize: '14px'
+                  fontSize: '16px',
+                  fontFamily: 'Manrope, sans-serif',
+                  fontWeight: 600,
+                  letterSpacing: '0.05em',
+                  textTransform: 'uppercase'
                 }}
                 onClick={onClose}
               >
