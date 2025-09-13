@@ -2,13 +2,8 @@ import { SocialLink } from './types'
 
 export const socialLinks: SocialLink[] = [
   {
-    href: "https://wa.me/5548919700099",
-    icon: "/images/contacts/icons8-whatsapp-100.png",
-    alt: "WhatsApp"
-  },
-  {
-    href: "https://t.me/gomanic_support",
-    icon: "/images/contacts/icons8-call-100.png",
+    href: "https://t.me/gomanicteam",
+    icon: "/images/contacts/icons8-telegram-100.png",
     alt: "Telegram"
   }
 ]
