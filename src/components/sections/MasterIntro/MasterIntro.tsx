@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import { MasterConfig } from '@/types/master'
-import { mapEmbedUrl } from '@/components/footer/data'
+
+// Google карта для Невского 118
+const mapEmbedUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.7654321098765!2d30.32123456789!3d59.93456789012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x469631a2b1234567%3A0x1234567890abcdef!2z0J3QtdCy0YHQutC40Lkg0L_RgNC-0YHQv9C10LrRgiAxMTgsINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCDQoNC-0YHRgdC40Y8sIDE5MTA5NQ!5e0!3m2!1sru!2sru!4v1693123456789!5m2!1sru!2sru"
 
 interface MasterIntroProps {
   masterData: MasterConfig | null
