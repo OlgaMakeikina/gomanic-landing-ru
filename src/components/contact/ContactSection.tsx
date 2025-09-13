@@ -35,7 +35,7 @@ export default function ContactSection({ masterData }: ContactSectionProps) {
       <div className="vogue-container relative z-10">
         <div className="max-w-2xl mx-auto">
           <ContactHeader />
-          <BookingForm className="mt-20" />
+          <BookingForm className="mt-20" masterData={masterData} />
         </div>
       </div>
     </section>

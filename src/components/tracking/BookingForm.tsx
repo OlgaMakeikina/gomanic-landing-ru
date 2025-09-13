@@ -6,9 +6,14 @@ import { trackFormSubmission } from '@/utils/analytics';
 interface BookingFormProps {
   className?: string;
   variant?: 'default' | 'compact';
+  masterData?: {
+    contacts?: {
+      whatsapp?: string;
+    };
+  } | null;
 }
 
-export default function BookingForm({ className = '', variant = 'default' }: BookingFormProps) {
+export default function BookingForm({ className = '', variant = 'default', masterData }: BookingFormProps) {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -19,11 +24,11 @@ export default function BookingForm({ className = '', variant = 'default' }: Boo
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState('');
 
-  // GLASS стили как в SegurancaQualidade
+  // GLASS стили - темно-серый цвет проекта
   const GLASS = {
-    cardBg: 'rgba(255, 255, 255, 0.12)',
-    cardBorder: 'rgba(255, 255, 255, 0.25)',
-    cardShadow: '0 32px 64px rgba(0,0,0,0.5)',
+    cardBg: 'rgba(59, 59, 57, 0.85)',
+    cardBorder: 'rgba(255, 255, 255, 0.2)',
+    cardShadow: '0 32px 64px rgba(0,0,0,0.7)',
   };
 
   // Список услуг
@@ -66,13 +71,32 @@ export default function BookingForm({ className = '', variant = 'default' }: Boo
         body: JSON.stringify({ ...formData, type: 'booking' }),
       });
 
-      const result = await response.json();      if (result.success) {
+      const result = await response.json();
+      
+      if (result.success) {
         setIsSubmitted(true);
         if (typeof window !== 'undefined' && window.gtag) {
           window.gtag('event', 'conversion', {
             send_to: 'AW-XXXXXXXXX/XXXXXXXXXXXXX',
           });
         }
+        
+        // Редирект на WhatsApp мастера через 2 секунды
+        setTimeout(() => {
+          const selectedService = services.find(s => s.id === formData.service);
+          const message = encodeURIComponent(
+            `Привет! Я заполнил(а) форму на сайте и хочу записаться на процедуру:\n\n` +
+            `📝 Имя: ${formData.name}\n` +
+            `📞 Телефон: ${formData.phone}\n` +
+            `📧 Email: ${formData.email}\n` +
+            `💅 Услуга: ${selectedService?.name} (${selectedService?.price})\n\n` +
+            `Когда можно записаться?`
+          );
+          
+          const masterWhatsApp = masterData?.contacts?.whatsapp || '+79221526716';
+          const phoneNumber = masterWhatsApp.replace(/[^0-9]/g, '');
+          window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+        }, 2000);
       } else {
         setError(result.error || 'Ошибка отправки формы');
       }
@@ -93,9 +117,9 @@ export default function BookingForm({ className = '', variant = 'default' }: Boo
           boxShadow: GLASS.cardShadow 
         }}
       >
-        {/* Градиентные слои как в SegurancaQualidade */}
-        <div className="absolute inset-0 bg-gradient-to-br from-white/15 via-white/5 to-transparent rounded-2xl" />
-        <div className="absolute inset-0 bg-gradient-to-tl from-black/20 via-transparent to-black/10 rounded-2xl" />
+        {/* Градиентные слои для стеклянного эффекта */}
+        <div className="absolute inset-0 bg-gradient-to-br from-white/8 via-white/2 to-transparent rounded-2xl" />
+        <div className="absolute inset-0 bg-gradient-to-tl from-black/30 via-transparent to-black/15 rounded-2xl" />
         
         <div className="relative z-10 p-8">
           <div className="text-green-400 mb-4" style={{
@@ -114,7 +138,7 @@ export default function BookingForm({ className = '', variant = 'default' }: Boo
             opacity: 0.9,
             lineHeight: 1.6
           }}>
-            Спасибо! Вскоре вы получите email со ссылками для записи.
+            Спасибо! Сейчас вас перенаправит в WhatsApp мастера для записи на процедуру.
           </p>
         </div>
       </div>
@@ -130,9 +154,9 @@ export default function BookingForm({ className = '', variant = 'default' }: Boo
         boxShadow: GLASS.cardShadow 
       }}
     >
-      {/* Градиентные слои как в SegurancaQualidade */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white/15 via-white/5 to-transparent rounded-2xl" />
-      <div className="absolute inset-0 bg-gradient-to-tl from-black/20 via-transparent to-black/10 rounded-2xl" />
+      {/* Градиентные слои для стеклянного эффекта */}
+      <div className="absolute inset-0 bg-gradient-to-br from-white/8 via-white/2 to-transparent rounded-2xl" />
+      <div className="absolute inset-0 bg-gradient-to-tl from-black/30 via-transparent to-black/15 rounded-2xl" />
       
       <div className="relative z-10 p-8">
         <form onSubmit={handleSubmit}>
