@@ -164,7 +164,7 @@ export default function MobileClientsGallery({ colors }: MobileClientsGalleryPro
                 lineHeight:1.3,
                 textShadow: "0 2px 8px rgba(0,0,0,0.4)"
               }}>
-            СТАНЬ ДОВОЛЬНОЙ КЛИЕНТКОЙ
+            СТАНЬ НАШЕЙ ДОВОЛЬНОЙ КЛИЕНТКОЙ
           </h4>
           
           <p className="mb-6 opacity-90"
