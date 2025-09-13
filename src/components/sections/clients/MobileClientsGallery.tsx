@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
+import { useSwipeNavigation } from '@/hooks/useSwipeNavigation'
 
 interface MobileClientsGalleryProps {
   colors: {
@@ -30,37 +31,38 @@ export default function MobileClientsGallery({ colors }: MobileClientsGalleryPro
 
   const [currentIndex, setCurrentIndex] = useState(0)
   const scrollRef = useRef<HTMLDivElement>(null)
-  const touchStartX = useRef<number>(0)
-  const touchEndX = useRef<number>(0)
-  const isDragging = useRef<boolean>(false)
 
-  const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.targetTouches[0].clientX
-    isDragging.current = true
-  }
-
-  const handleTouchMove = (e: React.TouchEvent) => {
-    if (!isDragging.current) return
-    touchEndX.current = e.targetTouches[0].clientX
-  }
-
-  const handleTouchEnd = () => {
-    if (!isDragging.current) return
-    isDragging.current = false
-    
-    if (!touchStartX.current || !touchEndX.current) return
-    
-    const distance = touchStartX.current - touchEndX.current
-    const isLeftSwipe = distance > 50
-    const isRightSwipe = distance < -50
-
-    if (isLeftSwipe && currentIndex < allMedia.length - 1) {
+  const nextSlide = () => {
+    if (currentIndex < allMedia.length - 1) {
       setCurrentIndex(currentIndex + 1)
-    }
-    if (isRightSwipe && currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1)
+      if (scrollRef.current) {
+        scrollRef.current.scrollTo({
+          left: (currentIndex + 1) * scrollRef.current.offsetWidth,
+          behavior: 'smooth'
+        })
+      }
     }
   }
+
+  const prevSlide = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1)
+      if (scrollRef.current) {
+        scrollRef.current.scrollTo({
+          left: (currentIndex - 1) * scrollRef.current.offsetWidth,
+          behavior: 'smooth'
+        })
+      }
+    }
+  }
+
+  const swipeHandlers = useSwipeNavigation({
+    onSwipeLeft: nextSlide,
+    onSwipeRight: prevSlide,
+    threshold: 50,
+    preventDefault: true,
+    enableMouse: true
+  })
 
   useEffect(() => {
     const handleScroll = () => {
@@ -88,10 +90,13 @@ export default function MobileClientsGallery({ colors }: MobileClientsGalleryPro
         <div 
           ref={scrollRef}
           className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide rounded-2xl"
-          style={{ scrollBehavior: 'smooth' }}
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
+          style={{ 
+            scrollBehavior: 'smooth',
+            touchAction: 'pan-y pinch-zoom',
+            WebkitOverflowScrolling: 'touch',
+            overscrollBehaviorX: 'none'
+          }}
+          {...swipeHandlers}
         >
           {allMedia.map((media, index) => (
             <div key={index} className="w-full flex-shrink-0 snap-center px-2">

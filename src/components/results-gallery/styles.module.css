@@ -309,6 +309,17 @@
   border-radius: 16px;
   box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
   margin: 0 auto 0 auto;
+  touch-action: pan-y pinch-zoom;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: grab;
+}
+
+.mobileSliderWrapper:active {
+  cursor: grabbing;
 }
 
 .mobileSliderContainer {

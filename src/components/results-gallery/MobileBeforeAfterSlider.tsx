@@ -2,6 +2,7 @@
 
 import { useState, useRef } from 'react'
 import Image from 'next/image'
+import { useSwipeNavigation } from '@/hooks/useSwipeNavigation'
 import styles from './styles.module.css'
 
 interface MobileBeforeAfterSliderProps {
@@ -10,39 +11,37 @@ interface MobileBeforeAfterSliderProps {
 
 export default function MobileBeforeAfterSlider({ images }: MobileBeforeAfterSliderProps) {
   const [currentIndex, setCurrentIndex] = useState(0)
-  const touchStartX = useRef<number>(0)
-  const touchEndX = useRef<number>(0)
 
-  const handleTouchStart = (e: React.TouchEvent) => {
-    touchStartX.current = e.targetTouches[0].clientX
-  }
-
-  const handleTouchMove = (e: React.TouchEvent) => {
-    touchEndX.current = e.targetTouches[0].clientX
-  }
-
-  const handleTouchEnd = () => {
-    if (!touchStartX.current || !touchEndX.current) return
-    
-    const distance = touchStartX.current - touchEndX.current
-    const isLeftSwipe = distance > 50
-    const isRightSwipe = distance < -50
-
-    if (isLeftSwipe && currentIndex < images.length - 1) {
+  const nextSlide = () => {
+    if (currentIndex < images.length - 1) {
       setCurrentIndex(currentIndex + 1)
     }
-    if (isRightSwipe && currentIndex > 0) {
+  }
+
+  const prevSlide = () => {
+    if (currentIndex > 0) {
       setCurrentIndex(currentIndex - 1)
     }
   }
+
+  const swipeHandlers = useSwipeNavigation({
+    onSwipeLeft: nextSlide,
+    onSwipeRight: prevSlide,
+    threshold: 50,
+    preventDefault: true,
+    enableMouse: true
+  })
 
   return (
     <div className={styles.mobileSingleSlider}>
       <div 
         className={styles.mobileSliderWrapper}
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
+        style={{ 
+          touchAction: 'pan-y pinch-zoom',
+          WebkitOverflowScrolling: 'touch',
+          overscrollBehaviorX: 'none'
+        }}
+        {...swipeHandlers}
       >
         <div 
           className={styles.mobileSliderContainer}
