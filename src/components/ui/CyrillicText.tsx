@@ -33,6 +33,10 @@ export function CyrillicText({
     ? `${className} ${fallbackClassName}`
     : className;
 
+  if (supportsCyrillic === null) {
+    return <Component className={className} style={style} id={id} {...props}>{children}</Component>;
+  }
+
   return <Component className={appliedClassName} style={style} id={id} {...props}>{children}</Component>;
 }
 

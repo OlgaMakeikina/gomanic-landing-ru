@@ -29,14 +29,14 @@ function VipCard({ title, description, delay }: VipCardProps) {
         isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
       }`}
       style={{
-        background: 'linear-gradient(135deg, rgba(254, 254, 254, 0.92) 0%, rgba(254, 254, 254, 0.88) 100%)',
+        background: 'linear-gradient(135deg, rgba(68, 79, 85, 0.3) 0%, rgba(68, 79, 85, 0.2) 100%)',
         backdropFilter: 'blur(15px)',
         WebkitBackdropFilter: 'blur(15px)',
-        border: '1px solid rgba(254, 254, 254, 0.6)',
+        border: '1px solid rgba(68, 79, 85, 0.4)',
         borderRadius: '16px',
         padding: '2rem',
         textAlign: 'center' as const,
-        boxShadow: '0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(254, 254, 254, 0.4)',
+        boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(68, 79, 85, 0.3)',
         position: 'relative' as const,
         overflow: 'hidden' as const
       }}
@@ -48,15 +48,15 @@ function VipCard({ title, description, delay }: VipCardProps) {
           left: 0,
           right: 0,
           bottom: 0,
-          background: 'linear-gradient(45deg, rgba(254, 254, 254, 0.08), transparent)',
+          background: 'linear-gradient(45deg, rgba(68, 79, 85, 0.1), transparent)',
           pointerEvents: 'none'
         }}
       />
       
-      <h3 className="vogue-caption mb-4 relative z-10" style={{color: '#3B3B3A', fontSize: '16px'}}>
+      <h3 className="vogue-caption mb-4 relative z-10" style={{color: '#FEFEFE', fontSize: '16px'}}>
         {title}
       </h3>
-      <p className="vogue-body relative z-10" style={{color: '#3B3B3A', lineHeight: '1.6'}}>
+      <p className="vogue-body relative z-10" style={{color: '#fdfffe', lineHeight: '1.6'}}>
         <strong>{description}</strong>
       </p>
     </div>
@@ -105,10 +105,10 @@ function CountdownTimer() {
         <div 
           key={i} 
           style={{
-            background: 'linear-gradient(135deg, rgba(59, 59, 58, 0.8) 0%, rgba(59, 59, 58, 0.6) 100%)',
+            background: 'linear-gradient(135deg, rgba(68, 79, 85, 0.4) 0%, rgba(68, 79, 85, 0.3) 100%)',
             backdropFilter: 'blur(10px)',
             WebkitBackdropFilter: 'blur(10px)',
-            border: '1px solid rgba(254, 254, 254, 0.1)',
+            border: '1px solid rgba(68, 79, 85, 0.5)',
             borderRadius: '12px',
             padding: '0.75rem',
             textAlign: 'center' as const,
@@ -133,18 +133,18 @@ export default function VipExclusivo({ masterData }: VipExclusivoProps) {
 
   const vipCards = [
     {
-      title: 'ЗАКРЫТЫЙ КЛУБ',
-      description: 'Только 30 клиентов в месяц могут иметь VIP-пропуск.',
+      title: 'СЕРТИФИЦИРОВАННЫЙ МАСТЕР',
+      description: '',
       delay: 200
     },
     {
       title: 'УНИКАЛЬНАЯ ЦЕНА',
-      description: 'Эта цена больше не повторится после того, как места закончатся.',
+      description: '',
       delay: 400
     },
     {
-      title: 'ПОДАРОК-СЮРПРИЗ',
-      description: 'VIP-клиенты получают подарок-сюрприз при первом посещении.',
+      title: 'ПОДАРОК-СЮРПРИЗ ПРИ ПЕРВОМ ВИЗИТЕ',
+      description: '',
       delay: 600
     }
   ]
@@ -152,7 +152,7 @@ export default function VipExclusivo({ masterData }: VipExclusivoProps) {
   return (
     <section id="vip-exclusivo" className="vogue-section relative overflow-hidden" 
              style={{
-               backgroundColor: '#444f55',
+               backgroundColor: '#3b3b39',
                color: '#FEFEFE'
              }}
              aria-labelledby="vip-heading">
@@ -201,13 +201,13 @@ export default function VipExclusivo({ masterData }: VipExclusivoProps) {
           <div className="text-center mb-16">
             <div className="inline-block text-white px-8 py-4 rounded-lg transform rotate-1" 
                  style={{
-                   background: 'linear-gradient(135deg, rgba(59, 59, 57, 0.9) 0%, rgba(59, 59, 57, 0.7) 100%)',
+                   background: 'linear-gradient(135deg, rgba(68, 79, 85, 0.4) 0%, rgba(68, 79, 85, 0.3) 100%)',
                    backdropFilter: 'blur(20px)',
                    WebkitBackdropFilter: 'blur(20px)',
-                   border: '1px solid rgba(254, 254, 254, 0.2)',
-                   boxShadow: '0 8px 32px rgba(59, 59, 57, 0.3), 0 2px 8px rgba(254, 254, 254, 0.1)'
+                   border: '1px solid rgba(68, 79, 85, 0.5)',
+                   boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(68, 79, 85, 0.3)'
                  }}>
-              <div className="text-2xl font-bold">ОСТАЛОСЬ ТОЛЬКО 3 МЕСТА</div>
+              <div className="text-2xl font-bold" style={{color: '#FEFEFE'}}>ОСТАЛОСЬ ТОЛЬКО 3 МЕСТА</div>
             </div>
           </div>
           
@@ -222,8 +222,8 @@ export default function VipExclusivo({ masterData }: VipExclusivoProps) {
               isCtaVisible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-12 opacity-0 scale-95'
             }`}
             style={{ 
-              background: 'rgba(255, 255, 255, 0.12)', 
-              borderColor: 'rgba(255, 255, 255, 0.25)', 
+              background: 'rgba(68, 79, 85, 0.2)', 
+              borderColor: 'rgba(68, 79, 85, 0.4)', 
               boxShadow: '0 32px 64px rgba(0,0,0,0.5)' 
             }}
           >
@@ -274,12 +274,13 @@ export default function VipExclusivo({ masterData }: VipExclusivoProps) {
                 e.currentTarget.style.transform = 'scale(1.02)'
               }}
             >
-              ХОЧУ СВОЙ VIP-ПРОПУСК СЕЙЧАС!
+              ХОЧУ ГАРАНТИРОВАТЬ СВОЕ МЕСТО СЕЙЧАС!
             </button>
-            
-            <p className="text-sm mt-4" style={{color: '#FEFEFE', opacity: 0.9}}>
+           {/*     <p className="text-sm mt-4" style={{color: '#FEFEFE', opacity: 0.9}}>
               Предоплата на 100% безопасна. Если не сможете прийти, перенесем встречу или вернем деньги.
             </p>
+           */} 
+       
             </div>
           </div>
         </div>
@@ -288,9 +289,9 @@ export default function VipExclusivo({ masterData }: VipExclusivoProps) {
       <style jsx>{`
         .vip-glass-card:hover {
           transform: translateY(-4px) !important;
-          box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18), 0 4px 12px rgba(254, 254, 254, 0.5) !important;
-          background: linear-gradient(135deg, rgba(254, 254, 254, 0.96) 0%, rgba(254, 254, 254, 0.92) 100%) !important;
-          border: 1px solid rgba(254, 254, 254, 0.8) !important;
+          box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(68, 79, 85, 0.5) !important;
+          background: linear-gradient(135deg, rgba(68, 79, 85, 0.4) 0%, rgba(68, 79, 85, 0.3) 100%) !important;
+          border: 1px solid rgba(68, 79, 85, 0.6) !important;
           backdrop-filter: blur(18px) !important;
         }
       `}</style>
