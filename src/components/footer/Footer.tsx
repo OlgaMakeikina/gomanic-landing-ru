@@ -5,7 +5,6 @@ import FooterLogo from './FooterLogo'
 import SocialLinks from './SocialLinks'
 import AddressSection from './AddressSection'
 import Copyright from './Copyright'
-import Disclaimer from './Disclaimer'
 
 interface FooterProps {
   masterData?: MasterConfig | null
