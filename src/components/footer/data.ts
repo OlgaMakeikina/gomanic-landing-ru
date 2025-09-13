@@ -21,7 +21,7 @@ export const socialLinks: SocialLink[] = [
 export const companyData = [
   {
     label: "НАИМЕНОВАНИЕ",
-    value: "GOMANIC LTDA"
+    value: "GOMANIC"
   },
   {
     label: "CNPJ",

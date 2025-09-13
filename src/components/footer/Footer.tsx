@@ -34,7 +34,7 @@ export default function Footer({ masterData }: FooterProps) {
         </div>
         
         <Copyright />
-        <Disclaimer masterData={masterData} />
+
       </div>
     </footer>
   )
