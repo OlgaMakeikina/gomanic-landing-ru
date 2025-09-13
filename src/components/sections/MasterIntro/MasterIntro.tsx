@@ -137,7 +137,7 @@ export default function MasterIntro({ masterData }: MasterIntroProps) {
                   color: '#444f55'
                 }}
               >
-                О себе: <em>"{personal.strongSide.description}"</em>
+                <b>О себе:</b> <em>"{personal.strongSide.description}"</em>
               </p>
             </div>
 
@@ -150,7 +150,7 @@ export default function MasterIntro({ masterData }: MasterIntroProps) {
                   color: '#444f55'
                 }}
               >
-                Адрес: Невский проспект, 118, этаж 4, офис 4109, Санкт-Петербург
+                <b>Адрес: </b>Невский проспект, 118, этаж 4, офис 4109, Санкт-Петербург
               </p>
               
               {/* Google карта */}
