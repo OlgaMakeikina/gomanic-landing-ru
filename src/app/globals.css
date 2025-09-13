@@ -997,3 +997,150 @@
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+/* ===== iOS SAFARI SWIPE FIX ===== */
+
+/* Отключаем браузерную навигацию свайпами на Hero секции */
+#hero {
+  touch-action: pan-y pinch-zoom !important;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Предотвращаем случайные свайпы */
+#hero * {
+  touch-action: inherit;
+}
+
+/* Улучшенная поддержка touch для всех браузеров */
+.touch-pan-y {
+  touch-action: pan-y pinch-zoom;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: none;
+}
+
+/* Дополнительная фиксация для iOS */
+@supports (-webkit-touch-callout: none) {
+  #hero {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  /* Отключаем "резиновый" эффект на iOS */
+  #hero {
+    overscroll-behavior: none;
+    -webkit-overscroll-behavior: none;
+  }
+}
+
+/* Cursor grab для desktop */
+@media (pointer: fine) {
+  #hero {
+    cursor: grab;
+    user-select: none;
+  }
+  
+  #hero:active {
+    cursor: grabbing;
+  }
+  
+  /* Убираем выделение текста при драге */
+  #hero * {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+}
+
+/* Поддержка для старых Android браузеров */
+@media (max-width: 768px) {
+  #hero {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    perspective: 1000;
+  }
+}
+/* ===== ADDITIONAL CROSS-BROWSER SWIPE FIXES ===== */
+
+/* Specific fixes for different browsers and OS versions */
+
+/* iOS Safari specific */
+@supports (-webkit-appearance: none) {
+  #hero {
+    -webkit-touch-callout: none !important;
+    -webkit-user-select: none !important;
+    -webkit-user-drag: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+  
+  /* Prevent rubber band effect on iOS */
+  #hero {
+    overscroll-behavior: none !important;
+    -webkit-overscroll-behavior: none !important;
+  }
+  
+  /* Force hardware acceleration */
+  #hero * {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+}
+
+/* Chrome Mobile specific */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  #hero {
+    overscroll-behavior-x: none !important;
+    overscroll-behavior-y: auto !important;
+  }
+}
+
+/* Firefox Mobile specific */
+@-moz-document url-prefix() {
+  #hero {
+    touch-action: pan-y pinch-zoom !important;
+    -moz-user-select: none;
+  }
+}
+
+/* Edge Mobile specific */
+@supports (-ms-ime-align: auto) {
+  #hero {
+    -ms-touch-action: pan-y pinch-zoom !important;
+    -ms-scroll-chaining: none !important;
+  }
+}
+
+/* Samsung Internet specific */
+@media screen and (max-width: 768px) {
+  #hero {
+    -webkit-transform: translate3d(0, 0, 0) !important;
+    transform: translate3d(0, 0, 0) !important;
+  }
+}
+
+/* Android WebView specific fixes */
+@media (pointer: coarse) {
+  #hero {
+    touch-action: pan-y pinch-zoom !important;
+    -webkit-user-select: none !important;
+    user-select: none !important;
+  }
+  
+  #hero * {
+    pointer-events: auto;
+  }
+}

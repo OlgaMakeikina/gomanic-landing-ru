@@ -1,42 +1,49 @@
-'use client';
+'use client'
 
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react'
 
-export function useCyrillicFontSupport() {
-  const [supportsCyrillic, setSupportsCyrillic] = useState<boolean | null>(null);
+export const useCyrillicFontSupport = () => {
+  const [supportsCyrillic, setSupportsCyrillic] = useState<boolean | null>(null)
 
   useEffect(() => {
-    const checkCyrillicSupport = () => {
-      const canvas = document.createElement('canvas');
-      const ctx = canvas.getContext('2d');
+    const detectCyrillicSupport = () => {
+      if (typeof document === 'undefined') return
+
+      const canvas = document.createElement('canvas')
+      const context = canvas.getContext('2d')
       
-      if (!ctx) {
-        setSupportsCyrillic(false);
-        return;
+      if (!context) {
+        setSupportsCyrillic(false)
+        return
       }
 
-      ctx.font = '16px Horizon';
-      const horizonWidth = ctx.measureText('Ф').width;
-      
-      ctx.font = '16px Arial';
-      const arialWidth = ctx.measureText('Ф').width;
-      
-      const hasGlyphs = horizonWidth !== arialWidth && horizonWidth > 0;
-      setSupportsCyrillic(hasGlyphs);
-    };
+      context.font = '16px Horizon, sans-serif'
+      context.fillText('Тест', 0, 16)
+      const horizonData = context.getImageData(0, 0, canvas.width, canvas.height).data
 
-    if (typeof document !== 'undefined') {
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', checkCyrillicSupport);
-      } else {
-        setTimeout(checkCyrillicSupport, 100);
+      context.clearRect(0, 0, canvas.width, canvas.height)
+      context.font = '16px sans-serif'
+      context.fillText('Тест', 0, 16)
+      const fallbackData = context.getImageData(0, 0, canvas.width, canvas.height).data
+
+      let isDifferent = false
+      for (let i = 0; i < horizonData.length; i++) {
+        if (horizonData[i] !== fallbackData[i]) {
+          isDifferent = true
+          break
+        }
       }
+
+      setSupportsCyrillic(isDifferent)
     }
 
-    return () => {
-      document.removeEventListener('DOMContentLoaded', checkCyrillicSupport);
-    };
-  }, []);
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(detectCyrillicSupport)
+    } else {
+      const timer = setTimeout(detectCyrillicSupport, 1000)
+      return () => clearTimeout(timer)
+    }
+  }, [])
 
-  return supportsCyrillic;
+  return supportsCyrillic
 }

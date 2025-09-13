@@ -1,1 +1,2 @@
-export { useCyrillicFontSupport } from './useCyrillicFontSupport';
+export { useSwipeNavigation } from './useSwipeNavigation'
+export { useCyrillicFontSupport } from './useCyrillicFontSupport'

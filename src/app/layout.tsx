@@ -56,6 +56,7 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
         <link rel="icon" type="image/x-icon" href="/icons/favicon.ico?v=2" />
         <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png?v=2" />
         <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png?v=2" />
@@ -67,6 +68,8 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content="Gomanic" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="mobile-web-app-capable" content="yes" />
         
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />

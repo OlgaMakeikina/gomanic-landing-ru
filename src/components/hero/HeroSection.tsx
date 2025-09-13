@@ -1,9 +1,10 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import { MasterConfig } from '@/types/master'
 import { heroSlidesRU as heroSlides } from './data_RU'
 import { generateMasterSlides } from '@/utils/master-slides'
+import { useSwipeNavigation } from '@/hooks/useSwipeNavigation'
 import SlideBackground from './SlideBackground'
 import SlideOverlay from './SlideOverlay'
 import SlideNavigation from './SlideNavigation'
@@ -18,14 +19,25 @@ interface HeroSectionProps {
 export default function HeroSectionRU({ masterData }: HeroSectionProps) {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isPlaying, setIsPlaying] = useState(true)
-  const [touchStart, setTouchStart] = useState<number | null>(null)
-  const [touchEnd, setTouchEnd] = useState<number | null>(null)
   const sectionRef = useRef<HTMLElement>(null)
 
-  // Используем данные мастера если есть, иначе дефолтные слайды
   const slides = masterData ? generateMasterSlides(masterData) : heroSlides
 
-  const minSwipeDistance = 50
+  const nextSlide = useCallback(() => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length)
+  }, [slides.length])
+
+  const prevSlide = useCallback(() => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
+  }, [slides.length])
+
+  const swipeHandlers = useSwipeNavigation({
+    onSwipeLeft: nextSlide,
+    onSwipeRight: prevSlide,
+    threshold: 50,
+    preventDefault: true,
+    enableMouse: true
+  })
 
   useEffect(() => {
     if (!isPlaying) return
@@ -35,16 +47,26 @@ export default function HeroSectionRU({ masterData }: HeroSectionProps) {
     return () => clearInterval(slideInterval)
   }, [isPlaying, slides.length])
 
+  useEffect(() => {
+    const heroElement = sectionRef.current
+    if (!heroElement) return
+
+    const style = heroElement.style as any
+    style.touchAction = 'pan-y pinch-zoom'
+    style.overscrollBehaviorX = 'none'
+    style.webkitOverflowScrolling = 'touch'
+    style.cursor = 'grab'
+    
+    return () => {
+      style.touchAction = ''
+      style.overscrollBehaviorX = ''
+      style.webkitOverflowScrolling = ''
+      style.cursor = ''
+    }
+  }, [])
+
   const goToSlide = (index: number) => {
     setCurrentSlide(index)
-  }
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % heroSlides.length)
-  }
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length)
   }
 
   const handleButtonAction = (action: string, id?: string) => {
@@ -57,28 +79,6 @@ export default function HeroSectionRU({ masterData }: HeroSectionProps) {
       if (targetElement) {
         targetElement.scrollIntoView({ behavior: 'smooth' })
       }
-    }
-  }
-
-  const onTouchStart = (e: React.TouchEvent) => {
-    setTouchEnd(null)
-    setTouchStart(e.targetTouches[0].clientX)
-  }
-
-  const onTouchMove = (e: React.TouchEvent) => {
-    setTouchEnd(e.targetTouches[0].clientX)
-  }
-
-  const onTouchEnd = () => {
-    if (!touchStart || !touchEnd) return
-    const distance = touchStart - touchEnd
-    const isLeftSwipe = distance > minSwipeDistance
-    const isRightSwipe = distance < -minSwipeDistance
-
-    if (isLeftSwipe) {
-      nextSlide()
-    } else if (isRightSwipe) {
-      prevSlide()
     }
   }
   const renderSlide = (slideIndex: number) => {
@@ -98,10 +98,13 @@ export default function HeroSectionRU({ masterData }: HeroSectionProps) {
     <section 
       ref={sectionRef}
       id="hero" 
-      className="relative w-full h-screen overflow-hidden"
-      onTouchStart={onTouchStart}
-      onTouchMove={onTouchMove}
-      onTouchEnd={onTouchEnd}
+      className="relative w-full h-screen overflow-hidden touch-pan-y"
+      style={{ 
+        touchAction: 'pan-y pinch-zoom',
+        WebkitOverflowScrolling: 'touch',
+        overscrollBehaviorX: 'none'
+      }}
+      {...swipeHandlers}
       onMouseEnter={() => setIsPlaying(false)}
       onMouseLeave={() => setIsPlaying(true)}
     >
