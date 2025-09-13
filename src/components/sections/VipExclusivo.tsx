@@ -187,30 +187,17 @@ export default function VipExclusivo({ masterData }: VipExclusivoProps) {
 
       <div className="vogue-container relative z-10">
         <div className="text-center mb-20">
-          <div className="vogue-caption mb-4" 
-               style={{
-                 color: '#FEFEFE',
-                 textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)',
-                 fontFamily: "Manrope, sans-serif", 
-                 fontSize: 14, 
-                 opacity: 0.85
-               }}>
-            ОГРАНИЧЕННЫЙ ДОСТУП
-          </div>
           <HorizonText as="h2" id="vip-heading" className="vogue-subhead mb-8" 
               style={{
                 color: '#FEFEFE'
               }}>
-            VIP-ПРОПУСК = ЭКСКЛЮЗИВНЫЙ КЛУБ
+            КОЛИЧЕСТВО МЕСТ ОГРАНИЧЕНО!
           </HorizonText>
           <div className="vogue-divider mx-auto mb-8" 
                style={{
                  backgroundColor: '#3b3b39',
                  boxShadow: '0 2px 8px rgba(59, 59, 57, 0.5)'
                }}></div>
-          <p className="vogue-body max-w-3xl mx-auto text-lg" style={{color: '#FEFEFE'}}>
-            Это не просто акция. Это <strong style={{color: '#FEFEFE'}}>эксклюзивный доступ</strong> для избранных особых людей
-          </p>
         </div>
         
         <div className="max-w-5xl mx-auto">
