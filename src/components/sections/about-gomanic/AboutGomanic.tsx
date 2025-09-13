@@ -18,14 +18,9 @@ export default function AboutGomanic() {
     return () => clearTimeout(timer)
   }, [])
 
-  const handleWhatsAppClick = () => {
-    const message = "Привет! Я хочу узнать подробнее об обучении в академии GOMANIC."
-    window.open(`https://wa.me/79123456789?text=${encodeURIComponent(message)}`, '_blank')
-  }
-
   const handleTelegramClick = () => {
     const message = "Привет! Я хочу узнать подробнее об обучении в академии GOMANIC."
-    window.open(`https://t.me/gomanic_academy?text=${encodeURIComponent(message)}`, '_blank')
+    window.open(`https://t.me/gomanicteam?text=${encodeURIComponent(message)}`, '_blank')
   }
 
   return (
@@ -89,13 +84,9 @@ export default function AboutGomanic() {
               Пройди профессиональное обучение и получи все навыки для успешной карьеры в nail-индустрии
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button onClick={handleWhatsAppClick} className="px-8 py-4 rounded-lg font-bold transition-all hover:opacity-90 hover:scale-105 uppercase tracking-wide"
-                      style={{ backgroundColor: '#FEFEFE', color: '#444f55', fontFamily: 'Manrope, sans-serif', fontSize: '14px', letterSpacing: '0.1em' }}>
-                НАПИСАТЬ В WHATSAPP
-              </button>
               <button onClick={handleTelegramClick} className="px-8 py-4 rounded-lg font-bold border-2 transition-all hover:opacity-90 hover:scale-105 uppercase tracking-wide"
                       style={{ color: '#FEFEFE', borderColor: '#FEFEFE', backgroundColor: 'transparent', fontFamily: 'Manrope, sans-serif', fontSize: '14px', letterSpacing: '0.1em' }}>
-                НАПИСАТЬ В TELEGRAM
+                УЗНАТЬ ОБ ОБУЧЕНИИ
               </button>
             </div>
           </div>
