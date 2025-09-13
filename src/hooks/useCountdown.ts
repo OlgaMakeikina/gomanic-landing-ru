@@ -10,8 +10,8 @@ interface CountdownTime {
   totalSeconds: number
 }
 
-// Фиксированная дата окончания акции - 30 дней от 23 августа 2025
-const TARGET_DATE = new Date('2025-09-22T23:59:59') // 30 дней
+// Фиксированная дата окончания акции - 31 день от текущей даты
+const TARGET_DATE = new Date(Date.now() + 31 * 24 * 60 * 60 * 1000) // 31 день
 
 // Глобальный счетчик для синхронизации между компонентами
 let globalCountdownValue: CountdownTime | null = null

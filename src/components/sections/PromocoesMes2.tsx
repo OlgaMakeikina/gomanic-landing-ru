@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react"
 import { MasterConfig } from '@/types/master'
 import { HorizonText } from '@/components/ui';
+import { useCountdown } from '@/hooks/useCountdown';
 
 interface PromocoesMes2Props {
   masterData?: MasterConfig | null;
@@ -47,25 +48,7 @@ export default function PromocoesMes2({ masterData }: PromocoesMes2Props) {
 
   const COLORS = { dark: "#444f55", gray: "#3B3B3A", white: "#FEFEFE" }
   const [openAccordion, setOpenAccordion] = useState<number | null>(null)
-
-  const [remaining, setRemaining] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 })
-  useEffect(() => {
-    const end = new Date(new Date().getFullYear(), new Date().getMonth() + 1, 0, 23, 59, 59, 999)
-    const tick = () => {
-      const now = new Date()
-      const d = end.getTime() - now.getTime()
-      if (d <= 0) return setRemaining({ days: 0, hours: 0, minutes: 0, seconds: 0 })
-      const totalSeconds = Math.floor(d / 1000)
-      const days = Math.floor(totalSeconds / (24 * 3600))
-      const hours = Math.floor((totalSeconds % (24 * 3600)) / 3600)
-      const minutes = Math.floor((totalSeconds % 3600) / 60)
-      const seconds = totalSeconds % 60
-      setRemaining({ days, hours, minutes, seconds })
-    }
-    tick()
-    const id = setInterval(tick, 1000)
-    return () => clearInterval(id)
-  }, [])
+  const { time } = useCountdown()
 
   const toggleAccordion = (index: number) => {
     setOpenAccordion(openAccordion === index ? null : index)
@@ -135,7 +118,7 @@ export default function PromocoesMes2({ masterData }: PromocoesMes2Props) {
                       lineHeight: 1,
                     }}
                   >
-                    {String(remaining.days).padStart(2, "0")}
+                    {String(time.days).padStart(2, "0")}
                   </div>
                   <div
                     style={{
@@ -164,7 +147,7 @@ export default function PromocoesMes2({ masterData }: PromocoesMes2Props) {
                       lineHeight: 1,
                     }}
                   >
-                    {String(remaining.hours).padStart(2, "0")}
+                    {String(time.hours).padStart(2, "0")}
                   </div>
                   <div
                     style={{
@@ -193,7 +176,7 @@ export default function PromocoesMes2({ masterData }: PromocoesMes2Props) {
                       lineHeight: 1,
                     }}
                   >
-                    {String(remaining.minutes).padStart(2, "0")}
+                    {String(time.minutes).padStart(2, "0")}
                   </div>
                   <div
                     style={{
@@ -222,7 +205,7 @@ export default function PromocoesMes2({ masterData }: PromocoesMes2Props) {
                       lineHeight: 1,
                     }}
                   >
-                    {String(remaining.seconds).padStart(2, "0")}
+                    {String(time.seconds).padStart(2, "0")}
                   </div>
                   <div
                     style={{
