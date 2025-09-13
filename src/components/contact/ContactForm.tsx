@@ -24,7 +24,7 @@ export default function ContactForm({ formData, onFormDataChange, onSubmit }: Co
         type="tel"
         value={formData.phone}
         onChange={(value) => updateFormData('phone', value)}
-        placeholder="(11) 99999-9999"
+        placeholder="+79991234567"
         required
       />
       

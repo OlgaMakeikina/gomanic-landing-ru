@@ -52,7 +52,7 @@ export default function BookingForm({ className = '', variant = 'default' }: Boo
 
     // Валидация выбора услуги
     if (!formData.service) {
-      setError('Por favor, escolha uma opção de serviço');
+      setError('Пожалуйста, выберите вариант услуги');
       setIsSubmitting(false);
       return;
     }
@@ -174,7 +174,7 @@ export default function BookingForm({ className = '', variant = 'default' }: Boo
                 textTransform: 'uppercase',
                 opacity: 0.85
               }}>
-                WHATSAPP *
+                ТЕЛЕФОН *
               </label>
               <input
                 type="tel"
@@ -182,7 +182,7 @@ export default function BookingForm({ className = '', variant = 'default' }: Boo
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                 className="glass-input w-full px-4 py-3 rounded-xl border backdrop-blur-sm transition-all focus:outline-none focus:ring-2 focus:ring-white/40"
-                placeholder="(11) 99999-9999"
+                placeholder="+79991234567"
                 style={{
                   background: 'rgba(255, 255, 255, 0.15)',
                   borderColor: 'rgba(255, 255, 255, 0.2)',
@@ -210,7 +210,7 @@ export default function BookingForm({ className = '', variant = 'default' }: Boo
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 className="glass-input w-full px-4 py-3 rounded-xl border backdrop-blur-sm transition-all focus:outline-none focus:ring-2 focus:ring-white/40"
-                placeholder="seu@email.com"
+                placeholder="mail@email.com"
                 style={{
                   background: 'rgba(255, 255, 255, 0.15)',
                   borderColor: 'rgba(255, 255, 255, 0.2)',
