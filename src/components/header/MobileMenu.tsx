@@ -1,6 +1,16 @@
 import { MobileMenuProps } from './types'
 
-export default function MobileMenu({ isOpen, items, onClose }: MobileMenuProps) {
+interface ExtendedMobileMenuProps extends MobileMenuProps {
+  masterData?: {
+    contacts?: {
+      address?: {
+        full?: string;
+      };
+    };
+  } | null;
+}
+
+export default function MobileMenu({ isOpen, items, onClose, masterData }: ExtendedMobileMenuProps) {
   return (
     <nav className={`lg:hidden fixed inset-0 z-40 transition-all duration-500 ${
       isOpen 
@@ -55,69 +65,6 @@ export default function MobileMenu({ isOpen, items, onClose }: MobileMenuProps) 
             ))}
           </div>
 
-          <div className="flex justify-center space-x-4 mb-5">
-            <a 
-              href="https://wa.me/5548919700099" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-12 h-12 flex items-center justify-center rounded-full contact-icon whatsapp-icon touch-manipulation"
-              style={{
-                backgroundColor: '#25D366',
-                border: '1px solid rgba(254, 254, 254, 0.2)',
-                boxShadow: '0 4px 12px rgba(37, 211, 102, 0.3)'
-              }}
-              aria-label="WhatsApp"
-            >
-              <img 
-                src="/images/contacts/icons8-whatsapp-100.png" 
-                alt="WhatsApp" 
-                width={24} 
-                height={24}
-                style={{ filter: 'brightness(0) invert(1)' }}
-              />
-            </a>
-
-            <a 
-              href="tel:+5548919700099" 
-              className="w-12 h-12 flex items-center justify-center rounded-full contact-icon phone-icon touch-manipulation"
-              style={{
-                backgroundColor: '#444e55',
-                border: '1px solid rgba(254, 254, 254, 0.2)',
-                boxShadow: '0 4px 12px rgba(68, 78, 85, 0.3)'
-              }}
-              aria-label="Телефон"
-            >
-              <img 
-                src="/images/contacts/icons8-call-100.png" 
-                alt="Телефон" 
-                width={20} 
-                height={20}
-                style={{ filter: 'brightness(0) invert(1)' }}
-              />
-            </a>
-
-            {/* <a 
-              href="https://www.instagram.com/unhas_cinco_estrelas?igsh=YXFiN2psamRvd2Fq" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-12 h-12 flex items-center justify-center rounded-full contact-icon instagram-icon touch-manipulation"
-              style={{
-                background: 'linear-gradient(45deg, #F09433 0%, #E6683C 25%, #DC2743 50%, #CC2366 75%, #BC1888 100%)',
-                border: '1px solid rgba(254, 254, 254, 0.2)',
-                boxShadow: '0 4px 12px rgba(225, 48, 108, 0.3)'
-              }}
-              aria-label="Instagram"
-            >
-              <img 
-                src="/images/contacts/icons8-instagram-100.png" 
-                alt="Instagram" 
-                width={20} 
-                height={20}
-                style={{ filter: 'brightness(0) invert(1)' }}
-              />
-            </a> */}
-          </div>
-
           <button 
             onClick={() => {
               onClose()
@@ -145,16 +92,23 @@ export default function MobileMenu({ isOpen, items, onClose }: MobileMenuProps) 
           </button>
 
           <div 
-            className="urgency-indicator inline-block px-4 py-2 rounded" 
+            className="w-full rounded-lg overflow-hidden"
             style={{
-              background: 'linear-gradient(135deg, rgba(68, 78, 85, 0.4) 0%, rgba(68, 78, 85, 0.3) 100%)',
-              backdropFilter: 'blur(10px)',
-              WebkitBackdropFilter: 'blur(10px)',
+              height: '200px',
               border: '1px solid rgba(254, 254, 254, 0.2)',
-              boxShadow: '0 2px 8px rgba(68, 78, 85, 0.2)'
+              boxShadow: '0 2px 8px rgba(0, 0, 0, 0.3)'
             }}
           >
-            <div className="vogue-caption text-xs" style={{color: '#FEFEFE'}}>📍 Невский пр., 118, СПб</div>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.4832842723186!2d30.347961776909826!3d59.93428887491749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca5ba729%3A0x4b9c53d4493c879f!2z0J3QtdCy0YHQutC40Lkg0L_RgNC-0YHQv9C10LrRgiwgMTE4LCDQodCw0L3QutGCLdCf0LXRgtC10YDQsdGD0YDQsywgMTkxMTg2!5e0!3m2!1sru!2sru!4v1736631000000!5m2!1sru!2sru"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title={masterData?.contacts?.address?.full || "Невский проспект, 118, офис 4109, Санкт-Петербург"}
+            ></iframe>
           </div>
           
         </div>

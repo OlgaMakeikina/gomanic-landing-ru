@@ -56,6 +56,7 @@ export default function Header({ masterData }: HeaderProps) {
             isOpen={isMobileMenuOpen}
             items={menuItems}
             onClose={handleMobileMenuClose}
+            masterData={masterData}
           />
         </div>
 
