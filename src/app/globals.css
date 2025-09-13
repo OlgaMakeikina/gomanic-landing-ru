@@ -988,3 +988,12 @@
 .glass-input:-ms-input-placeholder {
   color: rgba(254, 254, 254, 0.6) !important;
 }
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 
 interface MobileClientsGalleryProps {
   colors: {
@@ -29,18 +29,25 @@ export default function MobileClientsGallery({ colors }: MobileClientsGalleryPro
   const allMedia = [...clientImages, clientVideo]
 
   const [currentIndex, setCurrentIndex] = useState(0)
+  const scrollRef = useRef<HTMLDivElement>(null)
   const touchStartX = useRef<number>(0)
   const touchEndX = useRef<number>(0)
+  const isDragging = useRef<boolean>(false)
 
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.targetTouches[0].clientX
+    isDragging.current = true
   }
 
   const handleTouchMove = (e: React.TouchEvent) => {
+    if (!isDragging.current) return
     touchEndX.current = e.targetTouches[0].clientX
   }
 
   const handleTouchEnd = () => {
+    if (!isDragging.current) return
+    isDragging.current = false
+    
     if (!touchStartX.current || !touchEndX.current) return
     
     const distance = touchStartX.current - touchEndX.current
@@ -55,52 +62,75 @@ export default function MobileClientsGallery({ colors }: MobileClientsGalleryPro
     }
   }
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!scrollRef.current) return
+      
+      const container = scrollRef.current
+      const itemWidth = container.offsetWidth
+      const newIndex = Math.round(container.scrollLeft / itemWidth)
+      
+      if (newIndex !== currentIndex) {
+        setCurrentIndex(newIndex)
+      }
+    }
+
+    const scrollElement = scrollRef.current
+    if (scrollElement) {
+      scrollElement.addEventListener('scroll', handleScroll)
+      return () => scrollElement.removeEventListener('scroll', handleScroll)
+    }
+  }, [currentIndex])
+
   return (
     <div className="md:hidden px-4">
-      {/* Слайдер */}
       <div className="mb-6">
         <div 
-          className="overflow-hidden rounded-2xl"
+          ref={scrollRef}
+          className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide rounded-2xl"
+          style={{ scrollBehavior: 'smooth' }}
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
         >
-          <div 
-            className="flex transition-transform duration-300 ease-out"
-            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-          >
-            {allMedia.map((media, index) => (
-              <div key={index} className="w-full flex-shrink-0 px-2">
-                {media.endsWith('.mp4') ? (
-                  <div className="aspect-[9/16] bg-black rounded-2xl overflow-hidden mx-auto max-w-[280px]">
-                    <video
-                      className="w-full h-full object-cover"
-                      autoPlay loop muted playsInline
-                    >
-                      <source src={media} type="video/mp4" />
-                    </video>
-                  </div>
-                ) : (
-                  <div className="aspect-square rounded-2xl overflow-hidden">
-                    <img
-                      src={media}
-                      alt={`Довольная клиентка ${index + 1}`}
-                      className="w-full h-full object-cover"
-                      style={{filter: 'brightness(1.1) contrast(1.05) saturate(1.2)'}}
-                    />
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
+          {allMedia.map((media, index) => (
+            <div key={index} className="w-full flex-shrink-0 snap-center px-2">
+              {media.endsWith('.mp4') ? (
+                <div className="aspect-[9/16] bg-black rounded-2xl overflow-hidden mx-auto max-w-[280px]">
+                  <video
+                    className="w-full h-full object-cover"
+                    autoPlay loop muted playsInline
+                  >
+                    <source src={media} type="video/mp4" />
+                  </video>
+                </div>
+              ) : (
+                <div className="aspect-square rounded-2xl overflow-hidden">
+                  <img
+                    src={media}
+                    alt={`Довольная клиентка ${index + 1}`}
+                    className="w-full h-full object-cover"
+                    style={{filter: 'brightness(1.1) contrast(1.05) saturate(1.2)'}}
+                  />
+                </div>
+              )}
+            </div>
+          ))}
         </div>
         
-        {/* Индикаторы */}
         <div className="flex justify-center mt-4 space-x-2">
           {allMedia.map((_, index) => (
             <button
               key={index}
-              onClick={() => setCurrentIndex(index)}
+              onClick={() => {
+                setCurrentIndex(index)
+                if (scrollRef.current) {
+                  scrollRef.current.scrollTo({
+                    left: index * scrollRef.current.offsetWidth,
+                    behavior: 'smooth'
+                  })
+                }
+              }}
               className="w-2 h-2 rounded-full transition-all duration-300"
               style={{
                 backgroundColor: index === currentIndex ? colors.white : 'rgba(255,255,255,0.3)'
@@ -108,36 +138,8 @@ export default function MobileClientsGallery({ colors }: MobileClientsGalleryPro
             />
           ))}
         </div>
-        
-        {/* Навигационные стрелки */}
-        <div className="flex justify-center mt-4 space-x-4">
-          <button
-            onClick={() => setCurrentIndex(Math.max(0, currentIndex - 1))}
-            disabled={currentIndex === 0}
-            className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center backdrop-blur-sm transition-all"
-            style={{
-              background: 'rgba(255,255,255,0.1)',
-              opacity: currentIndex === 0 ? 0.3 : 1
-            }}
-          >
-            <span className="text-white">←</span>
-          </button>
-          
-          <button
-            onClick={() => setCurrentIndex(Math.min(allMedia.length - 1, currentIndex + 1))}
-            disabled={currentIndex === allMedia.length - 1}
-            className="w-10 h-10 rounded-full border border-white/30 flex items-center justify-center backdrop-blur-sm transition-all"
-            style={{
-              background: 'rgba(255,255,255,0.1)',
-              opacity: currentIndex === allMedia.length - 1 ? 0.3 : 1
-            }}
-          >
-            <span className="text-white">→</span>
-          </button>
-        </div>
       </div>
 
-      {/* CTA плашка */}
       <div className="rounded-2xl border shadow-2xl p-6 text-center relative overflow-hidden backdrop-blur-xl"
            style={{ 
              background:"rgba(68,78,85,.90)", 
