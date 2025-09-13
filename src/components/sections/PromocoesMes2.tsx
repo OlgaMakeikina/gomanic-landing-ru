@@ -238,7 +238,7 @@ export default function PromocoesMes2({ masterData }: PromocoesMes2Props) {
               }}
             >
               <span>🔥</span>
-              <span>Только 30 мест! Не упустите!</span>
+              <span>Только 5 мест в неделю! Не упустите!</span>
             </div>
           </div>
         </div>
