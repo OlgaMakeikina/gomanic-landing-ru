@@ -48,7 +48,6 @@ function VideoItem({ src, poster, alt, label }: VideoItemProps) {
       muted 
       playsInline
       preload="metadata"
-      poster={poster}
       onClick={handleVideoClick}
       onError={() => setHasError(true)}
       onLoadStart={() => console.log('Loading video:', src)}
