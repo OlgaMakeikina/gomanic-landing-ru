@@ -5,14 +5,14 @@ export function generateMasterSlides(masterData: MasterConfig): HeroSlide[] {
   return [
     {
       id: 1,
-      image: '/images/hero/slide1.jpg',
+      image: '/images/hero/hero1.jpeg',
       title: masterData.personal.name,
       subtitle: masterData.seo.h2,
       content: masterData.personal.strongSide.description
     },
     {
       id: 2,
-      image: '/images/hero/slide2.jpg',
+      image: '/images/hero/hero2.jpeg',
       title: 'Услуги и цены',
       subtitle: `${masterData.personal.status.label} - специальные предложения`,
       content: 'Профессиональный маникюр по выгодным ценам',
@@ -24,7 +24,7 @@ export function generateMasterSlides(masterData: MasterConfig): HeroSlide[] {
     },
     {
       id: 3,
-      image: '/images/hero/slide3.jpg',
+      image: '/images/hero/hero3.jpeg',
       title: 'Запись на приём',
       subtitle: `${masterData.contacts.address.city}, ${masterData.contacts.address.metro || ''}`,
       content: masterData.contacts.address.full

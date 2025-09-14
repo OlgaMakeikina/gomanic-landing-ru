@@ -27,7 +27,7 @@ export default function ResultsGallery() {
   }
 
   const masterData = getMasterDataSync()
-  const portfolioImages = masterData?.portfolio.photos || fallbackData.map(img => `/images/gallery/${img}`)
+  const portfolioImages = masterData?.portfolio.photos || fallbackData.map(img => `/images/clients/${img}`)
 
   return (
     <section 
