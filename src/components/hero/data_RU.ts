@@ -3,7 +3,7 @@ import { HeroSlide } from './types'
 export const heroSlidesRU: HeroSlide[] = [
   {
     id: 1,
-    image: '/images/hero/hero1.jpeg',
+    image: '/images/hero/hero4.jpeg',
     title: 'GOMANIC',
     subtitle: '',
     content: 'Независимые специалисты, сертифицированные по программе - Mетод эстетики ногтей GOMANIC'
@@ -11,7 +11,7 @@ export const heroSlidesRU: HeroSlide[] = [
   
   {
     id: 2,
-    image: '/images/hero/hero2.jpeg',
+    image: '/images/hero/hero1.jpeg',
     title: 'Экономия до 55%',
     subtitle: '',
     services: [
