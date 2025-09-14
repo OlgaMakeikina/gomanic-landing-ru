@@ -45,9 +45,37 @@ export default function MasterIntro({ masterData }: MasterIntroProps) {
   }, [masterData])
   
   const currentMasterData = masterData || defaultData
-  if (!currentMasterData) return null
+  
+  // Показываем компонент даже без данных на SSR, данные подгрузятся на клиенте
+  const showComponent = currentMasterData || (typeof window !== 'undefined')
+  if (!showComponent) return null
 
-  const { personal } = currentMasterData
+  // Fallback данные для показа пока загружаются настоящие
+  const fallbackPersonal = {
+    name: "Загрузка...",
+    specialization: "Мастер маникюра",
+    experience: "Опытный специалист",
+    status: { 
+      type: 'experienced' as const, 
+      label: 'Доступен для записи',
+      promotion: {
+        text: "",
+        isActive: false
+      }
+    },
+    strongSide: {
+      title: "Профессионализм",
+      description: "Высокое качество работы и внимание к деталям"
+    },
+    location: {
+      address: "Санкт-Петербург",
+      mapUrl: mapEmbedUrl
+    },
+    bio: "Профессиональный мастер маникюра с многолетним опытом работы.",
+    photo: "/images/masters/default-avatar.jpg"
+  }
+
+  const personal = currentMasterData?.personal || fallbackPersonal
   const statusStyle = statusColors[personal.status.type]
 
   const handleServicesClick = () => {
