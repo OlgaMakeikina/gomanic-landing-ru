@@ -78,10 +78,10 @@ export default function AboutGomanic() {
              style={{ background: 'rgba(254, 254, 254, 0.15)', boxShadow: '0 20px 60px rgba(0, 0, 0, 0.5)' }}>
           <div className="relative z-10">
             <h3 className="text-2xl lg:text-1xl font-bold mb-4 uppercase tracking-wide" style={{ fontFamily: 'DrukWideCyr-Super, Arial, sans-serif', color: '#FEFEFE' }}>
-              Хочешь стать частью команды GOMANIC?
+             Хочешь пройти обучение по системе GoManic?
             </h3>
             <p className="text-lg mb-8 opacity-90" style={{ fontFamily: 'Manrope, sans-serif', color: '#FEFEFE' }}>
-              Пройди профессиональное обучение и получи все навыки для успешной карьеры в nail-индустрии
+              Освой методику GoManic и начни карьеру в nail-индустрии
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button onClick={handleTelegramClick} className="px-8 py-4 rounded-lg font-bold border-2 transition-all hover:opacity-90 hover:scale-105 uppercase tracking-wide"
