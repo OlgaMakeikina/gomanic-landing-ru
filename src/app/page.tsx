@@ -36,7 +36,7 @@ export default function Home() {
     <div className="min-h-screen" style={{backgroundColor: '#FEFEFE'}}>
       <Header masterData={masterData} />
       <main role="main" id="main-content">
-        <HeroSectionRU masterData={masterData} />
+        <HeroSectionRU />
         <MasterIntro masterData={masterData} />
         <PromocoesMes2 masterData={masterData} />
         <ResultsGallery /> 
