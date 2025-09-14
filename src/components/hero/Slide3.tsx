@@ -55,11 +55,11 @@ export default function Slide3({ slideData, onButtonAction }: SlideProps) {
                     </HeroButton>
                     
                     <HeroButton 
-                      onClick={() => onButtonAction('whatsapp')}
+                      onClick={() => onButtonAction('scroll', 'about-gomanic')}
                       variant="secondary"
                       className="w-full"
                     >
-                      СВЯЗАТЬСЯ ПО WHATSAPP
+                      ПОДРОБНЕЕ О GOMANIC
                     </HeroButton>
                   </div>
                 </div>
@@ -86,15 +86,15 @@ export default function Slide3({ slideData, onButtonAction }: SlideProps) {
                   variant="primary"
                   className="text-sm px-6 py-2.5 min-w-[120px]"
                 >
-                  ХОЧУ VIP-ПРОПУСК
+                   ХОЧУ ЗАПИСАТЬСЯ
                 </HeroButton>
                 
                 <HeroButton 
-                  onClick={() => onButtonAction('whatsapp')}
+                  onClick={() => onButtonAction('scroll', 'about-gomanic')}
                   variant="secondary"
                   className="text-sm px-6 py-2.5 min-w-[120px]"
                 >
-                  СВЯЗАТЬСЯ ПО WHATSAPP
+                  ПОДРОБНЕЕ О GOMANIC
                 </HeroButton>
               </div>
             </div>

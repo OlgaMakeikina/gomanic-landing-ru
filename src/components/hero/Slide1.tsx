@@ -27,10 +27,10 @@ export default function Slide1({ slideData, onButtonAction }: SlideProps) {
               </HeroButton>
               
               <HeroButton 
-                onClick={() => onButtonAction('whatsapp')}
+                onClick={() => onButtonAction('scroll', 'agendamento')}
                 variant="secondary"
               >
-                Записаться в WA
+                ЗАБРОНИРОВАТЬ МЕСТО
               </HeroButton>
             </div>
           </div>
@@ -55,10 +55,10 @@ export default function Slide1({ slideData, onButtonAction }: SlideProps) {
             </HeroButton>
             
             <HeroButton 
-              onClick={() => onButtonAction('whatsapp')}
+              onClick={() => onButtonAction('scroll', 'agendamento')}
               variant="secondary"
             >
-              Записаться в WA
+              ЗАБРОНИРОВАТЬ МЕСТО
             </HeroButton>
           </div>
         </div>
