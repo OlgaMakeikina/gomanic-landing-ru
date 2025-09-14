@@ -6,7 +6,7 @@ import { getCurrentMaster, loadMasterData } from '@/utils/master-loader'
 
 import Header from '@/components/header'
 import HeroSectionRU from '@/components/hero/HeroSection'
-import MasterIntro from '@/components/sections/MasterIntro'
+import MasterIntro from '@/components/sections/MasterIntro/MasterIntro'
 import PromocoesMes2 from '@/components/sections/PromocoesMes2'
 import AboutGomanic from '@/components/sections/about-gomanic/AboutGomanic'
 import SegurancaQualidade from '@/components/sections/SegurancaQualidade'
