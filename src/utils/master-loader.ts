@@ -6,8 +6,13 @@ export function getCurrentMaster(): string | null {
   const host = window.location.hostname
   const subdomain = host.split('.')[0]
   
-  if (subdomain === 'gomanic' || subdomain === 'www' || subdomain === 'localhost') {
-    return null
+  // Для основного домена gomanic.ru загружаем мастера по умолчанию
+  if (subdomain === 'gomanic' || subdomain === 'www' || host === 'gomanic.ru') {
+    return 'anastasia-moscow'
+  }
+  
+  if (subdomain === 'localhost') {
+    return 'anastasia-moscow'
   }
   
   return subdomain

@@ -12,16 +12,16 @@ export const metadata = {
     title: defaultSEO.title,
     description: defaultSEO.description,
     url: defaultSEO.canonical,
-    siteName: 'Gomanic Brasil',
+    siteName: 'Gomanic Россия',
     images: [
       {
         url: defaultSEO.ogImage!,
         width: 1200,
         height: 630,
-        alt: 'Gomanic Brasil - Manicure pela Metade do Preço',
+        alt: 'Gomanic Россия - Профессиональный маникюр',
       },
     ],
-    locale: 'pt_BR',
+    locale: 'ru_RU',
     type: 'website',
   },
   twitter: {
@@ -118,8 +118,8 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "BeautySalon",
-              "name": "Gomanic Brasil",
-              "description": "Serviços de manicure profissional com especialistas certificados",
+              "name": "Gomanic Россия",
+              "description": "Профессиональный маникюр с независимыми специалистами",
               "url": process.env.NEXT_PUBLIC_SITE_URL
             }),
           }}
