@@ -33,8 +33,10 @@ const statusColors = {
 export default function MasterIntro({ masterData }: MasterIntroProps) {
   // Для localhost загружаем данные Анастасии по умолчанию
   const [defaultData, setDefaultData] = useState<MasterConfig | null>(null)
+  const [isClient, setIsClient] = useState(false)
   
   useEffect(() => {
+    setIsClient(true)
     if (!masterData && typeof window !== 'undefined' && window.location.hostname === 'localhost') {
       // Загружаем данные Анастасии для localhost
       fetch('/api/masters/anastasia-moscow')
@@ -44,11 +46,34 @@ export default function MasterIntro({ masterData }: MasterIntroProps) {
     }
   }, [masterData])
   
-  const currentMasterData = masterData || defaultData
+  if (!isClient) {
+    return (
+      <section id="master-intro" className="py-20" style={{ backgroundColor: '#FEFEFE' }}>
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 
+              className="text-4xl lg:text-5xl font-bold mb-4 uppercase tracking-wide"
+              style={{ 
+                fontFamily: 'DrukWideCyr-Super, Arial, sans-serif',
+                color: '#444f55'
+              }}
+            >
+              Мастер системы GOMANIC
+            </h2>
+          </div>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="animate-pulse bg-gray-200 aspect-square rounded-2xl"></div>
+            <div className="space-y-4">
+              <div className="animate-pulse bg-gray-200 h-6 rounded"></div>
+              <div className="animate-pulse bg-gray-200 h-4 rounded w-3/4"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    )
+  }
   
-  // Показываем компонент даже без данных на SSR, данные подгрузятся на клиенте
-  const showComponent = currentMasterData || (typeof window !== 'undefined')
-  if (!showComponent) return null
+  const currentMasterData = masterData || defaultData
 
   // Fallback данные для показа пока загружаются настоящие
   const fallbackPersonal = {

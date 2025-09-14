@@ -10,6 +10,14 @@ interface PromocoesMes2Props {
 }
 
 export default function PromocoesMes2({ masterData }: PromocoesMes2Props) {
+  const [isClient, setIsClient] = useState(false)
+  const [openAccordion, setOpenAccordion] = useState<number | null>(null)
+  const { time } = useCountdown()
+
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
+
   const promocoes = useMemo(
     () => [
       {
@@ -47,8 +55,6 @@ export default function PromocoesMes2({ masterData }: PromocoesMes2Props) {
   )
 
   const COLORS = { dark: "#444f55", gray: "#3B3B3A", white: "#FEFEFE" }
-  const [openAccordion, setOpenAccordion] = useState<number | null>(null)
-  const { time } = useCountdown()
 
   const toggleAccordion = (index: number) => {
     setOpenAccordion(openAccordion === index ? null : index)
@@ -118,7 +124,7 @@ export default function PromocoesMes2({ masterData }: PromocoesMes2Props) {
                       lineHeight: 1,
                     }}
                   >
-                    {String(time.days).padStart(2, "0")}
+                    {isClient ? String(time.days).padStart(2, "0") : "00"}
                   </div>
                   <div
                     style={{
@@ -147,7 +153,7 @@ export default function PromocoesMes2({ masterData }: PromocoesMes2Props) {
                       lineHeight: 1,
                     }}
                   >
-                    {String(time.hours).padStart(2, "0")}
+                    {isClient ? String(time.hours).padStart(2, "0") : "00"}
                   </div>
                   <div
                     style={{
@@ -176,7 +182,7 @@ export default function PromocoesMes2({ masterData }: PromocoesMes2Props) {
                       lineHeight: 1,
                     }}
                   >
-                    {String(time.minutes).padStart(2, "0")}
+                    {isClient ? String(time.minutes).padStart(2, "0") : "00"}
                   </div>
                   <div
                     style={{
@@ -205,7 +211,7 @@ export default function PromocoesMes2({ masterData }: PromocoesMes2Props) {
                       lineHeight: 1,
                     }}
                   >
-                    {String(time.seconds).padStart(2, "0")}
+                    {isClient ? String(time.seconds).padStart(2, "0") : "00"}
                   </div>
                   <div
                     style={{
