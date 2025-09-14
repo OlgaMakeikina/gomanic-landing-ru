@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 
 export default function AboutGomanic() {
   const [isVisible, setIsVisible] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
 
   const stats = [
     { number: "3000+", label: "учеников из 12 стран обучено" },
@@ -15,7 +16,18 @@ export default function AboutGomanic() {
 
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 200)
-    return () => clearTimeout(timer)
+    
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+    
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    
+    return () => {
+      clearTimeout(timer)
+      window.removeEventListener('resize', checkMobile)
+    }
   }, [])
 
   const handleTelegramClick = () => {
@@ -30,7 +42,7 @@ export default function AboutGomanic() {
       style={{ 
         backgroundImage: 'url(/images/clients/0_0_4_1.jpeg)',
         backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        backgroundPosition: isMobile ? 'left top' : 'center',
         boxShadow: '0 -10px 20px rgba(0, 0, 0, 0.3), 0 20px 40px rgba(0, 0, 0, 0.6)'
       }}
     >
