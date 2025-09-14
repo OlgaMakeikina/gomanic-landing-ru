@@ -4,7 +4,7 @@ export const processSteps: ProcessStep[] = [
   {
     numero: "1",
     titulo: "Выберите услугу",
-    descricao: "Выберите услугу у мастера, которая вам подходит",
+    descricao: "Выберите услугу у мастера, которая вам подходит и заполните форму на сайте",
     detalhes: "",
     seguranca: "",
     imagem: "/images/process/process1.jpeg"
@@ -13,7 +13,7 @@ export const processSteps: ProcessStep[] = [
   {
     numero: "2",
     titulo: "Запишитесь на удобное для вас время",
-    descricao: "Напишите мастеру в WhatsApp для уточнени записи",
+    descricao: "Напишите мастеру в WhatsApp для уточнения записи",
     detalhes: "",
     seguranca: "",
     imagem: "/images/process/process3.jpeg"
@@ -21,7 +21,7 @@ export const processSteps: ProcessStep[] = [
   {
     numero: "4",
     titulo: "Приходите и экономьте",
-    descricao: "Приходите в назваченное время, наслаждйтесь услугой и скидкой до 50%",
+    descricao: "Приходите в назначенное время, наслаждайтесь услугой и скидкой до 50%",
     detalhes: "",
     seguranca: "",
     imagem: "/images/process/process4.jpeg"
