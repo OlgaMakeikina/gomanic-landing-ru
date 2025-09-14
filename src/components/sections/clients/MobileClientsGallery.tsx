@@ -26,8 +26,7 @@ export default function MobileClientsGallery({ colors }: MobileClientsGalleryPro
     '/images/clients/client3.jpeg'
   ]
 
-  const clientVideo = '/images/clients/u2311792965_httpss.mj.runUTcEApe-3E8_Ultra_realistic_hyper_de_f3873cb7-a4ac-4988-ae27-89ca058a275d_3.mp4'
-  const allMedia = [...clientImages, clientVideo]
+  const allMedia = clientImages
 
   const [currentIndex, setCurrentIndex] = useState(0)
   const scrollRef = useRef<HTMLDivElement>(null)
@@ -100,25 +99,14 @@ export default function MobileClientsGallery({ colors }: MobileClientsGalleryPro
         >
           {allMedia.map((media, index) => (
             <div key={index} className="w-full flex-shrink-0 snap-center px-2">
-              {media.endsWith('.mp4') ? (
-                <div className="aspect-[9/16] bg-black rounded-2xl overflow-hidden mx-auto max-w-[280px]">
-                  <video
-                    className="w-full h-full object-cover"
-                    autoPlay loop muted playsInline
-                  >
-                    <source src={media} type="video/mp4" />
-                  </video>
-                </div>
-              ) : (
-                <div className="aspect-square rounded-2xl overflow-hidden">
-                  <img
-                    src={media}
-                    alt={`Довольная клиентка ${index + 1}`}
-                    className="w-full h-full object-cover"
-                    style={{filter: 'brightness(1.1) contrast(1.05) saturate(1.2)'}}
-                  />
-                </div>
-              )}
+              <div className="aspect-square rounded-2xl overflow-hidden">
+                <img
+                  src={media}
+                  alt={`Довольная клиентка ${index + 1}`}
+                  className="w-full h-full object-cover"
+                  style={{filter: 'brightness(1.1) contrast(1.05) saturate(1.2)'}}
+                />
+              </div>
             </div>
           ))}
         </div>
