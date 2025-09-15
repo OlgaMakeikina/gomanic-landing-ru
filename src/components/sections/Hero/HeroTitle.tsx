@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { HorizonText } from '@/components/ui'
+import { HorizonText } from '@/components/common/ui'
 
 interface HeroTitleProps {
   title: string

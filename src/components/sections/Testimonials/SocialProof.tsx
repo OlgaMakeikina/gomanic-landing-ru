@@ -1,5 +1,5 @@
 import { MasterConfig } from '@/types/master'
-import { HorizonText } from '@/components/ui';
+import { HorizonText } from '@/components/common/ui';
 
 interface SocialProofProps {
   masterData?: MasterConfig | null;

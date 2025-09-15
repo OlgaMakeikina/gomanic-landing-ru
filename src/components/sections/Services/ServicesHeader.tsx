@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { HorizonText } from '@/components/ui'
+import { HorizonText } from '@/components/common/ui'
 import { useCountdown } from '@/hooks/useCountdown'
 import { COLORS } from './constants'
 

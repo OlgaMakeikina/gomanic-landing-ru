@@ -1,7 +1,7 @@
 'use client'
 import { MasterConfig } from '@/types/master'
 import ContactHeader from './ContactHeader'
-import BookingForm from '@/components/tracking/BookingForm'
+import BookingForm from '@/components/features/booking'
 
 interface ContactSectionProps {
   masterData?: MasterConfig | null;

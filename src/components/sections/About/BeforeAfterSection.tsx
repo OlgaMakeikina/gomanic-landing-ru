@@ -1,6 +1,6 @@
 'use client'
 
-import { HorizonText } from '@/components/ui';
+import { HorizonText } from '@/components/common/ui';
 
 export default function BeforeAfterSection() {
   const COLORS = { dark: "#3B3B3A", gray: "#444e55", white: "#FEFEFE" }

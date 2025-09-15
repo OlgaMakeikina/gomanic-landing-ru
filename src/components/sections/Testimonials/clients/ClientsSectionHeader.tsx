@@ -1,6 +1,6 @@
 'use client'
 
-import { HorizonText } from '@/components/ui';
+import { HorizonText } from '@/components/common/ui';
 
 interface ClientsSectionHeaderProps {
   colors: {

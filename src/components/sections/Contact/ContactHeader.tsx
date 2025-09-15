@@ -1,4 +1,4 @@
-import { HorizonText } from '@/components/ui'
+import { HorizonText } from '@/components/common/ui'
 
 export default function ContactHeader() {
   return (

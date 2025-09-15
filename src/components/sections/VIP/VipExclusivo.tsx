@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { MasterConfig } from '@/types/master'
 import { useCountdown } from '@/hooks/useCountdown'
-import { HorizonText } from '@/components/ui'
+import { HorizonText } from '@/components/common/ui'
 
 interface VipExclusivoProps {
   masterData?: MasterConfig | null;

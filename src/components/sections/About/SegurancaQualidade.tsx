@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 import { MasterConfig } from '@/types/master'
-import { HorizonText } from '@/components/ui';
+import { HorizonText } from '@/components/common/ui';
 
 interface SegurancaQualidadeProps {
   masterData?: MasterConfig | null;

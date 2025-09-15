@@ -1,5 +1,5 @@
 import { LogoProps } from './types'
-import { HorizonText } from '@/components/ui'
+import { HorizonText } from '@/components/common/ui'
 
 export default function Logo({ className = '' }: LogoProps) {
   return (
