@@ -1,0 +1,64 @@
+/* === GOMANIC VOGUE STYLES === */
+/* Модульная архитектура CSS - каждый файл ≤ 120 строк */
+
+/* Base Styles */
+@import './base/tailwind.css';
+@import './base/fonts.css';
+@import './base/typography.css';
+
+/* Component Styles */
+@import './components/buttons.css';
+@import './components/cards.css';
+@import './components/elements.css';
+
+/* Layout Styles */
+@import './layouts/containers.css';
+@import './layouts/header.css';
+
+/* Mobile Styles */
+@import './mobile/animations.css';
+@import './mobile/menu.css';
+@import './mobile/hero.css';
+
+/* Browser Fixes */
+@import './browser-fixes/mobile-browsers.css';
+@import './browser-fixes/scrollbars.css';
+
+/* Дополнительные mobile адаптации */
+
+/* Ландшафтная ориентация на мобильных */
+@media (max-height: 500px) and (orientation: landscape) {
+  #hero {
+    min-height: 100vh;
+    padding: 10px 0;
+  }
+  
+  .hero-mobile-padding {
+    padding: 10px 16px;
+  }
+  
+  .hero-mobile-title {
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+    margin-bottom: 0.5rem;
+  }
+  
+  .hero-mobile-subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    margin-bottom: 0.5rem;
+  }
+  
+  .hero-mobile-card {
+    padding: 16px;
+  }
+}
+
+/* ===== ГЛАССМОРФИЗМ ДЛЯ МОБИЛЬНОГО МЕНЮ ===== */
+
+/* Основной контейнер глассморфизма */
+.glass-container {
+  background: rgba(59, 59, 58, 0.85);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 32px 64px rgba(0, 0, 0, 0.3);
+}

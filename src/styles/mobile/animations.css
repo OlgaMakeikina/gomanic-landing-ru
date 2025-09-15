@@ -1,0 +1,46 @@
+/* Анимации для мобильного меню */
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutToRight {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+/* Улучшения для очень маленьких экранов */
+@media (max-width: 320px) {
+  .contact-icon {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .booking-button {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+}
+
+/* Темная тема для мобильного меню */
+.mobile-menu-dark {
+  background: linear-gradient(
+    135deg,
+    rgba(59, 59, 58, 0.98) 0%,
+    rgba(68, 78, 85, 0.95) 50%,
+    rgba(59, 59, 58, 0.98) 100%
+  );
+  backdrop-filter: blur(20px);
+}

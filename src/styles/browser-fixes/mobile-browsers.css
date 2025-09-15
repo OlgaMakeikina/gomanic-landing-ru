@@ -1,0 +1,44 @@
+/* Chrome Mobile specific */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  #hero {
+    overscroll-behavior-x: none !important;
+    overscroll-behavior-y: auto !important;
+  }
+}
+
+/* Firefox Mobile specific */
+@-moz-document url-prefix() {
+  #hero {
+    touch-action: pan-y pinch-zoom !important;
+    -moz-user-select: none;
+  }
+}
+
+/* Edge Mobile specific */
+@supports (-ms-ime-align: auto) {
+  #hero {
+    -ms-touch-action: pan-y pinch-zoom !important;
+    -ms-scroll-chaining: none !important;
+  }
+}
+
+/* Samsung Internet specific */
+@media screen and (max-width: 768px) {
+  #hero {
+    -webkit-transform: translate3d(0, 0, 0) !important;
+    transform: translate3d(0, 0, 0) !important;
+  }
+}
+
+/* Android WebView specific fixes */
+@media (pointer: coarse) {
+  #hero {
+    touch-action: pan-y pinch-zoom !important;
+    -webkit-user-select: none !important;
+    user-select: none !important;
+  }
+  
+  #hero * {
+    pointer-events: auto;
+  }
+}

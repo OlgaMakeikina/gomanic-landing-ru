@@ -1,0 +1,78 @@
+/* ===== КОМПАКТНОЕ МОБИЛЬНОЕ МЕНЮ ===== */
+
+/* Убираем лишние отступы и делаем меню центрированным */
+@media (max-width: 1024px) {
+  .mobile-menu-compact {
+    padding: 20px;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .mobile-nav-compact {
+    margin-bottom: 20px;
+  }
+  
+  .mobile-nav-compact a {
+    padding: 8px 16px;
+    margin: 2px 0;
+    font-size: 15px;
+    line-height: 1.2;
+  }
+  
+  /* Компактные иконки */
+  .contact-icons-compact {
+    margin-bottom: 20px;
+  }
+  
+  .contact-icons-compact a {
+    width: 48px;
+    height: 48px;
+    margin: 0 8px;
+  }
+  
+  /* Компактная кнопка */
+  .booking-button-compact {
+    padding: 12px 24px;
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
+  
+  /* Компактный индикатор */
+  .urgency-compact {
+    padding: 8px 16px;
+    font-size: 11px;
+  }
+}
+
+/* Дополнительная компактность для очень маленьких экранов */
+@media (max-width: 375px) {
+  .mobile-nav-compact a {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+  
+  .contact-icons-compact a {
+    width: 44px;
+    height: 44px;
+    margin: 0 6px;
+  }
+  
+  .booking-button-compact {
+    padding: 10px 20px;
+    font-size: 12px;
+  }
+}
+
+/* Убираем скролл если контент помещается */
+.mobile-menu-no-scroll {
+  overflow: hidden;
+}
+
+.mobile-menu-content-compact {
+  max-height: 100vh;
+  overflow: visible;
+  padding: 0;
+}
