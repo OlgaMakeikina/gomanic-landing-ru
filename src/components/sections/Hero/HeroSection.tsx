@@ -1,97 +1,40 @@
 'use client'
 
-import { useState, useEffect, useRef, useCallback } from 'react'
+import { useEffect, useRef } from 'react'
 import { MasterConfig } from '@/types/master'
 import { heroSlidesRU as heroSlides } from './data_RU'
 import { generateMasterSlides } from '@/utils/master-slides'
-import { useSwipeNavigation } from '@/hooks/useSwipeNavigation'
+import { useHeroSlider } from './hooks'
+import { SlideRenderer, handleButtonAction, setupTouchStyles } from './components'
 import SlideBackground from './SlideBackground'
 import SlideOverlay from './SlideOverlay'
 import SlideNavigation from './SlideNavigation'
-import Slide1 from './Slide1'
-import Slide2 from './Slide2'
-import Slide3 from './Slide3'
 
 interface HeroSectionProps {
   masterData?: MasterConfig | null
 }
 
 export default function HeroSectionRU({ masterData }: HeroSectionProps) {
-  const [currentSlide, setCurrentSlide] = useState(0)
-  const [isPlaying, setIsPlaying] = useState(true)
   const sectionRef = useRef<HTMLElement>(null)
-
   const slides = masterData ? generateMasterSlides(masterData) : heroSlides
-
-  const nextSlide = useCallback(() => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length)
-  }, [slides.length])
-
-  const prevSlide = useCallback(() => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
-  }, [slides.length])
-
-  const swipeHandlers = useSwipeNavigation({
-    onSwipeLeft: nextSlide,
-    onSwipeRight: prevSlide,
-    threshold: 50,
-    preventDefault: true,
-    enableMouse: true
-  })
-
-  useEffect(() => {
-    if (!isPlaying) return
-    const slideInterval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length)
-    }, 6000)
-    return () => clearInterval(slideInterval)
-  }, [isPlaying, slides.length])
+  
+  const {
+    currentSlide,
+    isPlaying,
+    setIsPlaying,
+    nextSlide,
+    goToSlide,
+    swipeHandlers
+  } = useHeroSlider({ slidesLength: slides.length })
 
   useEffect(() => {
     const heroElement = sectionRef.current
     if (!heroElement) return
-
-    const style = heroElement.style as any
-    style.touchAction = 'pan-y pinch-zoom'
-    style.overscrollBehaviorX = 'none'
-    style.webkitOverflowScrolling = 'touch'
-    style.cursor = 'grab'
-    
-    return () => {
-      style.touchAction = ''
-      style.overscrollBehaviorX = ''
-      style.webkitOverflowScrolling = ''
-      style.cursor = ''
-    }
+    return setupTouchStyles(heroElement)
   }, [])
 
-  const goToSlide = (index: number) => {
-    setCurrentSlide(index)
-  }
-
-  const handleButtonAction = (action: string, id?: string) => {
-    if (action === 'next') {
-      nextSlide()
-    } else if (action === 'whatsapp') {
-      window.open('https://wa.me/5548996737351', '_blank')
-    } else if (action === 'scroll' && id) {
-      const targetElement = document.getElementById(id)
-      if (targetElement) {
-        targetElement.scrollIntoView({ behavior: 'smooth' })
-      }
-    }
-  }
-  const renderSlide = (slideIndex: number) => {
-    const slideData = slides[slideIndex]
-    const slideProps = { 
-      slideData, 
-      onButtonAction: handleButtonAction 
-    }
-
-    if (slideIndex === 0) return <Slide1 {...slideProps} />
-    if (slideIndex === 1) return <Slide2 {...slideProps} />
-    if (slideIndex === 2) return <Slide3 {...slideProps} />
-    return null
+  const onButtonAction = (action: string, id?: string) => {
+    handleButtonAction(action, id, nextSlide)
   }
 
   return (
@@ -116,7 +59,11 @@ export default function HeroSectionRU({ masterData }: HeroSectionProps) {
       <SlideOverlay currentSlide={currentSlide} />
 
       <div className="relative z-20 h-full">
-        {renderSlide(currentSlide)}
+        <SlideRenderer
+          slideIndex={currentSlide}
+          slides={slides}
+          onButtonAction={onButtonAction}
+        />
       </div>
 
       <SlideNavigation

@@ -1,7 +1,7 @@
 import './globals.css'
 import './cyrillic-fonts.css'
 import { defaultSEO } from '@/utils/seo'
-import Script from 'next/script'
+import { MetaTags, FontPreloads, StructuredData, AnalyticsScripts } from '@/components/layout/RootLayout'
 
 export const metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://gomanic.com.br'),
@@ -46,122 +46,25 @@ export const metadata = {
   },
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
-  const GA_ID = process.env.GOOGLE_ANALYTICS_ID;
+interface RootLayoutProps {
+  children: React.ReactNode;
+}
+
+export default function RootLayout({ children }: RootLayoutProps) {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
+  const gaId = process.env.GOOGLE_ANALYTICS_ID;
+  const fbPixelId = process.env.FACEBOOK_PIXEL_ID;
   
   return (
     <html lang="ru">
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-        <link rel="icon" type="image/x-icon" href="/icons/favicon.ico?v=2" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png?v=2" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png?v=2" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png?v=2" />
-        <link rel="manifest" href="/icons/site.webmanifest?v=2" />
-        <meta name="theme-color" content="#FEFEFE" />
-        <meta name="msapplication-TileColor" content="#FEFEFE" />
-        <meta name="msapplication-config" content="/icons/browserconfig.xml" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="apple-mobile-web-app-title" content="Gomanic" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="mobile-web-app-capable" content="yes" />
-        
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link 
-          href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" 
-          rel="stylesheet" 
-        />
-        <link 
-          rel="preload" 
-          href="/fonts/drukwidecyr-super.woff2" 
-          as="font" 
-          type="font/woff2" 
-          crossOrigin="anonymous"
-        />
-        <link 
-          rel="preload" 
-          href="/fonts/horizon.otf" 
-          as="font" 
-          type="font/otf" 
-          crossOrigin="anonymous"
-        />
-        <link 
-          rel="preload" 
-          href="/fonts/druk-wide-super.ttf" 
-          as="font" 
-          type="font/ttf" 
-          crossOrigin="anonymous"
-        />
-        <link 
-          rel="preload" 
-          href="/fonts/Garet-Book.otf" 
-          as="font" 
-          type="font/otf" 
-          crossOrigin="anonymous"
-        />
-        <link 
-          rel="preload" 
-          href="/fonts/Garet-Heavy.otf" 
-          as="font" 
-          type="font/otf" 
-          crossOrigin="anonymous"
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "BeautySalon",
-              "name": "Gomanic Россия",
-              "description": "Профессиональный маникюр с независимыми специалистами",
-              "url": process.env.NEXT_PUBLIC_SITE_URL
-            }),
-          }}
-        />
-        <script src="/js/font-fallback.js" defer></script>
+        <MetaTags />
+        <FontPreloads />
+        <StructuredData siteUrl={siteUrl} />
       </head>
       <body>
         {children}
-        
-        {GA_ID && (
-          <>
-            <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-              strategy="afterInteractive"
-            />
-            <Script id="google-analytics" strategy="afterInteractive">
-              {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${GA_ID}', {
-                  page_path: window.location.pathname,
-                });
-              `}
-            </Script>
-          </>
-        )}
-        
-        <Script id="facebook-pixel" strategy="afterInteractive">
-          {`
-            !function(f,b,e,v,n,t,s)
-            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-            n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t,s)}(window, document,'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '${process.env.FACEBOOK_PIXEL_ID || ''}');
-            fbq('track', 'PageView');
-          `}
-        </Script>
+        <AnalyticsScripts gaId={gaId} fbPixelId={fbPixelId} />
       </body>
     </html>
   )

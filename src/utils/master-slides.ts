@@ -1,5 +1,5 @@
 import { MasterConfig } from '@/types/master'
-import { HeroSlide } from '@/components/hero/types'
+import { HeroSlide } from '@/components/sections/Hero/types'
 
 export function generateMasterSlides(masterData: MasterConfig): HeroSlide[] {
   return [

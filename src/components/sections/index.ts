@@ -1,6 +1,6 @@
 // Секции лендинга
 export { default as Hero } from './Hero';
-export { Services as default } from './Services'; // Services уже рефакторингован
+export { default as Services } from './Services'; // Services уже рефакторингован
 export * from './About';
 export * from './Gallery'; 
 export * from './Testimonials';
