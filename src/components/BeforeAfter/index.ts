@@ -1,3 +1,1 @@
-import BeforeAfterGallery from './BeforeAfterGallery';
-
-export default BeforeAfterGallery;
+export { default } from '../common/media/BeforeAfter';

@@ -1,19 +1,23 @@
-// Export all section components for easy importing
-export { default as Header } from './header/Header'
-export { default as HeroSection } from './hero/HeroSection'
-export { default as PromocoesMes } from './sections/PromocoesMes'
-export { default as SegurancaQualidade } from './sections/SegurancaQualidade'
-export { default as SocialProof } from './sections/SocialProof'
-export { default as PortfolioSection } from './portfolio/PortfolioSection'
-export { default as TestimonialsSection } from './sections/TestimonialsSection'
-export { default as VipVantagens } from './sections/VipVantagens'
-export { default as VipExclusivo } from './sections/VipExclusivo'
-export { default as ComoFunciona } from './como-funciona/ComoFunciona'
-export { default as OfertaSection } from './sections/OfertaSection'
-export { default as ContactSection } from './contact/ContactSection'
-export { default as FinalOfferSection } from './sections/FinalOfferSection'
-export { default as Footer } from './footer/Footer'
-export { default as BeforeAfterGallery } from './BeforeAfter/BeforeAfterGallery'
+// Common components
+export * from './common/ui';
+export * from './common/forms';
+export * from './common/media';
 
-// Export UI components
-export * from './ui'
+// Layout components  
+export { default as Header } from './layout/Header';
+export { default as Footer } from './layout/Footer';
+
+// Section components
+export { default as Hero } from './sections/Hero';
+export { default as Services } from './sections/Services';
+export { default as About } from './sections/About';
+export { default as Gallery } from './sections/Gallery';
+export { default as Testimonials } from './sections/Testimonials';
+export { default as Process } from './sections/Process';
+export { default as VIP } from './sections/VIP';
+export { default as Contact } from './sections/Contact';
+
+// Feature components
+export * from './features/booking';
+export * from './features/master';
+export * from './features/analytics';

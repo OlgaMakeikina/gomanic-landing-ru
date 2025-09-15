@@ -1,1 +1,1 @@
-export { CyrillicText, HorizonText } from './CyrillicText';
+export * from '../common/ui';
