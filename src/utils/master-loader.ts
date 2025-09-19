@@ -6,16 +6,22 @@ export function getCurrentMaster(): string | null {
   const host = window.location.hostname
   const subdomain = host.split('.')[0]
   
-  // Для основного домена gomanic.ru загружаем мастера по умолчанию
+  // Для основного домена не загружаем данные мастера
   if (subdomain === 'gomanic' || subdomain === 'www' || host === 'gomanic.ru') {
-    return 'anastasia-moscow'
+    return null
   }
   
+  // Для localhost загружаем данные Анастасии для тестирования
   if (subdomain === 'localhost') {
     return 'anastasia-moscow'
   }
   
-  return subdomain
+  // Маппинг поддоменов на мастеров
+  const masterMapping: { [key: string]: string } = {
+    'nastya6716': 'anastasia-moscow'
+  }
+  
+  return masterMapping[subdomain] || subdomain
 }
 
 export async function loadMasterData(masterId: string): Promise<MasterConfig | null> {
