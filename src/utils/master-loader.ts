@@ -13,12 +13,12 @@ export function getCurrentMaster(): string | null {
   
   // Для localhost загружаем данные Анастасии для тестирования
   if (subdomain === 'localhost') {
-    return 'anastasia-moscow'
+    return 'anastasia-ulianova'
   }
   
   // Маппинг поддоменов на мастеров
   const masterMapping: { [key: string]: string } = {
-    'nastya6716': 'anastasia-moscow'
+    'nastya6716': 'anastasia-ulianova'
   }
   
   return masterMapping[subdomain] || subdomain

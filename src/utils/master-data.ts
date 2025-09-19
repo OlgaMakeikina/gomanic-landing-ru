@@ -1,7 +1,7 @@
 import { MasterConfig } from '@/types/master'
-import anastasiaData from '@/data/masters/anastasia-moscow.json'
+import anastasiaData from '@/data/masters/anastasia-ulianova.json'
 
-const DEFAULT_MASTER_ID = 'anastasia-moscow'
+const DEFAULT_MASTER_ID = 'anastasia-ulianova'
 
 export async function getMasterData(): Promise<MasterConfig | null> {
   try {
