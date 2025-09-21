@@ -11,10 +11,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'horizon': ['Horizon', 'Druk Wide Super', 'Arial Black', 'Arial', 'sans-serif'],
-        'druk': ['Druk Wide Super', 'Arial Black', 'Arial', 'sans-serif'],
-        'garet': ['Garet', 'Inter', 'system-ui', 'sans-serif'],
-        'orbitron': ['var(--font-orbitron)', 'Orbitron', 'monospace'],
+        'druk': ['DrukWideCyr-Super', 'Arial Black', 'Arial', 'sans-serif'],
+        'body': ['Manrope', 'Inter', 'system-ui', 'sans-serif'],
         'sans': [
           "Inter",
           "-apple-system",

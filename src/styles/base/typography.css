@@ -10,7 +10,7 @@
 
 /* Заголовки с Horizon - как в журнале */
 .vogue-masthead {
-  font-family: 'DrukWideCyr-Super', Arial, sans-serif;
+  font-family: var(--font-vogue-heading);
   font-size: clamp(4rem, 12vw, 12rem);
   font-weight: normal;
   letter-spacing: 0.15em;
@@ -21,7 +21,7 @@
 }
 
 .vogue-headline {
-  font-family: 'DrukWideCyr-Super', Arial, sans-serif;
+  font-family: var(--font-vogue-heading);
   font-size: clamp(2.5rem, 8vw, 6rem);
   font-weight: normal;
   letter-spacing: 0.1em;
@@ -31,7 +31,7 @@
 }
 
 .vogue-subhead {
-  font-family: 'DrukWideCyr-Super', Arial, sans-serif;
+  font-family: var(--font-vogue-heading);
   font-size: clamp(1.2rem, 3vw, 2.5rem);
   font-weight: normal;
   letter-spacing: 0.08em;
@@ -42,7 +42,7 @@
 
 /* Основной текст - элегантный и читабельный */
 .vogue-body {
-  font-family: 'Manrope', Arial, sans-serif;
+  font-family: var(--font-vogue-body);
   font-size: 16px;
   font-weight: 400;
   letter-spacing: 0.01em;
@@ -51,7 +51,7 @@
 }
 
 .vogue-caption {
-  font-family: 'DrukWideCyr-Super', Arial, sans-serif;
+  font-family: var(--font-vogue-heading);
   font-size: 12px;
   font-weight: 400;
   letter-spacing: 0.12em;
@@ -61,7 +61,7 @@
 }
 
 .vogue-logo {
-  font-family: 'DrukWideCyr-Super', Arial, sans-serif;
+  font-family: var(--font-vogue-heading);
   font-size: 12px;
   font-weight: normal;
   letter-spacing: 0.12em;
@@ -70,7 +70,7 @@
 }
 
 .vogue-quote {
-  font-family: 'Manrope', Arial, sans-serif;
+  font-family: var(--font-vogue-body);
   font-size: 18px;
   font-weight: 400;
   font-style: italic;

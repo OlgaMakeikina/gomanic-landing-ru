@@ -16,7 +16,7 @@
 /* Специальные элементы */
 .vogue-badge {
   padding: 8px 20px;
-  font-family: 'Manrope', Arial, sans-serif;
+  font-family: var(--font-vogue-body);
   font-size: 10px;
   font-weight: 600;
   letter-spacing: 0.12em;
@@ -27,7 +27,7 @@
 }
 
 .vogue-number {
-  font-family: 'DrukWideCyr-Super', Arial, sans-serif;
+  font-family: var(--font-vogue-heading);
   font-size: 4rem;
   font-weight: normal;
   color: #3B3B3A;

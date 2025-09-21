@@ -1,5 +1,4 @@
 import './globals.css'
-import './cyrillic-fonts.css'
 import { defaultSEO } from '@/utils/seo'
 import { MetaTags, FontPreloads, StructuredData, AnalyticsScripts } from '@/components/layout/RootLayout'
 
