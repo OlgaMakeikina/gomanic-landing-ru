@@ -1,0 +1,38 @@
+interface MasterConfig {
+  name: string;
+  yandexMetrikaId: string;
+  subdomain: string;
+  seoTitle: string;
+  seoDescription: string;
+}
+
+export const mastersConfig: Record<string, MasterConfig> = {
+  'nastya': {
+    name: 'Настя Ульянова',
+    yandexMetrikaId: '104232703',
+    subdomain: 'nastya',
+    seoTitle: 'Настя Ульянова - Профессиональный маникюр',
+    seoDescription: 'Мастер маникюра Настя Ульянова. Качественный маникюр с покрытием.'
+  },
+  'default': {
+    name: 'Gomanic',
+    yandexMetrikaId: '',
+    subdomain: 'www',
+    seoTitle: 'Gomanic Россия - Профессиональный маникюр',
+    seoDescription: 'Профессиональные мастера маникюра. Качественные услуги маникюра и педикюра.'
+  }
+};
+
+export function getCurrentMasterConfig(hostname?: string): MasterConfig {
+  if (!hostname) {
+    return mastersConfig.default;
+  }
+  
+  const subdomain = hostname.split('.')[0];
+  
+  return mastersConfig[subdomain] || mastersConfig.default;
+}
+
+export function getMasterConfigBySubdomain(subdomain: string): MasterConfig {
+  return mastersConfig[subdomain] || mastersConfig.default;
+}

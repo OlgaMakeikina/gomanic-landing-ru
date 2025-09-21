@@ -2,6 +2,7 @@ declare global {
   interface Window {
     gtag: (...args: any[]) => void;
     dataLayer: any[];
+    ym: (...args: any[]) => void;
   }
 }
 
@@ -70,4 +71,24 @@ export const trackPageView = (page: string): void => {
     category: 'navigation',
     label: page,
   });
+};
+
+export const ymEvent = (counterId: string, eventName: string, params?: any): void => {
+  if (typeof window !== 'undefined' && window.ym && counterId) {
+    window.ym(counterId, 'reachGoal', eventName, params);
+  }
+};
+
+export const ymPageView = (counterId: string, url?: string): void => {
+  if (typeof window !== 'undefined' && window.ym && counterId) {
+    window.ym(counterId, 'hit', url || window.location.href);
+  }
+};
+
+export const trackYandexFormSubmission = (counterId: string, formType: string): void => {
+  ymEvent(counterId, 'form_submit', { form_type: formType });
+};
+
+export const trackYandexButtonClick = (counterId: string, buttonName: string): void => {
+  ymEvent(counterId, 'button_click', { button_name: buttonName });
 };

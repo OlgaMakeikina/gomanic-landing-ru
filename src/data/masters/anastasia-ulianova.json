@@ -93,6 +93,7 @@
   },
   "analytics": {
     "gaId": "G-XXXXXXXXXX",
-    "pixelId": "XXXXXXXXXX"
+    "pixelId": "XXXXXXXXXX",
+    "yandexMetrikaId": "104232703"
   }
 }

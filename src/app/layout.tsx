@@ -64,7 +64,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
       </head>
       <body>
         {children}
-        <AnalyticsScripts gaId={gaId} fbPixelId={fbPixelId} />
+        <AnalyticsScripts 
+          gaId={gaId} 
+          fbPixelId={fbPixelId}
+        />
       </body>
     </html>
   )

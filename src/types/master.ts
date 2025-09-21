@@ -60,5 +60,6 @@ export interface MasterConfig {
   analytics: {
     gaId: string;
     pixelId: string;
+    yandexMetrikaId?: string;
   };
 }

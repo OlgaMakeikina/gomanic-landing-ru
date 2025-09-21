@@ -1,0 +1,24 @@
+'use client';
+
+import { useState, useEffect } from 'react';
+import { getCurrentMasterConfig, type MasterConfig } from '@/utils/masters-config';
+
+export function useMasterConfig(): MasterConfig | null {
+  const [config, setConfig] = useState<MasterConfig | null>(null);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const masterConfig = getCurrentMasterConfig(window.location.hostname);
+      setConfig(masterConfig);
+    }
+  }, []);
+
+  return config;
+}
+
+export function getMasterConfigClient(): MasterConfig {
+  if (typeof window !== 'undefined') {
+    return getCurrentMasterConfig(window.location.hostname);
+  }
+  return getCurrentMasterConfig();
+}

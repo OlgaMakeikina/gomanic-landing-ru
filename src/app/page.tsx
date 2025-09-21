@@ -3,6 +3,8 @@
 import { useEffect, useState } from 'react'
 import { MasterConfig } from '@/types/master'
 import { getCurrentMaster, loadMasterData } from '@/utils/master-loader'
+import DynamicSEO from '@/components/layout/DynamicSEO'
+import DynamicYandexMetrika from '@/components/layout/DynamicYandexMetrika'
 
 import Header from '@/components/layout/Header'
 import HeroSectionRU from '@/components/sections/Hero'
@@ -34,6 +36,8 @@ export default function Home() {
 
   return (
     <div className="min-h-screen" style={{backgroundColor: '#FEFEFE'}}>
+      <DynamicSEO />
+      <DynamicYandexMetrika />
       <Header masterData={masterData} />
       <main role="main" id="main-content">
         <HeroSectionRU />
