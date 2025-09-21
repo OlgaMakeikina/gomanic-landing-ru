@@ -1,6 +1,6 @@
 {
   "name": "gomanic-multi-masters",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "Multi-master landing system with subdomains for GOMANIC specialists",
   "private": true,
   "scripts": {
