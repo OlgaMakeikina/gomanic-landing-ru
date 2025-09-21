@@ -1,0 +1,166 @@
+/* GOMANIC COMPONENTS - КНОПКИ, КАРТОЧКИ, ЭЛЕМЕНТЫ */
+
+/* КНОПКИ */
+.vogue-btn {
+  font-family: var(--font-vogue-body);
+  padding: 16px 48px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border: 1px solid var(--color-text);
+  background-color: transparent;
+  color: var(--color-text);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.vogue-btn:hover {
+  background-color: var(--color-text);
+  color: var(--color-bg);
+}
+
+.vogue-btn-filled {
+  background-color: var(--color-text);
+  color: var(--color-bg);
+  border: 1px solid var(--color-text);
+}
+
+.vogue-btn-filled:hover {
+  background-color: transparent;
+  color: var(--color-text);
+}
+
+.booking-button {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.booking-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s;
+}
+
+.booking-button:hover::before {
+  left: 100%;
+}
+
+.booking-button:hover {
+  background-color: var(--color-text);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(68, 78, 85, 0.4);
+}
+
+.booking-button:active {
+  transform: translateY(0);
+}
+
+/* КАРТОЧКИ */
+.vogue-card {
+  padding: 60px 40px;
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-accent);
+  transition: all 0.4s ease;
+}
+
+.vogue-card:hover {
+  border-color: var(--color-text);
+  transform: translateY(-2px);
+}
+
+.vogue-testimonial-card {
+  padding: 60px 40px;
+  background-color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+  transition: all 0.4s ease;
+}
+
+.vogue-testimonial-card:hover {
+  background-color: var(--color-text);
+  transform: translateY(-2px);
+}
+
+.vogue-testimonial-card:hover .vogue-caption {
+  color: var(--color-bg) !important;
+  opacity: 1 !important;
+}
+
+.vogue-testimonial-card:hover .vogue-quote {
+  color: var(--color-bg) !important;
+}
+
+.vogue-testimonial-card:hover .vogue-divider {
+  background-color: var(--color-bg) !important;
+}
+
+.vogue-testimonial-card:hover .testimonial-stars {
+  color: var(--color-accent) !important;
+}
+
+/* ЭЛЕМЕНТЫ */
+.vogue-divider {
+  width: 60px;
+  height: 1px;
+  background-color: var(--color-text);
+  opacity: 0.3;
+}
+
+.vogue-divider-long {
+  width: 120px;
+  height: 1px;
+  background-color: var(--color-text);
+  opacity: 0.2;
+}
+
+.vogue-badge {
+  padding: 8px 20px;
+  font-family: var(--font-vogue-body);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid var(--color-text);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+.vogue-number {
+  font-family: var(--font-vogue-heading);
+  font-size: 4rem;
+  font-weight: normal;
+  color: var(--color-text);
+  opacity: 0.1;
+  line-height: 1;
+}
+
+.vogue-grid {
+  display: grid;
+  gap: 2px;
+  background-color: var(--color-accent);
+}
+
+.vogue-grid-item {
+  background-color: var(--color-bg);
+  padding: 60px 40px;
+}
+
+/* АНИМАЦИИ */
+.urgency-indicator {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(68, 78, 85, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(68, 78, 85, 0.1);
+  }
+}

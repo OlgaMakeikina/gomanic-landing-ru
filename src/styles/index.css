@@ -1,31 +1,11 @@
-/* === GOMANIC VOGUE STYLES === */
-/* Модульная архитектура CSS - каждый файл ≤ 120 строк */
+/* GOMANIC CONSOLIDATED STYLES - 4 ЛОГИЧНЫХ МОДУЛЯ */
 
-/* Base Styles */
-@import './base/tailwind.css';
-@import './base/typography.css';
+@import './base.css';       /* Типографика и основы */
+@import './components.css'; /* Кнопки, карточки, элементы */
+@import './layouts.css';    /* Контейнеры и структура */
+@import './mobile.css';     /* Мобильные адаптации */
 
-/* Component Styles */
-@import './components/buttons.css';
-@import './components/cards.css';
-@import './components/elements.css';
-
-/* Layout Styles */
-@import './layouts/containers.css';
-@import './layouts/header.css';
-
-/* Mobile Styles */
-@import './mobile/animations.css';
-@import './mobile/menu.css';
-@import './mobile/hero.css';
-
-/* Browser Fixes */
-@import './browser-fixes/mobile-browsers.css';
-@import './browser-fixes/scrollbars.css';
-
-/* Дополнительные mobile адаптации */
-
-/* Ландшафтная ориентация на мобильных */
+/* Дополнительные mobile адаптации для глассморфизма */
 @media (max-height: 500px) and (orientation: landscape) {
   #hero {
     min-height: 100vh;
@@ -51,9 +31,7 @@
   }
 }
 
-/* ===== ГЛАССМОРФИЗМ ДЛЯ МОБИЛЬНОГО МЕНЮ ===== */
-
-/* Основной контейнер глассморфизма */
+/* Глассморфизм для мобильного меню */
 .glass-container {
   background: rgba(59, 59, 58, 0.85);
   backdrop-filter: blur(15px);
