@@ -38,6 +38,7 @@ export default function AboutGomanic() {
   return (
     <section 
       id="about-gomanic" 
+      aria-labelledby="about-gomanic-heading"
       className="py-20 relative overflow-hidden" 
       style={{ 
         backgroundImage: 'url(/images/clients/0_0_4_1.jpeg)',
@@ -54,7 +55,7 @@ export default function AboutGomanic() {
           <div className="uppercase tracking-[0.22em] mb-4" style={{ color: '#FEFEFE', fontFamily: "Manrope, sans-serif", fontSize: 14, opacity: 0.85 }}>
             О ПЛАТФОРМЕ
           </div>
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6 uppercase tracking-wide" style={{ fontFamily: 'DrukWideCyr-Super, Arial, sans-serif', color: '#FEFEFE' }}>
+          <h2 id="about-gomanic-heading" className="text-4xl lg:text-5xl font-bold mb-6 uppercase tracking-wide" style={{ fontFamily: 'DrukWideCyr-Super, Arial, sans-serif', color: '#FEFEFE' }}>
             GOMANIC
           </h2>
           <p className="text-xl lg:text-1xl max-w-4xl mx-auto leading-relaxed" style={{ fontFamily: 'Manrope, sans-serif', color: '#FEFEFE', fontWeight: 300, opacity: 0.9 }}>

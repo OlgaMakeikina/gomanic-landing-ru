@@ -29,6 +29,7 @@ export default function ServicesHeader() {
 
       <HorizonText 
         as="h2"
+        id="services-heading"
         className="vogue-subhead mb-8"
         style={{color: COLORS.white}}
       >

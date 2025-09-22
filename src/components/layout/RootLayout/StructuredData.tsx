@@ -8,7 +8,25 @@ export default function StructuredData({ siteUrl }: StructuredDataProps) {
     "@type": "BeautySalon",
     "name": "Gomanic Россия",
     "description": "Профессиональный маникюр с независимыми специалистами",
-    "url": siteUrl
+    "url": siteUrl,
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "RU"
+    },
+    "serviceType": ["Маникюр", "Педикюр", "Nail Art", "Обучение маникюру"],
+    "priceRange": "$$",
+    "sameAs": ["https://t.me/gomanicteam"],
+    "potentialAction": {
+      "@type": "ReserveAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": `${siteUrl}#agendamento`
+      },
+      "result": {
+        "@type": "Reservation",
+        "name": "Бронирование маникюра"
+      }
+    }
   };
 
   return (

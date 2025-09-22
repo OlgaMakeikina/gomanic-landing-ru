@@ -14,6 +14,7 @@ export default function Services({ masterData }: ServicesProps) {
   return (
     <section 
       id="promocoes" 
+      aria-labelledby="services-heading"
       className="relative py-20" 
       style={{ backgroundColor: COLORS.dark }}
     >

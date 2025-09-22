@@ -41,6 +41,7 @@ export default function HeroSectionRU({ masterData }: HeroSectionProps) {
     <section 
       ref={sectionRef}
       id="hero" 
+      aria-label="Главный баннер с услугами маникюра"
       className="relative w-full h-screen overflow-hidden touch-pan-y"
       style={{ 
         touchAction: 'pan-y pinch-zoom',
