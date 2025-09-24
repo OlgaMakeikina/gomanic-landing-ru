@@ -20,4 +20,5 @@ export const GLASS_STYLES = {
   cardBg: 'rgba(59, 59, 57, 0.85)',
   cardBorder: 'rgba(255, 255, 255, 0.2)',
   cardShadow: '0 32px 64px rgba(0,0,0,0.7)',
+  textSecondary: 'rgba(254, 254, 254, 0.7)',
 };

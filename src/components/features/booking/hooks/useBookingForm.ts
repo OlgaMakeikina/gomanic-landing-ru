@@ -7,6 +7,7 @@ export interface FormData {
   phone: string;
   email: string;
   service: string;
+  privacyConsent: boolean;
 }
 
 export interface MasterData {
@@ -21,13 +22,14 @@ export function useBookingForm(masterData?: MasterData | null) {
     phone: '',
     email: '',
     service: '',
+    privacyConsent: false,
   });
   
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState('');
 
-  const updateField = (field: keyof FormData, value: string) => {
+  const updateField = (field: keyof FormData, value: string | boolean) => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
@@ -38,6 +40,12 @@ export function useBookingForm(masterData?: MasterData | null) {
 
     if (!formData.service) {
       setError('Пожалуйста, выберите вариант услуги');
+      setIsSubmitting(false);
+      return;
+    }
+
+    if (!formData.privacyConsent) {
+      setError('Необходимо согласие на обработку персональных данных');
       setIsSubmitting(false);
       return;
     }

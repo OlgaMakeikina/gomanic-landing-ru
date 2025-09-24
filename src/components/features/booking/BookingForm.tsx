@@ -7,6 +7,7 @@ import {
   SuccessMessage, 
   SubmitButton, 
   ErrorMessage, 
+  PrivacyCheckbox,
   GLASS_STYLES 
 } from './components';
 
@@ -79,6 +80,11 @@ export default function BookingForm({ className = '', variant = 'default', maste
             <ServiceSelector
               selectedService={formData.service}
               onServiceChange={(serviceId) => updateField('service', serviceId)}
+            />
+
+            <PrivacyCheckbox
+              checked={formData.privacyConsent}
+              onChange={(checked) => updateField('privacyConsent', checked)}
             />
 
             <ErrorMessage error={error} />
