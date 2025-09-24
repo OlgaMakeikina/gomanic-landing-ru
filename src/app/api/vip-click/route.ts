@@ -10,6 +10,7 @@ interface VIPClickData {
   sessionId?: string;
   userEmail?: string;
   userName?: string;
+  userPhone?: string;
 }
 
 export async function POST(request: NextRequest) {

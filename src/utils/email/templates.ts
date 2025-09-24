@@ -5,6 +5,103 @@ export interface UserEmailData {
   bookingUrl: string;
 }
 
+export interface BookingConfirmationData {
+  email: string;
+  name: string;
+  phone: string;
+  service: string;
+}
+
+export function generateBookingConfirmation(data: BookingConfirmationData): string {
+  const { name, phone, service } = data;
+  
+  return `
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ваша заявка принята - GOMANIC</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Helvetica Neue', Arial, sans-serif; background-color: #FEFEFE;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #FEFEFE;">
+    <tr>
+      <td align="center" style="padding: 40px 20px;">
+        <table width="600" cellpadding="0" cellspacing="0" style="background-color: #FFFFFF; border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.08);">
+          
+          <tr>
+            <td style="padding: 40px; text-align: center; background: linear-gradient(135deg, #444f55 0%, #3b3b39 100%); border-radius: 16px 16px 0 0;">
+              <h1 style="margin: 0; color: #FEFEFE; font-size: 32px; font-weight: 700; letter-spacing: 0.5px;">
+                GOMANIC
+              </h1>
+              <p style="margin: 10px 0 0 0; color: #FEFEFE; font-size: 14px; opacity: 0.9;">
+                Эксклюзивный маникюр премиум-класса
+              </p>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding: 40px;">
+              <h2 style="margin: 0 0 20px 0; color: #444f55; font-size: 24px; font-weight: 600;">
+                ${name}, спасибо за заявку! ✨
+              </h2>
+              
+              <p style="margin: 0 0 20px 0; color: #3b3b39; font-size: 16px; line-height: 1.6;">
+                Ваша заявка успешно принята. Мы свяжемся с вами в ближайшее время для подтверждения записи.
+              </p>
+
+              <div style="background-color: #FEFEFE; border: 2px solid #444f55; border-radius: 12px; padding: 20px; margin: 30px 0;">
+                <h3 style="margin: 0 0 15px 0; color: #444f55; font-size: 18px;">
+                  📋 Детали вашей заявки:
+                </h3>
+                <table style="width: 100%;">
+                  <tr>
+                    <td style="padding: 8px 0; color: #666; font-weight: 600;">Имя:</td>
+                    <td style="padding: 8px 0; color: #333;">${name}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 8px 0; color: #666; font-weight: 600;">Телефон:</td>
+                    <td style="padding: 8px 0; color: #333;">${phone}</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 8px 0; color: #666; font-weight: 600;">Услуга:</td>
+                    <td style="padding: 8px 0; color: #333;">${service}</td>
+                  </tr>
+                </table>
+              </div>
+
+              <div style="background: linear-gradient(135deg, #444f55 0%, #3b3b39 100%); padding: 20px; border-radius: 12px; margin: 30px 0; text-align: center;">
+                <p style="margin: 0; color: #FEFEFE; font-size: 16px; font-weight: 600;">
+                  💬 Мы уже переводим вас в WhatsApp для быстрой связи!
+                </p>
+              </div>
+
+              <p style="margin: 20px 0 0 0; color: #666; font-size: 14px; line-height: 1.6;">
+                Если у вас есть вопросы, просто ответьте на это письмо или свяжитесь с нами через WhatsApp.
+              </p>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding: 30px; text-align: center; background-color: #FEFEFE; border-radius: 0 0 16px 16px; border-top: 1px solid #f0f0f0;">
+              <p style="margin: 0 0 10px 0; color: #999; font-size: 13px;">
+                © ${new Date().getFullYear()} GOMANIC. Все права защищены.
+              </p>
+              <p style="margin: 0; color: #999; font-size: 12px;">
+                São Paulo, Brazil
+              </p>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+  `.trim();
+}
+
 export function generateUserEmail(data: UserEmailData): string {
   const { name, remainingSlots, bookingUrl } = data;
   
