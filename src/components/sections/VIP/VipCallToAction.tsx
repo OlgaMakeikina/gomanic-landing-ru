@@ -1,15 +1,78 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import CountdownTimer from './CountdownTimer'
+import { trackVIPButtonView, trackVIPButtonClick, trackSlotsUpdate } from '@/utils/analytics'
+
+const INITIAL_SLOTS = 30;
+const MINIMUM_SLOTS = 3;
 
 export default function VipCallToAction() {
   const [isVisible, setIsVisible] = useState(false)
+  const [remainingSlots, setRemainingSlots] = useState(INITIAL_SLOTS)
+  const [hasViewed, setHasViewed] = useState(false)
+  const [sessionId] = useState(() => `session_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`)
+  const buttonRef = useRef<HTMLButtonElement>(null)
 
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 1500)
     return () => clearTimeout(timer)
   }, [])
+
+  useEffect(() => {
+    if (isVisible && !hasViewed) {
+      trackVIPButtonView()
+      setHasViewed(true)
+    }
+  }, [isVisible, hasViewed])
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !hasViewed) {
+            trackVIPButtonView()
+            setHasViewed(true)
+          }
+        })
+      },
+      { threshold: 0.5 }
+    )
+
+    if (buttonRef.current) {
+      observer.observe(buttonRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [hasViewed])
+
+  const handleClick = async () => {
+    trackVIPButtonClick()
+
+    if (remainingSlots > MINIMUM_SLOTS) {
+      const newSlots = remainingSlots - 1
+      setRemainingSlots(newSlots)
+      trackSlotsUpdate(newSlots)
+
+      try {
+        await fetch('/api/vip-click', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            timestamp: new Date().toISOString(),
+            userAgent: navigator.userAgent,
+            referrer: document.referrer,
+            remainingSlots: newSlots,
+            sessionId,
+          }),
+        })
+      } catch (error) {
+        console.error('Failed to send VIP click data:', error)
+      }
+    }
+
+    document.getElementById('agendamento')?.scrollIntoView({ behavior: 'smooth' })
+  }
 
   return (
     <div 
@@ -24,6 +87,17 @@ export default function VipCallToAction() {
       <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-black/10 rounded-2xl" />
       
       <div className="relative z-10 p-8 text-center">
+        <div className="mb-4">
+          <div className="text-3xl font-bold mb-2" style={{color: '#FEFEFE'}}>
+            ОСТАЛОСЬ ВСЕГО {remainingSlots} {remainingSlots === 1 ? 'МЕСТО' : remainingSlots < 5 ? 'МЕСТА' : 'МЕСТ'}!
+          </div>
+          <div className="text-sm opacity-75" style={{color: '#FEFEFE'}}>
+            {remainingSlots <= MINIMUM_SLOTS && (
+              <span className="text-yellow-300 font-semibold">⚠️ Последние места!</span>
+            )}
+          </div>
+        </div>
+
         <h3 className="text-2xl font-bold mb-4" style={{color: '#FEFEFE'}}>
           ЭТА ВОЗМОЖНОСТЬ ЗАКАНЧИВАЕТСЯ ЧЕРЕЗ:
         </h3>
@@ -35,7 +109,8 @@ export default function VipCallToAction() {
         </p>
         
         <button 
-          onClick={() => document.getElementById('agendamento')?.scrollIntoView({ behavior: 'smooth' })}
+          ref={buttonRef}
+          onClick={handleClick}
           className="px-12 py-4 transition-all duration-300 text-lg"
           style={{
             background: '#FFFFFF',
