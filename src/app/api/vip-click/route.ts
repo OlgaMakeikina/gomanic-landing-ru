@@ -13,10 +13,18 @@ interface VIPClickData {
 }
 
 export async function POST(request: NextRequest) {
+  console.log('=== VIP Click API Called ===');
+  
   try {
-    const data: VIPClickData = await request.json();
+    const rawBody = await request.text();
+    console.log('Raw request body:', rawBody);
+    
+    const data: VIPClickData = JSON.parse(rawBody);
+    console.log('Parsed data:', JSON.stringify(data, null, 2));
 
     const webhookUrl = process.env.N8N_WEBHOOK_URL;
+    console.log('Webhook URL configured:', !!webhookUrl);
+    
     if (!webhookUrl) {
       throw new Error('N8N_WEBHOOK_URL not configured');
     }
@@ -24,24 +32,35 @@ export async function POST(request: NextRequest) {
     const ip = request.headers.get('x-forwarded-for') || 
                 request.headers.get('x-real-ip') || 
                 'unknown';
+    
+    console.log('IP address:', ip);
+
+    const webhookPayload = {
+      event: 'vip_button_click',
+      data: {
+        ...data,
+        ip,
+        timestamp: new Date().toISOString(),
+      },
+    };
+    
+    console.log('Sending to webhook:', JSON.stringify(webhookPayload, null, 2));
 
     const webhookResponse = await fetch(webhookUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
-        event: 'vip_button_click',
-        data: {
-          ...data,
-          ip,
-          timestamp: new Date().toISOString(),
-        },
-      }),
+      body: JSON.stringify(webhookPayload),
     });
 
+    console.log('Webhook response status:', webhookResponse.status);
+    
     if (!webhookResponse.ok) {
-      console.error('N8N webhook failed:', await webhookResponse.text());
+      const errorText = await webhookResponse.text();
+      console.error('N8N webhook failed:', errorText);
+    } else {
+      console.log('Webhook sent successfully');
     }
 
     const transporter = nodemailer.createTransport({
@@ -53,8 +72,17 @@ export async function POST(request: NextRequest) {
         pass: process.env.SMTP_PASS,
       },
     });
+    
+    console.log('SMTP configured:', {
+      host: process.env.SMTP_HOST,
+      port: process.env.SMTP_PORT,
+      user: process.env.SMTP_USER,
+      secure: process.env.SMTP_SECURE
+    });
 
     const adminEmails = process.env.ADMIN_EMAILS?.split(',') || [];
+    console.log('Admin emails:', adminEmails);
+    
     const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://gomanic.ru';
 
     const adminEmailContent = generateAdminNotification({
@@ -67,14 +95,19 @@ export async function POST(request: NextRequest) {
       userEmail: data.userEmail,
     });
 
-    await transporter.sendMail({
+    console.log('Sending admin email...');
+    const adminEmailResult = await transporter.sendMail({
       from: process.env.SMTP_FROM,
       to: adminEmails,
       subject: `🔥 VIP Button Click - ${data.remainingSlots} slots left`,
       html: adminEmailContent,
     });
+    
+    console.log('Admin email sent:', adminEmailResult.messageId);
 
     if (data.userEmail) {
+      console.log('Sending user email to:', data.userEmail);
+      
       const userEmailContent = generateUserEmail({
         email: data.userEmail,
         name: data.userName,
@@ -82,21 +115,27 @@ export async function POST(request: NextRequest) {
         bookingUrl: `${siteUrl}#agendamento`,
       });
 
-      await transporter.sendMail({
+      const userEmailResult = await transporter.sendMail({
         from: process.env.SMTP_FROM,
         to: data.userEmail,
         subject: '🎉 Ваше эксклюзивное место в GOMANIC ждет вас!',
         html: userEmailContent,
       });
+      
+      console.log('User email sent:', userEmailResult.messageId);
     }
 
+    console.log('=== VIP Click API Success ===');
     return NextResponse.json({ 
       success: true, 
       message: 'Data sent successfully' 
     });
 
   } catch (error) {
-    console.error('VIP click tracking error:', error);
+    console.error('=== VIP Click API Error ===');
+    console.error('Error details:', error);
+    console.error('Error stack:', error instanceof Error ? error.stack : 'No stack trace');
+    
     return NextResponse.json(
       { success: false, error: 'Failed to process request' },
       { status: 500 }
