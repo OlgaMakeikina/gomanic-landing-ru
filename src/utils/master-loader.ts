@@ -6,9 +6,9 @@ export function getCurrentMaster(): string | null {
   const host = window.location.hostname
   const subdomain = host.split('.')[0]
   
-  // Для основного домена не загружаем данные мастера
+  // Для основного домена gomanic.ru показываем Анастасию (как дефолтный мастер)
   if (subdomain === 'gomanic' || subdomain === 'www' || host === 'gomanic.ru') {
-    return null
+    return 'anastasia-ulianova'
   }
   
   // Для localhost загружаем данные Анастасии для тестирования
