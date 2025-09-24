@@ -11,7 +11,6 @@ export default function VipCallToAction() {
   const [isVisible, setIsVisible] = useState(false)
   const [remainingSlots, setRemainingSlots] = useState(INITIAL_SLOTS)
   const [hasViewed, setHasViewed] = useState(false)
-  const [sessionId] = useState(() => `session_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`)
   const buttonRef = useRef<HTMLButtonElement>(null)
 
   useEffect(() => {
@@ -46,29 +45,13 @@ export default function VipCallToAction() {
     return () => observer.disconnect()
   }, [hasViewed])
 
-  const handleClick = async () => {
+  const handleClick = () => {
     trackVIPButtonClick()
 
     if (remainingSlots > MINIMUM_SLOTS) {
       const newSlots = remainingSlots - 1
       setRemainingSlots(newSlots)
       trackSlotsUpdate(newSlots)
-
-      try {
-        await fetch('/api/vip-click', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            timestamp: new Date().toISOString(),
-            userAgent: navigator.userAgent,
-            referrer: document.referrer,
-            remainingSlots: newSlots,
-            sessionId,
-          }),
-        })
-      } catch (error) {
-        console.error('Failed to send VIP click data:', error)
-      }
     }
 
     document.getElementById('agendamento')?.scrollIntoView({ behavior: 'smooth' })
