@@ -20,3 +20,9 @@ coverage/
 .idea/
 .nyc_output/
 backup/
+
+# Приватные инструкции и данные доступа
+DEPLOYMENT_GUIDE.md
+PRIVATE_*.md
+*_PRIVATE.md
+server-credentials.txt
