@@ -70,4 +70,8 @@ export function trackSlotsUpdate(remainingSlots: number): void {
   trackEvent('slots_updated', 'VIP', `Slots: ${remainingSlots}`, remainingSlots);
 }
 
+export function trackFormSubmission(formType: string): void {
+  trackEvent('form_submission', 'Form', formType);
+}
+
 export {};
