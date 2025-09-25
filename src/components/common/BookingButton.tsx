@@ -7,6 +7,7 @@ interface BookingButtonProps {
   className?: string;
   style?: React.CSSProperties;
   onClick?: () => void;
+  disableHoverEffects?: boolean; // Новое свойство для отключения hover эффектов
 }
 
 export default function BookingButton({ 
@@ -15,7 +16,8 @@ export default function BookingButton({
   variant = 'primary',
   className = '',
   style = {},
-  onClick 
+  onClick,
+  disableHoverEffects = false
 }: BookingButtonProps) {
   
   // Точно такие же стили как в HeroButton
@@ -51,6 +53,9 @@ export default function BookingButton({
   };
 
   const handleMouseEnter = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    // Не применяем hover эффекты если они отключены или переданы кастомные стили
+    if (disableHoverEffects || Object.keys(style).length > 0) return;
+    
     if (variant === 'primary') {
       e.currentTarget.style.backgroundColor = '#444e55'
     } else {
@@ -60,6 +65,9 @@ export default function BookingButton({
   };
 
   const handleMouseLeave = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    // Не применяем hover эффекты если они отключены или переданы кастомные стили
+    if (disableHoverEffects || Object.keys(style).length > 0) return;
+    
     if (variant === 'primary') {
       e.currentTarget.style.backgroundColor = '#3B3B3A'
     } else {
@@ -68,16 +76,18 @@ export default function BookingButton({
     }
   };
 
+  // Если переданы кастомные стили, используем только их
+  const finalStyle = Object.keys(style).length > 0 
+    ? { ...baseStyle, ...style }
+    : { ...(variant === 'primary' ? primaryStyle : secondaryStyle), ...style };
+
   return (
     <a
       href={bookingUrl}
       target="_blank"
       rel="noopener noreferrer"
       className={`transition-all duration-300 hover:scale-105 touch-manipulation w-full max-w-sm ${className}`}
-      style={{
-        ...(variant === 'primary' ? primaryStyle : secondaryStyle),
-        ...style
-      }}
+      style={finalStyle}
       onClick={onClick}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}

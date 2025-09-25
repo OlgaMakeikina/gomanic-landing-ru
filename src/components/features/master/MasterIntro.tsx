@@ -238,36 +238,23 @@ export default function MasterIntro({ masterData }: MasterIntroProps) {
                 ПОСМОТРЕТЬ УСЛУГИ
               </button>
               
-              {masterData?.contacts?.bookingUrl ? (
-                <BookingButton
-                  bookingUrl={masterData.contacts.bookingUrl}
-                  text="ЗАПИСАТЬСЯ К МАСТЕРУ"
-                  className="px-8 py-4 rounded-lg font-bold border-2 transition-all hover:opacity-90 hover:scale-105 uppercase tracking-wide whitespace-nowrap"
-                  style={{ 
-                    color: '#444f55', 
-                    borderColor: '#444f55',
-                    backgroundColor: 'transparent',
-                    fontFamily: 'Manrope, sans-serif',
-                    fontSize: '14px',
-                    letterSpacing: '0.1em'
-                  }}
-                />
-              ) : (
-                <button
-                  onClick={handleBookingClick}
-                  className="px-8 py-4 rounded-lg font-bold border-2 transition-all hover:opacity-90 hover:scale-105 uppercase tracking-wide whitespace-nowrap"
-                  style={{ 
-                    color: '#444f55', 
-                    borderColor: '#444f55',
-                    backgroundColor: 'transparent',
-                    fontFamily: 'Manrope, sans-serif',
-                    fontSize: '14px',
-                    letterSpacing: '0.1em'
-                  }}
-                >
-                  ЗАПИСАТЬСЯ К МАСТЕРУ
-                </button>
-              )}
+              <a
+                href="https://dikidi.net/1899279?p=3.pi-po-sm-ssm&o=1&m=4107990"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-4 rounded-lg font-bold border-2 transition-all hover:opacity-90 hover:scale-105 uppercase tracking-wide whitespace-nowrap inline-flex items-center justify-center"
+                style={{ 
+                  color: '#444f55', 
+                  borderColor: '#444f55',
+                  backgroundColor: 'transparent',
+                  fontFamily: 'Manrope, sans-serif',
+                  fontSize: '14px',
+                  letterSpacing: '0.1em',
+                  textDecoration: 'none'
+                }}
+              >
+                ЗАПИСАТЬСЯ К МАСТЕРУ
+              </a>
             </div>
 
           </div>
