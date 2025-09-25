@@ -17,7 +17,6 @@ import ClientsSection from '@/components/sections/Testimonials/ClientsSection'
 import SocialProof from '@/components/sections/Testimonials/SocialProof'
 import ComoFunciona from '@/components/sections/Process'
 import VipExclusivo from '@/components/sections/VIP'
-import ContactSection from '@/components/sections/Contact'
 import Footer from '@/components/layout/Footer'
 
 export default function Home() {
@@ -50,7 +49,6 @@ export default function Home() {
         <SocialProof masterData={masterData} />
         <ComoFunciona masterData={masterData} />
         <VipExclusivo masterData={masterData} />
-        <ContactSection masterData={masterData} />
       </main>
       <Footer masterData={masterData} />
     </div>

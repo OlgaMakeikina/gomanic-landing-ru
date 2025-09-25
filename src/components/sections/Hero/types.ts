@@ -14,5 +14,6 @@ export interface HeroSlide {
 
 export interface SlideProps {
   slideData: HeroSlide
+  masterData?: import('@/types/master').MasterConfig | null
   onButtonAction: (action: string, id?: string) => void
 }

@@ -1,17 +1,20 @@
 import Slide1 from '../Slide1';
 import Slide2 from '../Slide2';
 import Slide3 from '../Slide3';
+import { MasterConfig } from '@/types/master';
 
 interface SlideRendererProps {
   slideIndex: number;
   slides: any[];
+  masterData?: MasterConfig | null;
   onButtonAction: (action: string, id?: string) => void;
 }
 
-export default function SlideRenderer({ slideIndex, slides, onButtonAction }: SlideRendererProps) {
+export default function SlideRenderer({ slideIndex, slides, masterData, onButtonAction }: SlideRendererProps) {
   const slideData = slides[slideIndex];
   const slideProps = { 
     slideData, 
+    masterData,
     onButtonAction 
   };
 

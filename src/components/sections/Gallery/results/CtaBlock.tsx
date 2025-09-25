@@ -1,7 +1,11 @@
 import { CtaBlockProps } from './types'
 import styles from './styles.module.css'
+import BookingButton from '@/components/common/BookingButton'
+import { useMasterData } from '@/hooks/useMasterData'
 
 export default function CtaBlock({ onCtaClick }: CtaBlockProps) {
+  const masterData = useMasterData()
+  
   return (
     <div className={styles.ctaContainer}>
       <div className={styles.ctaBox}>
@@ -14,12 +18,20 @@ export default function CtaBlock({ onCtaClick }: CtaBlockProps) {
             <span className={styles.ctaHighlight}>сэкономьте 50%</span>
           </p>
           
-          <button
-            onClick={onCtaClick}
-            className={styles.ctaButton}
-          >
-            Хочу забронировать место сейчас
-          </button>
+          {masterData?.contacts?.bookingUrl ? (
+            <BookingButton
+              bookingUrl={masterData.contacts.bookingUrl}
+              text="Хочу забронировать место сейчас"
+              className={styles.ctaButton}
+            />
+          ) : (
+            <button
+              onClick={onCtaClick}
+              className={styles.ctaButton}
+            >
+              Хочу забронировать место сейчас
+            </button>
+          )}
         </div>
       </div>
     </div>

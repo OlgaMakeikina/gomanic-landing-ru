@@ -2,8 +2,9 @@ import { SlideProps } from './types'
 import HeroButton from './HeroButton'
 import VipBadge from './VipBadge'
 import BenefitItem from './BenefitItem'
+import BookingButton from '@/components/common/BookingButton'
 
-export default function Slide3({ slideData, onButtonAction }: SlideProps) {
+export default function Slide3({ slideData, masterData, onButtonAction }: SlideProps) {
   return (
     <div className="animate-fade-in flex items-center justify-center min-h-screen py-20 lg:py-0">
       <div className="max-w-6xl w-full mx-auto px-0 lg:px-4">
@@ -46,13 +47,11 @@ export default function Slide3({ slideData, onButtonAction }: SlideProps) {
                   
                   {/* Desktop buttons */}
                   <div className="hidden lg:flex lg:flex-col lg:gap-4">
-                    <HeroButton 
-                      onClick={() => onButtonAction('scroll', 'agendamento')}
+                    <BookingButton
+                      text="ХОЧУ ЗАПИСАТЬСЯ"
                       variant="primary"
                       className="w-full"
-                    >
-                      ХОЧУ ЗАПИСАТЬСЯ
-                    </HeroButton>
+                    />
                     
                     <HeroButton 
                       onClick={() => onButtonAction('scroll', 'about-gomanic')}
@@ -81,13 +80,11 @@ export default function Slide3({ slideData, onButtonAction }: SlideProps) {
               
               {/* Mobile buttons - at the bottom */}
               <div className="lg:hidden mt-8 flex flex-col gap-3 items-center">
-                <HeroButton 
-                  onClick={() => onButtonAction('scroll', 'agendamento')}
+                <BookingButton
+                  text="ХОЧУ ЗАПИСАТЬСЯ"
                   variant="primary"
                   className="text-sm px-6 py-2.5 min-w-[120px]"
-                >
-                   ХОЧУ ЗАПИСАТЬСЯ
-                </HeroButton>
+                />
                 
                 <HeroButton 
                   onClick={() => onButtonAction('scroll', 'about-gomanic')}

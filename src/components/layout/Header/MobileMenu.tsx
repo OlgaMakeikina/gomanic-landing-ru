@@ -1,4 +1,6 @@
 import { MobileMenuProps } from './types'
+import BookingButton from '@/components/common/BookingButton'
+import { useMasterData } from '@/hooks/useMasterData'
 
 interface ExtendedMobileMenuProps extends MobileMenuProps {
   masterData?: {
@@ -6,11 +8,15 @@ interface ExtendedMobileMenuProps extends MobileMenuProps {
       address?: {
         full?: string;
       };
+      bookingUrl?: string;
     };
   } | null;
 }
 
 export default function MobileMenu({ isOpen, items, onClose, masterData }: ExtendedMobileMenuProps) {
+  const currentMasterData = useMasterData()
+  const bookingUrl = currentMasterData?.contacts?.bookingUrl || masterData?.contacts?.bookingUrl
+  
   return (
     <nav className={`lg:hidden fixed inset-0 z-40 transition-all duration-500 ${
       isOpen 
@@ -65,31 +71,56 @@ export default function MobileMenu({ isOpen, items, onClose, masterData }: Exten
             ))}
           </div>
 
-          <button 
-            onClick={() => {
-              onClose()
-              document.getElementById('agendamento')?.scrollIntoView({ behavior: 'smooth' })
-            }}
-            className="booking-button px-6 py-3 mb-4 touch-manipulation"
-            style={{
-              background: 'linear-gradient(135deg, rgba(68, 78, 85, 0.9) 0%, rgba(68, 78, 85, 0.8) 100%)',
-              backdropFilter: 'blur(10px)',
-              WebkitBackdropFilter: 'blur(10px)',
-              color: '#FEFEFE',
-              border: '1px solid rgba(254, 254, 254, 0.3)',
-              fontFamily: 'Manrope, sans-serif',
-              fontSize: '14px',
-              fontWeight: 600,
-              letterSpacing: '0.1em',
-              textTransform: 'uppercase',
-              cursor: 'pointer',
-              borderRadius: '8px',
-              minHeight: '44px',
-              boxShadow: '0 4px 12px rgba(68, 78, 85, 0.4), inset 0 1px 0 rgba(254, 254, 254, 0.1)'
-            }}
-          >
-            ЗАПИСАТЬСЯ СЕЙЧАС
-          </button>
+          {bookingUrl ? (
+            <BookingButton
+              bookingUrl={bookingUrl}
+              text="ЗАПИСАТЬСЯ СЕЙЧАС"
+              className="booking-button px-6 py-3 mb-4 touch-manipulation"
+              style={{
+                background: 'linear-gradient(135deg, rgba(68, 78, 85, 0.9) 0%, rgba(68, 78, 85, 0.8) 100%)',
+                backdropFilter: 'blur(10px)',
+                WebkitBackdropFilter: 'blur(10px)',
+                color: '#FEFEFE',
+                border: '1px solid rgba(254, 254, 254, 0.3)',
+                fontFamily: 'Manrope, sans-serif',
+                fontSize: '14px',
+                fontWeight: 600,
+                letterSpacing: '0.1em',
+                textTransform: 'uppercase',
+                cursor: 'pointer',
+                borderRadius: '8px',
+                minHeight: '44px',
+                boxShadow: '0 4px 12px rgba(68, 78, 85, 0.4), inset 0 1px 0 rgba(254, 254, 254, 0.1)'
+              }}
+              onClick={onClose}
+            />
+          ) : (
+            <button 
+              onClick={() => {
+                onClose()
+                document.getElementById('agendamento')?.scrollIntoView({ behavior: 'smooth' })
+              }}
+              className="booking-button px-6 py-3 mb-4 touch-manipulation"
+              style={{
+                background: 'linear-gradient(135deg, rgba(68, 78, 85, 0.9) 0%, rgba(68, 78, 85, 0.8) 100%)',
+                backdropFilter: 'blur(10px)',
+                WebkitBackdropFilter: 'blur(10px)',
+                color: '#FEFEFE',
+                border: '1px solid rgba(254, 254, 254, 0.3)',
+                fontFamily: 'Manrope, sans-serif',
+                fontSize: '14px',
+                fontWeight: 600,
+                letterSpacing: '0.1em',
+                textTransform: 'uppercase',
+                cursor: 'pointer',
+                borderRadius: '8px',
+                minHeight: '44px',
+                boxShadow: '0 4px 12px rgba(68, 78, 85, 0.4), inset 0 1px 0 rgba(254, 254, 254, 0.1)'
+              }}
+            >
+              ЗАПИСАТЬСЯ СЕЙЧАС
+            </button>
+          )}
 
           <div 
             className="w-full rounded-lg overflow-hidden"

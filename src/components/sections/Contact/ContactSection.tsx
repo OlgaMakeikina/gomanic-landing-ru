@@ -35,13 +35,16 @@ export default function ContactSection({ masterData }: ContactSectionProps) {
       <div className="vogue-container relative z-10">
         <div className="max-w-2xl mx-auto">
           <ContactHeader />
-          <BookingForm 
-            className="mt-20" 
-            masterData={{
-              bookingUrl: masterData?.contacts?.bookingUrl,
-              contacts: masterData?.contacts
-            }} 
-          />
+          {/* Форма бронирования скрыта согласно требованию */}
+          <div className="hidden">
+            <BookingForm 
+              className="mt-20" 
+              masterData={{
+                bookingUrl: masterData?.contacts?.bookingUrl,
+                contacts: masterData?.contacts
+              }} 
+            />
+          </div>
         </div>
       </div>
     </section>

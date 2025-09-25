@@ -1,8 +1,9 @@
 import { SlideProps } from './types'
 import HeroButton from './HeroButton'
 import HeroTitle from './HeroTitle'
+import BookingButton from '@/components/common/BookingButton'
 
-export default function Slide1({ slideData, onButtonAction }: SlideProps) {
+export default function Slide1({ slideData, masterData, onButtonAction }: SlideProps) {
   return (
     <div className="animate-fade-in flex items-center justify-center min-h-screen py-20 lg:py-0">
       <div className="max-w-6xl mx-auto">
@@ -26,12 +27,10 @@ export default function Slide1({ slideData, onButtonAction }: SlideProps) {
                 О МАСТЕРЕ
               </HeroButton>
               
-              <HeroButton 
-                onClick={() => onButtonAction('scroll', 'agendamento')}
+              <BookingButton
+                text="ЗАБРОНИРОВАТЬ МЕСТО"
                 variant="secondary"
-              >
-                ЗАБРОНИРОВАТЬ МЕСТО
-              </HeroButton>
+              />
             </div>
           </div>
         </div>
@@ -54,12 +53,10 @@ export default function Slide1({ slideData, onButtonAction }: SlideProps) {
               О МАСТЕРЕ
             </HeroButton>
             
-            <HeroButton 
-              onClick={() => onButtonAction('scroll', 'agendamento')}
+            <BookingButton
+              text="ЗАБРОНИРОВАТЬ МЕСТО"
               variant="secondary"
-            >
-              ЗАБРОНИРОВАТЬ МЕСТО
-            </HeroButton>
+            />
           </div>
         </div>
       </div>

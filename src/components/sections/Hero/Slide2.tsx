@@ -2,8 +2,9 @@ import { SlideProps } from './types'
 import HeroButton from './HeroButton'
 import VipBadge from './VipBadge'
 import ServiceItem from './ServiceItem'
+import BookingButton from '@/components/common/BookingButton'
 
-export default function Slide2RU({ slideData, onButtonAction }: SlideProps) {
+export default function Slide2RU({ slideData, masterData, onButtonAction }: SlideProps) {
   return (
     <div className="animate-fade-in flex items-center justify-center min-h-screen py-20 lg:py-0">
       <div className="max-w-6xl w-full mx-auto px-0 lg:px-4">
@@ -45,13 +46,11 @@ export default function Slide2RU({ slideData, onButtonAction }: SlideProps) {
                   </p>
                   
                   <div className="hidden lg:flex lg:flex-col lg:gap-4 lg:justify-start lg:items-start">
-                    <HeroButton 
-                      onClick={() => onButtonAction('scroll', 'agendamento')}
+                    <BookingButton
+                      text="ХОЧУ ЗАПИСАТЬСЯ"
                       variant="primary"
                       className="min-w-[140px]"
-                    >
-                      ХОЧУ ЗАПИСАТЬСЯ
-                    </HeroButton>
+                    />
                     <HeroButton 
                       onClick={() => onButtonAction('scroll', 'portfolio')}
                       variant="secondary"
@@ -76,13 +75,11 @@ export default function Slide2RU({ slideData, onButtonAction }: SlideProps) {
               </div>
               
               <div className="lg:hidden mt-8 flex flex-col gap-3 items-center">
-                <HeroButton 
-                  onClick={() => onButtonAction('scroll', 'agendamento')}
+                <BookingButton
+                  text="ХОЧУ ЗАПИСАТЬСЯ"
                   variant="primary"
                   className="text-sm px-6 py-2.5 min-w-[120px]"
-                >
-                  ХОЧУ ЗАПИСАТЬСЯ
-                </HeroButton>
+                />
                 <HeroButton 
                   onClick={() => onButtonAction('scroll', 'portfolio')}
                   variant="secondary"

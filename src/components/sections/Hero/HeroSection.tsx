@@ -63,6 +63,7 @@ export default function HeroSectionRU({ masterData }: HeroSectionProps) {
         <SlideRenderer
           slideIndex={currentSlide}
           slides={slides}
+          masterData={masterData}
           onButtonAction={onButtonAction}
         />
       </div>

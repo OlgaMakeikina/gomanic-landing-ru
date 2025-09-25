@@ -3,11 +3,14 @@
 import { useState, useEffect, useRef } from 'react'
 import CountdownTimer from './CountdownTimer'
 import { trackVIPButtonView, trackVIPButtonClick, trackSlotsUpdate } from '@/utils/analytics'
+import BookingButton from '@/components/common/BookingButton'
+import { useMasterData } from '@/hooks/useMasterData'
 
 const INITIAL_SLOTS = 30;
 const MINIMUM_SLOTS = 3;
 
 export default function VipCallToAction() {
+  const masterData = useMasterData()
   const [isVisible, setIsVisible] = useState(false)
   const [remainingSlots, setRemainingSlots] = useState(INITIAL_SLOTS)
   const [hasViewed, setHasViewed] = useState(false)
@@ -91,39 +94,61 @@ export default function VipCallToAction() {
           После этого вернется обычная цена (без скидки)
         </p>
         
-        <button 
-          ref={buttonRef}
-          onClick={handleClick}
-          className="px-12 py-4 transition-all duration-300 text-lg"
-          style={{
-            background: '#FFFFFF',
-            color: '#444f55',
-            borderRadius: '12px',
-            fontFamily: 'Manrope, sans-serif',
-            fontSize: '18px',
-            fontWeight: 700,
-            letterSpacing: '0.1em',
-            textTransform: 'uppercase',
-            cursor: 'pointer',
-            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2)',
-            transform: 'scale(1.02)',
-            border: 'none'
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.background = '#FEFEFE'
-            e.currentTarget.style.color = '#444f55'
-            e.currentTarget.style.transform = 'scale(1.05)'
-            e.currentTarget.style.boxShadow = '0 12px 35px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(0, 0, 0, 0.25)'
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.background = '#FFFFFF'
-            e.currentTarget.style.color = '#444f55'
-            e.currentTarget.style.transform = 'scale(1.02)'
-            e.currentTarget.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2)'
-          }}
-        >
-          ХОЧУ ГАРАНТИРОВАТЬ СВОЕ МЕСТО СЕЙЧАС!
-        </button>
+        {masterData?.contacts?.bookingUrl ? (
+          <BookingButton
+            bookingUrl={masterData.contacts.bookingUrl}
+            text="ХОЧУ ГАРАНТИРОВАТЬ СВОЕ МЕСТО СЕЙЧАС!"
+            className="px-12 py-4 transition-all duration-300 text-lg"
+            style={{
+              background: '#FFFFFF',
+              color: '#444f55',
+              borderRadius: '12px',
+              fontFamily: 'Manrope, sans-serif',
+              fontSize: '18px',
+              fontWeight: 700,
+              letterSpacing: '0.1em',
+              textTransform: 'uppercase',
+              cursor: 'pointer',
+              boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2)',
+              transform: 'scale(1.02)',
+              border: 'none'
+            }}
+          />
+        ) : (
+          <button 
+            ref={buttonRef}
+            onClick={handleClick}
+            className="px-12 py-4 transition-all duration-300 text-lg"
+            style={{
+              background: '#FFFFFF',
+              color: '#444f55',
+              borderRadius: '12px',
+              fontFamily: 'Manrope, sans-serif',
+              fontSize: '18px',
+              fontWeight: 700,
+              letterSpacing: '0.1em',
+              textTransform: 'uppercase',
+              cursor: 'pointer',
+              boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2)',
+              transform: 'scale(1.02)',
+              border: 'none'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = '#FEFEFE'
+              e.currentTarget.style.color = '#444f55'
+              e.currentTarget.style.transform = 'scale(1.05)'
+              e.currentTarget.style.boxShadow = '0 12px 35px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(0, 0, 0, 0.25)'
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = '#FFFFFF'
+              e.currentTarget.style.color = '#444f55'
+              e.currentTarget.style.transform = 'scale(1.02)'
+              e.currentTarget.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2)'
+            }}
+          >
+            ХОЧУ ГАРАНТИРОВАТЬ СВОЕ МЕСТО СЕЙЧАС!
+          </button>
+        )}
       </div>
     </div>
   )
