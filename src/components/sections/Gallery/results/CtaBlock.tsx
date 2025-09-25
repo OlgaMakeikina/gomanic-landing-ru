@@ -1,11 +1,8 @@
 import { CtaBlockProps } from './types'
 import styles from './styles.module.css'
-import BookingButton from '@/components/common/BookingButton'
-import { useMasterData } from '@/hooks/useMasterData'
+import { createDikidiLink } from '@/utils/dikidi-tracking'
 
 export default function CtaBlock({ onCtaClick }: CtaBlockProps) {
-  const masterData = useMasterData()
-  
   return (
     <div className={styles.ctaContainer}>
       <div className={styles.ctaBox}>
@@ -32,6 +29,7 @@ export default function CtaBlock({ onCtaClick }: CtaBlockProps) {
               letterSpacing: '0.1em',
               textDecoration: 'none'
             }}
+            onClick={createDikidiLink("Хочу забронировать место сейчас", "Gallery Portfolio Section")}
           >
             Хочу забронировать место сейчас
           </a>

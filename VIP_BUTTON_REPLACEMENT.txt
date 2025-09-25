@@ -1,0 +1,24 @@
+        <a
+          href="https://dikidi.net/1899279?p=3.pi-po-sm-ssm&o=1&m=4107990"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="px-12 py-4 transition-all duration-300 text-lg inline-flex items-center justify-center hover:scale-105"
+          style={{
+            background: '#FFFFFF',
+            color: '#444f55',
+            borderRadius: '12px',
+            fontFamily: 'Manrope, sans-serif',
+            fontSize: '18px',
+            fontWeight: 700,
+            letterSpacing: '0.1em',
+            textTransform: 'uppercase',
+            cursor: 'pointer',
+            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2)',
+            transform: 'scale(1.02)',
+            border: 'none',
+            textDecoration: 'none'
+          }}
+          onClick={createDikidiLink("ХОЧУ ГАРАНТИРОВАТЬ СВОЕ МЕСТО СЕЙЧАС!", "VIP Section")}
+        >
+          ХОЧУ ГАРАНТИРОВАТЬ СВОЕ МЕСТО СЕЙЧАС!
+        </a>

@@ -3,8 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import styles from './BeforeAfterGallery.module.css';
-import BookingButton from '@/components/common/BookingButton'
-import { useMasterData } from '@/hooks/useMasterData'
+import { createDikidiLink } from '@/utils/dikidi-tracking'
 
 const photoData = [
   '/images/before-after/0_1 (12).jpeg',
@@ -13,8 +12,6 @@ const photoData = [
 ];
 
 const BeforeAfterGallery: React.FC = () => {
-  const masterData = useMasterData()
-  
   return (
     <section className={styles.section}>
       <div className={styles.container}>
@@ -70,56 +67,28 @@ const BeforeAfterGallery: React.FC = () => {
                 <span style={{ fontWeight: 700 }}>Запишитесь сейчас и сэкономьте 50%</span>
               </p>
               
-              {masterData?.contacts?.bookingUrl ? (
-                <BookingButton
-                  bookingUrl={masterData.contacts.bookingUrl}
-                  text="Хочу забронировать место сейчас"
-                  className="px-12 py-4 rounded-xl transition-all duration-300 transform hover:scale-105"
-                  style={{
-                    background: '#FEFEFE',
-                    color: '#444e55',
-                    border: '1px solid #FEFEFE',
-                    fontFamily: "Garet, sans-serif",
-                    fontSize: 16,
-                    fontWeight: 700,
-                    letterSpacing: "0.1em",
-                    textTransform: "uppercase",
-                    boxShadow: "0 10px 28px rgba(254,254,254,0.15)",
-                    cursor: "pointer"
-                  }}
-                />
-              ) : (
-                <button
-                  onClick={() => document.getElementById('agendamento')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="px-12 py-4 rounded-xl transition-all duration-300 transform hover:scale-105"
-                  style={{
-                    background: '#FEFEFE',
-                    color: '#444e55',
-                    border: '1px solid #FEFEFE',
-                    fontFamily: "Garet, sans-serif",
-                    fontSize: 16,
-                    fontWeight: 700,
-                    letterSpacing: "0.1em",
-                    textTransform: "uppercase",
-                    boxShadow: "0 10px 28px rgba(254,254,254,0.15)",
-                    cursor: "pointer"
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.background = "transparent"
-                    e.currentTarget.style.color = '#FEFEFE'
-                    e.currentTarget.style.boxShadow = "0 10px 28px rgba(59,59,57,0.45)"
-                    e.currentTarget.style.border = '1px solid #FEFEFE'
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.background = '#FEFEFE'
-                    e.currentTarget.style.color = '#444e55'
-                    e.currentTarget.style.boxShadow = "0 10px 28px rgba(254,254,254,0.15)"
-                    e.currentTarget.style.border = '1px solid #FEFEFE'
-                  }}
-                >
-                  Хочу забронировать место сейчас
-                </button>
-              )}
+              <a
+                href="https://dikidi.net/1899279?p=3.pi-po-sm-ssm&o=1&m=4107990"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-12 py-4 rounded-xl transition-all duration-300 transform hover:scale-105 inline-flex items-center justify-center"
+                style={{
+                  background: '#FEFEFE',
+                  color: '#444e55',
+                  border: '1px solid #FEFEFE',
+                  fontFamily: "Garet, sans-serif",
+                  fontSize: 16,
+                  fontWeight: 700,
+                  letterSpacing: "0.1em",
+                  textTransform: "uppercase",
+                  boxShadow: "0 10px 28px rgba(254,254,254,0.15)",
+                  cursor: "pointer",
+                  textDecoration: "none"
+                }}
+                onClick={createDikidiLink("Хочу забронировать место сейчас", "Before After Gallery")}
+              >
+                Хочу забронировать место сейчас
+              </a>
             </div>
           </div>
         </div>

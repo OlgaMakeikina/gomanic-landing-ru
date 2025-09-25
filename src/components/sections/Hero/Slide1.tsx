@@ -1,7 +1,7 @@
 import { SlideProps } from './types'
 import HeroButton from './HeroButton'
 import HeroTitle from './HeroTitle'
-import BookingButton from '@/components/common/BookingButton'
+import { createDikidiLink } from '@/utils/dikidi-tracking'
 
 export default function Slide1({ slideData, masterData, onButtonAction }: SlideProps) {
   return (
@@ -20,10 +20,24 @@ export default function Slide1({ slideData, masterData, onButtonAction }: SlideP
             
             {/* Buttons in one row */}
             <div className="flex gap-4 justify-center items-center">
-              <BookingButton
-                text="ЗАБРОНИРОВАТЬ МЕСТО"
-                variant="primary"
-              />
+              <a
+                href="https://dikidi.net/1899279?p=3.pi-po-sm-ssm&o=1&m=4107990"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-all duration-300 hover:scale-105 touch-manipulation w-full max-w-sm px-6 py-3 rounded-lg font-semibold uppercase tracking-wide text-center"
+                style={{
+                  backgroundColor: '#3B3B3A',
+                  color: '#FEFEFE',
+                  textDecoration: 'none',
+                  boxShadow: '0 8px 32px rgba(0,0,0,0.3)',
+                  fontFamily: 'Manrope, sans-serif',
+                  fontSize: '14px',
+                  letterSpacing: '0.05em'
+                }}
+                onClick={createDikidiLink("ЗАБРОНИРОВАТЬ МЕСТО", "Hero Slide 1 Desktop")}
+              >
+                ЗАБРОНИРОВАТЬ МЕСТО
+              </a>
               
               <HeroButton 
                 onClick={() => onButtonAction('scroll', 'master-intro')}
@@ -46,10 +60,24 @@ export default function Slide1({ slideData, masterData, onButtonAction }: SlideP
           
           {/* Buttons in one row for mobile */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4">
-            <BookingButton
-              text="ЗАБРОНИРОВАТЬ МЕСТО"
-              variant="primary"
-            />
+            <a
+              href="https://dikidi.net/1899279?p=3.pi-po-sm-ssm&o=1&m=4107990"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-all duration-300 hover:scale-105 touch-manipulation w-full max-w-sm px-6 py-3 rounded-lg font-semibold uppercase tracking-wide text-center"
+              style={{
+                backgroundColor: '#3B3B3A',
+                color: '#FEFEFE',
+                textDecoration: 'none',
+                boxShadow: '0 8px 32px rgba(0,0,0,0.3)',
+                fontFamily: 'Manrope, sans-serif',
+                fontSize: '14px',
+                letterSpacing: '0.05em'
+              }}
+              onClick={createDikidiLink("ЗАБРОНИРОВАТЬ МЕСТО", "Hero Slide 1 Mobile")}
+            >
+              ЗАБРОНИРОВАТЬ МЕСТО
+            </a>
             
             <HeroButton 
               onClick={() => onButtonAction('scroll', 'master-intro')}

@@ -2,7 +2,7 @@ import { SlideProps } from './types'
 import HeroButton from './HeroButton'
 import VipBadge from './VipBadge'
 import ServiceItem from './ServiceItem'
-import BookingButton from '@/components/common/BookingButton'
+import { createDikidiLink } from '@/utils/dikidi-tracking'
 
 export default function Slide2RU({ slideData, masterData, onButtonAction }: SlideProps) {
   return (
@@ -46,11 +46,24 @@ export default function Slide2RU({ slideData, masterData, onButtonAction }: Slid
                   </p>
                   
                   <div className="hidden lg:flex lg:flex-col lg:gap-4 lg:justify-start lg:items-start">
-                    <BookingButton
-                      text="ХОЧУ ЗАПИСАТЬСЯ"
-                      variant="primary"
-                      className="min-w-[140px]"
-                    />
+                    <a
+                      href="https://dikidi.net/1899279?p=3.pi-po-sm-ssm&o=1&m=4107990"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="transition-all duration-300 hover:scale-105 touch-manipulation px-6 py-3 rounded-lg font-semibold uppercase tracking-wide text-center min-w-[140px]"
+                      style={{
+                        backgroundColor: '#3B3B3A',
+                        color: '#FEFEFE',
+                        textDecoration: 'none',
+                        boxShadow: '0 8px 32px rgba(0,0,0,0.3)',
+                        fontFamily: 'Manrope, sans-serif',
+                        fontSize: '14px',
+                        letterSpacing: '0.05em'
+                      }}
+                      onClick={createDikidiLink("ХОЧУ ЗАПИСАТЬСЯ", "Hero Slide 2 Desktop")}
+                    >
+                      ХОЧУ ЗАПИСАТЬСЯ
+                    </a>
                     <HeroButton 
                       onClick={() => onButtonAction('scroll', 'portfolio')}
                       variant="secondary"
@@ -75,11 +88,24 @@ export default function Slide2RU({ slideData, masterData, onButtonAction }: Slid
               </div>
               
               <div className="lg:hidden mt-8 flex flex-col gap-3 items-center">
-                <BookingButton
-                  text="ХОЧУ ЗАПИСАТЬСЯ"
-                  variant="primary"
-                  className="text-sm px-6 py-2.5 min-w-[120px]"
-                />
+                <a
+                  href="https://dikidi.net/1899279?p=3.pi-po-sm-ssm&o=1&m=4107990"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-all duration-300 hover:scale-105 touch-manipulation px-6 py-3 rounded-lg font-semibold uppercase tracking-wide text-center text-sm min-w-[120px]"
+                  style={{
+                    backgroundColor: '#3B3B3A',
+                    color: '#FEFEFE',
+                    textDecoration: 'none',
+                    boxShadow: '0 8px 32px rgba(0,0,0,0.3)',
+                    fontFamily: 'Manrope, sans-serif',
+                    fontSize: '14px',
+                    letterSpacing: '0.05em'
+                  }}
+                  onClick={createDikidiLink("ХОЧУ ЗАПИСАТЬСЯ", "Hero Slide 2 Mobile")}
+                >
+                  ХОЧУ ЗАПИСАТЬСЯ
+                </a>
                 <HeroButton 
                   onClick={() => onButtonAction('scroll', 'portfolio')}
                   variant="secondary"
