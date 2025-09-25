@@ -20,17 +20,17 @@ export default function Slide1({ slideData, masterData, onButtonAction }: SlideP
             
             {/* Buttons in one row */}
             <div className="flex gap-4 justify-center items-center">
+              <BookingButton
+                text="ЗАБРОНИРОВАТЬ МЕСТО"
+                variant="primary"
+              />
+              
               <HeroButton 
                 onClick={() => onButtonAction('scroll', 'master-intro')}
-                variant="primary"
+                variant="secondary"
               >
                 О МАСТЕРЕ
               </HeroButton>
-              
-              <BookingButton
-                text="ЗАБРОНИРОВАТЬ МЕСТО"
-                variant="secondary"
-              />
             </div>
           </div>
         </div>
@@ -46,17 +46,17 @@ export default function Slide1({ slideData, masterData, onButtonAction }: SlideP
           
           {/* Buttons in one row for mobile */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4">
+            <BookingButton
+              text="ЗАБРОНИРОВАТЬ МЕСТО"
+              variant="primary"
+            />
+            
             <HeroButton 
               onClick={() => onButtonAction('scroll', 'master-intro')}
-              variant="primary"
+              variant="secondary"
             >
               О МАСТЕРЕ
             </HeroButton>
-            
-            <BookingButton
-              text="ЗАБРОНИРОВАТЬ МЕСТО"
-              variant="secondary"
-            />
           </div>
         </div>
       </div>
