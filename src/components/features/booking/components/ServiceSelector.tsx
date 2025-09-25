@@ -3,9 +3,10 @@ import { services } from './bookingData';
 interface ServiceSelectorProps {
   selectedService: string;
   onServiceChange: (serviceId: string) => void;
+  error?: string;
 }
 
-export default function ServiceSelector({ selectedService, onServiceChange }: ServiceSelectorProps) {
+export default function ServiceSelector({ selectedService, onServiceChange, error }: ServiceSelectorProps) {
   return (
     <div>
       <label className="block mb-3" style={{
@@ -25,7 +26,9 @@ export default function ServiceSelector({ selectedService, onServiceChange }: Se
             className={`backdrop-blur-sm rounded-xl p-4 border cursor-pointer transition-all ${
               selectedService === service.id 
                 ? 'border-white/60' 
-                : 'border-white/20 hover:border-white/40'
+                : error 
+                  ? 'border-red-400/60 hover:border-red-400/80'
+                  : 'border-white/20 hover:border-white/40'
             }`}
             style={{
               background: selectedService === service.id 
@@ -77,6 +80,11 @@ export default function ServiceSelector({ selectedService, onServiceChange }: Se
           </div>
         ))}
       </div>
+      {error && (
+        <p className="text-sm mt-2" style={{ color: '#f87171' }}>
+          {error}
+        </p>
+      )}
     </div>
   );
 }

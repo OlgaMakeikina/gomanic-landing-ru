@@ -7,6 +7,8 @@ interface FormInputProps {
   onChange: (value: string) => void;
   placeholder: string;
   required?: boolean;
+  error?: string;
+  onBlur?: () => void;
 }
 
 export default function FormInput({ 
@@ -15,7 +17,9 @@ export default function FormInput({
   value, 
   onChange, 
   placeholder, 
-  required = false 
+  required = false,
+  error,
+  onBlur
 }: FormInputProps) {
   return (
     <div>
@@ -34,16 +38,24 @@ export default function FormInput({
         required={required}
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="glass-input w-full px-4 py-3 rounded-xl border backdrop-blur-sm transition-all focus:outline-none focus:ring-2 focus:ring-white/40"
+        onBlur={onBlur}
+        className={`glass-input w-full px-4 py-3 rounded-xl border backdrop-blur-sm transition-all focus:outline-none focus:ring-2 focus:ring-white/40 ${
+          error ? 'border-red-400' : ''
+        }`}
         placeholder={placeholder}
         style={{
           background: 'rgba(255, 255, 255, 0.15)',
-          borderColor: 'rgba(255, 255, 255, 0.2)',
+          borderColor: error ? '#f87171' : 'rgba(255, 255, 255, 0.2)',
           color: '#FEFEFE',
           fontFamily: 'Manrope, sans-serif',
           fontSize: 16
         }}
       />
+      {error && (
+        <p className="text-sm mt-2" style={{ color: '#f87171' }}>
+          {error}
+        </p>
+      )}
     </div>
   );
 }

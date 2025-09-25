@@ -1,0 +1,88 @@
+import { validateName, validatePhone, validateEmail } from '../utils/validation';
+
+describe('Validation Tests', () => {
+  describe('validateName', () => {
+    test('should accept valid names', () => {
+      expect(validateName('Анна')).toEqual({ isValid: true });
+      expect(validateName('John Doe')).toEqual({ isValid: true });
+      expect(validateName("O'Connor")).toEqual({ isValid: true });
+      expect(validateName('Мария-Анна')).toEqual({ isValid: true });
+    });
+
+    test('should reject invalid names', () => {
+      expect(validateName('')).toEqual({ 
+        isValid: false, 
+        error: 'Имя обязательно для заполнения' 
+      });
+      expect(validateName('A')).toEqual({ 
+        isValid: false, 
+        error: 'Имя должно содержать минимум 2 символа' 
+      });
+      expect(validateName('123')).toEqual({ 
+        isValid: false, 
+        error: 'Имя может содержать только буквы, пробелы, дефисы и апострофы' 
+      });
+      expect(validateName('  Анна')).toEqual({ 
+        isValid: false, 
+        error: 'Имя не должно начинаться или заканчиваться пробелом' 
+      });
+      expect(validateName('Анна  Мария')).toEqual({ 
+        isValid: false, 
+        error: 'Имя не должно содержать двойные пробелы' 
+      });
+    });
+  });
+
+  describe('validatePhone', () => {
+    test('should accept valid phone numbers', () => {
+      expect(validatePhone('+79991234567')).toEqual({ isValid: true });
+      expect(validatePhone('89991234567')).toEqual({ isValid: true });
+      expect(validatePhone('9991234567')).toEqual({ isValid: true });
+    });
+
+    test('should reject invalid phone numbers', () => {
+      expect(validatePhone('')).toEqual({ 
+        isValid: false, 
+        error: 'Номер телефона обязателен для заполнения' 
+      });
+      expect(validatePhone('123')).toEqual({ 
+        isValid: false, 
+        error: 'Номер телефона слишком короткий' 
+      });
+      expect(validatePhone('81234567890')).toEqual({ 
+        isValid: false, 
+        error: 'Российский номер должен начинаться с 8 или +7' 
+      });
+      expect(validatePhone('71234567890')).toEqual({ 
+        isValid: false, 
+        error: 'Российский номер должен начинаться с +79' 
+      });
+    });
+  });
+
+  describe('validateEmail', () => {
+    test('should accept valid emails', () => {
+      expect(validateEmail('test@example.com')).toEqual({ isValid: true });
+      expect(validateEmail('user.name+tag@gmail.com')).toEqual({ isValid: true });
+    });
+
+    test('should reject invalid emails', () => {
+      expect(validateEmail('')).toEqual({ 
+        isValid: false, 
+        error: 'Email обязателен для заполнения' 
+      });
+      expect(validateEmail('invalid')).toEqual({ 
+        isValid: false, 
+        error: 'Введите корректный email адрес' 
+      });
+      expect(validateEmail('test@tempmail.org')).toEqual({ 
+        isValid: false, 
+        error: 'Одноразовые email адреса не допускаются' 
+      });
+      expect(validateEmail('test..test@example.com')).toEqual({ 
+        isValid: false, 
+        error: 'Email содержит недопустимые символы' 
+      });
+    });
+  });
+});

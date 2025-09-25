@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { trackFormSubmission } from '@/utils/analytics';
 import { services } from '../components/bookingData';
+import { validateAllFields, validateName, validatePhone, validateEmail, ValidationResult } from '../utils/validation';
+import { formatPhoneNumber, formatName, normalizeEmail } from '../utils/formatting';
 
 export interface FormData {
   name: string;
@@ -28,24 +30,73 @@ export function useBookingForm(masterData?: MasterData | null) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState('');
+  const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
 
   const updateField = (field: keyof FormData, value: string | boolean) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
+    let formattedValue = value;
+    
+    if (typeof value === 'string') {
+      switch (field) {
+        case 'phone':
+          formattedValue = formatPhoneNumber(value);
+          break;
+        case 'name':
+          formattedValue = formatName(value);
+          break;
+        case 'email':
+          formattedValue = normalizeEmail(value);
+          break;
+      }
+    }
+    
+    setFormData(prev => ({ ...prev, [field]: formattedValue }));
+    
+    if (fieldErrors[field]) {
+      setFieldErrors(prev => {
+        const newErrors = { ...prev };
+        delete newErrors[field];
+        return newErrors;
+      });
+    }
+  };
+
+  const validateField = (field: keyof FormData, value: string) => {
+    let validation: ValidationResult;
+    switch (field) {
+      case 'name':
+        validation = validateName(value);
+        break;
+      case 'phone':
+        validation = validatePhone(value);
+        break;
+      case 'email':
+        validation = validateEmail(value);
+        break;
+      default:
+        return;
+    }
+    
+    if (!validation.isValid) {
+      setFieldErrors(prev => ({ ...prev, [field]: validation.error! }));
+    } else {
+      setFieldErrors(prev => {
+        const newErrors = { ...prev };
+        delete newErrors[field];
+        return newErrors;
+      });
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     setError('');
+    setFieldErrors({});
 
-    if (!formData.service) {
-      setError('Пожалуйста, выберите вариант услуги');
-      setIsSubmitting(false);
-      return;
-    }
-
-    if (!formData.privacyConsent) {
-      setError('Необходимо согласие на обработку персональных данных');
+    const validation = validateAllFields(formData);
+    if (!validation.isValid) {
+      setFieldErrors(validation.errors);
+      setError('Пожалуйста, исправьте ошибки в форме');
       setIsSubmitting(false);
       return;
     }
@@ -100,7 +151,9 @@ export function useBookingForm(masterData?: MasterData | null) {
     isSubmitting,
     isSubmitted,
     error,
+    fieldErrors,
     updateField,
+    validateField,
     handleSubmit
   };
 }

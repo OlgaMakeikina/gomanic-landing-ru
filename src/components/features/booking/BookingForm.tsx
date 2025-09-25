@@ -27,7 +27,9 @@ export default function BookingForm({ className = '', variant = 'default', maste
     isSubmitting,
     isSubmitted,
     error,
+    fieldErrors,
     updateField,
+    validateField,
     handleSubmit
   } = useBookingForm(masterData);
 
@@ -55,8 +57,10 @@ export default function BookingForm({ className = '', variant = 'default', maste
               type="text"
               value={formData.name}
               onChange={(value) => updateField('name', value)}
+              onBlur={() => validateField('name', formData.name)}
               placeholder="Ваше полное имя"
               required
+              error={fieldErrors.name}
             />
             
             <FormInput
@@ -64,8 +68,10 @@ export default function BookingForm({ className = '', variant = 'default', maste
               type="tel"
               value={formData.phone}
               onChange={(value) => updateField('phone', value)}
+              onBlur={() => validateField('phone', formData.phone)}
               placeholder="+79991234567"
               required
+              error={fieldErrors.phone}
             />
             
             <FormInput
@@ -73,18 +79,22 @@ export default function BookingForm({ className = '', variant = 'default', maste
               type="email"
               value={formData.email}
               onChange={(value) => updateField('email', value)}
+              onBlur={() => validateField('email', formData.email)}
               placeholder="mail@email.com"
               required
+              error={fieldErrors.email}
             />
 
             <ServiceSelector
               selectedService={formData.service}
               onServiceChange={(serviceId) => updateField('service', serviceId)}
+              error={fieldErrors.service}
             />
 
             <PrivacyCheckbox
               checked={formData.privacyConsent}
               onChange={(checked) => updateField('privacyConsent', checked)}
+              error={fieldErrors.privacyConsent}
             />
 
             <ErrorMessage error={error} />
