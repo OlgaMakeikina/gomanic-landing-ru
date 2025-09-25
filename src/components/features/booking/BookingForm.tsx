@@ -3,7 +3,6 @@
 import { useBookingForm } from './hooks/useBookingForm';
 import { 
   FormInput, 
-  ServiceSelector, 
   SuccessMessage, 
   SubmitButton, 
   ErrorMessage, 
@@ -15,6 +14,7 @@ interface BookingFormProps {
   className?: string;
   variant?: 'default' | 'compact';
   masterData?: {
+    bookingUrl?: string;
     contacts?: {
       whatsapp?: string;
     };
@@ -83,12 +83,6 @@ export default function BookingForm({ className = '', variant = 'default', maste
               placeholder="mail@email.com"
               required
               error={fieldErrors.email}
-            />
-
-            <ServiceSelector
-              selectedService={formData.service}
-              onServiceChange={(serviceId) => updateField('service', serviceId)}
-              error={fieldErrors.service}
             />
 
             <PrivacyCheckbox

@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { trackFormSubmission } from '@/utils/analytics';
-import { services } from '../components/bookingData';
 import { validateAllFields, validateName, validatePhone, validateEmail, ValidationResult } from '../utils/validation';
 import { formatPhoneNumber, formatName, normalizeEmail } from '../utils/formatting';
 
@@ -8,11 +7,11 @@ export interface FormData {
   name: string;
   phone: string;
   email: string;
-  service: string;
   privacyConsent: boolean;
 }
 
 export interface MasterData {
+  bookingUrl?: string;
   contacts?: {
     whatsapp?: string;
   };
@@ -23,7 +22,6 @@ export function useBookingForm(masterData?: MasterData | null) {
     name: '',
     phone: '',
     email: '',
-    service: '',
     privacyConsent: false,
   });
   
@@ -122,19 +120,8 @@ export function useBookingForm(masterData?: MasterData | null) {
         }
         
         setTimeout(() => {
-          const selectedService = services.find(s => s.id === formData.service);
-          const message = encodeURIComponent(
-            `Привет! Я заполнил(а) форму на сайте и хочу записаться на процедуру:\n\n` +
-            `📝 Имя: ${formData.name}\n` +
-            `📞 Телефон: ${formData.phone}\n` +
-            `📧 Email: ${formData.email}\n` +
-            `💅 Услуга: ${selectedService?.name} (${selectedService?.price})\n\n` +
-            `Когда можно записаться?`
-          );
-          
-          const masterWhatsApp = masterData?.contacts?.whatsapp || '+79221526716';
-          const phoneNumber = masterWhatsApp.replace(/[^0-9]/g, '');
-          window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+          const bookingUrl = masterData?.bookingUrl || 'https://dikidi.net/1899279?p=3.pi-po-sm-ssm-si&o=1&m=4107990&s=20568416';
+          window.location.href = bookingUrl;
         }, 2000);
       } else {
         setError(result.error || 'Ошибка отправки формы');

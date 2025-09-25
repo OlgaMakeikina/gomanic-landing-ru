@@ -56,25 +56,23 @@ export function validatePhone(phone: string): ValidationResult {
     return { isValid: false, error: 'Номер телефона слишком длинный' };
   }
   
+  // Российские операторы: 9xx (мобильные)
+  const validRussianMobilePrefixes = ['90', '91', '92', '93', '94', '95', '96', '97', '98', '99'];
+  
+  let operatorCode = '';
+  
   if (cleanPhone.startsWith('8') && cleanPhone.length === 11) {
-    if (!cleanPhone.startsWith('89')) {
-      return { isValid: false, error: 'Российский номер должен начинаться с 8 или +7' };
-    }
+    operatorCode = cleanPhone.substring(1, 3);
   } else if (cleanPhone.startsWith('7') && cleanPhone.length === 11) {
-    if (!cleanPhone.startsWith('79')) {
-      return { isValid: false, error: 'Российский номер должен начинаться с +79' };
-    }
+    operatorCode = cleanPhone.substring(1, 3);
   } else if (cleanPhone.length === 10) {
-    if (!cleanPhone.startsWith('9')) {
-      return { isValid: false, error: 'Номер должен начинаться с 9 (без кода страны)' };
-    }
+    operatorCode = cleanPhone.substring(0, 2);
   } else {
-    return { isValid: false, error: 'Некорректный формат номера телефона' };
+    return { isValid: false, error: 'Некорректная длина номера телефона' };
   }
   
-  const phoneRegex = /^(\+?7|8)?[\s\-\(\)]?\d{3}[\s\-\(\)]?\d{3}[\s\-]?\d{2}[\s\-]?\d{2}$/;
-  if (!phoneRegex.test(phone.trim())) {
-    return { isValid: false, error: 'Введите корректный номер телефона' };
+  if (!validRussianMobilePrefixes.includes(operatorCode)) {
+    return { isValid: false, error: 'Некорректный код оператора' };
   }
   
   return { isValid: true };
@@ -122,7 +120,6 @@ export function validateAllFields(formData: {
   name: string;
   phone: string;
   email: string;
-  service: string;
   privacyConsent: boolean;
 }): ValidationResults {
   const errors: Record<string, string> = {};
@@ -140,10 +137,6 @@ export function validateAllFields(formData: {
   const emailValidation = validateEmail(formData.email);
   if (!emailValidation.isValid) {
     errors.email = emailValidation.error!;
-  }
-  
-  if (!formData.service) {
-    errors.service = 'Пожалуйста, выберите вариант услуги';
   }
   
   if (!formData.privacyConsent) {

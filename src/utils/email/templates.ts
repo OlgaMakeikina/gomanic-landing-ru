@@ -9,11 +9,10 @@ export interface BookingConfirmationData {
   email: string;
   name: string;
   phone: string;
-  service: string;
 }
 
 export function generateBookingConfirmation(data: BookingConfirmationData): string {
-  const { name, phone, service } = data;
+  const { name, phone } = data;
   
   return `
 <!DOCTYPE html>
@@ -47,7 +46,7 @@ export function generateBookingConfirmation(data: BookingConfirmationData): stri
               </h2>
               
               <p style="margin: 0 0 20px 0; color: #3b3b39; font-size: 16px; line-height: 1.6;">
-                Ваша заявка успешно принята. Мы свяжемся с вами в ближайшее время для подтверждения записи.
+                Ваша заявка успешно принята. Через несколько секунд вы будете перенаправлены на страницу онлайн-записи к мастеру.
               </p>
 
               <div style="background-color: #FEFEFE; border: 2px solid #444f55; border-radius: 12px; padding: 20px; margin: 30px 0;">
@@ -63,21 +62,17 @@ export function generateBookingConfirmation(data: BookingConfirmationData): stri
                     <td style="padding: 8px 0; color: #666; font-weight: 600;">Телефон:</td>
                     <td style="padding: 8px 0; color: #333;">${phone}</td>
                   </tr>
-                  <tr>
-                    <td style="padding: 8px 0; color: #666; font-weight: 600;">Услуга:</td>
-                    <td style="padding: 8px 0; color: #333;">${service}</td>
-                  </tr>
                 </table>
               </div>
 
               <div style="background: linear-gradient(135deg, #444f55 0%, #3b3b39 100%); padding: 20px; border-radius: 12px; margin: 30px 0; text-align: center;">
                 <p style="margin: 0; color: #FEFEFE; font-size: 16px; font-weight: 600;">
-                  💬 Мы уже переводим вас в WhatsApp для быстрой связи!
+                  📅 Через несколько секунд откроется страница онлайн-записи!
                 </p>
               </div>
 
               <p style="margin: 20px 0 0 0; color: #666; font-size: 14px; line-height: 1.6;">
-                Если у вас есть вопросы, просто ответьте на это письмо или свяжитесь с нами через WhatsApp.
+                Если у вас есть вопросы, просто ответьте на это письмо или свяжитесь с мастером на странице записи.
               </p>
             </td>
           </tr>

@@ -1,0 +1,23 @@
+import { validatePhone } from './src/components/features/booking/utils/validation';
+
+// Тестируем проблемный номер
+console.log('=== ТЕСТ ВАЛИДАЦИИ ТЕЛЕФОНА ===');
+console.log('');
+
+const testNumbers = [
+  '+7 (926) 273-20-15',
+  '79262732015', 
+  '89262732015',
+  '9262732015',
+  '+79262732015'
+];
+
+testNumbers.forEach(number => {
+  const result = validatePhone(number);
+  console.log(`Номер: ${number}`);
+  console.log(`Результат: ${result.isValid ? '✅ ВАЛИДЕН' : '❌ ОШИБКА'}`);
+  if (!result.isValid) {
+    console.log(`Ошибка: ${result.error}`);
+  }
+  console.log('---');
+});

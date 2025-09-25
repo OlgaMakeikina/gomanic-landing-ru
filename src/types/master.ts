@@ -45,6 +45,7 @@ export interface MasterConfig {
   contacts: {
     phone: string;
     whatsapp: string;
+    bookingUrl?: string;
     address: {
       full: string;
       city: string;

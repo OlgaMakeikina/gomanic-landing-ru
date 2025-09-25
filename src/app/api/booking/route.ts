@@ -7,13 +7,13 @@ export async function POST(request: NextRequest) {
   
   try {
     const body = await request.json();
-    const { name, phone, email, service } = body;
+    const { name, phone, email } = body;
 
-    console.log('Booking data received:', { name, phone, email, service });
+    console.log('Booking data received:', { name, phone, email });
 
-    if (!name || !phone || !email || !service) {
+    if (!name || !phone || !email) {
       return NextResponse.json(
-        { error: 'Имя, телефон, email и услуга обязательны' },
+        { error: 'Имя, телефон и email обязательны' },
         { status: 400 }
       );
     }
@@ -22,7 +22,6 @@ export async function POST(request: NextRequest) {
       name, 
       phone, 
       email, 
-      service, 
       timestamp: new Date().toISOString() 
     });
 
@@ -45,7 +44,6 @@ export async function POST(request: NextRequest) {
         email,
         name,
         phone,
-        service,
       });
 
       console.log('Sending confirmation email to user:', email);
@@ -89,10 +87,6 @@ export async function POST(request: NextRequest) {
         <td style="padding: 10px; border-bottom: 1px solid #ddd;">${email}</td>
       </tr>
       <tr>
-        <td style="padding: 10px; border-bottom: 1px solid #ddd;"><strong>Услуга</strong></td>
-        <td style="padding: 10px; border-bottom: 1px solid #ddd;">${service}</td>
-      </tr>
-      <tr>
         <td style="padding: 10px; border-bottom: 1px solid #ddd;"><strong>Время</strong></td>
         <td style="padding: 10px; border-bottom: 1px solid #ddd;">${new Date().toLocaleString('ru-RU')}</td>
       </tr>
@@ -130,7 +124,6 @@ export async function POST(request: NextRequest) {
               name,
               phone,
               email,
-              service,
               timestamp: new Date().toISOString(),
               ip: request.headers.get('x-forwarded-for') || 
                   request.headers.get('x-real-ip') || 
@@ -154,7 +147,7 @@ export async function POST(request: NextRequest) {
     console.log('=== Booking API Success ===');
     return NextResponse.json({
       success: true,
-      message: 'Данные успешно отправлены! Сейчас вас перенаправит в WhatsApp.',
+      message: 'Данные успешно отправлены! Через несколько секунд вы будете перенаправлены на страницу онлайн-записи.',
     });
     
   } catch (error) {
