@@ -55,7 +55,7 @@ export default function VipCallToAction() {
       trackSlotsUpdate(newSlots)
     }
 
-    document.getElementById('agendamento')?.scrollIntoView({ behavior: 'smooth' })
+    document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })
   }
 
   return (

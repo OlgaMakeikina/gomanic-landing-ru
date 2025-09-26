@@ -98,7 +98,7 @@ export default function MobileMenu({ isOpen, items, onClose, masterData }: Exten
             <button 
               onClick={() => {
                 onClose()
-                document.getElementById('agendamento')?.scrollIntoView({ behavior: 'smooth' })
+                document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })
               }}
               className="booking-button px-6 py-3 mb-4 touch-manipulation"
               style={{

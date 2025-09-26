@@ -109,7 +109,7 @@ export default function MasterIntro({ masterData }: MasterIntroProps) {
   }
 
   const handleBookingClick = () => {
-    document.getElementById('agendamento')?.scrollIntoView({ behavior: 'smooth' })
+    document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })
   }
 
   return (

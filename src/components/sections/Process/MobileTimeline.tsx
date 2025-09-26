@@ -2,7 +2,7 @@ import { ProcessTimelineProps } from './types'
 import MobileStepCard from './MobileStepCard'
 import TimelineLine from './TimelineLine'
 
-export default function MobileTimeline({ passos }: ProcessTimelineProps) {
+export default function MobileTimeline({ steps }: ProcessTimelineProps) {
   return (
     <div className="block lg:hidden max-w-2xl mx-auto">
       <div className="relative">
@@ -10,8 +10,8 @@ export default function MobileTimeline({ passos }: ProcessTimelineProps) {
           <TimelineLine />
         </div>
         
-        {passos.map((passo, index) => (
-          <MobileStepCard key={index} passo={passo} index={index} />
+        {steps.map((step, index) => (
+          <MobileStepCard key={index} step={step} index={index} />
         ))}
       </div>
     </div>

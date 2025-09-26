@@ -46,7 +46,7 @@ async function sendEmailNotification(data: any) {
   if (!process.env.SMTP_HOST) return;
 
   const emailContent = `
-Nova solicitação de agendamento - Gomanic Brasil
+Nova solicitação de booking - Gomanic Россия
 
 Nome: ${data.name}
 Telefone: ${data.phone}

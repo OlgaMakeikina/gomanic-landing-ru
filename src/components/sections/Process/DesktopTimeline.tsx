@@ -2,7 +2,7 @@ import { ProcessTimelineProps } from './types'
 import DesktopStepCard from './DesktopStepCard'
 import TimelineLine from './TimelineLine'
 
-export default function DesktopTimeline({ passos }: ProcessTimelineProps) {
+export default function DesktopTimeline({ steps }: ProcessTimelineProps) {
   return (
     <div className="max-w-4xl mx-auto hidden lg:block">
       <div className="relative">
@@ -10,8 +10,8 @@ export default function DesktopTimeline({ passos }: ProcessTimelineProps) {
           <TimelineLine />
         </div>
         
-        {passos.map((passo, index) => (
-          <DesktopStepCard key={index} passo={passo} index={index} />
+        {steps.map((step, index) => (
+          <DesktopStepCard key={index} step={step} index={index} />
         ))}
       </div>
     </div>

@@ -60,7 +60,7 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ 
       success: true,
-      message: 'Agendamento recebido com sucesso!' 
+      message: 'Booking received successfully!' 
     })
 
   } catch (error) {

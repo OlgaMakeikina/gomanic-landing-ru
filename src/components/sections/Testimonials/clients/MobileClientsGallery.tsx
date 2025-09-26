@@ -166,7 +166,7 @@ export default function MobileClientsGallery({ colors }: MobileClientsGalleryPro
           </p>
           
           <button
-            onClick={() => document.getElementById('agendamento')?.scrollIntoView({ behavior:'smooth' })}
+            onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior:'smooth' })}
             className="w-full rounded-2xl px-6 py-4 font-bold uppercase tracking-wider text-sm transition-all duration-300 transform active:scale-95"
             style={{ 
               background: "linear-gradient(135deg, rgba(254,254,254,0.98) 0%, rgba(254,254,254,0.92) 100%)", 

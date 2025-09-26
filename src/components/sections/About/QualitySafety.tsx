@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { MasterConfig } from '@/types/master'
 import { HorizonText } from '@/components/common/ui';
 
-interface SegurancaQualidadeProps {
+interface QualitySafetyProps {
   masterData?: MasterConfig | null;
 }
 
@@ -65,7 +65,7 @@ function VideoItem({ src, poster, alt, label }: VideoItemProps) {
   )
 }
 
-export default function SegurancaQualidade({ masterData }: SegurancaQualidadeProps): JSX.Element {
+export default function QualitySafety({ masterData }: QualitySafetyProps): JSX.Element {
   const [isPlaying] = useState(false)
 
   const COLORS = { dark: '#444f55', gray: '#3B3B3A', white: '#FEFEFE' }

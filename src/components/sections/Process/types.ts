@@ -1,17 +1,17 @@
 export interface ProcessStep {
-  numero: string
-  titulo: string
-  descricao: string
-  detalhes: string
-  seguranca: string
-  imagem: string
+  number: string
+  title: string
+  description: string
+  details: string
+  security: string
+  image: string
 }
 
 export interface ProcessStepCardProps {
-  passo: ProcessStep
+  step: ProcessStep
   index: number
 }
 
 export interface ProcessTimelineProps {
-  passos: ProcessStep[]
+  steps: ProcessStep[]
 }

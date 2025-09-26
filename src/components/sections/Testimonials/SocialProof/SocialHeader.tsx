@@ -18,7 +18,7 @@ export default function SocialHeader() {
 
       <HorizonText 
         as="h2"
-        id="social-heading"
+        id="reviews-heading"
         className="vogue-subhead mb-8"
         style={{color: SOCIAL_COLORS.dark}}
       >

@@ -9,6 +9,6 @@ export { default as VIP } from './VIP';
 export { default as Contact } from './Contact';
 
 // Совместимость со старыми именами
-export { SegurancaQualidade } from './About';
+export { QualitySafety } from './About';
 export { SocialProof, ClientsSection } from './Testimonials';
 export { ResultsGallery } from './Gallery';

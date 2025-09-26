@@ -1,6 +1,6 @@
 import { ProcessStepCardProps } from './types'
 
-export default function MobileStepCard({ passo, index }: ProcessStepCardProps) {
+export default function MobileStepCard({ step, index }: ProcessStepCardProps) {
   return (
     <div className="relative mb-12 last:mb-0 pl-20">
       <div className="absolute left-0 top-4">
@@ -10,7 +10,7 @@ export default function MobileStepCard({ passo, index }: ProcessStepCardProps) {
                color: '#444f55',
                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.5)'
              }}>
-          <span className="relative z-10 font-bold text-xl">{passo.numero}</span>
+          <span className="relative z-10 font-bold text-xl">{step.number}</span>
         </div>
       </div>
       
@@ -21,15 +21,15 @@ export default function MobileStepCard({ passo, index }: ProcessStepCardProps) {
            }}>
         <div className="overflow-hidden"
              style={{boxShadow: '0 8px 24px rgba(0, 0, 0, 0.3)'}}>
-          <img src={passo.imagem} alt={passo.titulo} className="w-full h-56 object-cover" />
+          <img src={step.image} alt={step.title} className="w-full h-56 object-cover" />
         </div>
         <div className="p-6">
-          <h3 className="vogue-caption mb-3" style={{color: '#FEFEFE'}}>{passo.titulo}</h3>
-          <p className="vogue-body text-base mb-3" style={{color: '#FEFEFE', fontWeight: 600}}>{passo.descricao}</p>
-          <p className="vogue-body text-sm mb-3" style={{color: '#FEFEFE', opacity: 0.9}}>{passo.detalhes}</p>
-          {passo.seguranca && (
+          <h3 className="vogue-caption mb-3" style={{color: '#FEFEFE'}}>{step.title}</h3>
+          <p className="vogue-body text-base mb-3" style={{color: '#FEFEFE', fontWeight: 600}}>{step.description}</p>
+          <p className="vogue-body text-sm mb-3" style={{color: '#FEFEFE', opacity: 0.9}}>{step.details}</p>
+          {step.security && (
             <div className="mt-4 p-3 rounded-lg backdrop-blur-sm border border-white border-opacity-20" style={{background: 'rgba(254, 254, 254, 0.12)'}}>
-              <p className="text-xs text-center" style={{color: '#FEFEFE'}}>{passo.seguranca}</p>
+              <p className="text-xs text-center" style={{color: '#FEFEFE'}}>{step.security}</p>
             </div>
           )}
         </div>

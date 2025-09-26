@@ -20,7 +20,7 @@ export default function StructuredData({ siteUrl }: StructuredDataProps) {
       "@type": "ReserveAction",
       "target": {
         "@type": "EntryPoint",
-        "urlTemplate": `${siteUrl}#agendamento`
+        "urlTemplate": `${siteUrl}#booking`
       },
       "result": {
         "@type": "Reservation",

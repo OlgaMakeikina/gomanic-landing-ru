@@ -10,7 +10,7 @@ interface ContactSectionProps {
 export default function ContactSection({ masterData }: ContactSectionProps) {
   return (
     <section 
-      id="agendamento" 
+      id="booking" 
       className="vogue-section relative" 
       style={{
         backgroundColor: '#444e55', // fallback color

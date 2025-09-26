@@ -101,7 +101,7 @@ export default function BeforeAfterSection() {
         {/* CTA после блока до/после */}
         <div className="text-center mt-16">
           <button
-            onClick={() => document.getElementById('agendamento')?.scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })}
             className="px-12 py-4 rounded-xl transition-all duration-300 transform hover:scale-105"
             style={{
               background: 'linear-gradient(135deg, #444e55 0%, #3a434a 100%)',

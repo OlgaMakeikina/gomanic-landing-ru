@@ -11,7 +11,7 @@ import HeroSectionRU from '@/components/sections/Hero'
 import MasterIntro from '@/components/features/master'
 import ServicesSection from '@/components/sections/Services'
 import AboutGomanic from '@/components/sections/About/gomanic'
-import QualitySection from '@/components/sections/About/SegurancaQualidade'
+import QualitySafety from '@/components/sections/About/QualitySafety'
 import ResultsGallery from '@/components/sections/Gallery/results'
 import ClientsSection from '@/components/sections/Testimonials/ClientsSection'
 import SocialProof from '@/components/sections/Testimonials/SocialProof'
@@ -44,7 +44,7 @@ export default function Home() {
         <ServicesSection masterData={masterData} />
         <ResultsGallery /> 
         <AboutGomanic />
-        <QualitySection masterData={masterData} />
+        <QualitySafety masterData={masterData} />
         <ClientsSection masterData={masterData} />
         <SocialProof masterData={masterData} />
         <ProcessSection masterData={masterData} />

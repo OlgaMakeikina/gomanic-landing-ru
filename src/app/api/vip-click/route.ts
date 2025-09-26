@@ -113,7 +113,7 @@ export async function POST(request: NextRequest) {
         email: data.userEmail,
         name: data.userName,
         remainingSlots: data.remainingSlots,
-        bookingUrl: `${siteUrl}#agendamento`,
+        bookingUrl: `${siteUrl}#booking`,
       });
 
       const userEmailResult = await transporter.sendMail({

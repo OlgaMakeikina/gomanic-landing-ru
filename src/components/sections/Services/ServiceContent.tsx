@@ -14,7 +14,7 @@ export default function ServiceContent({ service, isOpen }: ServiceContentProps)
   const masterData = useMasterData()
   
   const handleBookingClick = () => {
-    document.getElementById("agendamento")?.scrollIntoView({ 
+    document.getElementById("booking")?.scrollIntoView({ 
       behavior: "smooth", 
       block: "start" 
     })

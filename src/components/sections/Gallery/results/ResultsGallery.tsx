@@ -23,7 +23,7 @@ export default function ResultsGallery() {
   }, [])
 
   const handleCtaClick = () => {
-    document.getElementById('agendamento')?.scrollIntoView({ behavior: 'smooth' })
+    document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })
   }
 
   const masterData = getMasterDataSync()

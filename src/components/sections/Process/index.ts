@@ -1,1 +1,1 @@
-export { default } from './ComoFunciona';
+export { default } from './ProcessSection';

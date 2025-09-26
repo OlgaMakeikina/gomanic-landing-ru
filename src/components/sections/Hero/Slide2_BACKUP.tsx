@@ -43,7 +43,7 @@ export default function Slide2({ slideData, onButtonAction }: SlideProps) {
                 {/* Desktop buttons */}
                 <div className="hidden lg:flex lg:flex-col lg:gap-4 lg:justify-start lg:items-start">
                   <HeroButton 
-                    onClick={() => onButtonAction('scroll', 'agendamento')}
+                    onClick={() => onButtonAction('scroll', 'booking')}
                     variant="primary"
                     className="min-w-[140px]"
                   >
@@ -75,7 +75,7 @@ export default function Slide2({ slideData, onButtonAction }: SlideProps) {
             {/* Mobile buttons - at the bottom */}
             <div className="lg:hidden mt-8 flex flex-col gap-3 items-center">
               <HeroButton 
-                onClick={() => onButtonAction('scroll', 'agendamento')}
+                onClick={() => onButtonAction('scroll', 'booking')}
                 variant="primary"
                 className="text-sm px-6 py-2.5 min-w-[120px]"
               >

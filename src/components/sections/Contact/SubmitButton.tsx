@@ -26,7 +26,7 @@ export default function SubmitButton() {
           e.currentTarget.style.border = 'none'
         }}
       >
-        CONFIRMAR AGENDAMENTO
+        ЗАПИСАТЬСЯ
       </button>
     </div>
   )

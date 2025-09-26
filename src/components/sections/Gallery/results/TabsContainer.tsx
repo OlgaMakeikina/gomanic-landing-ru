@@ -8,7 +8,7 @@ interface TabsContainerProps {
 
 export default function TabsContainer({ activeTab, onTabChange }: TabsContainerProps) {
   return (
-    <nav className={styles.tabsContainer} role="navigation" aria-label="Navegação da galeria">
+    <nav className={styles.tabsContainer} role="navigation" aria-label="Gallery navigation">
       <div className={styles.tabs} role="tablist">
         <TabButton
           isActive={activeTab === 'portfolio'}

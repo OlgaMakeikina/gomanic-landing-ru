@@ -165,7 +165,7 @@ export default function DesktopClientsGallery({ colors }: DesktopClientsGalleryP
             СТАНЬ НАШЕЙ ДОВОЛЬНОЙ КЛИЕНТКОЙ
           </h4>
           <button
-            onClick={() => document.getElementById('agendamento')?.scrollIntoView({ behavior:'smooth' })}
+            onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior:'smooth' })}
             className="rounded-xl px-8 py-4 font-semibold uppercase tracking-wider text-sm transition-all duration-300 transform hover:scale-110 shadow-xl"
             style={{ 
               background: "linear-gradient(135deg, rgba(254,254,254,0.95) 0%, rgba(254,254,254,0.85) 100%)", 

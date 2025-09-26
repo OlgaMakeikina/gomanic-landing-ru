@@ -8,10 +8,10 @@ interface SocialProofProps {
 export default function SocialProof({ masterData }: SocialProofProps) {
   return (
     <section 
-      id="social" 
+      id="reviews" 
       className="relative py-20" 
       style={{ backgroundColor: SOCIAL_COLORS.white }} 
-      aria-labelledby="social-heading"
+      aria-labelledby="reviews-heading"
     >
       <div className="relative mx-auto max-w-7xl px-6">
         <SocialHeader />
