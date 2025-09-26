@@ -40,7 +40,6 @@ export default function Home() {
       <Header masterData={masterData} />
       <main role="main" id="main-content">
         <HeroSectionRU />
-        <MasterIntro masterData={masterData} />
         <ServicesSection masterData={masterData} />
         <ResultsGallery /> 
         <AboutGomanic />
