@@ -24,7 +24,7 @@ export default function Slide1({ slideData, masterData, onButtonAction }: SlideP
                 href="https://dikidi.net/1899279?p=3.pi-po-sm-ssm&o=1&m=4107990"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="transition-all duration-300 hover:scale-105 touch-manipulation w-full max-w-sm"
+                className="transition-all duration-300 hover:scale-105 touch-manipulation flex-1 max-w-[240px]"
                 style={{
                   backgroundColor: '#3B3B3A',
                   color: '#FEFEFE',
@@ -50,6 +50,7 @@ export default function Slide1({ slideData, masterData, onButtonAction }: SlideP
               <HeroButton 
                 onClick={() => onButtonAction('scroll', 'master-intro')}
                 variant="secondary"
+                className="flex-1 max-w-[240px]"
               >
                 О МАСТЕРЕ
               </HeroButton>
@@ -72,7 +73,7 @@ export default function Slide1({ slideData, masterData, onButtonAction }: SlideP
               href="https://dikidi.net/1899279?p=3.pi-po-sm-ssm&o=1&m=4107990"
               target="_blank"
               rel="noopener noreferrer"
-              className="transition-all duration-300 hover:scale-105 touch-manipulation w-full max-w-sm"
+              className="transition-all duration-300 hover:scale-105 touch-manipulation w-full sm:flex-1 max-w-[240px]"
               style={{
                 backgroundColor: '#3B3B3A',
                 color: '#FEFEFE',
@@ -98,6 +99,7 @@ export default function Slide1({ slideData, masterData, onButtonAction }: SlideP
             <HeroButton 
               onClick={() => onButtonAction('scroll', 'master-intro')}
               variant="secondary"
+              className="w-full sm:flex-1 max-w-[240px]"
             >
               О МАСТЕРЕ
             </HeroButton>

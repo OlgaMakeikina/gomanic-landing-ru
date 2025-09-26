@@ -50,7 +50,7 @@ export default function Slide2RU({ slideData, masterData, onButtonAction }: Slid
                       href="https://dikidi.net/1899279?p=3.pi-po-sm-ssm&o=1&m=4107990"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="transition-all duration-300 hover:scale-105 touch-manipulation w-full max-w-sm"
+                      className="transition-all duration-300 hover:scale-105 touch-manipulation w-full"
                       style={{
                         backgroundColor: '#3B3B3A',
                         color: '#FEFEFE',
@@ -75,7 +75,7 @@ export default function Slide2RU({ slideData, masterData, onButtonAction }: Slid
                     <HeroButton 
                       onClick={() => onButtonAction('scroll', 'portfolio')}
                       variant="secondary"
-                      className="w-full max-w-sm"
+                      className="w-full"
                     >
                       СМОТРЕТЬ ПОРТФОЛИО
                     </HeroButton>

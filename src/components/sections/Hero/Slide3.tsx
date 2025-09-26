@@ -46,12 +46,12 @@ export default function Slide3({ slideData, masterData, onButtonAction }: SlideP
                   </p>
                   
                   {/* Desktop buttons */}
-                  <div className="hidden lg:flex lg:flex-col lg:gap-4">
+                  <div className="hidden lg:flex lg:flex-col lg:gap-4 lg:items-start">
                     <a
                       href="https://dikidi.net/1899279?p=3.pi-po-sm-ssm&o=1&m=4107990"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="transition-all duration-300 hover:scale-105 touch-manipulation w-full max-w-sm"
+                      className="transition-all duration-300 hover:scale-105 touch-manipulation w-full"
                       style={{
                         backgroundColor: '#3B3B3A',
                         color: '#FEFEFE',
