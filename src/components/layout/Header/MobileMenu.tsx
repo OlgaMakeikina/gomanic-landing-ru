@@ -1,5 +1,4 @@
 import { MobileMenuProps } from './types'
-import BookingButton from '@/components/common/BookingButton'
 import { useMasterData } from '@/hooks/useMasterData'
 
 interface ExtendedMobileMenuProps extends MobileMenuProps {
@@ -15,7 +14,6 @@ interface ExtendedMobileMenuProps extends MobileMenuProps {
 
 export default function MobileMenu({ isOpen, items, onClose, masterData }: ExtendedMobileMenuProps) {
   const currentMasterData = useMasterData()
-  const bookingUrl = currentMasterData?.contacts?.bookingUrl || masterData?.contacts?.bookingUrl
   
   return (
     <nav className={`lg:hidden fixed inset-0 z-40 transition-all duration-500 ${
@@ -33,7 +31,7 @@ export default function MobileMenu({ isOpen, items, onClose, masterData }: Exten
         onClick={onClose}
       ></div>
       
-      <div className={`relative h-full flex flex-col justify-center items-center text-center px-6 transform transition-transform duration-500 ${
+      <div className={`relative h-full flex flex-col justify-center items-center text-center px-6 pb-16 transform transition-transform duration-500 ${
         isOpen ? 'translate-x-0' : 'translate-x-full'
       }`}>
         
@@ -48,12 +46,12 @@ export default function MobileMenu({ isOpen, items, onClose, masterData }: Exten
           }}
         >
           
-          <div className="space-y-1 mb-6">
+          <div className="space-y-0 mb-6">
             {items.map((item, index) => (
               <a 
                 key={index}
                 href={item.href} 
-                className="block hover:opacity-70 transition-all duration-300 py-2 text-base touch-manipulation"
+                className="block hover:opacity-70 transition-all duration-300 py-1 text-base touch-manipulation"
                 style={{
                   color: '#FEFEFE', 
                   minHeight: '40px', 
@@ -71,61 +69,10 @@ export default function MobileMenu({ isOpen, items, onClose, masterData }: Exten
             ))}
           </div>
 
-          {bookingUrl ? (
-            <BookingButton
-              bookingUrl={bookingUrl}
-              text="ЗАПИСАТЬСЯ СЕЙЧАС"
-              className="booking-button px-6 py-3 mb-4 touch-manipulation"
-              style={{
-                background: 'linear-gradient(135deg, rgba(68, 78, 85, 0.9) 0%, rgba(68, 78, 85, 0.8) 100%)',
-                backdropFilter: 'blur(10px)',
-                WebkitBackdropFilter: 'blur(10px)',
-                color: '#FEFEFE',
-                border: '1px solid rgba(254, 254, 254, 0.3)',
-                fontFamily: 'Manrope, sans-serif',
-                fontSize: '14px',
-                fontWeight: 600,
-                letterSpacing: '0.1em',
-                textTransform: 'uppercase',
-                cursor: 'pointer',
-                borderRadius: '8px',
-                minHeight: '44px',
-                boxShadow: '0 4px 12px rgba(68, 78, 85, 0.4), inset 0 1px 0 rgba(254, 254, 254, 0.1)'
-              }}
-              onClick={onClose}
-            />
-          ) : (
-            <button 
-              onClick={() => {
-                onClose()
-                document.getElementById('booking')?.scrollIntoView({ behavior: 'smooth' })
-              }}
-              className="booking-button px-6 py-3 mb-4 touch-manipulation"
-              style={{
-                background: 'linear-gradient(135deg, rgba(68, 78, 85, 0.9) 0%, rgba(68, 78, 85, 0.8) 100%)',
-                backdropFilter: 'blur(10px)',
-                WebkitBackdropFilter: 'blur(10px)',
-                color: '#FEFEFE',
-                border: '1px solid rgba(254, 254, 254, 0.3)',
-                fontFamily: 'Manrope, sans-serif',
-                fontSize: '14px',
-                fontWeight: 600,
-                letterSpacing: '0.1em',
-                textTransform: 'uppercase',
-                cursor: 'pointer',
-                borderRadius: '8px',
-                minHeight: '44px',
-                boxShadow: '0 4px 12px rgba(68, 78, 85, 0.4), inset 0 1px 0 rgba(254, 254, 254, 0.1)'
-              }}
-            >
-              ЗАПИСАТЬСЯ СЕЙЧАС
-            </button>
-          )}
-
           <div 
-            className="w-full rounded-lg overflow-hidden"
+            className="w-full rounded-lg overflow-hidden mb-4"
             style={{
-              height: '200px',
+              height: '180px',
               border: '1px solid rgba(254, 254, 254, 0.2)',
               boxShadow: '0 2px 8px rgba(0, 0, 0, 0.3)'
             }}
