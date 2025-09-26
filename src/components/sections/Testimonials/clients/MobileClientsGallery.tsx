@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react'
 import { useSwipeNavigation } from '@/hooks/useSwipeNavigation'
+import { MobileHidden } from '@/components/common'
 
 interface MobileClientsGalleryProps {
   colors: {
@@ -165,19 +166,21 @@ export default function MobileClientsGallery({ colors }: MobileClientsGalleryPro
             Тысячи клиентов уже доверились нашей работе
           </p>
           
-          <button
-            onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior:'smooth' })}
-            className="w-full rounded-2xl px-6 py-4 font-bold uppercase tracking-wider text-sm transition-all duration-300 transform active:scale-95"
-            style={{ 
-              background: "linear-gradient(135deg, rgba(254,254,254,0.98) 0%, rgba(254,254,254,0.92) 100%)", 
-              color: colors.dark,
-              border: "1px solid rgba(255,255,255,0.4)",
-              backdropFilter: "blur(8px)",
-              boxShadow: "0 8px 25px rgba(254,254,254,0.2)"
-            }}
-          >
-            ХОЧУ ПРИСОЕДИНИТЬСЯ
-          </button>
+          <MobileHidden>
+            <button
+              onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior:'smooth' })}
+              className="w-full rounded-2xl px-6 py-4 font-bold uppercase tracking-wider text-sm transition-all duration-300 transform active:scale-95"
+              style={{ 
+                background: "linear-gradient(135deg, rgba(254,254,254,0.98) 0%, rgba(254,254,254,0.92) 100%)", 
+                color: colors.dark,
+                border: "1px solid rgba(255,255,255,0.4)",
+                backdropFilter: "blur(8px)",
+                boxShadow: "0 8px 25px rgba(254,254,254,0.2)"
+              }}
+            >
+              ХОЧУ ПРИСОЕДИНИТЬСЯ
+            </button>
+          </MobileHidden>
         </div>
       </div>
     </div>
