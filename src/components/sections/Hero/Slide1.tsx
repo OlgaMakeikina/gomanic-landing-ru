@@ -19,43 +19,24 @@ export default function Slide1({ slideData, masterData, onButtonAction }: SlideP
               showLocationInfo={false}
             />
             
-            {/* Buttons in one row - Desktop only */}
+            {/* Single booking button - Desktop only */}
             <MobileHidden>
-              <div className="flex gap-4 justify-center items-center">
+              <div className="flex justify-center">
                 <a
                   href="https://dikidi.net/1921931?p=0.pi"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="transition-all duration-300 hover:scale-105 touch-manipulation flex-1 max-w-[240px]"
-                  style={{
-                    backgroundColor: '#3B3B3A',
-                    color: '#FEFEFE',
-                    textDecoration: 'none',
-                    boxShadow: '0 8px 32px rgba(0,0,0,0.3)',
-                    fontFamily: 'Manrope, sans-serif',
-                    fontSize: '14px',
-                    fontWeight: 600,
-                    letterSpacing: '0.05em',
-                    textTransform: 'uppercase',
-                    padding: '16px 24px',
-                    borderRadius: '8px',
-                    textAlign: 'center',
-                    display: 'block',
-                    minHeight: '48px',
-                    lineHeight: '16px'
-                  }}
+                  className="max-w-[240px] block"
                   onClick={createDikidiLink("ЗАБРОНИРОВАТЬ МЕСТО", "Hero Slide 1 Desktop")}
                 >
-                  ЗАБРОНИРОВАТЬ МЕСТО
+                  <HeroButton 
+                    onClick={() => {}}
+                    variant="secondary"
+                    className="w-full"
+                  >
+                    ЗАБРОНИРОВАТЬ МЕСТО
+                  </HeroButton>
                 </a>
-                
-                <HeroButton 
-                  onClick={() => onButtonAction('scroll', 'master-intro')}
-                  variant="secondary"
-                  className="flex-1 max-w-[240px]"
-                >
-                  О МАСТЕРЕ
-                </HeroButton>
               </div>
             </MobileHidden>
           </div>
@@ -69,17 +50,6 @@ export default function Slide1({ slideData, masterData, onButtonAction }: SlideP
             content={slideData.content}
             showLocationInfo={false}
           />
-          
-          {/* Only "О МАСТЕРЕ" button for mobile - booking handled by fixed button */}
-          <div className="flex justify-center px-4">
-            <HeroButton 
-              onClick={() => onButtonAction('scroll', 'master-intro')}
-              variant="secondary"
-              className="w-full max-w-[240px]"
-            >
-              О МАСТЕРЕ
-            </HeroButton>
-          </div>
         </div>
       </div>
     </div>
