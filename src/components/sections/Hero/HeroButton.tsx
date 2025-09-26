@@ -54,7 +54,7 @@ export default function HeroButton({ onClick, variant, children, className = '' 
   return (
     <button 
       onClick={onClick}
-      className={`transition-all duration-300 hover:scale-105 touch-manipulation w-full max-w-sm ${className}`}
+      className={`transition-all duration-300 hover:scale-105 touch-manipulation ${className}`}
       style={variant === 'primary' ? primaryStyle : secondaryStyle}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}

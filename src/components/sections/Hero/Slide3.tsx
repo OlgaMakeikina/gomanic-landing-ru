@@ -51,7 +51,7 @@ export default function Slide3({ slideData, masterData, onButtonAction }: SlideP
                       href="https://dikidi.net/1899279?p=3.pi-po-sm-ssm&o=1&m=4107990"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="transition-all duration-300 hover:scale-105 touch-manipulation w-full px-6 py-3 rounded-lg font-semibold uppercase tracking-wide text-center"
+                      className="transition-all duration-300 hover:scale-105 touch-manipulation w-full max-w-sm"
                       style={{
                         backgroundColor: '#3B3B3A',
                         color: '#FEFEFE',
@@ -59,7 +59,15 @@ export default function Slide3({ slideData, masterData, onButtonAction }: SlideP
                         boxShadow: '0 8px 32px rgba(0,0,0,0.3)',
                         fontFamily: 'Manrope, sans-serif',
                         fontSize: '14px',
-                        letterSpacing: '0.05em'
+                        fontWeight: 600,
+                        letterSpacing: '0.05em',
+                        textTransform: 'uppercase',
+                        padding: '16px 24px',
+                        borderRadius: '8px',
+                        textAlign: 'center',
+                        display: 'block',
+                        minHeight: '48px',
+                        lineHeight: '16px'
                       }}
                       onClick={createDikidiLink("ХОЧУ ЗАПИСАТЬСЯ", "Hero Slide 3 Desktop")}
                     >
@@ -97,7 +105,7 @@ export default function Slide3({ slideData, masterData, onButtonAction }: SlideP
                   href="https://dikidi.net/1899279?p=3.pi-po-sm-ssm&o=1&m=4107990"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="transition-all duration-300 hover:scale-105 touch-manipulation px-6 py-3 rounded-lg font-semibold uppercase tracking-wide text-center text-sm min-w-[120px]"
+                  className="transition-all duration-300 hover:scale-105 touch-manipulation w-full max-w-sm"
                   style={{
                     backgroundColor: '#3B3B3A',
                     color: '#FEFEFE',
@@ -105,7 +113,15 @@ export default function Slide3({ slideData, masterData, onButtonAction }: SlideP
                     boxShadow: '0 8px 32px rgba(0,0,0,0.3)',
                     fontFamily: 'Manrope, sans-serif',
                     fontSize: '14px',
-                    letterSpacing: '0.05em'
+                    fontWeight: 600,
+                    letterSpacing: '0.05em',
+                    textTransform: 'uppercase',
+                    padding: '16px 24px',
+                    borderRadius: '8px',
+                    textAlign: 'center',
+                    display: 'block',
+                    minHeight: '48px',
+                    lineHeight: '16px'
                   }}
                   onClick={createDikidiLink("ХОЧУ ЗАПИСАТЬСЯ", "Hero Slide 3 Mobile")}
                 >
@@ -115,7 +131,7 @@ export default function Slide3({ slideData, masterData, onButtonAction }: SlideP
                 <HeroButton 
                   onClick={() => onButtonAction('scroll', 'about-gomanic')}
                   variant="secondary"
-                  className="text-sm px-6 py-2.5 min-w-[120px]"
+                  className="w-full max-w-sm"
                 >
                   ПОДРОБНЕЕ О GOMANIC
                 </HeroButton>
