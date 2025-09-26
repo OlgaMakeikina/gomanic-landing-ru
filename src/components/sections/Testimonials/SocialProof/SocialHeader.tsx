@@ -33,7 +33,7 @@ export default function SocialHeader() {
           fontSize: 16 
         }}
       >
-        Реальные отзывы наших клиентов
+        Реальные отзывы клиентов
       </p>
     </div>
   );

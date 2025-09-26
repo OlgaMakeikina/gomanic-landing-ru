@@ -162,7 +162,7 @@ export default function DesktopClientsGallery({ colors }: DesktopClientsGalleryP
                 fontSize:20,
                 textShadow: "0 2px 8px rgba(0,0,0,0.3)"
               }}>
-            СТАНЬ НАШЕЙ ДОВОЛЬНОЙ КЛИЕНТКОЙ
+            СТАНЬ СЛЕДУЮЩЕЙ ДОВОЛЬНОЙ КЛИЕНТКОЙ
           </h4>
           <button
             onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior:'smooth' })}
