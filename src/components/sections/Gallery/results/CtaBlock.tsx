@@ -16,7 +16,7 @@ export default function CtaBlock({ onCtaClick }: CtaBlockProps) {
           </p>
           
           <a
-            href="https://dikidi.net/1899279?p=3.pi-po-sm-ssm&o=1&m=4107990"
+            href="https://dikidi.net/1921931?p=0.pi"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-12 py-4 rounded-lg font-bold border-2 transition-all hover:opacity-90 hover:scale-105 uppercase tracking-wide whitespace-nowrap"

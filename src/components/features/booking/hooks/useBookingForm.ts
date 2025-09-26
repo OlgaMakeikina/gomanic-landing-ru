@@ -120,7 +120,7 @@ export function useBookingForm(masterData?: MasterData | null) {
         }
         
         setTimeout(() => {
-          const bookingUrl = masterData?.bookingUrl || 'https://dikidi.net/1899279?p=3.pi-po-sm-ssm-si&o=1&m=4107990&s=20568416';
+          const bookingUrl = masterData?.bookingUrl || 'https://dikidi.net/1921931?p=0.pi';
           window.location.href = bookingUrl;
         }, 2000);
       } else {

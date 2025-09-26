@@ -21,7 +21,7 @@ export default function Slide1({ slideData, masterData, onButtonAction }: SlideP
             {/* Buttons in one row */}
             <div className="flex gap-4 justify-center items-center">
               <a
-                href="https://dikidi.net/1899279?p=3.pi-po-sm-ssm&o=1&m=4107990"
+                href="https://dikidi.net/1921931?p=0.pi"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="transition-all duration-300 hover:scale-105 touch-manipulation flex-1 max-w-[240px]"
@@ -70,7 +70,7 @@ export default function Slide1({ slideData, masterData, onButtonAction }: SlideP
           {/* Buttons in one row for mobile */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4">
             <a
-              href="https://dikidi.net/1899279?p=3.pi-po-sm-ssm&o=1&m=4107990"
+              href="https://dikidi.net/1921931?p=0.pi"
               target="_blank"
               rel="noopener noreferrer"
               className="transition-all duration-300 hover:scale-105 touch-manipulation w-full sm:flex-1 max-w-[240px]"

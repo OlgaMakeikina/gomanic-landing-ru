@@ -48,7 +48,7 @@ export default function Slide3({ slideData, masterData, onButtonAction }: SlideP
                   {/* Desktop buttons */}
                   <div className="hidden lg:flex lg:flex-col lg:gap-4 lg:items-start">
                     <a
-                      href="https://dikidi.net/1899279?p=3.pi-po-sm-ssm&o=1&m=4107990"
+                      href="https://dikidi.net/1921931?p=0.pi"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="transition-all duration-300 hover:scale-105 touch-manipulation w-full"
@@ -102,7 +102,7 @@ export default function Slide3({ slideData, masterData, onButtonAction }: SlideP
               {/* Mobile buttons - at the bottom */}
               <div className="lg:hidden mt-8 flex flex-col gap-3 items-center">
                 <a
-                  href="https://dikidi.net/1899279?p=3.pi-po-sm-ssm&o=1&m=4107990"
+                  href="https://dikidi.net/1921931?p=0.pi"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="transition-all duration-300 hover:scale-105 touch-manipulation w-full max-w-sm"

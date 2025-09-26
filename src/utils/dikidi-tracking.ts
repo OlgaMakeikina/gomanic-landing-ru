@@ -42,7 +42,7 @@ export const trackDikidiClick = async (buttonText: string, buttonLocation: strin
 
 // Создание ссылки на Дикиди с отслеживанием
 export const createDikidiLink = (buttonText: string, buttonLocation: string) => {
-  const dikidiUrl = "https://dikidi.net/1899279?p=3.pi-po-sm-ssm&o=1&m=4107990";
+  const dikidiUrl = "https://dikidi.net/1921931?p=0.pi";
   
   return (e: React.MouseEvent) => {
     e.preventDefault();

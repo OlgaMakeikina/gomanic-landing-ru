@@ -11,7 +11,7 @@ interface BookingButtonProps {
 }
 
 export default function BookingButton({ 
-  bookingUrl = "https://dikidi.net/1899279?p=3.pi-po-sm-ssm&o=1&m=4107990", 
+  bookingUrl = "https://dikidi.net/1921931?p=0.pi", 
   text = "Записаться", 
   variant = 'primary',
   className = '',
