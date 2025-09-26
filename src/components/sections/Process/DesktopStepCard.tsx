@@ -16,7 +16,7 @@ export default function DesktopStepCard({ step, index }: ProcessStepCardProps) {
       
       <div className={`flex ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
         <div className={`w-5/12 ${index % 2 === 0 ? 'pr-12' : 'pl-12'}`}>
-          <div className="backdrop-blur-xl rounded-2xl overflow-hidden border border-white border-opacity-30"
+          <div className="backdrop-blur-xl rounded-lg overflow-hidden border border-white border-opacity-30"
                style={{
                  background: 'rgba(254, 254, 254, 0.15)',
                  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.4)'

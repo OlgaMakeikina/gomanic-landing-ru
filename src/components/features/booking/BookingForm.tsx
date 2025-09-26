@@ -39,15 +39,15 @@ export default function BookingForm({ className = '', variant = 'default', maste
 
   return (
     <div 
-      className={`relative backdrop-blur-xl rounded-2xl border overflow-hidden ${className}`}
+      className={`relative backdrop-blur-xl rounded-lg border overflow-hidden ${className}`}
       style={{ 
         background: GLASS_STYLES.cardBg, 
         borderColor: GLASS_STYLES.cardBorder, 
         boxShadow: GLASS_STYLES.cardShadow 
       }}
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-white/8 via-white/2 to-transparent rounded-2xl" />
-      <div className="absolute inset-0 bg-gradient-to-tl from-black/30 via-transparent to-black/15 rounded-2xl" />
+      <div className="absolute inset-0 bg-gradient-to-br from-white/8 via-white/2 to-transparent rounded-lg" />
+      <div className="absolute inset-0 bg-gradient-to-tl from-black/30 via-transparent to-black/15 rounded-lg" />
       
       <div className="relative z-10 p-8">
         <form onSubmit={handleSubmit}>

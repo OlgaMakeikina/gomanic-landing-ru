@@ -61,7 +61,7 @@ export default function VipCallToAction() {
 
   return (
     <div 
-      className={`relative rounded-2xl overflow-hidden transition-all duration-1000 transform ${
+      className={`relative rounded-lg overflow-hidden transition-all duration-1000 transform ${
         isVisible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-12 opacity-0 scale-95'
       }`}
       style={{ 
@@ -69,7 +69,7 @@ export default function VipCallToAction() {
         boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2)'
       }}
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-black/10 rounded-2xl" />
+      <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-black/10 rounded-lg" />
       
       <div className="relative z-10 p-4 lg:p-8 text-center">
         <div className="mb-4">
@@ -104,7 +104,7 @@ export default function VipCallToAction() {
             style={{
               background: '#FFFFFF',
               color: '#444f55',
-              borderRadius: '12px',
+              borderRadius: '8px',
               fontFamily: 'Manrope, sans-serif',
               fontSize: '18px',
               fontWeight: 700,

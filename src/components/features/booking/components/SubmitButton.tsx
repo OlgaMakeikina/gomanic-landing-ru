@@ -7,7 +7,7 @@ export default function SubmitButton({ isSubmitting }: SubmitButtonProps) {
     <button
       type="submit"
       disabled={isSubmitting}
-      className="w-full rounded-xl border backdrop-blur-sm transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+      className="w-full rounded-lg border backdrop-blur-sm transition-all disabled:opacity-50 disabled:cursor-not-allowed"
       style={{
         background: 'linear-gradient(135deg, rgba(68,79,85,0.95) 0%, rgba(59,59,58,0.95) 100%)',
         borderColor: '#FEFEFE',

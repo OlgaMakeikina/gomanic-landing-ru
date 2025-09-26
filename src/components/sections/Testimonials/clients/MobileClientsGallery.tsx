@@ -89,7 +89,7 @@ export default function MobileClientsGallery({ colors }: MobileClientsGalleryPro
       <div className="mb-6">
         <div 
           ref={scrollRef}
-          className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide rounded-2xl"
+          className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide rounded-lg"
           style={{ 
             scrollBehavior: 'smooth',
             touchAction: 'pan-y pinch-zoom',
@@ -100,7 +100,7 @@ export default function MobileClientsGallery({ colors }: MobileClientsGalleryPro
         >
           {allMedia.map((media, index) => (
             <div key={index} className="w-full flex-shrink-0 snap-center px-2">
-              <div className="aspect-square rounded-2xl overflow-hidden">
+              <div className="aspect-square rounded-lg overflow-hidden">
                 <img
                   src={media}
                   alt={`Довольная клиентка ${index + 1}`}
@@ -134,14 +134,14 @@ export default function MobileClientsGallery({ colors }: MobileClientsGalleryPro
         </div>
       </div>
 
-      <div className="rounded-2xl border shadow-2xl p-6 text-center relative overflow-hidden backdrop-blur-xl"
+      <div className="rounded-lg border shadow-2xl p-6 text-center relative overflow-hidden backdrop-blur-xl"
            style={{ 
              background:"rgba(68,78,85,.90)", 
              borderColor:"rgba(254,254,254,.3)",
              boxShadow: "0 25px 50px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1)"
            }}>
-        <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-white/5 to-transparent rounded-2xl"></div>
-        <div className="absolute inset-0 bg-gradient-to-tl from-black/20 via-transparent to-black/10 rounded-2xl"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-white/5 to-transparent rounded-lg"></div>
+        <div className="absolute inset-0 bg-gradient-to-tl from-black/20 via-transparent to-black/10 rounded-lg"></div>
         
         <div className="relative z-10">
           <h4 className="uppercase tracking-[0.12em] mb-4"
@@ -169,7 +169,7 @@ export default function MobileClientsGallery({ colors }: MobileClientsGalleryPro
           <MobileHidden>
             <button
               onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior:'smooth' })}
-              className="w-full rounded-2xl px-6 py-4 font-bold uppercase tracking-wider text-sm transition-all duration-300 transform active:scale-95"
+              className="w-full rounded-lg px-6 py-4 font-bold uppercase tracking-wider text-sm transition-all duration-300 transform active:scale-95"
               style={{ 
                 background: "linear-gradient(135deg, rgba(254,254,254,0.98) 0%, rgba(254,254,254,0.92) 100%)", 
                 color: colors.dark,

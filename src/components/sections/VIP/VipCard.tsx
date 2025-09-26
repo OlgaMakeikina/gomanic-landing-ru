@@ -23,7 +23,7 @@ export default function VipCard({ title, description, delay }: VipCardProps) {
       }`}
       style={{
         background: '#444f55',
-        borderRadius: '16px',
+        borderRadius: '8px',
         padding: '1.5rem',
         textAlign: 'center' as const,
         boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2)',

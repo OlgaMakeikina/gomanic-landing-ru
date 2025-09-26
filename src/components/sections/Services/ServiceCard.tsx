@@ -15,7 +15,7 @@ interface ServiceCardProps {
 export default function ServiceCard({ service, isOpen, onToggle }: ServiceCardProps) {
   return (
     <div
-      className="relative backdrop-blur-xl rounded-2xl border overflow-hidden"
+      className="relative backdrop-blur-xl rounded-lg border overflow-hidden"
       style={{
         background: GLASS_STYLES.cardBg,
         borderColor: GLASS_STYLES.cardBorder,

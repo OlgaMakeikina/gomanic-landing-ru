@@ -39,7 +39,7 @@ export default function FormInput({
         value={value}
         onChange={(e) => onChange(e.target.value)}
         onBlur={onBlur}
-        className={`glass-input w-full px-4 py-3 rounded-xl border backdrop-blur-sm transition-all focus:outline-none focus:ring-2 focus:ring-white/40 ${
+        className={`glass-input w-full px-4 py-3 rounded-lg border backdrop-blur-sm transition-all focus:outline-none focus:ring-2 focus:ring-white/40 ${
           error ? 'border-red-400' : ''
         }`}
         placeholder={placeholder}

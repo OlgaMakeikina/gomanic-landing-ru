@@ -43,7 +43,7 @@ export default function GalleryCarousel({ images, currentIndex, onPrev, onNext, 
               }}
             >
               <div 
-                className="relative backdrop-blur-xl rounded-2xl overflow-hidden group"
+                className="relative backdrop-blur-xl rounded-lg overflow-hidden group"
                 style={{
                   background: GLASS.cardBg,
                   border: "none",
@@ -52,15 +52,15 @@ export default function GalleryCarousel({ images, currentIndex, onPrev, onNext, 
                   height: isCenter ? "480px" : "350px"
                 }}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-gray-500/5 via-gray-500/2 to-transparent rounded-2xl"></div>
-                <div className="absolute inset-0 bg-gradient-to-tl from-gray-600/8 via-transparent to-gray-600/5 rounded-2xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-gray-500/5 via-gray-500/2 to-transparent rounded-lg"></div>
+                <div className="absolute inset-0 bg-gradient-to-tl from-gray-600/8 via-transparent to-gray-600/5 rounded-lg"></div>
                 
                 <div className="relative z-10 h-full">
                   <img 
                     src={`/images/gallery/${filename}`} 
                     alt={`Resultado Premium ${currentIndex + offset + 1}`}
                     key={`${filename}-update`}
-                    className="w-full h-full object-cover rounded-2xl transition-all duration-500"
+                    className="w-full h-full object-cover rounded-lg transition-all duration-500"
                     style={{ 
                       filter: 'brightness(0.95) contrast(1.05)'
                     }}

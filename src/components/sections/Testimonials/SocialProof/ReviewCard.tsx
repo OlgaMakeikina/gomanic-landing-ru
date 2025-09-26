@@ -11,7 +11,7 @@ export default function ReviewCard({ screenshot, index }: ReviewCardProps) {
         background: 'rgba(59, 59, 58, 0.08)',
         backdropFilter: 'blur(10px)',
         border: '1px solid rgba(59, 59, 58, 0.15)',
-        borderRadius: '16px',
+        borderRadius: '8px',
         boxShadow: '0 20px 40px rgba(59, 59, 58, 0.1)',
         overflow: 'hidden',
         transition: 'all 0.3s ease'
@@ -27,8 +27,8 @@ export default function ReviewCard({ screenshot, index }: ReviewCardProps) {
         e.currentTarget.style.borderColor = 'rgba(59, 59, 58, 0.15)'
       }}
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-500/5 via-gray-500/2 to-transparent rounded-2xl"></div>
-      <div className="absolute inset-0 bg-gradient-to-tl from-gray-600/8 via-transparent to-gray-600/5 rounded-2xl"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-500/5 via-gray-500/2 to-transparent rounded-lg"></div>
+      <div className="absolute inset-0 bg-gradient-to-tl from-gray-600/8 via-transparent to-gray-600/5 rounded-lg"></div>
       
       <div className="relative z-10">
         <img 

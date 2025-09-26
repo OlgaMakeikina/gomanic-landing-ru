@@ -29,7 +29,7 @@ export default function DesktopClientsGallery({ colors }: DesktopClientsGalleryP
       <div className="grid gap-3 grid-cols-3 auto-rows-min">
         
         {/* Row 1 - три больших фото */}
-        <figure className="aspect-square overflow-hidden rounded-2xl group">
+        <figure className="aspect-square overflow-hidden rounded-lg group">
           <img
             src={clientImages[0]}
             alt="Довольная клиентка"
@@ -38,7 +38,7 @@ export default function DesktopClientsGallery({ colors }: DesktopClientsGalleryP
           />
         </figure>
 
-        <figure className="aspect-square overflow-hidden rounded-2xl group">
+        <figure className="aspect-square overflow-hidden rounded-lg group">
           <img
             src={clientImages[1]}
             alt="Клиентка"
@@ -47,7 +47,7 @@ export default function DesktopClientsGallery({ colors }: DesktopClientsGalleryP
           />
         </figure>
 
-        <figure className="aspect-square overflow-hidden rounded-2xl group">
+        <figure className="aspect-square overflow-hidden rounded-lg group">
           <img
             src={clientImages[2]}
             alt="Маникюр"
@@ -57,7 +57,7 @@ export default function DesktopClientsGallery({ colors }: DesktopClientsGalleryP
         </figure>
 
         {/* Row 2 - большое фото, 4 малых фото, видео */}
-        <figure className="aspect-square overflow-hidden rounded-2xl group">
+        <figure className="aspect-square overflow-hidden rounded-lg group">
           <img
             src={clientImages[3]}
             alt="Результат"
@@ -67,7 +67,7 @@ export default function DesktopClientsGallery({ colors }: DesktopClientsGalleryP
         </figure>
 
         <div className="aspect-square grid grid-cols-2 grid-rows-2 gap-3">
-          <figure className="aspect-square overflow-hidden rounded-2xl group">
+          <figure className="aspect-square overflow-hidden rounded-lg group">
             <img
               src={clientImages[4]}
               alt="Клиентка"
@@ -76,7 +76,7 @@ export default function DesktopClientsGallery({ colors }: DesktopClientsGalleryP
             />
           </figure>
 
-          <figure className="aspect-square overflow-hidden rounded-2xl group">
+          <figure className="aspect-square overflow-hidden rounded-lg group">
             <img
               src={clientImages[5]}
               alt="Процесс"
@@ -85,7 +85,7 @@ export default function DesktopClientsGallery({ colors }: DesktopClientsGalleryP
             />
           </figure>
 
-          <figure className="aspect-square overflow-hidden rounded-2xl group">
+          <figure className="aspect-square overflow-hidden rounded-lg group">
             <img
               src={clientImages[6]}
               alt="Красота"
@@ -94,7 +94,7 @@ export default function DesktopClientsGallery({ colors }: DesktopClientsGalleryP
             />
           </figure>
 
-          <figure className="aspect-square overflow-hidden rounded-2xl group">
+          <figure className="aspect-square overflow-hidden rounded-lg group">
             <img
               src={clientImages[7]}
               alt="Мастерство"
@@ -104,7 +104,7 @@ export default function DesktopClientsGallery({ colors }: DesktopClientsGalleryP
           </figure>
         </div>
 
-        <figure className="aspect-square overflow-hidden rounded-2xl group">
+        <figure className="aspect-square overflow-hidden rounded-lg group">
           <img
             src={clientImages[11]}
             alt="Клиентка GOMANIC"
@@ -114,7 +114,7 @@ export default function DesktopClientsGallery({ colors }: DesktopClientsGalleryP
         </figure>
 
         {/* Row 3 - три больших фото */}
-        <figure className="aspect-square overflow-hidden rounded-2xl group">
+        <figure className="aspect-square overflow-hidden rounded-lg group">
           <img
             src={clientImages[8]}
             alt="Довольная"
@@ -123,7 +123,7 @@ export default function DesktopClientsGallery({ colors }: DesktopClientsGalleryP
           />
         </figure>
 
-        <figure className="aspect-square overflow-hidden rounded-2xl group">
+        <figure className="aspect-square overflow-hidden rounded-lg group">
           <img
             src={clientImages[9]}
             alt="Стиль"
@@ -132,7 +132,7 @@ export default function DesktopClientsGallery({ colors }: DesktopClientsGalleryP
           />
         </figure>
 
-        <figure className="aspect-square overflow-hidden rounded-2xl group">
+        <figure className="aspect-square overflow-hidden rounded-lg group">
           <img
             src={clientImages[12]}
             alt="Результат работы"
@@ -144,14 +144,14 @@ export default function DesktopClientsGallery({ colors }: DesktopClientsGalleryP
       </div>
 
       {/* CTA блок под сеткой */}
-      <div className="mt-8 rounded-2xl border shadow-2xl p-8 text-center relative overflow-hidden backdrop-blur-xl"
+      <div className="mt-8 rounded-lg border shadow-2xl p-8 text-center relative overflow-hidden backdrop-blur-xl"
            style={{ 
              background:"rgba(68,78,85,.85)", 
              borderColor:"rgba(254,254,254,.4)",
              boxShadow: "0 20px 60px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.2)"
            }}>
-        <div className="absolute inset-0 bg-gradient-to-br from-white/15 via-white/8 to-transparent rounded-2xl"></div>
-        <div className="absolute inset-0 bg-gradient-to-tl from-black/20 via-transparent to-black/10 rounded-2xl"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-white/15 via-white/8 to-transparent rounded-lg"></div>
+        <div className="absolute inset-0 bg-gradient-to-tl from-black/20 via-transparent to-black/10 rounded-lg"></div>
         
         <div className="relative z-10">
           <h4 className="uppercase tracking-[0.1em] mb-4"
@@ -166,7 +166,7 @@ export default function DesktopClientsGallery({ colors }: DesktopClientsGalleryP
           </h4>
           <button
             onClick={() => document.getElementById('booking')?.scrollIntoView({ behavior:'smooth' })}
-            className="rounded-xl px-8 py-4 font-semibold uppercase tracking-wider text-sm transition-all duration-300 transform hover:scale-110 shadow-xl"
+            className="rounded-lg px-8 py-4 font-semibold uppercase tracking-wider text-sm transition-all duration-300 transform hover:scale-110 shadow-xl"
             style={{ 
               background: "linear-gradient(135deg, rgba(254,254,254,0.95) 0%, rgba(254,254,254,0.85) 100%)", 
               color: colors.dark,

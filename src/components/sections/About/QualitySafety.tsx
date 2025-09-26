@@ -393,7 +393,7 @@ export default function QualitySafety({ masterData }: QualitySafetyProps): JSX.E
                   </h4>
 
                   <div
-                    className="px-6 py-4 rounded-xl"
+                    className="px-6 py-4 rounded-lg"
                     style={{
                       background: '#FEFEFE',
                       color: '#3B3B3A',
