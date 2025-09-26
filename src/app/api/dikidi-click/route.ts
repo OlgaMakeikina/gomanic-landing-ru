@@ -116,9 +116,21 @@ export async function POST(request: NextRequest) {
     });
 
     console.log('Sending dikidi notification to admin...');
+    
+    const adminEmails = process.env.ADMIN_EMAILS?.split(',') || [];
+    console.log('Admin emails for dikidi notification:', adminEmails);
+    
+    if (adminEmails.length === 0) {
+      console.warn('No admin emails configured!');
+      return NextResponse.json({ 
+        success: true, 
+        message: 'Dikidi click tracked but no admin emails configured' 
+      });
+    }
+    
     const emailResult = await transporter.sendMail({
       from: process.env.SMTP_FROM,
-      to: '1111barlet@gmail.com',
+      to: adminEmails,
       subject: `🎯 Переход на Дикиди: "${data.buttonText}" - ${new Date().toLocaleString('ru-RU')}`,
       html: adminEmailContent,
     });

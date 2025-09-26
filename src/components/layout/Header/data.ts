@@ -1,7 +1,7 @@
 import { MenuItem } from './types'
 
 export const menuItems: MenuItem[] = [
-  { href: "#promocoes", label: "АКЦИИ" },
+  { href: "#services", label: "АКЦИИ" },
   { href: "#master-intro", label: "О мастере" },
   { href: "#about-gomanic", label: "О платформе" },
   { href: "#social", label: "Отзывы" },

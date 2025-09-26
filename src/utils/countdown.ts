@@ -40,7 +40,7 @@ export const calculateTimeLeft = () => {
   }
 }
 
-// Функция для форматирования времени в формате DD:HH:MM (для PromocoesMes2)
+// Функция для форматирования времени в формате DD:HH:MM (для Services секции)
 export const formatTimeForPromo = () => {
   const timeLeft = calculateTimeLeft()
   

@@ -105,7 +105,7 @@ export default function MasterIntro({ masterData }: MasterIntroProps) {
   const statusStyle = statusColors[personal.status.type]
 
   const handleServicesClick = () => {
-    document.getElementById('promocoes')?.scrollIntoView({ behavior: 'smooth' })
+    document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })
   }
 
   const handleBookingClick = () => {

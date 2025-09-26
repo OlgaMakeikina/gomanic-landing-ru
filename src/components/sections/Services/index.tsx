@@ -13,7 +13,7 @@ interface ServicesProps {
 export default function Services({ masterData }: ServicesProps) {
   return (
     <section 
-      id="promocoes" 
+      id="services" 
       aria-labelledby="services-heading"
       className="relative py-20" 
       style={{ backgroundColor: COLORS.dark }}

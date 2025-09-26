@@ -102,7 +102,7 @@ export const useCountdown = () => {
   return { time, mounted }
 }
 
-// Функция для форматирования в DD:HH:MM:SS формат (для PromocoesMes2)
+// Функция для форматирования в DD:HH:MM:SS формат (для // Services countdown formatter2)
 export const formatTimeForPromo = (time: CountdownTime): string => {
   if (time.totalSeconds <= 0) {
     return "00:00:00:00"

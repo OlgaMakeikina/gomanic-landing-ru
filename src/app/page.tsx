@@ -9,14 +9,14 @@ import DynamicYandexMetrika from '@/components/layout/DynamicYandexMetrika'
 import Header from '@/components/layout/Header'
 import HeroSectionRU from '@/components/sections/Hero'
 import MasterIntro from '@/components/features/master'
-import PromocoesMes2 from '@/components/sections/Services'
+import ServicesSection from '@/components/sections/Services'
 import AboutGomanic from '@/components/sections/About/gomanic'
-import SegurancaQualidade from '@/components/sections/About/SegurancaQualidade'
+import QualitySection from '@/components/sections/About/SegurancaQualidade'
 import ResultsGallery from '@/components/sections/Gallery/results'
 import ClientsSection from '@/components/sections/Testimonials/ClientsSection'
 import SocialProof from '@/components/sections/Testimonials/SocialProof'
-import ComoFunciona from '@/components/sections/Process'
-import VipExclusivo from '@/components/sections/VIP'
+import ProcessSection from '@/components/sections/Process'
+import VipSection from '@/components/sections/VIP'
 import Footer from '@/components/layout/Footer'
 
 export default function Home() {
@@ -41,14 +41,14 @@ export default function Home() {
       <main role="main" id="main-content">
         <HeroSectionRU />
         <MasterIntro masterData={masterData} />
-        <PromocoesMes2 masterData={masterData} />
+        <ServicesSection masterData={masterData} />
         <ResultsGallery /> 
         <AboutGomanic />
-        <SegurancaQualidade masterData={masterData} />
+        <QualitySection masterData={masterData} />
         <ClientsSection masterData={masterData} />
         <SocialProof masterData={masterData} />
-        <ComoFunciona masterData={masterData} />
-        <VipExclusivo masterData={masterData} />
+        <ProcessSection masterData={masterData} />
+        <VipSection masterData={masterData} />
       </main>
       <Footer masterData={masterData} />
     </div>
