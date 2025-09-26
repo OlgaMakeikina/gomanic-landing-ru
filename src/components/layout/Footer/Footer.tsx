@@ -10,7 +10,7 @@ interface FooterProps {
 
 export default function Footer({ masterData }: FooterProps) {
   return (
-    <footer className="py-20 border-t relative" 
+    <footer className="py-20 border-t relative pb-24 lg:pb-20" 
             style={{
               backgroundColor: '#444e55', 
               color: '#FEFEFE', 
