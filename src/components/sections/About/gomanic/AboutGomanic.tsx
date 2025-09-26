@@ -67,19 +67,19 @@ export default function AboutGomanic() {
           {stats.map((stat, index) => (
             <div 
               key={index}
-              className={`text-center p-6 rounded-2xl backdrop-blur-xl border border-white border-opacity-40 transition-all duration-700 hover:scale-105 relative overflow-hidden opacity-100 translate-y-0`}
+              className={`text-center p-4 lg:p-6 rounded-2xl backdrop-blur-xl border border-white border-opacity-40 transition-all duration-700 hover:scale-105 relative overflow-hidden opacity-100 translate-y-0`}
               style={{
                 background: 'rgba(254, 254, 254, 0.20)',
                 boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4)',
-                minHeight: '120px'
+                minHeight: '140px'
               }}
             >
               <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-white/10 to-transparent rounded-2xl"></div>
               <div className="relative z-10">
-                <div className="text-2xl lg:text-3xl font-bold mb-2" style={{ fontFamily: 'DrukWideCyr-Super, Arial, sans-serif', color: '#FEFEFE', whiteSpace: 'nowrap' }}>
+                <div className="text-lg lg:text-xl xl:text-2xl font-bold mb-2" style={{ fontFamily: 'DrukWideCyr-Super, Arial, sans-serif', color: '#FEFEFE', lineHeight: '1.1', whiteSpace: 'nowrap' }}>
                   {stat.number}
                 </div>
-                <p className="text-sm lg:text-base leading-relaxed" style={{ fontFamily: 'Manrope, sans-serif', color: '#FEFEFE', opacity: 0.95 }}>
+                <p className="text-xs lg:text-sm leading-relaxed" style={{ fontFamily: 'Manrope, sans-serif', color: '#FEFEFE', opacity: 0.95 }}>
                   {stat.label}
                 </p>
               </div>
