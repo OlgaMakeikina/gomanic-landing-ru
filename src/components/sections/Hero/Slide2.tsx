@@ -3,6 +3,7 @@ import HeroButton from './HeroButton'
 import VipBadge from './VipBadge'
 import ServiceItem from './ServiceItem'
 import { createDikidiLink } from '@/utils/dikidi-tracking'
+import { MobileHidden } from '@/components/common'
 
 export default function Slide2RU({ slideData, masterData, onButtonAction }: SlideProps) {
   return (
@@ -45,41 +46,43 @@ export default function Slide2RU({ slideData, masterData, onButtonAction }: Slid
                     {slideData.subtitle}
                   </p>
                   
-                  <div className="hidden lg:flex lg:flex-col lg:gap-4 lg:justify-start lg:items-start">
-                    <a
-                      href="https://dikidi.net/1921931?p=0.pi"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="transition-all duration-300 hover:scale-105 touch-manipulation w-full"
-                      style={{
-                        backgroundColor: '#3B3B3A',
-                        color: '#FEFEFE',
-                        textDecoration: 'none',
-                        boxShadow: '0 8px 32px rgba(0,0,0,0.3)',
-                        fontFamily: 'Manrope, sans-serif',
-                        fontSize: '14px',
-                        fontWeight: 600,
-                        letterSpacing: '0.05em',
-                        textTransform: 'uppercase',
-                        padding: '16px 24px',
-                        borderRadius: '8px',
-                        textAlign: 'center',
-                        display: 'block',
-                        minHeight: '48px',
-                        lineHeight: '16px'
-                      }}
-                      onClick={createDikidiLink("ХОЧУ ЗАПИСАТЬСЯ", "Hero Slide 2 Desktop")}
-                    >
-                      ХОЧУ ЗАПИСАТЬСЯ
-                    </a>
-                    <HeroButton 
-                      onClick={() => onButtonAction('scroll', 'portfolio')}
-                      variant="secondary"
-                      className="w-full"
-                    >
-                      СМОТРЕТЬ ПОРТФОЛИО
-                    </HeroButton>
-                  </div>
+                  <MobileHidden>
+                    <div className="flex flex-col gap-4 justify-start items-start">
+                      <a
+                        href="https://dikidi.net/1921931?p=0.pi"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="transition-all duration-300 hover:scale-105 touch-manipulation w-full"
+                        style={{
+                          backgroundColor: '#3B3B3A',
+                          color: '#FEFEFE',
+                          textDecoration: 'none',
+                          boxShadow: '0 8px 32px rgba(0,0,0,0.3)',
+                          fontFamily: 'Manrope, sans-serif',
+                          fontSize: '14px',
+                          fontWeight: 600,
+                          letterSpacing: '0.05em',
+                          textTransform: 'uppercase',
+                          padding: '16px 24px',
+                          borderRadius: '8px',
+                          textAlign: 'center',
+                          display: 'block',
+                          minHeight: '48px',
+                          lineHeight: '16px'
+                        }}
+                        onClick={createDikidiLink("ХОЧУ ЗАПИСАТЬСЯ", "Hero Slide 2 Desktop")}
+                      >
+                        ХОЧУ ЗАПИСАТЬСЯ
+                      </a>
+                      <HeroButton 
+                        onClick={() => onButtonAction('scroll', 'portfolio')}
+                        variant="secondary"
+                        className="w-full"
+                      >
+                        СМОТРЕТЬ ПОРТФОЛИО
+                      </HeroButton>
+                    </div>
+                  </MobileHidden>
                 </div>
 
                 <div className="text-center">
@@ -97,32 +100,6 @@ export default function Slide2RU({ slideData, masterData, onButtonAction }: Slid
               </div>
               
               <div className="lg:hidden mt-8 flex flex-col gap-3 items-center">
-                <a
-                  href="https://dikidi.net/1921931?p=0.pi"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transition-all duration-300 hover:scale-105 touch-manipulation w-full max-w-sm"
-                  style={{
-                    backgroundColor: '#3B3B3A',
-                    color: '#FEFEFE',
-                    textDecoration: 'none',
-                    boxShadow: '0 8px 32px rgba(0,0,0,0.3)',
-                    fontFamily: 'Manrope, sans-serif',
-                    fontSize: '14px',
-                    fontWeight: 600,
-                    letterSpacing: '0.05em',
-                    textTransform: 'uppercase',
-                    padding: '16px 24px',
-                    borderRadius: '8px',
-                    textAlign: 'center',
-                    display: 'block',
-                    minHeight: '48px',
-                    lineHeight: '16px'
-                  }}
-                  onClick={createDikidiLink("ХОЧУ ЗАПИСАТЬСЯ", "Hero Slide 2 Mobile")}
-                >
-                  ХОЧУ ЗАПИСАТЬСЯ
-                </a>
                 <HeroButton 
                   onClick={() => onButtonAction('scroll', 'portfolio')}
                   variant="secondary"

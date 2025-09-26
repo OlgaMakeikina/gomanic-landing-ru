@@ -3,6 +3,7 @@
 import { ServiceItem } from './data'
 import { COLORS } from './constants'
 import BookingButton from '@/components/common/BookingButton'
+import { MobileHidden } from '@/components/common'
 import { useMasterData } from '@/hooks/useMasterData'
 
 interface ServiceContentProps {
@@ -57,52 +58,54 @@ export default function ServiceContent({ service, isOpen }: ServiceContentProps)
           ))}
         </ul>
 
-        {masterData?.contacts?.bookingUrl ? (
-          <BookingButton
-            bookingUrl={masterData.contacts.bookingUrl}
-            text="Забронировать место"
-            className="w-full rounded-lg px-4 py-3 transition-all duration-300 hover:scale-105"
-            style={{
-              background: COLORS.white,
-              color: COLORS.gray,
-              border: `1px solid ${COLORS.white}`,
-              fontFamily: "Manrope, sans-serif",
-              fontSize: 14,
-              fontWeight: 700,
-              letterSpacing: "0.1em",
-              textTransform: "uppercase",
-              boxShadow: "0 8px 24px rgba(254,254,254,0.15)",
-            }}
-          />
-        ) : (
-          <button
-            onClick={handleBookingClick}
-            className="w-full rounded-lg px-4 py-3 transition-all duration-300 hover:scale-105"
-            style={{
-              background: COLORS.white,
-              color: COLORS.gray,
-              border: `1px solid ${COLORS.white}`,
-              fontFamily: "Manrope, sans-serif",
-              fontSize: 14,
-              fontWeight: 700,
-              letterSpacing: "0.1em",
-              textTransform: "uppercase",
-              boxShadow: "0 8px 24px rgba(254,254,254,0.15)",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = "transparent"
-              e.currentTarget.style.color = COLORS.white
-              e.currentTarget.style.boxShadow = "0 8px 24px rgba(59,59,57,0.45)"
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = COLORS.white
-              e.currentTarget.style.color = COLORS.gray
-              e.currentTarget.style.boxShadow = "0 8px 24px rgba(254,254,254,0.15)"
-            }}
-          >
-            Забронировать место
-          </button>
-        )}
+        <MobileHidden>
+          {masterData?.contacts?.bookingUrl ? (
+            <BookingButton
+              bookingUrl={masterData.contacts.bookingUrl}
+              text="Забронировать место"
+              className="w-full rounded-lg px-4 py-3 transition-all duration-300 hover:scale-105"
+              style={{
+                background: COLORS.white,
+                color: COLORS.gray,
+                border: `1px solid ${COLORS.white}`,
+                fontFamily: "Manrope, sans-serif",
+                fontSize: 14,
+                fontWeight: 700,
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                boxShadow: "0 8px 24px rgba(254,254,254,0.15)",
+              }}
+            />
+          ) : (
+            <button
+              onClick={handleBookingClick}
+              className="w-full rounded-lg px-4 py-3 transition-all duration-300 hover:scale-105"
+              style={{
+                background: COLORS.white,
+                color: COLORS.gray,
+                border: `1px solid ${COLORS.white}`,
+                fontFamily: "Manrope, sans-serif",
+                fontSize: 14,
+                fontWeight: 700,
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                boxShadow: "0 8px 24px rgba(254,254,254,0.15)",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = "transparent"
+                e.currentTarget.style.color = COLORS.white
+                e.currentTarget.style.boxShadow = "0 8px 24px rgba(59,59,57,0.45)"
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = COLORS.white
+                e.currentTarget.style.color = COLORS.gray
+                e.currentTarget.style.boxShadow = "0 8px 24px rgba(254,254,254,0.15)"
+              }}
+            >
+              Забронировать место
+            </button>
+          )}
+        </MobileHidden>
       </div>
     </div>
   )

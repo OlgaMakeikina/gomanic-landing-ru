@@ -5,6 +5,7 @@ import { MasterConfig } from '@/types/master'
 import { getCurrentMaster, loadMasterData } from '@/utils/master-loader'
 import DynamicSEO from '@/components/layout/DynamicSEO'
 import DynamicYandexMetrika from '@/components/layout/DynamicYandexMetrika'
+import { MobileBookingButton } from '@/components/common'
 
 import Header from '@/components/layout/Header'
 import HeroSectionRU from '@/components/sections/Hero'
@@ -50,6 +51,9 @@ export default function Home() {
         <VipSection masterData={masterData} />
       </main>
       <Footer masterData={masterData} />
+      <MobileBookingButton 
+        bookingUrl={masterData?.contacts?.bookingUrl || "https://dikidi.net/1921931?p=0.pi"}
+      />
     </div>
   )
 }

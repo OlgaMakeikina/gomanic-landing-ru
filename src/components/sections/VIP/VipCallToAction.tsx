@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import CountdownTimer from './CountdownTimer'
 import { trackVIPButtonView, trackVIPButtonClick, trackSlotsUpdate } from '@/utils/analytics'
 import { createDikidiLink } from '@/utils/dikidi-tracking'
+import { MobileHidden } from '@/components/common'
 
 const INITIAL_SLOTS = 30;
 const MINIMUM_SLOTS = 3;
@@ -70,9 +71,9 @@ export default function VipCallToAction() {
     >
       <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-black/10 rounded-2xl" />
       
-      <div className="relative z-10 p-8 text-center">
+      <div className="relative z-10 p-4 lg:p-8 text-center">
         <div className="mb-4">
-          <div className="text-3xl font-bold mb-2" style={{color: '#FEFEFE'}}>
+          <div className="text-xl lg:text-3xl font-bold mb-2" style={{color: '#FEFEFE'}}>
             ОСТАЛОСЬ ВСЕГО {remainingSlots} {remainingSlots === 1 ? 'МЕСТО' : remainingSlots < 5 ? 'МЕСТА' : 'МЕСТ'}!
           </div>
           <div className="text-sm opacity-75" style={{color: '#FEFEFE'}}>
@@ -82,40 +83,44 @@ export default function VipCallToAction() {
           </div>
         </div>
 
-        <h3 className="text-2xl font-bold mb-4" style={{color: '#FEFEFE'}}>
+        <h3 className="text-lg lg:text-2xl font-bold mb-4" style={{color: '#FEFEFE'}}>
           ЭТА ВОЗМОЖНОСТЬ ЗАКАНЧИВАЕТСЯ ЧЕРЕЗ:
         </h3>
         
-        <CountdownTimer />
+        <div className="mb-4 lg:mb-6">
+          <CountdownTimer />
+        </div>
         
-        <p className="vogue-body text-lg mb-6" style={{color: '#FEFEFE', fontWeight: 600}}>
+        <p className="vogue-body text-sm lg:text-lg mb-4 lg:mb-6" style={{color: '#FEFEFE', fontWeight: 600}}>
           После этого вернется обычная цена (без скидки)
         </p>
         
-        <a
-          href="https://dikidi.net/1921931?p=0.pi"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="px-12 py-4 transition-all duration-300 text-lg inline-flex items-center justify-center hover:scale-105"
-          style={{
-            background: '#FFFFFF',
-            color: '#444f55',
-            borderRadius: '12px',
-            fontFamily: 'Manrope, sans-serif',
-            fontSize: '18px',
-            fontWeight: 700,
-            letterSpacing: '0.1em',
-            textTransform: 'uppercase',
-            cursor: 'pointer',
-            boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2)',
-            transform: 'scale(1.02)',
-            border: 'none',
-            textDecoration: 'none'
-          }}
-          onClick={createDikidiLink("ХОЧУ ГАРАНТИРОВАТЬ СВОЕ МЕСТО СЕЙЧАС!", "VIP Section")}
-        >
-          ХОЧУ ГАРАНТИРОВАТЬ СВОЕ МЕСТО СЕЙЧАС!
-        </a>
+        <MobileHidden>
+          <a
+            href="https://dikidi.net/1921931?p=0.pi"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-12 py-4 transition-all duration-300 text-lg inline-flex items-center justify-center hover:scale-105"
+            style={{
+              background: '#FFFFFF',
+              color: '#444f55',
+              borderRadius: '12px',
+              fontFamily: 'Manrope, sans-serif',
+              fontSize: '18px',
+              fontWeight: 700,
+              letterSpacing: '0.1em',
+              textTransform: 'uppercase',
+              cursor: 'pointer',
+              boxShadow: '0 8px 32px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2)',
+              transform: 'scale(1.02)',
+              border: 'none',
+              textDecoration: 'none'
+            }}
+            onClick={createDikidiLink("ХОЧУ ГАРАНТИРОВАТЬ СВОЕ МЕСТО СЕЙЧАС!", "VIP Section")}
+          >
+            ХОЧУ ГАРАНТИРОВАТЬ СВОЕ МЕСТО СЕЙЧАС!
+          </a>
+        </MobileHidden>
       </div>
     </div>
   )
