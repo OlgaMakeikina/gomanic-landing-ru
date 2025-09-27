@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import { MasterConfig } from '@/types/master'
 import { menuItems } from './data'
+import { useScrollPosition } from '@/hooks'
 import Logo from './Logo'
 import Navigation from './Navigation'
 import VipBadge from './VipBadge'
@@ -14,6 +15,7 @@ interface HeaderProps {
 
 export default function Header({ masterData }: HeaderProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const { isScrolled } = useScrollPosition({ threshold: 50 })
 
   const handleMobileMenuClose = () => {
     setIsMobileMenuOpen(false)
@@ -30,11 +32,23 @@ export default function Header({ masterData }: HeaderProps) {
       </a>
       
       <header 
-        className="fixed top-0 left-0 right-0 z-50" 
-        style={{backgroundColor: '#FEFEFE', borderBottom: '1px solid rgba(68, 78, 85, 0.1)'}}
+        className="fixed top-0 left-0 right-0 z-50 transition-all duration-300" 
+        style={{
+          backgroundColor: '#FEFEFE', 
+          borderBottom: '1px solid rgba(68, 78, 85, 0.1)',
+          boxShadow: isScrolled 
+            ? '0 2px 10px rgba(68, 78, 85, 0.1)' 
+            : '0 0 0 rgba(68, 78, 85, 0)'
+        }}
         role="banner"
       >
-        <div className="max-w-8xl mx-auto px-4 lg:px-6 py-3 lg:py-4">
+        <div 
+          className="max-w-8xl mx-auto px-4 lg:px-6 transition-all duration-300"
+          style={{
+            paddingTop: isScrolled ? '6px' : '12px',
+            paddingBottom: isScrolled ? '6px' : '12px'
+          }}
+        >
           <div className="flex justify-between items-center">
             
             <Logo />
