@@ -13,7 +13,6 @@ import MasterIntro from '@/components/features/master'
 import ServicesSection from '@/components/sections/Services'
 import AboutGomanic from '@/components/sections/About/gomanic'
 import QualitySafety from '@/components/sections/About/QualitySafety'
-import ResultsGallery from '@/components/sections/Gallery/results'
 import ClientsSection from '@/components/sections/Testimonials/ClientsSection'
 import SocialProof from '@/components/sections/Testimonials/SocialProof'
 import ProcessSection from '@/components/sections/Process'
@@ -42,7 +41,7 @@ export default function Home() {
       <main role="main" id="main-content">
         <HeroSectionRU />
         <ServicesSection masterData={masterData} />
-        <ResultsGallery /> 
+  
         <AboutGomanic />
         <QualitySafety masterData={masterData} />
         <ClientsSection masterData={masterData} />
