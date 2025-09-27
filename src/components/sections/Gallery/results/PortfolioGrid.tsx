@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import styles from './styles.module.css'
 
 interface PortfolioGridProps {
   images: string[]
@@ -11,14 +10,14 @@ export default function PortfolioGrid({ images }: PortfolioGridProps) {
   }
 
   return (
-    <div className={styles.portfolioGrid}>
+    <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-5">
       {images.map((image, index) => (
-        <div key={index} className={styles.portfolioItem}>
+        <div key={index} className="relative aspect-square rounded-lg overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.1)] group">
           <Image
             src={getImageSrc(image)}
             alt={`Portfolio ${index + 1}`}
             fill
-            className={styles.portfolioImage}
+            className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
             sizes="(max-width: 768px) 50vw, 33vw"
             priority={index < 3}
             loading={index < 3 ? "eager" : "lazy"}

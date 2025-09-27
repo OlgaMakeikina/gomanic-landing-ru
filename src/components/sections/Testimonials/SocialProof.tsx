@@ -13,7 +13,7 @@ export default function SocialProof({ masterData }: SocialProofProps) {
       style={{ backgroundColor: SOCIAL_COLORS.white }} 
       aria-labelledby="reviews-heading"
     >
-      <div className="relative mx-auto max-w-7xl px-6">
+      <div className="vogue-container relative">
         <SocialHeader />
         <ReviewGrid />
       </div>

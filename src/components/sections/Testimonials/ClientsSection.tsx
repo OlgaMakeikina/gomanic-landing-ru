@@ -23,7 +23,7 @@ export default function ClientsSection({ masterData }: ClientsSectionProps) {
       }}
       aria-labelledby="clientes-heading"
     >
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="vogue-container">
         <ClientsSectionHeader colors={COLORS} />
         <DesktopClientsGallery colors={COLORS} />
         <MobileClientsGallery colors={COLORS} />

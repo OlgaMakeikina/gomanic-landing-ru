@@ -26,7 +26,7 @@ export default function SocialHeader() {
       </HorizonText>
 
       <p
-        className="mx-auto max-w-2xl"
+        className="mx-auto"
         style={{ 
           color: SOCIAL_COLORS.gray, 
           fontFamily: "Manrope, sans-serif", 

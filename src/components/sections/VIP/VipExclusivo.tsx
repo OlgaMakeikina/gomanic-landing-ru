@@ -46,7 +46,7 @@ export default function VipExclusivo({ masterData }: VipExclusivoProps) {
                }}></div>
         </div>
         
-        <div className="max-w-5xl mx-auto">
+        <div>
           <div className="text-center mb-16">
             <div className="text-2xl font-bold" style={{color: '#FEFEFE', fontFamily: 'Manrope, sans-serif'}}>
               ТОЛЬКО 5 МЕСТ В НЕДЕЛЮ ПО ЭТОЙ ЦЕНЕ

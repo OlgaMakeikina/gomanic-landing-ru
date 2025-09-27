@@ -25,7 +25,7 @@ export default function DesktopClientsGallery({ colors }: DesktopClientsGalleryP
   ]
 
   return (
-    <div className="mx-auto max-w-6xl px-5 hidden md:block">
+    <div className="hidden md:block">
       <div className="grid gap-3 grid-cols-3 auto-rows-min">
         
         {/* Row 1 - три больших фото */}

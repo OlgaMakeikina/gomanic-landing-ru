@@ -28,7 +28,7 @@ export default function Services({ masterData }: ServicesProps) {
         />
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-6">
+      <div className="vogue-container relative">
         <ServicesHeader />
         <ServicesGrid services={SERVICES_DATA} />
       </div>

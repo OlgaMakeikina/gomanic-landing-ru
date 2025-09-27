@@ -111,7 +111,7 @@ export default function QualitySafety({ masterData }: QualitySafetyProps): JSX.E
         />
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-6">
+      <div className="vogue-container relative">
         {/* Заголовок */}
         <header className="text-center mb-16">
           <p
@@ -131,17 +131,17 @@ export default function QualitySafety({ masterData }: QualitySafetyProps): JSX.E
         </HorizonText>
         </header>
 
-        {/* Верхние карточки (ограничение ширины на md) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:justify-items-center gap-6 md:gap-8 mb-16 max-w-5xl mx-auto">
+        {/* Верхние карточки */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:justify-items-center gap-6 md:gap-8 mb-16">
           {certificacoes.map((cert, index) => (
             <article
               key={index}
-              className="relative w-full md:max-w-[420px] backdrop-blur-xl rounded-2xl border overflow-hidden"
+              className="relative w-full md:max-w-[420px] backdrop-blur-xl rounded-lg border overflow-hidden"
               style={{ background: GLASS.cardBg, borderColor: GLASS.cardBorder, boxShadow: GLASS.cardShadow }}
               aria-labelledby={`cert-title-${index}`}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-white/15 via-white/5 to-transparent rounded-2xl" aria-hidden="true" />
-              <div className="absolute inset-0 bg-gradient-to-tl from-black/20 via-transparent to-black/10 rounded-2xl" aria-hidden="true" />
+              <div className="absolute inset-0 bg-gradient-to-br from-white/15 via-white/5 to-transparent rounded-lg" aria-hidden="true" />
+              <div className="absolute inset-0 bg-gradient-to-tl from-black/20 via-transparent to-black/10 rounded-lg" aria-hidden="true" />
 
               <div className="relative z-10">
                 <img
@@ -178,9 +178,9 @@ export default function QualitySafety({ masterData }: QualitySafetyProps): JSX.E
 
         {/* Дополнительные преимущества */}
         <section className="mt-16" aria-labelledby="additional-benefits-heading">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div
-              className="backdrop-blur-xl rounded-2xl p-8 border text-center"
+              className="backdrop-blur-xl rounded-lg p-8 border text-center"
               style={{
                 background: 'linear-gradient(135deg, rgba(68,79,85,0.95) 0%, rgba(59,59,58,0.95) 100%)',
                 borderColor: GLASS.cardBorder,
@@ -213,7 +213,7 @@ export default function QualitySafety({ masterData }: QualitySafetyProps): JSX.E
             </div>
 
             <div
-              className="backdrop-blur-xl rounded-2xl p-8 border text-center"
+              className="backdrop-blur-xl rounded-lg p-8 border text-center"
               style={{
                 background: 'linear-gradient(135deg, rgba(254,254,254,0.95) 0%, rgba(253,255,254,0.95) 100%)',
                 borderColor: COLORS.white,
@@ -289,7 +289,7 @@ export default function QualitySafety({ masterData }: QualitySafetyProps): JSX.E
             ].map((item, i) => (
               <div
                 key={i}
-                className="relative w-full backdrop-blur-xl rounded-2xl border overflow-hidden group"
+                className="relative w-full backdrop-blur-xl rounded-lg border overflow-hidden group"
                 style={{ background: GLASS.cardBg, borderColor: GLASS.cardBorder, boxShadow: GLASS.cardShadow, aspectRatio: '4/3' }}
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-white/5 to-transparent" />
@@ -322,7 +322,7 @@ export default function QualitySafety({ masterData }: QualitySafetyProps): JSX.E
             ].map((item, i) => (
               <div
                 key={i}
-                className="relative w-full backdrop-blur-xl rounded-2xl border overflow-hidden group"
+                className="relative w-full backdrop-blur-xl rounded-lg border overflow-hidden group"
                 style={{ background: GLASS.cardBg, borderColor: GLASS.cardBorder, boxShadow: GLASS.cardShadow, aspectRatio: '4/3' }}
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-white/5 to-transparent" />
@@ -349,7 +349,7 @@ export default function QualitySafety({ masterData }: QualitySafetyProps): JSX.E
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {/* Сертификат */}
             <div
-              className="relative rounded-2xl border overflow-hidden"
+              className="relative rounded-lg border overflow-hidden"
               style={{
                 background: GLASS.cardBg,
                 borderColor: GLASS.cardBorder,
@@ -369,7 +369,7 @@ export default function QualitySafety({ masterData }: QualitySafetyProps): JSX.E
             {/* Плашка */}
             <div className="flex items-center">
               <div
-                className="backdrop-blur-xl rounded-2xl p-8 w-full"
+                className="backdrop-blur-xl rounded-lg p-8 w-full"
                 style={{
                   background: 'linear-gradient(135deg, rgba(68,79,85,0.95) 0%, rgba(59,59,58,0.95) 100%)',
                   border: '1px solid #FEFEFE',

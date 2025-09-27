@@ -32,14 +32,15 @@ export default function ResultsGallery() {
   return (
     <section 
       id="portfolio" 
-      className={styles.section}
+      className="py-20"
+      style={{ backgroundColor: '#FEFEFE' }}
       aria-labelledby="gallery-heading"
       role="region"
     >
-      <div className={styles.container}>
+      <div className="vogue-container">
         <GalleryHeader />
         
-        <div className={styles.galleryContainer}>
+        <div className="min-h-[400px] mb-12">
           {isMobile ? (
             <MobilePortfolioSlider images={portfolioImages} />
           ) : (

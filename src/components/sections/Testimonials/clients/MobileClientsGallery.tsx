@@ -85,7 +85,7 @@ export default function MobileClientsGallery({ colors }: MobileClientsGalleryPro
   }, [currentIndex])
 
   return (
-    <div className="md:hidden px-4">
+    <div className="md:hidden">
       <div className="mb-6">
         <div 
           ref={scrollRef}

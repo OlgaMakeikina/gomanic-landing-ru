@@ -50,7 +50,7 @@ export default function AboutGomanic() {
       <div className="absolute inset-0 z-0" style={{ background: 'rgba(0,0,0,0.4)', filter: 'grayscale(100%)' }}></div>
       <div className="absolute inset-0 z-0" style={{ background: 'linear-gradient(135deg, rgba(59,59,58,0.5) 0%, rgba(68,79,85,0.5) 100%)' }}></div>
 
-      <div className="relative z-20 mx-auto max-w-6xl px-6">
+      <div className="vogue-container relative z-20">
         <div className="text-center mb-16">
           <div className="uppercase tracking-[0.22em] mb-4" style={{ color: '#FEFEFE', fontFamily: "Manrope, sans-serif", fontSize: 14, opacity: 0.85 }}>
             О ПЛАТФОРМЕ
@@ -67,14 +67,14 @@ export default function AboutGomanic() {
           {stats.map((stat, index) => (
             <div 
               key={index}
-              className={`text-center p-4 lg:p-6 rounded-2xl backdrop-blur-xl border border-white border-opacity-40 transition-all duration-700 hover:scale-105 relative overflow-hidden opacity-100 translate-y-0`}
+              className={`text-center p-4 lg:p-6 rounded-lg backdrop-blur-xl border border-white border-opacity-40 transition-all duration-700 hover:scale-105 relative overflow-hidden opacity-100 translate-y-0`}
               style={{
                 background: 'rgba(254, 254, 254, 0.20)',
                 boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4)',
                 minHeight: '140px'
               }}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-white/10 to-transparent rounded-2xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-white/10 to-transparent rounded-lg"></div>
               <div className="relative z-10">
                 <div className="text-lg lg:text-xl xl:text-2xl font-bold mb-2" style={{ fontFamily: 'DrukWideCyr-Super, Arial, sans-serif', color: '#FEFEFE', lineHeight: '1.1', whiteSpace: 'nowrap' }}>
                   {stat.number}
@@ -87,7 +87,7 @@ export default function AboutGomanic() {
           ))}
         </div>
 
-        <div className="text-center p-8 rounded-2xl backdrop-blur-xl border border-white border-opacity-30 relative overflow-hidden"
+        <div className="text-center p-8 rounded-lg backdrop-blur-xl border border-white border-opacity-30 relative overflow-hidden"
              style={{ background: 'rgba(254, 254, 254, 0.15)', boxShadow: '0 20px 60px rgba(0, 0, 0, 0.5)' }}>
           <div className="relative z-10">
             <h3 className="text-2xl lg:text-1xl font-bold mb-4 uppercase tracking-wide" style={{ fontFamily: 'DrukWideCyr-Super, Arial, sans-serif', color: '#FEFEFE' }}>
