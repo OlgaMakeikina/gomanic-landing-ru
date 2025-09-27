@@ -86,7 +86,7 @@ export default function BookingButton({
       href={bookingUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className={`transition-all duration-300 hover:scale-105 touch-manipulation w-full max-w-sm ${className}`}
+      className={`transition-all duration-300 hover:scale-105 touch-manipulation ${className}`}
       style={finalStyle}
       onClick={onClick}
       onMouseEnter={handleMouseEnter}

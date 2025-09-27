@@ -37,7 +37,7 @@ export default function ServicesHeader() {
       </HorizonText>
 
       <div
-        className="mx-auto inline-block rounded-2xl px-6 py-4 backdrop-blur-md border shadow-lg mb-4"
+        className="mx-auto inline-block rounded-lg px-6 py-4 backdrop-blur-md border shadow-lg mb-4"
         style={{
           background: "rgba(255, 255, 255, 0.25)",
           borderColor: "rgba(255, 255, 255, 0.40)",

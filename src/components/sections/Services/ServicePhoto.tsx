@@ -5,7 +5,7 @@ import { GLASS_STYLES } from './constants'
 export default function ServicePhoto() {
   return (
     <div
-      className="relative aspect-square rounded-2xl overflow-hidden backdrop-blur-xl border"
+      className="relative aspect-square rounded-lg overflow-hidden backdrop-blur-xl border"
       style={{
         background: GLASS_STYLES.cardBg,
         borderColor: GLASS_STYLES.cardBorder,
