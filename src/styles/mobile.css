@@ -1,5 +1,38 @@
 /* GOMANIC MOBILE - АДАПТАЦИИ И TOUCH INTERACTIONS */
 
+/* ABOUT GOMANIC СЕКЦИЯ */
+@media (max-width: 768px) {
+  #about-gomanic {
+    padding: 60px 0;
+  }
+  
+  #about-gomanic .vogue-container {
+    padding: 0 16px;
+  }
+  
+  #about-gomanic .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  
+  #about-gomanic .grid > div {
+    min-height: 120px;
+    padding: 16px 12px;
+    border-radius: 6px;
+  }
+  
+  #about-gomanic .grid > div div:first-child {
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+  
+  #about-gomanic .grid > div p {
+    font-size: 20px;
+    line-height: 1.3;
+  }
+}
+
 /* БАЗОВЫЕ MOBILE СТИЛИ */
 @media (max-width: 1024px) {
   #hero {
@@ -183,6 +216,25 @@
     font-size: 13px;
     padding: 14px 20px;
   }
+  
+  /* ABOUT GOMANIC СТАТИСТИКА */
+  #about-gomanic .grid {
+    gap: 8px;
+  }
+  
+  #about-gomanic .grid > div {
+    min-height: 90px;
+    padding: 12px 8px;
+  }
+  
+  #about-gomanic .grid > div div:first-child {
+    font-size: 12px;
+    margin-bottom: 4px;
+  }
+  
+  #about-gomanic .grid > div p {
+    font-size: 18px;
+  }
 }
 
 @media (max-width: 320px) {
@@ -194,5 +246,23 @@
   .booking-button {
     padding: 12px 24px;
     font-size: 14px;
+  }
+  
+  /* ABOUT GOMANIC ЭКСТРА МАЛЕНЬКИЕ ЭКРАНЫ */
+  #about-gomanic .grid {
+    gap: 6px;
+  }
+  
+  #about-gomanic .grid > div {
+    min-height: 80px;
+    padding: 10px 6px;
+  }
+  
+  #about-gomanic .grid > div div:first-child {
+    font-size: 11px;
+  }
+  
+  #about-gomanic .grid > div p {
+    font-size: 17px;
   }
 }

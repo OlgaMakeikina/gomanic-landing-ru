@@ -63,28 +63,49 @@ export default function AboutGomanic() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-16">
-          {stats.map((stat, index) => (
-            <div 
-              key={index}
-              className={`text-center p-4 lg:p-6 rounded-lg backdrop-blur-xl border border-white border-opacity-40 transition-all duration-700 hover:scale-105 relative overflow-hidden opacity-100 translate-y-0`}
-              style={{
-                background: 'rgba(254, 254, 254, 0.20)',
-                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4)',
-                minHeight: '140px'
-              }}
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-white/10 to-transparent rounded-lg"></div>
-              <div className="relative z-10">
-                <div className="text-lg lg:text-xl xl:text-2xl font-bold mb-2" style={{ fontFamily: 'DrukWideCyr-Super, Arial, sans-serif', color: '#FEFEFE', lineHeight: '1.1', whiteSpace: 'nowrap' }}>
-                  {stat.number}
+        <div className="mb-16">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-8 mb-4">
+            {stats.slice(0, 4).map((stat, index) => (
+              <div 
+                key={index}
+                className="text-center p-3 sm:p-4 lg:p-6 rounded-lg backdrop-blur-xl border border-white border-opacity-40 transition-all duration-700 hover:scale-105 relative overflow-hidden opacity-100 translate-y-0 flex items-center justify-center"
+                style={{
+                  background: 'rgba(254, 254, 254, 0.20)',
+                  boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4)',
+                  minHeight: isMobile ? '120px' : '140px'
+                }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-white/10 to-transparent rounded-lg"></div>
+                <div className="relative z-10">
+                  <div className="text-sm sm:text-lg lg:text-xl xl:text-2xl font-bold mb-1 sm:mb-2" style={{ fontFamily: 'DrukWideCyr-Super, Arial, sans-serif', color: '#FEFEFE', lineHeight: '1.1' }}>
+                    {stat.number}
+                  </div>
+                  <p className="text-xl sm:text-2xl md:text-lg lg:text-3xl leading-tight" style={{ fontFamily: 'Manrope, sans-serif', color: '#FEFEFE', opacity: 0.95 }}>
+                    {stat.label}
+                  </p>
                 </div>
-                <p className="text-xs lg:text-sm leading-relaxed" style={{ fontFamily: 'Manrope, sans-serif', color: '#FEFEFE', opacity: 0.95 }}>
-                  {stat.label}
-                </p>
               </div>
+            ))}
+          </div>
+
+          <div 
+            className="text-center p-4 sm:p-6 lg:p-8 rounded-lg backdrop-blur-xl border border-white border-opacity-40 transition-all duration-700 hover:scale-105 relative overflow-hidden opacity-100 translate-y-0 flex items-center justify-center"
+            style={{
+              background: 'rgba(254, 254, 254, 0.20)',
+              boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4)',
+              minHeight: isMobile ? '120px' : '140px'
+            }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-white/10 to-transparent rounded-lg"></div>
+            <div className="relative z-10">
+              <div className="text-sm sm:text-lg lg:text-xl xl:text-2xl font-bold mb-1 sm:mb-2" style={{ fontFamily: 'DrukWideCyr-Super, Arial, sans-serif', color: '#FEFEFE', lineHeight: '1.1' }}>
+                {stats[4].number}
+              </div>
+              <p className="text-xl sm:text-2xl md:text-lg lg:text-3xl leading-tight" style={{ fontFamily: 'Manrope, sans-serif', color: '#FEFEFE', opacity: 0.95 }}>
+                {stats[4].label}
+              </p>
             </div>
-          ))}
+          </div>
         </div>
 
         <div className="text-center p-8 rounded-lg backdrop-blur-xl border border-white border-opacity-30 relative overflow-hidden"
