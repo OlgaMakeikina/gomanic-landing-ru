@@ -31,7 +31,7 @@ export default function ResultsGallery() {
 
   return (
     <section 
-      id="portfolio" 
+      id="results" 
       className="py-20"
       style={{ backgroundColor: '#FEFEFE' }}
       aria-labelledby="gallery-heading"

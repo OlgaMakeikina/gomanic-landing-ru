@@ -75,7 +75,7 @@ export default function Slide2RU({ slideData, masterData, onButtonAction }: Slid
                         ХОЧУ ЗАПИСАТЬСЯ
                       </a>
                       <HeroButton 
-                        onClick={() => onButtonAction('scroll', 'portfolio')}
+                        onClick={() => onButtonAction('scroll', 'results')}
                         variant="secondary"
                         className="w-full"
                       >
@@ -101,7 +101,7 @@ export default function Slide2RU({ slideData, masterData, onButtonAction }: Slid
               
               <div className="lg:hidden mt-8 flex flex-col gap-3 items-center">
                 <HeroButton 
-                  onClick={() => onButtonAction('scroll', 'portfolio')}
+                  onClick={() => onButtonAction('scroll', 'results')}
                   variant="secondary"
                   className="w-full max-w-sm"
                 >

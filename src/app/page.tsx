@@ -11,6 +11,7 @@ import Header from '@/components/layout/Header'
 import HeroSectionRU from '@/components/sections/Hero'
 import MasterIntro from '@/components/features/master'
 import ServicesSection from '@/components/sections/Services'
+import { ResultsGallery } from '@/components/sections/Gallery'
 import AboutGomanic from '@/components/sections/About/gomanic'
 import QualitySafety from '@/components/sections/About/QualitySafety'
 import ClientsSection from '@/components/sections/Testimonials/ClientsSection'
@@ -41,7 +42,7 @@ export default function Home() {
       <main role="main" id="main-content">
         <HeroSectionRU />
         <ServicesSection masterData={masterData} />
-  
+        <ResultsGallery />
         <AboutGomanic />
         <QualitySafety masterData={masterData} />
         <ClientsSection masterData={masterData} />

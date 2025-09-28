@@ -80,7 +80,7 @@ export default function AboutGomanic() {
                   <div className="text-sm sm:text-lg lg:text-xl xl:text-2xl font-bold mb-1 sm:mb-2" style={{ fontFamily: 'DrukWideCyr-Super, Arial, sans-serif', color: '#FEFEFE', lineHeight: '1.1' }}>
                     {stat.number}
                   </div>
-                  <p className="text-xl sm:text-2xl md:text-lg lg:text-3xl leading-tight" style={{ fontFamily: 'Manrope, sans-serif', color: '#FEFEFE', opacity: 0.95 }}>
+                  <p className="text-xs sm:text-sm md:text-xs lg:text-sm leading-tight" style={{ fontFamily: 'Manrope, sans-serif', color: '#FEFEFE', opacity: 0.95 }}>
                     {stat.label}
                   </p>
                 </div>
@@ -101,7 +101,7 @@ export default function AboutGomanic() {
               <div className="text-sm sm:text-lg lg:text-xl xl:text-2xl font-bold mb-1 sm:mb-2" style={{ fontFamily: 'DrukWideCyr-Super, Arial, sans-serif', color: '#FEFEFE', lineHeight: '1.1' }}>
                 {stats[4].number}
               </div>
-              <p className="text-xl sm:text-2xl md:text-lg lg:text-3xl leading-tight" style={{ fontFamily: 'Manrope, sans-serif', color: '#FEFEFE', opacity: 0.95 }}>
+              <p className="text-xs sm:text-sm md:text-xs lg:text-sm leading-tight" style={{ fontFamily: 'Manrope, sans-serif', color: '#FEFEFE', opacity: 0.95 }}>
                 {stats[4].label}
               </p>
             </div>
