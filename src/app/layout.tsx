@@ -53,6 +53,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL;
   const gaId = process.env.GOOGLE_ANALYTICS_ID;
   const fbPixelId = process.env.FACEBOOK_PIXEL_ID;
+  const yandexId = process.env.YANDEX_METRIKA_ID;
   
   return (
     <html lang="ru">
@@ -66,6 +67,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <AnalyticsScripts 
           gaId={gaId} 
           fbPixelId={fbPixelId}
+          yandexId={yandexId}
         />
       </body>
     </html>

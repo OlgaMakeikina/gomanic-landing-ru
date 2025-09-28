@@ -1,11 +1,13 @@
 import Script from 'next/script';
+import YandexMetrika from './YandexMetrika';
 
 interface AnalyticsScriptsProps {
   gaId?: string;
   fbPixelId?: string;
+  yandexId?: string;
 }
 
-export default function AnalyticsScripts({ gaId, fbPixelId }: AnalyticsScriptsProps) {
+export default function AnalyticsScripts({ gaId, fbPixelId, yandexId }: AnalyticsScriptsProps) {
   return (
     <>
       {gaId && (
@@ -41,6 +43,8 @@ export default function AnalyticsScripts({ gaId, fbPixelId }: AnalyticsScriptsPr
           fbq('track', 'PageView');
         `}
       </Script>
+      
+      {yandexId && <YandexMetrika counterId={yandexId} />}
     </>
   );
 }
